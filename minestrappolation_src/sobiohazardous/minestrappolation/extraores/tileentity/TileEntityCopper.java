@@ -14,7 +14,6 @@ public class TileEntityCopper extends TileEntity
      */
     public void updateEntity()
     {
-        System.out.println(daysPassed);
     	if(worldObj.getWorldTime() == 12520)
         {
         	this.daysPassed += 1;
