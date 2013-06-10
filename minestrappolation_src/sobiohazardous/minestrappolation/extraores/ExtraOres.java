@@ -30,6 +30,9 @@ import sobiohazardous.minestrappolation.extraores.handler.EOGuiHandler;
 import sobiohazardous.minestrappolation.extraores.handler.ServerPacketHandler;
 import sobiohazardous.minestrappolation.extraores.handler.ServerTickHandler;
 import sobiohazardous.minestrappolation.extraores.item.*;
+import sobiohazardous.minestrappolation.extraores.lib.EOBlockRegister;
+import sobiohazardous.minestrappolation.extraores.lib.EONameManager;
+import sobiohazardous.minestrappolation.extraores.lib.EORecipeManager;
 import sobiohazardous.minestrappolation.extraores.misc.PlutoniumFuelHandler;
 import sobiohazardous.minestrappolation.extraores.misc.UraniumFuelHandler;
 import sobiohazardous.minestrappolation.extraores.plate.*;
@@ -38,6 +41,7 @@ import sobiohazardous.potionapi.PotionAPI;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHalfSlab;
+import net.minecraft.block.BlockStairs;
 import net.minecraft.block.BlockStep;
 import net.minecraft.block.BlockTNT;
 import net.minecraft.block.material.Material;
@@ -55,6 +59,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemSimpleFoiled;
+import net.minecraft.item.ItemSlab;
 import net.minecraft.item.ItemSnowball;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
@@ -100,7 +105,7 @@ import cpw.mods.fml.relauncher.Side;
 @NetworkMod(clientSideRequired = true, serverSideRequired = true,
 clientPacketHandlerSpec = @SidedPacketHandler(channels = {"extraoresChan"}, packetHandler = ClientPacketHandler.class),
 serverPacketHandlerSpec = @SidedPacketHandler(channels = {"extroresChan"}, packetHandler = ServerPacketHandler.class))
-@Mod ( modid = "ExtraoresID", name="Extrappolated Ores", version="A1.3.1")
+@Mod ( modid = "ExtraOres", name="Extrappolated Ores", version="A1.4")
 public class ExtraOres 
 {
 	//Items
@@ -450,6 +455,14 @@ public class ExtraOres
 	public static Block melterIdle;
 	public static Block melterBurning;
 	
+	public static Block RadiantQuartzStairs;
+	public static BlockHalfSlab RadiantQuartzSingleSlab;
+	public static BlockHalfSlab RadiantQuartzDoubleSlab;
+	
+	public static Block PinkQuartzStairs;
+	public static BlockHalfSlab PinkQuartzSingleSlab;
+	public static BlockHalfSlab PinkQuartzDoubleSlab;
+	
 	//less broken public static Block PinkQuartzSingleSlab;
 	//less broken public static Block PinkQuartzDoubleSlab;
 	
@@ -458,8 +471,8 @@ public class ExtraOres
 	//broken public static BlockHalfSlab QuartziteSingleSlab;
 	//broken public static BlockHalfSlab QuartziteDoubleSlab;
 	
-	public static CreativeTabs tabOresBlocks = new CreativeTabExtraoresBlocks(CreativeTabs.getNextID(),"Extra Ores");
-	public static CreativeTabs tabOresItems = new CreativeTabExtraoresItems(CreativeTabs.getNextID(), "Extra Ores Items");
+	public static CreativeTabs tabOresBlocks = new CreativeTabExtraoresBlocks(CreativeTabs.getNextID(),"Extrappolated Ores - Blocks");
+	public static CreativeTabs tabOresItems = new CreativeTabExtraoresItems(CreativeTabs.getNextID(), "Extrappolated Ores - Items");
 	
 	static EnumArmorMaterial MaterialZirconium = EnumHelper.addArmorMaterial("Zirconium", 18, new int[]{2, 7, 6, 2}, 15);
 	static EnumArmorMaterial MaterialTitanium = EnumHelper.addArmorMaterial("Titanium", 66, new int[]{4, 10, 8, 5}, 11);
@@ -617,7 +630,7 @@ public class ExtraOres
 		SteelPants = (new ItemExtracraftPants(363, "item_SteelLeggings",MaterialSteel, proxy.addArmor("steel"), 2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelPants");
 		SteelBoots = (new ItemExtracraftBoots(364, "item_SteelBoots",MaterialSteel, proxy.addArmor("steel"), 3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelBoots");
 		
-		SteelBlock = (new BlockEOSteel(235)).setHardness(6F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setCreativeTab(ExtraOres.tabOresBlocks).setUnlocalizedName("SteelBlock");
+		SteelBlock = (new BlockSteel(235)).setHardness(6F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setCreativeTab(ExtraOres.tabOresBlocks).setUnlocalizedName("SteelBlock");
 		
 		SoulOre = (new EOBlock(216, "block_SoulOre", Material.sand)).setHardness(2F).setResistance(3F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundSandFootstep).setUnlocalizedName("SoulOre");
 		SoulGem = (new EItemFoiled(339, "item_SoulGem")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SoulGem");
@@ -974,6 +987,14 @@ public class ExtraOres
 		
 		melterIdle = (new BlockMelter(806, false)).setHardness(6F).setResistance(8.0F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("melter");
 		melterBurning = (new BlockMelter(807, true)).setHardness(6F).setResistance(8.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("melter");
+	
+		RadiantQuartzStairs = new EOBlockStairs(808, SmoothRadiantQuartz, 0).setUnlocalizedName("RadiantQuartzStairs");
+		RadiantQuartzSingleSlab = (BlockHalfSlab) new RadiantQuartzSlab(809, false).setUnlocalizedName("RadiantQuartzSingleSlab").setCreativeTab(tabOresBlocks);
+		RadiantQuartzDoubleSlab = (BlockHalfSlab) new RadiantQuartzSlab(810, true).setUnlocalizedName("RadiantQuartzDoubleSlab");
+	
+		PinkQuartzStairs = new EOBlockStairs(811, SmoothQuartzite, 0).setUnlocalizedName("PinkQuartzStairs");
+		PinkQuartzSingleSlab = (BlockHalfSlab) new PinkQuartzSlab(812, false).setUnlocalizedName("PinkQuartzSingleSlab").setCreativeTab(tabOresBlocks);
+		PinkQuartzDoubleSlab = (BlockHalfSlab) new PinkQuartzSlab(813, true).setUnlocalizedName("PinkQuartzDoubleSlab");
 	}
 	
 	@Init
@@ -981,10 +1002,8 @@ public class ExtraOres
 
 	{
 
-		//this is the same as the load() method. add all names and recipes here.
-		//recipes are GameRegistry.addRecipe, ect. No longer Modloader.blablabla (except for add names)
         TickRegistry.registerTickHandler(new ClientTickHandler(EnumSet.of(TickType.CLIENT)), Side.CLIENT);
-        TickRegistry.registerTickHandler(new ServerTickHandler(EnumSet.of(TickType.SERVER)), Side.SERVER);
+        TickRegistry.registerTickHandler(new ServerTickHandler(EnumSet.of(TickType.PLAYER)), Side.SERVER);
         proxy.registerRenderThings(); //this allows seperate renderings for server and client
         
         GameRegistry.registerFuelHandler(new UraniumFuelHandler());
@@ -1064,13 +1083,8 @@ public class ExtraOres
 	@PostInit // like the modsLoaded thing from ModLoader
     public void myNewPostLoadMethod(FMLPostInitializationEvent evt)
     {
-		
+		Item.itemsList[this.RadiantQuartzSingleSlab.blockID] = (new ItemSlab(this.RadiantQuartzSingleSlab.blockID - 256, (BlockHalfSlab)RadiantQuartzSingleSlab, (BlockHalfSlab)RadiantQuartzDoubleSlab, false));
+		Item.itemsList[this.PinkQuartzSingleSlab.blockID] = (new ItemSlab(this.PinkQuartzSingleSlab.blockID - 256, (BlockHalfSlab)PinkQuartzSingleSlab, (BlockHalfSlab)PinkQuartzDoubleSlab, false));
     }
-	
-	public static void addRenderer(Map map)
-	{
-	map.put(EntityNukePrimed.class, new RenderNukePrimed());
-	}
-	
 
 }

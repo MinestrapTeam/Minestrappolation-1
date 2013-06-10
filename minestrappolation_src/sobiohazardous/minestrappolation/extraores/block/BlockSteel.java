@@ -16,12 +16,12 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
-public class BlockEOSteel extends Block
+public class BlockSteel extends Block
 {
 	public Icon top;
 	public Icon bottom;
 	
-	public BlockEOSteel(int par1)
+	public BlockSteel(int par1)
     {
         super(par1, Material.iron);
         this.setCreativeTab(ExtraOres.tabOresBlocks);

@@ -1,5 +1,9 @@
-package sobiohazardous.minestrappolation.extraores;
+package sobiohazardous.minestrappolation.extraores.lib;
 
+import sobiohazardous.minestrappolation.extraores.ExtraOres;
+import sobiohazardous.minestrappolation.extraores.block.PinkQuartzSlab;
+import sobiohazardous.minestrappolation.extraores.block.RadiantQuartzSlab;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.src.ModLoader;
 
@@ -370,6 +374,16 @@ public class EONameManager
 		ModLoader.addName(ExtraOres.RadiantQuartz, "Radiant Quartz");
 		
 		ModLoader.addName(ExtraOres.Godstone, "Godstone");
+		
+		ModLoader.addName(ExtraOres.RadiantQuartzStairs, "Radiant Quartz Stairs");
+		
+		ModLoader.addName(ExtraOres.PinkQuartzStairs, "Pink Quartz Stairs");
+		
+		LanguageRegistry.addName(ExtraOres.RadiantQuartzDoubleSlab,"Radiant Quartz DoubleSlab");
+		LanguageRegistry.instance().addStringLocalization(((RadiantQuartzSlab)ExtraOres.RadiantQuartzSingleSlab).getFullSlabName(0)+".name", "Radiant Quartz Slab");
+	
+		LanguageRegistry.addName(ExtraOres.PinkQuartzDoubleSlab,"Pink Quartz DoubleSlab");
+		LanguageRegistry.instance().addStringLocalization(((PinkQuartzSlab)ExtraOres.PinkQuartzSingleSlab).getFullSlabName(0)+".name", "Pink Quartz Slab");
 	}
 	
 }

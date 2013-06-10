@@ -1,5 +1,6 @@
-package sobiohazardous.minestrappolation.extradecor;
+package sobiohazardous.minestrappolation.extradecor.lib;
 
+import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class EDNameManager 

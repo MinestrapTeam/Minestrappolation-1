@@ -1,15 +1,13 @@
-package sobiohazardous.minestrappolation.extraores.proxy;
+package sobiohazardous.minestrappolation.extramobdrops.proxy;
 
+import java.util.EnumSet;
 import java.util.Map;
-
-import sobiohazardous.minestrappolation.extraores.entity.EntityNukePrimed;
-import sobiohazardous.minestrappolation.extraores.entity.RenderNukePrimed;
-import sobiohazardous.minestrappolation.extraores.lib.EOBlockRegister;
-import sobiohazardous.minestrappolation.extraores.plate.IPlateRenderingHandler;
-
 import net.minecraft.src.ModLoader;
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.common.TickType;
 import cpw.mods.fml.common.registry.EntityRegistry;
+import cpw.mods.fml.common.registry.TickRegistry;
+import cpw.mods.fml.relauncher.Side;
 
 
 public class CommonProxy
@@ -23,8 +21,10 @@ public class CommonProxy
     {
         /* NOOP, servers do not need Renderers */
     	
+    	
     }
     
     public void registerRenders(){};
     public static int addArmor(String armor) { return 0; }
+
 }

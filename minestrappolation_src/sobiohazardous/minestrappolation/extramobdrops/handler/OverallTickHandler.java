@@ -1,22 +1,20 @@
-package sobiohazardous.minestrappolation.extraores.handler;
+package sobiohazardous.minestrappolation.extramobdrops.handler;
 
 import java.util.EnumSet;
-
 import net.minecraft.entity.player.EntityPlayer;
-
-import sobiohazardous.minestrappolation.extraores.lib.ArmorEffects;
+import net.minecraft.world.World;
 
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
 
-public class ServerTickHandler implements ITickHandler
+public class OverallTickHandler implements ITickHandler
 {
     private final EnumSet<TickType> ticksToGet;
     
     /*
      * This Tick Handler will fire for whatever TickType's you construct and register it with.
      */
-    public ServerTickHandler(EnumSet<TickType> ticksToGet)
+    public OverallTickHandler(EnumSet<TickType> ticksToGet)
     {
         this.ticksToGet = ticksToGet;
     }
@@ -44,11 +42,10 @@ public class ServerTickHandler implements ITickHandler
     @Override
     public String getLabel()
     {
-        return "ExtraoresServerTick";
+        return "ExtraMobDropsTick";
     }
     
     public static void playerTick(EntityPlayer player)
     {
-    	ArmorEffects.loadArmorEffects(player);
     }
 }

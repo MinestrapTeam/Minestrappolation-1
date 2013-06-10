@@ -9,6 +9,9 @@ import sobiohazardous.minestrappolation.extradecor.block.*;
 import sobiohazardous.minestrappolation.extradecor.handler.ClientPacketHandler;
 import sobiohazardous.minestrappolation.extradecor.handler.ServerPacketHandler;
 import sobiohazardous.minestrappolation.extradecor.item.ItemBlockPlacer;
+import sobiohazardous.minestrappolation.extradecor.lib.EDBlockRegistry;
+import sobiohazardous.minestrappolation.extradecor.lib.EDNameManager;
+import sobiohazardous.minestrappolation.extradecor.lib.EDRecipeManager;
 import sobiohazardous.minestrappolation.extradecor.proxy.CommonProxy;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockGlass;
@@ -41,7 +44,7 @@ import cpw.mods.fml.common.network.NetworkMod.SidedPacketHandler;
 @NetworkMod(clientSideRequired = true, serverSideRequired = false,
 clientPacketHandlerSpec = @SidedPacketHandler(channels = {"extraoresChan"}, packetHandler = ClientPacketHandler.class),
 serverPacketHandlerSpec = @SidedPacketHandler(channels = {"extroresChan"}, packetHandler = ServerPacketHandler.class))
-@Mod ( modid = "ExtraDecorID", name="Extra Decor", version="A1.0")
+@Mod ( modid = "ExtraDecor", name="Extrappolated Decor", version="A1.0")
 public class ExtraDecor 
 {
 	@SidedProxy(clientSide = "sobiohazardous.minestrappolation.extradecor.proxy.ClientProxy", serverSide = "sobiohazardous.minestrappolation.extradecor.proxy.CommonProxy")
@@ -89,7 +92,8 @@ public class ExtraDecor
 	
 	public static Block oozeSlime;
 	
-	public static CreativeTabs tabDecorBlocks = new CreativeTabExtraDecorBlocks(CreativeTabs.getNextID(),"Extra Decor");
+	public static CreativeTabs tabDecorBlocks = new CreativeTabExtraDecorBlocks(CreativeTabs.getNextID(),"Extrappolated Decor - Blocks");
+	
 	public static int paneRenderId = RenderingRegistry.getNextAvailableRenderId();
 	public static int ropeRenderId = RenderingRegistry.getNextAvailableRenderId();
 	
@@ -122,7 +126,7 @@ public class ExtraDecor
 		
 		flintBlock = (new EDBlock(616, Material.ground, "block_FlintBlock")).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("flintBlock");
 		
-		gunpowderBlock = (new BlockGunpowder(617)).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("gunpowderBlock");
+		gunpowderBlock = (new BlockGunpowderBlock(617, Material.ground, "block_GunpowderBlock")).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("gunpowderBlock");
 		
 		rope = (new BlockRope(618)).setHardness(2.0F).setResistance(4.0F).setStepSound(Block.soundLadderFootstep).setUnlocalizedName("rope");
 		itemRope = (new ItemBlockPlacer(900, "item_Rope", rope)).setUnlocalizedName("itemRope").setCreativeTab(tabDecorBlocks);
@@ -149,6 +153,7 @@ public class ExtraDecor
 		MinecraftForge.setBlockHarvestLevel(obsidianTile, "pickaxe", 3);
 		MinecraftForge.setBlockHarvestLevel(gunpowderBlock, "shovel", 0);
 		MinecraftForge.setBlockHarvestLevel(ropeCoil, "shears", 0);
+		MinecraftForge.setBlockHarvestLevel(rope, "shears", 0);
 		//test
 	}
 	

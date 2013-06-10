@@ -22,6 +22,6 @@ public final class CreativeTabExtraDecorBlocks extends CreativeTabs
    
         public String getTranslatedTabLabel()
         {
-         return "Extra Decor Blocks";
+         return "Extrappolated Decor - Blocks";
         }
 }

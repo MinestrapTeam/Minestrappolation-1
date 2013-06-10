@@ -4,13 +4,16 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.HashMap;
 
+import cpw.mods.fml.common.registry.LanguageRegistry;
+
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionHelper;
+import net.minecraftforge.common.MinecraftForge;
 
 public class PotionAPI 
 {
 	public static void initializePotionAPI()
-	{
+	{	
 		Potion[] potionTypes = null;
 
 		for (Field f : Potion.class.getDeclaredFields()) 
@@ -39,6 +42,11 @@ public class PotionAPI
 	public void addBrewingRecipe()
 	{
 
+	}
+	
+	public static void addPotionEffectName(String unlocalizedEffectName, String newname)
+	{
+		LanguageRegistry.instance().addStringLocalization(unlocalizedEffectName, newname);
 	}
 	
 }

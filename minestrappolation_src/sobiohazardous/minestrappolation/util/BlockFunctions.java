@@ -1,4 +1,4 @@
-package sobiohazardous.minestrapolation.util;
+package sobiohazardous.minestrappolation.util;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.util.MathHelper;

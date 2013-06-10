@@ -1,5 +1,6 @@
-package sobiohazardous.minestrappolation.extraores;
+package sobiohazardous.minestrappolation.extraores.lib;
 
+import sobiohazardous.minestrappolation.extraores.ExtraOres;
 import net.minecraft.src.ModLoader;
 
 public class EOBlockRegister 
@@ -66,6 +67,12 @@ public class EOBlockRegister
 		ModLoader.registerBlock(ExtraOres.Godstone);
 		ModLoader.registerBlock(ExtraOres.melterIdle);
 		ModLoader.registerBlock(ExtraOres.melterBurning);
+		ModLoader.registerBlock(ExtraOres.RadiantQuartzStairs);
+		ModLoader.registerBlock(ExtraOres.RadiantQuartzSingleSlab);
+		ModLoader.registerBlock(ExtraOres.RadiantQuartzDoubleSlab);
+		ModLoader.registerBlock(ExtraOres.PinkQuartzStairs);
+		ModLoader.registerBlock(ExtraOres.PinkQuartzSingleSlab);
+		ModLoader.registerBlock(ExtraOres.PinkQuartzDoubleSlab);
 	}
 	
 }

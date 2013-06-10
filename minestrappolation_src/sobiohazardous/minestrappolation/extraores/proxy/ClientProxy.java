@@ -2,7 +2,6 @@ package sobiohazardous.minestrappolation.extraores.proxy;
 
 import java.util.Map;
 
-import sobiohazardous.minestrappolation.extraores.EOBlockRegister;
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
 import sobiohazardous.minestrappolation.extraores.entity.EntityGrenade;
 import sobiohazardous.minestrappolation.extraores.entity.EntityGrenadeImpact;
@@ -11,6 +10,7 @@ import sobiohazardous.minestrappolation.extraores.entity.EntityNukePrimed;
 import sobiohazardous.minestrappolation.extraores.entity.EntityPlutoniumPrimed;
 import sobiohazardous.minestrappolation.extraores.entity.RenderGrenade;
 import sobiohazardous.minestrappolation.extraores.entity.RenderNukePrimed;
+import sobiohazardous.minestrappolation.extraores.lib.EOBlockRegister;
 import sobiohazardous.minestrappolation.extraores.plate.IPlateRenderingHandler;
 
 import net.minecraft.src.ModLoader;

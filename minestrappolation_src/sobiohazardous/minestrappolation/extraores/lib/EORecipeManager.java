@@ -1,5 +1,6 @@
-package sobiohazardous.minestrappolation.extraores;
+package sobiohazardous.minestrappolation.extraores.lib;
 
+import sobiohazardous.minestrappolation.extraores.ExtraOres;
 import net.minecraft.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStoneBrick;
@@ -1127,6 +1128,23 @@ public class EORecipeManager
         GameRegistry.addRecipe(new ItemStack(ExtraOres.Godstone, 1), new Object[]
         		{
         	"SSS", "SES", "SSS", Character.valueOf('S'), ExtraOres.SunstoneDust, Character.valueOf('E'), Block.whiteStone
+        		});
+        
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.RadiantQuartzStairs, 4), new Object[]
+        		{
+        	"  S", " SS", "SSS", Character.valueOf('S'), ExtraOres.SmoothRadiantQuartz
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.RadiantQuartzSingleSlab, 6), new Object[]
+        		{
+        	"SSS", Character.valueOf('S'), ExtraOres.SmoothRadiantQuartz
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.PinkQuartzStairs, 4), new Object[]
+        		{
+        	"  S", " SS", "SSS", Character.valueOf('S'), ExtraOres.SmoothQuartzite
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.PinkQuartzSingleSlab, 6), new Object[]
+        		{
+        	"SSS", Character.valueOf('S'), ExtraOres.SmoothQuartzite
         		});
 	}
 	

@@ -1,5 +1,6 @@
-package sobiohazardous.minestrappolation.extradecor;
+package sobiohazardous.minestrappolation.extradecor.lib;
 
+import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class EDBlockRegistry 
@@ -34,6 +35,7 @@ public class EDBlockRegistry
 		GameRegistry.registerBlock(ExtraDecor.birchBeveled, "birchBeveled");
 		GameRegistry.registerBlock(ExtraDecor.spruceBeveled, "spruceBeveled");
 		GameRegistry.registerBlock(ExtraDecor.jungleBeveled, "jungleBeveled");
+		GameRegistry.registerBlock(ExtraDecor.oozeSlime, "oozeSlime");
 		
 	}
 	

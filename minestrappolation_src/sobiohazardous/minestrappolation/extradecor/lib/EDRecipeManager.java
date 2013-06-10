@@ -1,5 +1,6 @@
-package sobiohazardous.minestrappolation.extradecor;
+package sobiohazardous.minestrappolation.extradecor.lib;
 
+import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -54,7 +55,7 @@ public class EDRecipeManager
 			"SS", "SS", Character.valueOf('S'), ExtraDecor.endstoneSmooth
 				});
 		GameRegistry.addSmelting(Block.glass.blockID, new ItemStack(ExtraDecor.glassRefined), 20);
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.glassRefinedPane, 4), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.glassRefinedPane, 16), new Object[]
 				{
 			"SSS", "SSS", Character.valueOf('S'), ExtraDecor.glassRefined
 				});

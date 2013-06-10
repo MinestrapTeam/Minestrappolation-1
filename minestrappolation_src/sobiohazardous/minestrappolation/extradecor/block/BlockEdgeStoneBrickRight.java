@@ -5,8 +5,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-import sobiohazardous.minestrapolation.util.BlockFunctions;
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
+import sobiohazardous.minestrappolation.util.BlockFunctions;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
