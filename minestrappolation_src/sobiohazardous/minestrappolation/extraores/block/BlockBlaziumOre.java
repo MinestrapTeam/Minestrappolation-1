@@ -8,6 +8,7 @@ import sobiohazardous.minestrappolation.extraores.ExtraOres;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.item.Item;
 import net.minecraft.src.*;
 import net.minecraft.util.MathHelper;
 
@@ -45,6 +46,6 @@ public class BlockBlaziumOre extends Block
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return ExtraOres.BlazePowder.itemID;
+        return Item.blazePowder.itemID;
     }
 }

@@ -1,5 +1,7 @@
 package sobiohazardous.minestrappolation.extraores.item;
 
+import java.util.List;
+
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
 import sobiohazardous.minestrappolation.extraores.entity.EntityGrenade;
 import sobiohazardous.minestrappolation.extraores.entity.EntityGrenadeSticky;
@@ -9,6 +11,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntitySnowball;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 
 public class ItemGrenadeSticky extends Item
@@ -45,4 +48,10 @@ public class ItemGrenadeSticky extends Item
 	{
 	         itemIcon = iconRegister.registerIcon(texture);
 	}
+    
+    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) 
+    {
+    	par3List.add(EnumChatFormatting.RED + "WIP");
+    }
+    
 }

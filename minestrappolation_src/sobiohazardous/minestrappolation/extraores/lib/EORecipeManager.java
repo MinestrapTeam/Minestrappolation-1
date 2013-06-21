@@ -192,7 +192,7 @@ public class EORecipeManager
 			"ZZZ", "ZZZ", "ZZZ", Character.valueOf('Z'), ExtraOres.BlaziumIngot,
 				});
 		
-		GameRegistry.addSmelting(ExtraOres.BlazePowder.itemID, new ItemStack(ExtraOres.BlazeShard, 1), 1.0F);
+		GameRegistry.addSmelting(Item.blazePowder.itemID, new ItemStack(ExtraOres.BlazeShard, 1), 1.0F);
 		
 		GameRegistry.addRecipe(new ItemStack(ExtraOres.BlaziumIngot, 1), new Object[]
 				{

@@ -107,11 +107,139 @@ clientPacketHandlerSpec = @SidedPacketHandler(channels = {"extraoresChan"}, pack
 serverPacketHandlerSpec = @SidedPacketHandler(channels = {"extroresChan"}, packetHandler = ServerPacketHandler.class))
 @Mod ( modid = "ExtraOres", name="Extrappolated Ores", version="A1.4")
 public class ExtraOres 
-{
-	//Items
-	
+{	
 	@SidedProxy(clientSide = "sobiohazardous.minestrappolation.extraores.proxy.ClientProxy", serverSide = "sobiohazardous.minestrappolation.extraores.proxy.CommonProxy")
     public static CommonProxy proxy;
+	
+	//TODO all ids are messed up, completely re-do id's with config file.
+	public static int zirconiumOreId, 
+	zirconiumBlockId, 
+	zirconiumIngotId, 
+	zirconiumSwordId, 
+	zirconiumPickaxeId, 
+	zirconiumAxeId, 
+	zirconiumHoeId, 
+	zirconiumShovelId, 
+	zirconiumHelmetId, 
+	zirconiumChestId, 
+	zirconiumPantsId, 
+	zirconiumBootsId,
+	uraniumOreId,
+	uraniumId,
+	rawUraniumBlockId,
+	plutoniumOreId,
+	plutoniumId,
+	rawPlutoniumBlockId,
+	titaniumOreId,
+	titaniumIngotId,
+	titaniumSwordId,
+	titaniumPickaxeId,
+	titaniumAxeId,
+	titaniumHoeId,
+	titaniumShovelId,
+	titaniumHelmetId,
+	titaniumChestId,
+	titaniumPantsId,
+	titaniumBootsId,
+	titaniumBlockId,
+	sunstoneId,
+	sunstoneDustId,
+	sunstoneOreId,
+	toriteOreId,
+	toriteIngotId,
+	toriteBlockId,
+	toriteSwordId,
+	toritePickaxeId,
+	toriteAxeId,
+	toriteHoeId,
+	toriteShovelId,
+	toriteHelmetId,
+	toriteChestId,
+	toritePantsId,
+	toriteBootsId,
+	graniteId,
+	graniteBrickId,
+	quartziteId,
+	quartziteTileId,
+	blaziumOreId,
+	blaziumBlockId,
+	blaziumShardId,
+	blaziumIngotId,
+	blaziumSwordId,
+	blaziumPickaxeId,
+	blaziumAxeId,
+	blaziumHoeId,
+	blaziumShovelId,
+	blaziumHelmetId,
+	blaziumChestId,
+	blaziumPantsId,
+	blaziumBootsId,
+	copperOreId,
+	copperBlockId,
+	copperIngotId,
+	copperTarnishedId,
+	copperSwordId,
+	copperPickaxeId,
+	copperAxeId,
+	copperHoeId,
+	copperShovelId,
+	tinOreId,
+	tinIngotId,
+	tinBlockId,
+	tinHelmetId,
+	tinChestId,
+	tinPantsId,
+	tinBootsId,
+	tinPlateId,
+	bronzePlateId,
+	steelPlateId,
+	tinPlateItemId,
+	bronzePlateItemId,
+	steelPlateItemId,
+	coalIronIngotId,
+	steelIngotId,
+	steelPickaxe,
+	steelAxeId,
+	steelShovelId,
+	steelHoeId,
+	steelSwordId,
+	steelHelmetId,
+	steelChestId,
+	steelPantsId,
+	steelBootsId,
+	steelBlockId,
+	soulOreId,
+	souldGemId,
+	smoothQuartziteId,
+	pillarQuartziteId,
+	chiseledQuartziteId,
+	smoothQuartzTileId,
+	pinkQuartzId,
+	sandstonePickaxeId,
+	sandstoneShovelId,
+	sandstoneAxeId,
+	sandstoneHoeId,
+	sandstoneSwordId,
+	tinPlatedCobbleId,
+	tinPlatedMossyId,
+	tinPlatedStoneBrickId,
+	tinPlatedChiseledId,
+	tinPlatedGraniteId,
+	bronzeIngotId,
+	bronzePickaxeId,
+	bronzeShovelId,
+	bronzeAxeId,
+	bronzeHoeId,
+	bronzeSwordId,
+	bronzeHelmetId,
+	bronzeChestId,
+	bronzePantsId,
+	bronzeBootsId,
+	bronzeBlockId,
+	bronzePlatedMossyId,
+	bronzePlatedStoneBrickId,
+	bronzePlatedChiseledId,
+	bronzePlatedGraniteId;
 	
 	public static final Block ZirconiumOre;
 	public static final Block ZirconiumBlock;
@@ -183,8 +311,6 @@ public class ExtraOres
 	
 	public static Item BlazeShard;
 	public static Item BlaziumIngot;
-	
-	public static Item BlazePowder = Item.blazePowder; 
 
 	public static Item BlaziumSword;
 	public static Item BlaziumPickaxe;
@@ -612,23 +738,23 @@ public class ExtraOres
 		TinPlate = (new Plate(210,"block_Tin")).setHardness(0.7F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("TinPlate");
 		BronzePlate = (new Plate(211, "block_Bronze")).setHardness(0.7F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("BronzePlate");
 		SteelPlate = (new Plate(227, "block_SteelSide")).setHardness(0.7F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("SteelPlate");
-		TinPlateItem = (new ItemBlockPlacer(369,"item_TinPlate", TinPlate)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("TinPlateItem");
+		TinPlateItem = (new ItemBlockPlacer(515,"item_TinPlate", TinPlate)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("TinPlateItem");
 		BronzePlateItem = (new ItemBlockPlacer(370, "item_BronzePlate", BronzePlate)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzePlateItem");
 		SteelPlateItem = (new ItemBlockPlacer(371,"item_SteelPlate", SteelPlate)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelPlateItem");
 		
 		CoalIronIngot = (new EItem(337,"item_CoalIronIngot")).setCreativeTab(tabOresItems).setUnlocalizedName("CoalIronIngot");
 		SteelIngot = (new EItem(338, "item_SteelIngot")).setCreativeTab(tabOresItems).setUnlocalizedName("SteelIngot");
 		
-		SteelPickaxe = (new ItemEPickaxe(356, "item_SteelPickaxe",ExtracraftToolMaterial.STEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelPickaxe");
-		SteelShovel = (new ItemEShovel(357, "item_SteelShovel",ExtracraftToolMaterial.STEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelShovel");
-		SteelAxe = (new ItemEAxe(358, "item_SteelAxe",ExtracraftToolMaterial.STEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelAxe");
+		SteelPickaxe = (new ItemEPickaxe(504, "item_SteelPickaxe",ExtracraftToolMaterial.STEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelPickaxe");
+		SteelShovel = (new ItemEShovel(505, "item_SteelShovel",ExtracraftToolMaterial.STEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelShovel");
+		SteelAxe = (new ItemEAxe(506, "item_SteelAxe",ExtracraftToolMaterial.STEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelAxe");
 		SteelHoe = (new ItemEHoe(359, "item_SteelHoe",ExtracraftToolMaterial.STEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelHoe");
-		SteelSword = (new ItemESword(360, "item_SteelSword",ExtracraftToolMaterial.STEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelSword");
+		SteelSword = (new ItemESword(507, "item_SteelSword",ExtracraftToolMaterial.STEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelSword");
 		
-		SteelHelmet = (new ItemExtracraftHelmet(361,"item_SteelHelmet", MaterialSteel, proxy.addArmor("steel"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelHelmet");
-		SteelChest = (new ItemExtracraftChest(362, "item_SteelChestplate",MaterialSteel, proxy.addArmor("steel"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelChest");
-		SteelPants = (new ItemExtracraftPants(363, "item_SteelLeggings",MaterialSteel, proxy.addArmor("steel"), 2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelPants");
-		SteelBoots = (new ItemExtracraftBoots(364, "item_SteelBoots",MaterialSteel, proxy.addArmor("steel"), 3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelBoots");
+		SteelHelmet = (new ItemExtracraftHelmet(508,"item_SteelHelmet", MaterialSteel, proxy.addArmor("steel"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelHelmet");
+		SteelChest = (new ItemExtracraftChest(509, "item_SteelChestplate",MaterialSteel, proxy.addArmor("steel"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelChest");
+		SteelPants = (new ItemExtracraftPants(510, "item_SteelLeggings",MaterialSteel, proxy.addArmor("steel"), 2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelPants");
+		SteelBoots = (new ItemExtracraftBoots(511, "item_SteelBoots",MaterialSteel, proxy.addArmor("steel"), 3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelBoots");
 		
 		SteelBlock = (new BlockSteel(235)).setHardness(6F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setCreativeTab(ExtraOres.tabOresBlocks).setUnlocalizedName("SteelBlock");
 		
@@ -638,8 +764,8 @@ public class ExtraOres
 		SandstonePickaxe = (new ItemEPickaxe(341,"item_SandstonePickaxe", ExtracraftToolMaterial.SANDSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SandstonePickaxe");
 		SandstoneShovel = (new ItemEShovel(342, "item_SandstoneShovel",ExtracraftToolMaterial.SANDSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SandstoneShovel");
 		SandstoneAxe = (new ItemEAxe(343, "item_SandstoneAxe", ExtracraftToolMaterial.SANDSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SandstoneAxe");
-		SandstoneHoe = (new ItemEHoe(344, "item_SandstoneHoe",ExtracraftToolMaterial.SANDSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SandstoneHoe");
-		SandstoneSword = (new ItemESword(345, "item_SandstoneSword",ExtracraftToolMaterial.SANDSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SandstoneSword");
+		SandstoneHoe = (new ItemEHoe(492, "item_SandstoneHoe",ExtracraftToolMaterial.SANDSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SandstoneHoe");
+		SandstoneSword = (new ItemESword(493, "item_SandstoneSword",ExtracraftToolMaterial.SANDSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SandstoneSword");
 		
 		TinPlatedCobble = (new EOBlock(221, "block_TinCobble", Material.rock)).setHardness(2.0F).setResistance(10.0F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("TinPlatedCobble");
 		TinPlatedMossy = (new EOBlock(222, "block_TinMossy", Material.rock)).setHardness(2.0F).setResistance(10.0F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("TinPlatedMossy");
@@ -647,16 +773,16 @@ public class ExtraOres
 		TinPlatedChiseled = (new EOBlock(224, "block_TinChiseled", Material.rock)).setHardness(1.5F).setResistance(10.0F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("TinPlatedChiseled");
 		TinPlatedGranite = (new EOBlock(225,"block_TinGraniteBrick", Material.rock)).setHardness(6F).setResistance(10.0F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("TinPlatedGranite");
 		
-		BronzeIngot = (new EItem(346, "item_BronzeIngot")).setCreativeTab(tabOresItems).setUnlocalizedName("BronzeIngot");
-		BronzePickaxe = (new ItemEPickaxe(347, "item_BronzePickaxe",ExtracraftToolMaterial.BRONZE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzePickaxe");
-		BronzeShovel = (new ItemEShovel(348, "item_BronzeShovel",ExtracraftToolMaterial.BRONZE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzeShovel");
-		BronzeAxe = (new ItemEAxe(349, "item_BronzeAxe",ExtracraftToolMaterial.BRONZE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzeAxe");
-		BronzeHoe = (new ItemEHoe(350,"item_BronzeHoe", ExtracraftToolMaterial.BRONZE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzeHoe");
-		BronzeSword = (new ItemESword(351,"item_BronzeSword", ExtracraftToolMaterial.BRONZE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzeSword");
-		BronzeHelmet = (new ItemExtracraftHelmet(352,"item_BronzeHelmet", MaterialBronze, proxy.addArmor("bronze"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzeHelmet");
-		BronzeChest = (new ItemExtracraftChest(353, "item_BronzeChestplate",MaterialBronze, proxy.addArmor("bronze"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzeChest");
-		BronzePants = (new ItemExtracraftPants(354, "item_BronzeLeggings",MaterialBronze, proxy.addArmor("bronze"),2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzePants");
-		BronzeBoots = (new ItemExtracraftBoots(355, "item_BronzeBoots",MaterialBronze, proxy.addArmor("bronze"),3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzeBoots");
+		BronzeIngot = (new EItem(494, "item_BronzeIngot")).setCreativeTab(tabOresItems).setUnlocalizedName("BronzeIngot");
+		BronzePickaxe = (new ItemEPickaxe(495, "item_BronzePickaxe",ExtracraftToolMaterial.BRONZE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzePickaxe");
+		BronzeShovel = (new ItemEShovel(496, "item_BronzeShovel",ExtracraftToolMaterial.BRONZE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzeShovel");
+		BronzeAxe = (new ItemEAxe(497, "item_BronzeAxe",ExtracraftToolMaterial.BRONZE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzeAxe");
+		BronzeHoe = (new ItemEHoe(498,"item_BronzeHoe", ExtracraftToolMaterial.BRONZE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzeHoe");
+		BronzeSword = (new ItemESword(499,"item_BronzeSword", ExtracraftToolMaterial.BRONZE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzeSword");
+		BronzeHelmet = (new ItemExtracraftHelmet(500,"item_BronzeHelmet", MaterialBronze, proxy.addArmor("bronze"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzeHelmet");
+		BronzeChest = (new ItemExtracraftChest(501, "item_BronzeChestplate",MaterialBronze, proxy.addArmor("bronze"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzeChest");
+		BronzePants = (new ItemExtracraftPants(502, "item_BronzeLeggings",MaterialBronze, proxy.addArmor("bronze"),2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzePants");
+		BronzeBoots = (new ItemExtracraftBoots(503, "item_BronzeBoots",MaterialBronze, proxy.addArmor("bronze"),3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzeBoots");
 		BronzeBlock = (new EOBlock(226, "block_Bronze", Material.iron)).setHardness(7F).setResistance(20F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("BronzeBlock");
 		
 		BronzePlatedCobble = (new EOBlock(228, "block_BronzeCobble", Material.rock)).setHardness(2.0F).setResistance(30.0F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("BronzePlatedCobble");
@@ -677,9 +803,9 @@ public class ExtraOres
 		SteelPlatedGranite = (new EOBlock(240, "block_SteelGraniteBrick", Material.rock)).setHardness(6F).setResistance(20.0F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("SteelPlatedGranite");
 		
 		BedrockPickaxe = (new ItemEPickaxe(365, "item_BedrockPickaxe", ExtracraftToolMaterial.BEDROCK)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BedrockPickaxe");
-		BedrockShovel = (new ItemEShovel(366, "item_BedrockShovel",ExtracraftToolMaterial.BEDROCK)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BedrockShovel");
-		BedrockAxe = (new ItemEAxe(367, "item_BedrockAxe",ExtracraftToolMaterial.BEDROCK)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BedrockAxe");
-		BedrockHoe = (new ItemEHoe(368, "item_BedrockHoe",ExtracraftToolMaterial.BEDROCK)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BedrockHoe");
+		BedrockShovel = (new ItemEShovel(512, "item_BedrockShovel",ExtracraftToolMaterial.BEDROCK)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BedrockShovel");
+		BedrockAxe = (new ItemEAxe(513, "item_BedrockAxe",ExtracraftToolMaterial.BEDROCK)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BedrockAxe");
+		BedrockHoe = (new ItemEHoe(514, "item_BedrockHoe",ExtracraftToolMaterial.BEDROCK)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BedrockHoe");
 		
 		GranitePickaxe = (new ItemEPickaxe(372, "item_GranitePickaxe",ExtracraftToolMaterial.GRANITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("GranitePickaxe");
 		GraniteShovel = (new ItemEShovel(373, "item_GraniteShovel",ExtracraftToolMaterial.GRANITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("GraniteShovel");
@@ -696,285 +822,285 @@ public class ExtraOres
 	
 		
 		
-		BPZirconiumSword = (new ItemESword(379, "item_BronzePlatedZirconiumSword", ExtracraftToolMaterial.BPZIRCONIUM)).setCreativeTab(tabOresItems).setUnlocalizedName("BPZirconiumSword");
-		BPZirconiumPickaxe = (new ItemEPickaxe(380, "item_BronzePlatedZirconiumPickaxe", ExtracraftToolMaterial.BPZIRCONIUM)).setCreativeTab(tabOresItems).setUnlocalizedName("BPZirconiumPickaxe");
-		BPZirconiumShovel = (new ItemEShovel(381, "item_BronzePlatedZirconiumShovel", ExtracraftToolMaterial.BPZIRCONIUM)).setCreativeTab(tabOresItems).setUnlocalizedName("BPZirconiumShovel");
-		BPZirconiumHoe = (new ItemEHoe(382, "item_BronzePlatedZirconiumHoe", ExtracraftToolMaterial.BPZIRCONIUM)).setCreativeTab(tabOresItems).setUnlocalizedName("BPZirconiumHoe");
-		BPZirconiumAxe = (new ItemEAxe(383, "item_BronzePlatedZirconiumAxe", ExtracraftToolMaterial.BPZIRCONIUM)).setCreativeTab(tabOresItems).setUnlocalizedName("BPZirconiumAxe");
+		BPZirconiumSword = (new ItemESword(379, "item_BronzePlatedZirconiumSword", ExtracraftToolMaterial.BPZIRCONIUM)).setUnlocalizedName("BPZirconiumSword");
+		BPZirconiumPickaxe = (new ItemEPickaxe(380, "item_BronzePlatedZirconiumPickaxe", ExtracraftToolMaterial.BPZIRCONIUM)).setUnlocalizedName("BPZirconiumPickaxe");
+		BPZirconiumShovel = (new ItemEShovel(381, "item_BronzePlatedZirconiumShovel", ExtracraftToolMaterial.BPZIRCONIUM)).setUnlocalizedName("BPZirconiumShovel");
+		BPZirconiumHoe = (new ItemEHoe(382, "item_BronzePlatedZirconiumHoe", ExtracraftToolMaterial.BPZIRCONIUM)).setUnlocalizedName("BPZirconiumHoe");
+		BPZirconiumAxe = (new ItemEAxe(383, "item_BronzePlatedZirconiumAxe", ExtracraftToolMaterial.BPZIRCONIUM)).setUnlocalizedName("BPZirconiumAxe");
 	
-		BPZirconiumHelmet = (new ItemExtracraftHelmet(384, "item_BronzePlatedZirconiumHelmet", MaterialBPZirconium, proxy.addArmor("BPzirconium"), 0)).setCreativeTab(tabOresItems).setUnlocalizedName("BPZirconiumHelmet");
-		BPZirconiumChest = (new ItemExtracraftChest(385, "item_BronzePlatedZirconiumChestplate", MaterialBPZirconium, proxy.addArmor("BPzirconium"), 1)).setCreativeTab(tabOresItems).setUnlocalizedName("BPZirconiumChest");
-		BPZirconiumPants = (new ItemExtracraftPants(386, "item_BronzePlatedZirconiumLeggings",MaterialBPZirconium, proxy.addArmor("BPzirconium"),2)).setCreativeTab(tabOresItems).setUnlocalizedName("BPZirconiumPants");
-		BPZirconiumBoots = (new ItemExtracraftBoots(387, "item_BronzePlatedZirconiumBoots", MaterialBPZirconium, proxy.addArmor("BPzirconium"),3)).setCreativeTab(tabOresItems).setUnlocalizedName("BPZirconiumBoots");
+		BPZirconiumHelmet = (new ItemExtracraftHelmet(384, "item_BronzePlatedZirconiumHelmet", MaterialBPZirconium, proxy.addArmor("BPzirconium"), 0)).setUnlocalizedName("BPZirconiumHelmet");
+		BPZirconiumChest = (new ItemExtracraftChest(385, "item_BronzePlatedZirconiumChestplate", MaterialBPZirconium, proxy.addArmor("BPzirconium"), 1)).setUnlocalizedName("BPZirconiumChest");
+		BPZirconiumPants = (new ItemExtracraftPants(386, "item_BronzePlatedZirconiumLeggings",MaterialBPZirconium, proxy.addArmor("BPzirconium"),2)).setUnlocalizedName("BPZirconiumPants");
+		BPZirconiumBoots = (new ItemExtracraftBoots(387, "item_BronzePlatedZirconiumBoots", MaterialBPZirconium, proxy.addArmor("BPzirconium"),3)).setUnlocalizedName("BPZirconiumBoots");
 		
-		BPTitaniumSword = (new ItemESword(388,"item_BronzePlatedTitaniumSword", ExtracraftToolMaterial.BPTITANIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTitaniumSword");
-		BPTitaniumPickaxe = (new ItemEPickaxe(389, "item_BronzePlatedTitaniumPickaxe", ExtracraftToolMaterial.BPTITANIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTitaniumPickaxe");
+		BPTitaniumSword = (new ItemESword(388,"item_BronzePlatedTitaniumSword", ExtracraftToolMaterial.BPTITANIUM)).setUnlocalizedName("BPTitaniumSword");
+		BPTitaniumPickaxe = (new ItemEPickaxe(389, "item_BronzePlatedTitaniumPickaxe", ExtracraftToolMaterial.BPTITANIUM)).setUnlocalizedName("BPTitaniumPickaxe");
 		BPTitaniumShovel = (new ItemEShovel(390, "item_BronzePlatedTitaniumShovel", ExtracraftToolMaterial.BPTITANIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTitaniumShovel");
-		BPTitaniumHoe = (new ItemEHoe(391, "item_BronzePlatedTitaniumHoe",ExtracraftToolMaterial.BPTITANIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTitaniumHoe");
-		BPTitaniumAxe = (new ItemEAxe(392, "item_BronzePlatedTitaniumAxe",ExtracraftToolMaterial.BPTITANIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTitaniumAxe");
+		BPTitaniumHoe = (new ItemEHoe(391, "item_BronzePlatedTitaniumHoe",ExtracraftToolMaterial.BPTITANIUM)).setUnlocalizedName("BPTitaniumHoe");
+		BPTitaniumAxe = (new ItemEAxe(392, "item_BronzePlatedTitaniumAxe",ExtracraftToolMaterial.BPTITANIUM)).setUnlocalizedName("BPTitaniumAxe");
 	
-		BPTitaniumHelmet = (new ItemExtracraftHelmet(393, "item_BronzePlatedTitaniumHelmet", MaterialBPTitanium, proxy.addArmor("BPtitanium"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTitaniumHelmet");
-		BPTitaniumChest = (new ItemExtracraftChest(394, "item_BronzePlatedTitaniumChestplate",MaterialBPTitanium, proxy.addArmor("BPtitanium"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTitaniumChest");
-		BPTitaniumPants = (new ItemExtracraftPants(395, "item_BronzePlatedTitaniumLeggings", MaterialBPTitanium, proxy.addArmor("BPtitanium"),2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTitaniumPants");
-		BPTitaniumBoots = (new ItemExtracraftBoots(396, "item_BronzePlatedTitaniumBoots",MaterialBPTitanium, proxy.addArmor("BPtitanium"),3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTitaniumBoots");
+		BPTitaniumHelmet = (new ItemExtracraftHelmet(393, "item_BronzePlatedTitaniumHelmet", MaterialBPTitanium, proxy.addArmor("BPtitanium"), 0)).setUnlocalizedName("BPTitaniumHelmet");
+		BPTitaniumChest = (new ItemExtracraftChest(394, "item_BronzePlatedTitaniumChestplate",MaterialBPTitanium, proxy.addArmor("BPtitanium"), 1)).setUnlocalizedName("BPTitaniumChest");
+		BPTitaniumPants = (new ItemExtracraftPants(395, "item_BronzePlatedTitaniumLeggings", MaterialBPTitanium, proxy.addArmor("BPtitanium"),2)).setUnlocalizedName("BPTitaniumPants");
+		BPTitaniumBoots = (new ItemExtracraftBoots(396, "item_BronzePlatedTitaniumBoots",MaterialBPTitanium, proxy.addArmor("BPtitanium"),3)).setUnlocalizedName("BPTitaniumBoots");
 		
-		BPToriteSword = (new ItemESword(397, "item_BronzePlatedToriteSword", ExtracraftToolMaterial.BPTORITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPToriteSword");
-		BPToritePickaxe = (new ItemEPickaxe(398, "item_BronzePlatedToritePickaxe", ExtracraftToolMaterial.BPTORITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPToritePickaxe");
-		BPToriteShovel = (new ItemEShovel(399, "item_BronzePlatedToriteShovel", ExtracraftToolMaterial.BPTORITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPToriteShovel");
-		BPToriteHoe = (new ItemEHoe(400, "item_BronzePlatedToriteHoe",ExtracraftToolMaterial.BPTORITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPToriteHoe");
-		BPToriteAxe = (new ItemEAxe(401, "item_BronzePlatedToriteAxe",ExtracraftToolMaterial.BPTORITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPToriteAxe");
+		BPToriteSword = (new ItemESword(397, "item_BronzePlatedToriteSword", ExtracraftToolMaterial.BPTORITE)).setUnlocalizedName("BPToriteSword");
+		BPToritePickaxe = (new ItemEPickaxe(398, "item_BronzePlatedToritePickaxe", ExtracraftToolMaterial.BPTORITE)).setUnlocalizedName("BPToritePickaxe");
+		BPToriteShovel = (new ItemEShovel(399, "item_BronzePlatedToriteShovel", ExtracraftToolMaterial.BPTORITE)).setUnlocalizedName("BPToriteShovel");
+		BPToriteHoe = (new ItemEHoe(400, "item_BronzePlatedToriteHoe",ExtracraftToolMaterial.BPTORITE)).setUnlocalizedName("BPToriteHoe");
+		BPToriteAxe = (new ItemEAxe(401, "item_BronzePlatedToriteAxe",ExtracraftToolMaterial.BPTORITE)).setUnlocalizedName("BPToriteAxe");
 		
-		BPToriteHelmet = (new ItemExtracraftHelmet(402, "item_BronzePlatedToriteHelmet",MaterialBPTorite, proxy.addArmor("BPtorite"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPToriteHelmet");
-		BPToriteChest = (new ItemExtracraftChest(403, "item_BronzePlatedToriteChestplate",MaterialBPTorite, proxy.addArmor("BPtorite"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPToriteChest");
-		BPToritePants = (new ItemExtracraftPants(404, "item_BronzePlatedToriteLeggings",MaterialBPTorite, proxy.addArmor("BPtorite"),2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPToritePants");
-		BPToriteBoots = (new ItemExtracraftBoots(405, "item_BronzePlatedToriteBoots",MaterialBPTorite, proxy.addArmor("BPtorite"),3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPToriteBoots");
+		BPToriteHelmet = (new ItemExtracraftHelmet(402, "item_BronzePlatedToriteHelmet",MaterialBPTorite, proxy.addArmor("BPtorite"), 0)).setUnlocalizedName("BPToriteHelmet");
+		BPToriteChest = (new ItemExtracraftChest(403, "item_BronzePlatedToriteChestplate",MaterialBPTorite, proxy.addArmor("BPtorite"), 1)).setUnlocalizedName("BPToriteChest");
+		BPToritePants = (new ItemExtracraftPants(404, "item_BronzePlatedToriteLeggings",MaterialBPTorite, proxy.addArmor("BPtorite"),2)).setUnlocalizedName("BPToritePants");
+		BPToriteBoots = (new ItemExtracraftBoots(405, "item_BronzePlatedToriteBoots",MaterialBPTorite, proxy.addArmor("BPtorite"),3)).setUnlocalizedName("BPToriteBoots");
 		
-		BPBlaziumSword = (new ItemESword(406, "item_BronzePlatedFireSword", ExtracraftToolMaterial.BPBLAZIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBlaziumSword");
-		BPBlaziumPickaxe = (new ItemEPickaxe(407, "item_BronzePlatedFirePickaxe", ExtracraftToolMaterial.BPBLAZIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBlaziumPickaxe");
-		BPBlaziumShovel = (new ItemEShovel(408, "item_BronzePlatedFireShovel",ExtracraftToolMaterial.BPBLAZIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBlaziumShovel");
-		BPBlaziumHoe = (new ItemEHoe(409, "item_BronzePlatedFireHoe",ExtracraftToolMaterial.BPBLAZIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBlaziumHoe");
-		BPBlaziumAxe = (new ItemEAxe(410, "item_BronzePlatedFireAxe",ExtracraftToolMaterial.BPBLAZIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBlaziumAxe");
+		BPBlaziumSword = (new ItemESword(406, "item_BronzePlatedFireSword", ExtracraftToolMaterial.BPBLAZIUM)).setUnlocalizedName("BPBlaziumSword");
+		BPBlaziumPickaxe = (new ItemEPickaxe(407, "item_BronzePlatedFirePickaxe", ExtracraftToolMaterial.BPBLAZIUM)).setUnlocalizedName("BPBlaziumPickaxe");
+		BPBlaziumShovel = (new ItemEShovel(408, "item_BronzePlatedFireShovel",ExtracraftToolMaterial.BPBLAZIUM)).setUnlocalizedName("BPBlaziumShovel");
+		BPBlaziumHoe = (new ItemEHoe(409, "item_BronzePlatedFireHoe",ExtracraftToolMaterial.BPBLAZIUM)).setUnlocalizedName("BPBlaziumHoe");
+		BPBlaziumAxe = (new ItemEAxe(410, "item_BronzePlatedFireAxe",ExtracraftToolMaterial.BPBLAZIUM)).setUnlocalizedName("BPBlaziumAxe");
 		
-		BPBlaziumHelmet = (new ItemExtracraftHelmet(411,"item_BronzePlatedFireHelmet", MaterialBPBlazium, proxy.addArmor("BPfire"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBlaziumHelmet");
-		BPBlaziumChest = (new ItemExtracraftChest(412, "item_BronzePlatedFireChestplate",MaterialBPBlazium, proxy.addArmor("BPfire"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBlaziumChest");
-		BPBlaziumPants = (new ItemExtracraftPants(413, "item_BronzePlatedFireLeggings",MaterialBPBlazium, proxy.addArmor("BPfire"),2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBlaziumPants");
-		BPBlaziumBoots = (new ItemExtracraftBoots(414, "item_BronzePlatedFireBoots",MaterialBPBlazium, proxy.addArmor("BPfire"),3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBlaziumBoots");
+		BPBlaziumHelmet = (new ItemExtracraftHelmet(411,"item_BronzePlatedFireHelmet", MaterialBPBlazium, proxy.addArmor("BPfire"), 0)).setUnlocalizedName("BPBlaziumHelmet");
+		BPBlaziumChest = (new ItemExtracraftChest(412, "item_BronzePlatedFireChestplate",MaterialBPBlazium, proxy.addArmor("BPfire"), 1)).setUnlocalizedName("BPBlaziumChest");
+		BPBlaziumPants = (new ItemExtracraftPants(413, "item_BronzePlatedFireLeggings",MaterialBPBlazium, proxy.addArmor("BPfire"),2)).setUnlocalizedName("BPBlaziumPants");
+		BPBlaziumBoots = (new ItemExtracraftBoots(414, "item_BronzePlatedFireBoots",MaterialBPBlazium, proxy.addArmor("BPfire"),3)).setUnlocalizedName("BPBlaziumBoots");
 		
-		BPCopperSword = (new ItemESword(415, "item_BronzePlatedCopperSword",ExtracraftToolMaterial.BPCOPPER)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPCopperSword");
-		BPCopperPickaxe = (new ItemEPickaxe(416, "item_BronzePlatedCopperPickaxe",ExtracraftToolMaterial.BPCOPPER)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPCopperPickaxe");
-		BPCopperShovel = (new ItemEShovel(417, "item_BronzePlatedCopperShovel",ExtracraftToolMaterial.BPCOPPER)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPCopperShovel");
-		BPCopperHoe = (new ItemEHoe(418, "item_BronzePlatedCopperHoe",ExtracraftToolMaterial.BPCOPPER)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPCopperHoe");
-		BPCopperAxe = (new ItemEAxe(419, "item_BronzePlatedCopperAxe",ExtracraftToolMaterial.BPCOPPER)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPCopperAxe");
+		BPCopperSword = (new ItemESword(415, "item_BronzePlatedCopperSword",ExtracraftToolMaterial.BPCOPPER)).setUnlocalizedName("BPCopperSword");
+		BPCopperPickaxe = (new ItemEPickaxe(416, "item_BronzePlatedCopperPickaxe",ExtracraftToolMaterial.BPCOPPER)).setUnlocalizedName("BPCopperPickaxe");
+		BPCopperShovel = (new ItemEShovel(417, "item_BronzePlatedCopperShovel",ExtracraftToolMaterial.BPCOPPER)).setUnlocalizedName("BPCopperShovel");
+		BPCopperHoe = (new ItemEHoe(418, "item_BronzePlatedCopperHoe",ExtracraftToolMaterial.BPCOPPER)).setUnlocalizedName("BPCopperHoe");
+		BPCopperAxe = (new ItemEAxe(419, "item_BronzePlatedCopperAxe",ExtracraftToolMaterial.BPCOPPER)).setUnlocalizedName("BPCopperAxe");
 		
-		BPTinHelmet = (new ItemExtracraftHelmet(420,"item_BronzePlatedTinHelmet", MaterialBPTin, proxy.addArmor("BPtin"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTinHelmet");
-		BPTinChest = (new ItemExtracraftChest(421, "item_BronzePlatedTinChestplate",MaterialBPTin, proxy.addArmor("BPtin"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTinChest");
-		BPTinPants = (new ItemExtracraftPants(422, "item_BronzePlatedTinLeggings",MaterialBPTin, proxy.addArmor("BPtin"),2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTinPants");
-		BPTinBoots = (new ItemExtracraftBoots(423, "item_BronzePlatedTinBoots",MaterialBPTin, proxy.addArmor("BPtin"),3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTinBoots");
+		BPTinHelmet = (new ItemExtracraftHelmet(420,"item_BronzePlatedTinHelmet", MaterialBPTin, proxy.addArmor("BPtin"), 0)).setUnlocalizedName("BPTinHelmet");
+		BPTinChest = (new ItemExtracraftChest(421, "item_BronzePlatedTinChestplate",MaterialBPTin, proxy.addArmor("BPtin"), 1)).setUnlocalizedName("BPTinChest");
+		BPTinPants = (new ItemExtracraftPants(422, "item_BronzePlatedTinLeggings",MaterialBPTin, proxy.addArmor("BPtin"),2)).setUnlocalizedName("BPTinPants");
+		BPTinBoots = (new ItemExtracraftBoots(423, "item_BronzePlatedTinBoots",MaterialBPTin, proxy.addArmor("BPtin"),3)).setUnlocalizedName("BPTinBoots");
 		
-		BPSteelPickaxe = (new ItemEPickaxe(424, "item_BronzePlatedSteelPickaxe",ExtracraftToolMaterial.BPSTEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSteelPickaxe");
-		BPSteelShovel = (new ItemEShovel(425, "item_BronzePlatedSteelShovel",ExtracraftToolMaterial.BPSTEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSteelShovel");
-		BPSteelAxe = (new ItemEAxe(426, "item_BronzePlatedSteelAxe",ExtracraftToolMaterial.BPSTEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSteelAxe");
-		BPSteelHoe = (new ItemEHoe(427, "item_BronzePlatedSteelHoe",ExtracraftToolMaterial.BPSTEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSteelHoe");
-		BPSteelSword = (new ItemESword(428, "item_BronzePlatedSteelSword",ExtracraftToolMaterial.BPSTEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSteelSword");
+		BPSteelPickaxe = (new ItemEPickaxe(424, "item_BronzePlatedSteelPickaxe",ExtracraftToolMaterial.BPSTEEL)).setUnlocalizedName("BPSteelPickaxe");
+		BPSteelShovel = (new ItemEShovel(425, "item_BronzePlatedSteelShovel",ExtracraftToolMaterial.BPSTEEL)).setUnlocalizedName("BPSteelShovel");
+		BPSteelAxe = (new ItemEAxe(426, "item_BronzePlatedSteelAxe",ExtracraftToolMaterial.BPSTEEL)).setUnlocalizedName("BPSteelAxe");
+		BPSteelHoe = (new ItemEHoe(427, "item_BronzePlatedSteelHoe",ExtracraftToolMaterial.BPSTEEL)).setUnlocalizedName("BPSteelHoe");
+		BPSteelSword = (new ItemESword(428, "item_BronzePlatedSteelSword",ExtracraftToolMaterial.BPSTEEL)).setUnlocalizedName("BPSteelSword");
 		
-		BPSteelHelmet = (new ItemExtracraftHelmet(429,"item_BronzePlatedSteelHelmet", MaterialBPSteel, proxy.addArmor("BPsteel"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSteelHelmet");
-		BPSteelChest = (new ItemExtracraftChest(430, "item_BronzePlatedSteelChestplate",MaterialBPSteel, proxy.addArmor("BPsteel"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSteelChest");
-		BPSteelPants = (new ItemExtracraftPants(431, "item_BronzePlatedSteelLeggings",MaterialBPSteel, proxy.addArmor("BPsteel"), 2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSteelPants");
-		BPSteelBoots = (new ItemExtracraftBoots(432, "item_BronzePlatedSteelBoots",MaterialBPSteel, proxy.addArmor("BPsteel"), 3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSteelBoots");
+		BPSteelHelmet = (new ItemExtracraftHelmet(429,"item_BronzePlatedSteelHelmet", MaterialBPSteel, proxy.addArmor("BPsteel"), 0)).setUnlocalizedName("BPSteelHelmet");
+		BPSteelChest = (new ItemExtracraftChest(430, "item_BronzePlatedSteelChestplate",MaterialBPSteel, proxy.addArmor("BPsteel"), 1)).setUnlocalizedName("BPSteelChest");
+		BPSteelPants = (new ItemExtracraftPants(431, "item_BronzePlatedSteelLeggings",MaterialBPSteel, proxy.addArmor("BPsteel"), 2)).setUnlocalizedName("BPSteelPants");
+		BPSteelBoots = (new ItemExtracraftBoots(432, "item_BronzePlatedSteelBoots",MaterialBPSteel, proxy.addArmor("BPsteel"), 3)).setUnlocalizedName("BPSteelBoots");
 		
-		BPSandstonePickaxe = (new ItemEPickaxe(433,"item_BronzePlatedSandstonePickaxe", ExtracraftToolMaterial.BPSANDSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSandstonePickaxe");
-		BPSandstoneShovel = (new ItemEShovel(434, "item_BronzePlatedSandstoneShovel",ExtracraftToolMaterial.BPSANDSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSandstoneShovel");
-		BPSandstoneAxe = (new ItemEAxe(435, "item_BronzePlatedSandstoneAxe", ExtracraftToolMaterial.BPSANDSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSandstoneAxe");
-		BPSandstoneHoe = (new ItemEHoe(436, "item_BronzePlatedSandstoneHoe",ExtracraftToolMaterial.BPSANDSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSandstoneHoe");
-		BPSandstoneSword = (new ItemESword(437, "item_BronzePlatedSandstoneSword",ExtracraftToolMaterial.BPSANDSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSandstoneSword");
+		BPSandstonePickaxe = (new ItemEPickaxe(433,"item_BronzePlatedSandstonePickaxe", ExtracraftToolMaterial.BPSANDSTONE)).setUnlocalizedName("BPSandstonePickaxe");
+		BPSandstoneShovel = (new ItemEShovel(434, "item_BronzePlatedSandstoneShovel",ExtracraftToolMaterial.BPSANDSTONE)).setUnlocalizedName("BPSandstoneShovel");
+		BPSandstoneAxe = (new ItemEAxe(435, "item_BronzePlatedSandstoneAxe", ExtracraftToolMaterial.BPSANDSTONE)).setUnlocalizedName("BPSandstoneAxe");
+		BPSandstoneHoe = (new ItemEHoe(436, "item_BronzePlatedSandstoneHoe",ExtracraftToolMaterial.BPSANDSTONE)).setUnlocalizedName("BPSandstoneHoe");
+		BPSandstoneSword = (new ItemESword(437, "item_BronzePlatedSandstoneSword",ExtracraftToolMaterial.BPSANDSTONE)).setUnlocalizedName("BPSandstoneSword");
 		
-		BPBedrockPickaxe = (new ItemEPickaxe(438, "item_BronzePlatedBedrockPickaxe", ExtracraftToolMaterial.BPBEDROCK)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBedrockPickaxe");
-		BPBedrockShovel = (new ItemEShovel(439, "item_BronzePlatedBedrockShovel",ExtracraftToolMaterial.BPBEDROCK)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBedrockShovel");
-		BPBedrockAxe = (new ItemEAxe(440, "item_BronzePlatedBedrockAxe",ExtracraftToolMaterial.BPBEDROCK)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBedrockAxe");
-		BPBedrockHoe = (new ItemEHoe(441, "item_BronzePlatedBedrockHoe",ExtracraftToolMaterial.BPBEDROCK)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBedrockHoe");
+		BPBedrockPickaxe = (new ItemEPickaxe(438, "item_BronzePlatedBedrockPickaxe", ExtracraftToolMaterial.BPBEDROCK)).setUnlocalizedName("BPBedrockPickaxe");
+		BPBedrockShovel = (new ItemEShovel(439, "item_BronzePlatedBedrockShovel",ExtracraftToolMaterial.BPBEDROCK)).setUnlocalizedName("BPBedrockShovel");
+		BPBedrockAxe = (new ItemEAxe(440, "item_BronzePlatedBedrockAxe",ExtracraftToolMaterial.BPBEDROCK)).setUnlocalizedName("BPBedrockAxe");
+		BPBedrockHoe = (new ItemEHoe(441, "item_BronzePlatedBedrockHoe",ExtracraftToolMaterial.BPBEDROCK)).setUnlocalizedName("BPBedrockHoe");
 		
-		BPGranitePickaxe = (new ItemEPickaxe(442, "item_BronzePlatedGranitePickaxe",ExtracraftToolMaterial.BPGRANITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGranitePickaxe");
-		BPGraniteShovel = (new ItemEShovel(443, "item_BronzePlatedGraniteShovel",ExtracraftToolMaterial.BPGRANITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGraniteShovel");
-		BPGraniteAxe = (new ItemEAxe(444, "item_BronzePlatedGraniteAxe",ExtracraftToolMaterial.BPGRANITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGraniteAxe");
-		BPGraniteHoe = (new ItemEHoe(445, "item_BronzePlatedGraniteHoe",ExtracraftToolMaterial.BPGRANITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGraniteHoe");
-		BPGraniteSword = (new ItemESword(446, "item_BronzePlatedGraniteSword",ExtracraftToolMaterial.BPGRANITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGraniteSword");
+		BPGranitePickaxe = (new ItemEPickaxe(442, "item_BronzePlatedGranitePickaxe",ExtracraftToolMaterial.BPGRANITE)).setUnlocalizedName("BPGranitePickaxe");
+		BPGraniteShovel = (new ItemEShovel(443, "item_BronzePlatedGraniteShovel",ExtracraftToolMaterial.BPGRANITE)).setUnlocalizedName("BPGraniteShovel");
+		BPGraniteAxe = (new ItemEAxe(444, "item_BronzePlatedGraniteAxe",ExtracraftToolMaterial.BPGRANITE)).setUnlocalizedName("BPGraniteAxe");
+		BPGraniteHoe = (new ItemEHoe(445, "item_BronzePlatedGraniteHoe",ExtracraftToolMaterial.BPGRANITE)).setUnlocalizedName("BPGraniteHoe");
+		BPGraniteSword = (new ItemESword(446, "item_BronzePlatedGraniteSword",ExtracraftToolMaterial.BPGRANITE)).setUnlocalizedName("BPGraniteSword");
 		
-		BPWoodPickaxe = (new ItemEPickaxe(447, "item_BronzePlatedWoodPickaxe",ExtracraftToolMaterial.BPWOOD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPWoodPickaxe");
-		BPWoodShovel = (new ItemEShovel(448, "item_BronzePlatedWoodShovel",ExtracraftToolMaterial.BPWOOD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPWoodShovel");
-		BPWoodAxe = (new ItemEAxe(449, "item_BronzePlatedWoodAxe",ExtracraftToolMaterial.BPWOOD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPWoodAxe");
-		BPWoodHoe = (new ItemEHoe(450, "item_BronzePlatedWoodHoe",ExtracraftToolMaterial.BPWOOD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPWoodHoe");
-		BPWoodSword = (new ItemESword(451, "item_BronzePlatedWoodSword",ExtracraftToolMaterial.BPWOOD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPWoodSword");
+		BPWoodPickaxe = (new ItemEPickaxe(447, "item_BronzePlatedWoodPickaxe",ExtracraftToolMaterial.BPWOOD)).setUnlocalizedName("BPWoodPickaxe");
+		BPWoodShovel = (new ItemEShovel(448, "item_BronzePlatedWoodShovel",ExtracraftToolMaterial.BPWOOD)).setUnlocalizedName("BPWoodShovel");
+		BPWoodAxe = (new ItemEAxe(449, "item_BronzePlatedWoodAxe",ExtracraftToolMaterial.BPWOOD)).setUnlocalizedName("BPWoodAxe");
+		BPWoodHoe = (new ItemEHoe(450, "item_BronzePlatedWoodHoe",ExtracraftToolMaterial.BPWOOD)).setUnlocalizedName("BPWoodHoe");
+		BPWoodSword = (new ItemESword(451, "item_BronzePlatedWoodSword",ExtracraftToolMaterial.BPWOOD)).setUnlocalizedName("BPWoodSword");
 		
-		BPClothHelmet = (new ItemExtracraftHelmet(452,"item_BronzePlatedLeatherHelmet", MaterialBPCloth, proxy.addArmor("BPcloth"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPClothHelmet");
-		BPClothChest = (new ItemExtracraftChest(453, "item_BronzePlatedLeatherChestplate",MaterialBPCloth, proxy.addArmor("BPcloth"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPClothChest");
-		BPClothPants = (new ItemExtracraftPants(454, "item_BronzePlatedLeatherLeggings",MaterialBPCloth, proxy.addArmor("BPcloth"), 2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPClothPants");
-		BPClothBoots = (new ItemExtracraftBoots(455, "item_BronzePlatedLeatherBoots",MaterialBPCloth, proxy.addArmor("BPcloth"), 3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPClothBoots");
+		BPClothHelmet = (new ItemExtracraftHelmet(452,"item_BronzePlatedLeatherHelmet", MaterialBPCloth, proxy.addArmor("BPcloth"), 0)).setUnlocalizedName("BPClothHelmet");
+		BPClothChest = (new ItemExtracraftChest(453, "item_BronzePlatedLeatherChestplate",MaterialBPCloth, proxy.addArmor("BPcloth"), 1)).setUnlocalizedName("BPClothChest");
+		BPClothPants = (new ItemExtracraftPants(454, "item_BronzePlatedLeatherLeggings",MaterialBPCloth, proxy.addArmor("BPcloth"), 2)).setUnlocalizedName("BPClothPants");
+		BPClothBoots = (new ItemExtracraftBoots(455, "item_BronzePlatedLeatherBoots",MaterialBPCloth, proxy.addArmor("BPcloth"), 3)).setUnlocalizedName("BPClothBoots");
 		
-		BPStonePickaxe = (new ItemEPickaxe(456, "item_BronzePlatedStonePickaxe",ExtracraftToolMaterial.BPSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPStonePickaxe");
-		BPStoneShovel = (new ItemEShovel(457, "item_BronzePlatedStoneShovel",ExtracraftToolMaterial.BPSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPStoneShovel");
-		BPStoneAxe = (new ItemEAxe(458, "item_BronzePlatedStoneAxe",ExtracraftToolMaterial.BPSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPStoneAxe");
-		BPStoneHoe = (new ItemEHoe(459, "item_BronzePlatedStoneHoe",ExtracraftToolMaterial.BPSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPStoneHoe");
-		BPStoneSword = (new ItemESword(460, "item_BronzePlatedStoneSword",ExtracraftToolMaterial.BPSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPStoneSword");
+		BPStonePickaxe = (new ItemEPickaxe(456, "item_BronzePlatedStonePickaxe",ExtracraftToolMaterial.BPSTONE)).setUnlocalizedName("BPStonePickaxe");
+		BPStoneShovel = (new ItemEShovel(457, "item_BronzePlatedStoneShovel",ExtracraftToolMaterial.BPSTONE)).setUnlocalizedName("BPStoneShovel");
+		BPStoneAxe = (new ItemEAxe(458, "item_BronzePlatedStoneAxe",ExtracraftToolMaterial.BPSTONE)).setUnlocalizedName("BPStoneAxe");
+		BPStoneHoe = (new ItemEHoe(459, "item_BronzePlatedStoneHoe",ExtracraftToolMaterial.BPSTONE)).setUnlocalizedName("BPStoneHoe");
+		BPStoneSword = (new ItemESword(460, "item_BronzePlatedStoneSword",ExtracraftToolMaterial.BPSTONE)).setUnlocalizedName("BPStoneSword");
 		
-		BPChainHelmet = (new ItemExtracraftHelmet(461,"item_BronzePlatedChainHelmet", MaterialBPChain, proxy.addArmor("BPchain"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPChainHelmet");
-		BPChainChest = (new ItemExtracraftChest(462, "item_BronzePlatedChainChestplate",MaterialBPChain, proxy.addArmor("BPchain"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPChainChest");
-		BPChainPants = (new ItemExtracraftPants(463, "item_BronzePlatedChainLeggings",MaterialBPChain, proxy.addArmor("BPchain"), 2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPChainPants");
-		BPChainBoots = (new ItemExtracraftBoots(464, "item_BronzePlatedChainBoots",MaterialBPChain, proxy.addArmor("BPchain"), 3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPChainBoots");
+		BPChainHelmet = (new ItemExtracraftHelmet(461,"item_BronzePlatedChainHelmet", MaterialBPChain, proxy.addArmor("BPchain"), 0)).setUnlocalizedName("BPChainHelmet");
+		BPChainChest = (new ItemExtracraftChest(462, "item_BronzePlatedChainChestplate",MaterialBPChain, proxy.addArmor("BPchain"), 1)).setUnlocalizedName("BPChainChest");
+		BPChainPants = (new ItemExtracraftPants(463, "item_BronzePlatedChainLeggings",MaterialBPChain, proxy.addArmor("BPchain"), 2)).setUnlocalizedName("BPChainPants");
+		BPChainBoots = (new ItemExtracraftBoots(464, "item_BronzePlatedChainBoots",MaterialBPChain, proxy.addArmor("BPchain"), 3)).setUnlocalizedName("BPChainBoots");
 		
-		BPIronPickaxe = (new ItemEPickaxe(465, "item_BronzePlatedIronPickaxe",ExtracraftToolMaterial.BPIRON)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPIronPickaxe");
-		BPIronShovel = (new ItemEShovel(466, "item_BronzePlatedIronShovel",ExtracraftToolMaterial.BPIRON)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPIronShovel");
-		BPIronAxe = (new ItemEAxe(467, "item_BronzePlatedIronAxe",ExtracraftToolMaterial.BPIRON)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPIronAxe");
-		BPIronHoe = (new ItemEHoe(468, "item_BronzePlatedIronHoe",ExtracraftToolMaterial.BPIRON)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPIronHoe");
-		BPIronSword = (new ItemESword(469, "item_BronzePlatedIronSword",ExtracraftToolMaterial.BPIRON)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPStoneSword");
+		BPIronPickaxe = (new ItemEPickaxe(465, "item_BronzePlatedIronPickaxe",ExtracraftToolMaterial.BPIRON)).setUnlocalizedName("BPIronPickaxe");
+		BPIronShovel = (new ItemEShovel(466, "item_BronzePlatedIronShovel",ExtracraftToolMaterial.BPIRON)).setUnlocalizedName("BPIronShovel");
+		BPIronAxe = (new ItemEAxe(467, "item_BronzePlatedIronAxe",ExtracraftToolMaterial.BPIRON)).setUnlocalizedName("BPIronAxe");
+		BPIronHoe = (new ItemEHoe(468, "item_BronzePlatedIronHoe",ExtracraftToolMaterial.BPIRON)).setUnlocalizedName("BPIronHoe");
+		BPIronSword = (new ItemESword(469, "item_BronzePlatedIronSword",ExtracraftToolMaterial.BPIRON)).setUnlocalizedName("BPStoneSword");
 		
-		BPIronHelmet = (new ItemExtracraftHelmet(470,"item_BronzePlatedIronHelmet", MaterialBPIron, proxy.addArmor("BPiron"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPIronHelmet");
-		BPIronChest = (new ItemExtracraftChest(471, "item_BronzePlatedIronChestplate",MaterialBPIron, proxy.addArmor("BPiron"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPIronChest");
-		BPIronPants = (new ItemExtracraftPants(472, "item_BronzePlatedIronLeggings",MaterialBPIron, proxy.addArmor("BPiron"), 2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPIronPants");
-		BPIronBoots = (new ItemExtracraftBoots(473, "item_BronzePlatedIronBoots",MaterialBPIron, proxy.addArmor("BPiron"), 3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPIronBoots");
+		BPIronHelmet = (new ItemExtracraftHelmet(470,"item_BronzePlatedIronHelmet", MaterialBPIron, proxy.addArmor("BPiron"), 0)).setUnlocalizedName("BPIronHelmet");
+		BPIronChest = (new ItemExtracraftChest(471, "item_BronzePlatedIronChestplate",MaterialBPIron, proxy.addArmor("BPiron"), 1)).setUnlocalizedName("BPIronChest");
+		BPIronPants = (new ItemExtracraftPants(472, "item_BronzePlatedIronLeggings",MaterialBPIron, proxy.addArmor("BPiron"), 2)).setUnlocalizedName("BPIronPants");
+		BPIronBoots = (new ItemExtracraftBoots(473, "item_BronzePlatedIronBoots",MaterialBPIron, proxy.addArmor("BPiron"), 3)).setUnlocalizedName("BPIronBoots");
 		
-		BPGoldPickaxe = (new ItemEPickaxe(474, "item_BronzePlatedGoldPickaxe",ExtracraftToolMaterial.BPGOLD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGoldPickaxe");
-		BPGoldShovel = (new ItemEShovel(475, "item_BronzePlatedGoldShovel",ExtracraftToolMaterial.BPGOLD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGoldShovel");
-		BPGoldAxe = (new ItemEAxe(476, "item_BronzePlatedGoldAxe",ExtracraftToolMaterial.BPGOLD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGoldAxe");
-		BPGoldHoe = (new ItemEHoe(477, "item_BronzePlatedGoldHoe",ExtracraftToolMaterial.BPGOLD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGoldHoe");
-		BPGoldSword = (new ItemESword(478, "item_BronzePlatedGoldSword",ExtracraftToolMaterial.BPGOLD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGoldSword");
+		BPGoldPickaxe = (new ItemEPickaxe(474, "item_BronzePlatedGoldPickaxe",ExtracraftToolMaterial.BPGOLD)).setUnlocalizedName("BPGoldPickaxe");
+		BPGoldShovel = (new ItemEShovel(475, "item_BronzePlatedGoldShovel",ExtracraftToolMaterial.BPGOLD)).setUnlocalizedName("BPGoldShovel");
+		BPGoldAxe = (new ItemEAxe(476, "item_BronzePlatedGoldAxe",ExtracraftToolMaterial.BPGOLD)).setUnlocalizedName("BPGoldAxe");
+		BPGoldHoe = (new ItemEHoe(477, "item_BronzePlatedGoldHoe",ExtracraftToolMaterial.BPGOLD)).setUnlocalizedName("BPGoldHoe");
+		BPGoldSword = (new ItemESword(478, "item_BronzePlatedGoldSword",ExtracraftToolMaterial.BPGOLD)).setUnlocalizedName("BPGoldSword");
 		
-		BPGoldHelmet = (new ItemExtracraftHelmet(479,"item_BronzePlatedGoldHelmet", MaterialBPGold, proxy.addArmor("BPgold"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGoldHelmet");
-		BPGoldChest = (new ItemExtracraftChest(480, "item_BronzePlatedGoldChestplate",MaterialBPGold, proxy.addArmor("BPgold"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGoldChest");
-		BPGoldPants = (new ItemExtracraftPants(481, "item_BronzePlatedGoldLeggings",MaterialBPGold, proxy.addArmor("BPgold"), 2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGoldPants");
-		BPGoldBoots = (new ItemExtracraftBoots(482, "item_BronzePlatedGoldBoots",MaterialBPGold, proxy.addArmor("BPgold"), 3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGoldBoots");
+		BPGoldHelmet = (new ItemExtracraftHelmet(479,"item_BronzePlatedGoldHelmet", MaterialBPGold, proxy.addArmor("BPgold"), 0)).setUnlocalizedName("BPGoldHelmet");
+		BPGoldChest = (new ItemExtracraftChest(480, "item_BronzePlatedGoldChestplate",MaterialBPGold, proxy.addArmor("BPgold"), 1)).setUnlocalizedName("BPGoldChest");
+		BPGoldPants = (new ItemExtracraftPants(481, "item_BronzePlatedGoldLeggings",MaterialBPGold, proxy.addArmor("BPgold"), 2)).setUnlocalizedName("BPGoldPants");
+		BPGoldBoots = (new ItemExtracraftBoots(482, "item_BronzePlatedGoldBoots",MaterialBPGold, proxy.addArmor("BPgold"), 3)).setUnlocalizedName("BPGoldBoots");
 		
-		BPDiamondPickaxe = (new ItemEPickaxe(483, "item_BronzePlatedDiamondPickaxe",ExtracraftToolMaterial.BPEMERALD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPDiamondPickaxe");
-		BPDiamondShovel = (new ItemEShovel(484, "item_BronzePlatedDiamondShovel",ExtracraftToolMaterial.BPEMERALD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPDiamondShovel");
-		BPDiamondAxe = (new ItemEAxe(485, "item_BronzePlatedDiamondAxe",ExtracraftToolMaterial.BPEMERALD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPDiamondAxe");
-		BPDiamondHoe = (new ItemEHoe(486, "item_BronzePlatedDiamondHoe",ExtracraftToolMaterial.BPEMERALD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPDiamondHoe");
-		BPDiamondSword = (new ItemESword(487, "item_BronzePlatedDiamondSword",ExtracraftToolMaterial.BPEMERALD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPDiamondSword");
+		BPDiamondPickaxe = (new ItemEPickaxe(483, "item_BronzePlatedDiamondPickaxe",ExtracraftToolMaterial.BPEMERALD)).setUnlocalizedName("BPDiamondPickaxe");
+		BPDiamondShovel = (new ItemEShovel(484, "item_BronzePlatedDiamondShovel",ExtracraftToolMaterial.BPEMERALD)).setUnlocalizedName("BPDiamondShovel");
+		BPDiamondAxe = (new ItemEAxe(485, "item_BronzePlatedDiamondAxe",ExtracraftToolMaterial.BPEMERALD)).setUnlocalizedName("BPDiamondAxe");
+		BPDiamondHoe = (new ItemEHoe(486, "item_BronzePlatedDiamondHoe",ExtracraftToolMaterial.BPEMERALD)).setUnlocalizedName("BPDiamondHoe");
+		BPDiamondSword = (new ItemESword(487, "item_BronzePlatedDiamondSword",ExtracraftToolMaterial.BPEMERALD)).setUnlocalizedName("BPDiamondSword");
 		
-		BPDiamondHelmet = (new ItemExtracraftHelmet(488,"item_BronzePlatedDiamondHelmet", MaterialBPDiamond, proxy.addArmor("BPdiamond"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPDiamondHelmet");
-		BPDiamondChest = (new ItemExtracraftChest(489, "item_BronzePlatedDiamondChestplate",MaterialBPDiamond, proxy.addArmor("BPdiamond"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPDiamondChest");
-		BPDiamondPants = (new ItemExtracraftPants(490, "item_BronzePlatedDiamondLeggings",MaterialBPDiamond, proxy.addArmor("BPdiamond"), 2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPDiamondPants");
-		BPDiamondBoots = (new ItemExtracraftBoots(491, "item_BronzePlatedDiamondBoots",MaterialBPDiamond, proxy.addArmor("BPdiamond"), 3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPDiamondBoots");
+		BPDiamondHelmet = (new ItemExtracraftHelmet(488,"item_BronzePlatedDiamondHelmet", MaterialBPDiamond, proxy.addArmor("BPdiamond"), 0)).setUnlocalizedName("BPDiamondHelmet");
+		BPDiamondChest = (new ItemExtracraftChest(489, "item_BronzePlatedDiamondChestplate",MaterialBPDiamond, proxy.addArmor("BPdiamond"), 1)).setUnlocalizedName("BPDiamondChest");
+		BPDiamondPants = (new ItemExtracraftPants(490, "item_BronzePlatedDiamondLeggings",MaterialBPDiamond, proxy.addArmor("BPdiamond"), 2)).setUnlocalizedName("BPDiamondPants");
+		BPDiamondBoots = (new ItemExtracraftBoots(491, "item_BronzePlatedDiamondBoots",MaterialBPDiamond, proxy.addArmor("BPdiamond"), 3)).setUnlocalizedName("BPDiamondBoots");
 		
 		
 	
 		
 		
-		BPZirconiumSword = (new ItemESword(379, "item_BronzePlatedZirconiumSword", ExtracraftToolMaterial.BPZIRCONIUM)).setCreativeTab(tabOresItems).setUnlocalizedName("BPZirconiumSword");
-		BPZirconiumPickaxe = (new ItemEPickaxe(380, "item_BronzePlatedZirconiumPickaxe", ExtracraftToolMaterial.BPZIRCONIUM)).setCreativeTab(tabOresItems).setUnlocalizedName("BPZirconiumPickaxe");
-		BPZirconiumShovel = (new ItemEShovel(381, "item_BronzePlatedZirconiumShovel", ExtracraftToolMaterial.BPZIRCONIUM)).setCreativeTab(tabOresItems).setUnlocalizedName("BPZirconiumShovel");
-		BPZirconiumHoe = (new ItemEHoe(382, "item_BronzePlatedZirconiumHoe", ExtracraftToolMaterial.BPZIRCONIUM)).setCreativeTab(tabOresItems).setUnlocalizedName("BPZirconiumHoe");
-		BPZirconiumAxe = (new ItemEAxe(383, "item_BronzePlatedZirconiumAxe", ExtracraftToolMaterial.BPZIRCONIUM)).setCreativeTab(tabOresItems).setUnlocalizedName("BPZirconiumAxe");
+		BPZirconiumSword = (new ItemESword(379, "item_BronzePlatedZirconiumSword", ExtracraftToolMaterial.BPZIRCONIUM)).setUnlocalizedName("BPZirconiumSword");
+		BPZirconiumPickaxe = (new ItemEPickaxe(380, "item_BronzePlatedZirconiumPickaxe", ExtracraftToolMaterial.BPZIRCONIUM)).setUnlocalizedName("BPZirconiumPickaxe");
+		BPZirconiumShovel = (new ItemEShovel(381, "item_BronzePlatedZirconiumShovel", ExtracraftToolMaterial.BPZIRCONIUM)).setUnlocalizedName("BPZirconiumShovel");
+		BPZirconiumHoe = (new ItemEHoe(382, "item_BronzePlatedZirconiumHoe", ExtracraftToolMaterial.BPZIRCONIUM)).setUnlocalizedName("BPZirconiumHoe");
+		BPZirconiumAxe = (new ItemEAxe(383, "item_BronzePlatedZirconiumAxe", ExtracraftToolMaterial.BPZIRCONIUM)).setUnlocalizedName("BPZirconiumAxe");
 	
-		BPZirconiumHelmet = (new ItemExtracraftHelmet(384, "item_BronzePlatedZirconiumHelmet", MaterialBPZirconium, proxy.addArmor("BPzirconium"), 0)).setCreativeTab(tabOresItems).setUnlocalizedName("BPZirconiumHelmet");
-		BPZirconiumChest = (new ItemExtracraftChest(385, "item_BronzePlatedZirconiumChestplate", MaterialBPZirconium, proxy.addArmor("BPzirconium"), 1)).setCreativeTab(tabOresItems).setUnlocalizedName("BPZirconiumChest");
-		BPZirconiumPants = (new ItemExtracraftPants(386, "item_BronzePlatedZirconiumLeggings",MaterialBPZirconium, proxy.addArmor("BPzirconium"),2)).setCreativeTab(tabOresItems).setUnlocalizedName("BPZirconiumPants");
-		BPZirconiumBoots = (new ItemExtracraftBoots(387, "item_BronzePlatedZirconiumBoots", MaterialBPZirconium, proxy.addArmor("BPzirconium"),3)).setCreativeTab(tabOresItems).setUnlocalizedName("BPZirconiumBoots");
+		BPZirconiumHelmet = (new ItemExtracraftHelmet(384, "item_BronzePlatedZirconiumHelmet", MaterialBPZirconium, proxy.addArmor("BPzirconium"), 0)).setUnlocalizedName("BPZirconiumHelmet");
+		BPZirconiumChest = (new ItemExtracraftChest(385, "item_BronzePlatedZirconiumChestplate", MaterialBPZirconium, proxy.addArmor("BPzirconium"), 1)).setUnlocalizedName("BPZirconiumChest");
+		BPZirconiumPants = (new ItemExtracraftPants(386, "item_BronzePlatedZirconiumLeggings",MaterialBPZirconium, proxy.addArmor("BPzirconium"),2)).setUnlocalizedName("BPZirconiumPants");
+		BPZirconiumBoots = (new ItemExtracraftBoots(387, "item_BronzePlatedZirconiumBoots", MaterialBPZirconium, proxy.addArmor("BPzirconium"),3)).setUnlocalizedName("BPZirconiumBoots");
 		
-		BPTitaniumSword = (new ItemESword(388,"item_BronzePlatedTitaniumSword", ExtracraftToolMaterial.BPTITANIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTitaniumSword");
-		BPTitaniumPickaxe = (new ItemEPickaxe(389, "item_BronzePlatedTitaniumPickaxe", ExtracraftToolMaterial.BPTITANIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTitaniumPickaxe");
-		BPTitaniumShovel = (new ItemEShovel(390, "item_BronzePlatedTitaniumShovel", ExtracraftToolMaterial.BPTITANIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTitaniumShovel");
-		BPTitaniumHoe = (new ItemEHoe(391, "item_BronzePlatedTitaniumHoe",ExtracraftToolMaterial.BPTITANIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTitaniumHoe");
-		BPTitaniumAxe = (new ItemEAxe(392, "item_BronzePlatedTitaniumAxe",ExtracraftToolMaterial.BPTITANIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTitaniumAxe");
+		BPTitaniumSword = (new ItemESword(388,"item_BronzePlatedTitaniumSword", ExtracraftToolMaterial.BPTITANIUM)).setUnlocalizedName("BPTitaniumSword");
+		BPTitaniumPickaxe = (new ItemEPickaxe(389, "item_BronzePlatedTitaniumPickaxe", ExtracraftToolMaterial.BPTITANIUM)).setUnlocalizedName("BPTitaniumPickaxe");
+		BPTitaniumShovel = (new ItemEShovel(390, "item_BronzePlatedTitaniumShovel", ExtracraftToolMaterial.BPTITANIUM)).setUnlocalizedName("BPTitaniumShovel");
+		BPTitaniumHoe = (new ItemEHoe(391, "item_BronzePlatedTitaniumHoe",ExtracraftToolMaterial.BPTITANIUM)).setUnlocalizedName("BPTitaniumHoe");
+		BPTitaniumAxe = (new ItemEAxe(392, "item_BronzePlatedTitaniumAxe",ExtracraftToolMaterial.BPTITANIUM)).setUnlocalizedName("BPTitaniumAxe");
 	
-		BPTitaniumHelmet = (new ItemExtracraftHelmet(393, "item_BronzePlatedTitaniumHelmet", MaterialBPTitanium, proxy.addArmor("BPtitanium"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTitaniumHelmet");
-		BPTitaniumChest = (new ItemExtracraftChest(394, "item_BronzePlatedTitaniumChestplate",MaterialBPTitanium, proxy.addArmor("BPtitanium"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTitaniumChest");
-		BPTitaniumPants = (new ItemExtracraftPants(395, "item_BronzePlatedTitaniumLeggings", MaterialBPTitanium, proxy.addArmor("BPtitanium"),2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTitaniumPants");
-		BPTitaniumBoots = (new ItemExtracraftBoots(396, "item_BronzePlatedTitaniumBoots",MaterialBPTitanium, proxy.addArmor("BPtitanium"),3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTitaniumBoots");
+		BPTitaniumHelmet = (new ItemExtracraftHelmet(393, "item_BronzePlatedTitaniumHelmet", MaterialBPTitanium, proxy.addArmor("BPtitanium"), 0)).setUnlocalizedName("BPTitaniumHelmet");
+		BPTitaniumChest = (new ItemExtracraftChest(394, "item_BronzePlatedTitaniumChestplate",MaterialBPTitanium, proxy.addArmor("BPtitanium"), 1)).setUnlocalizedName("BPTitaniumChest");
+		BPTitaniumPants = (new ItemExtracraftPants(395, "item_BronzePlatedTitaniumLeggings", MaterialBPTitanium, proxy.addArmor("BPtitanium"),2)).setUnlocalizedName("BPTitaniumPants");
+		BPTitaniumBoots = (new ItemExtracraftBoots(396, "item_BronzePlatedTitaniumBoots",MaterialBPTitanium, proxy.addArmor("BPtitanium"),3)).setUnlocalizedName("BPTitaniumBoots");
 		
-		BPToriteSword = (new ItemESword(397, "item_BronzePlatedToriteSword", ExtracraftToolMaterial.BPTORITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPToriteSword");
-		BPToritePickaxe = (new ItemEPickaxe(398, "item_BronzePlatedToritePickaxe", ExtracraftToolMaterial.BPTORITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPToritePickaxe");
-		BPToriteShovel = (new ItemEShovel(399, "item_BronzePlatedToriteShovel", ExtracraftToolMaterial.BPTORITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPToriteShovel");
-		BPToriteHoe = (new ItemEHoe(400, "item_BronzePlatedToriteHoe",ExtracraftToolMaterial.BPTORITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPToriteHoe");
-		BPToriteAxe = (new ItemEAxe(401, "item_BronzePlatedToriteAxe",ExtracraftToolMaterial.BPTORITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPToriteAxe");
+		BPToriteSword = (new ItemESword(397, "item_BronzePlatedToriteSword", ExtracraftToolMaterial.BPTORITE)).setUnlocalizedName("BPToriteSword");
+		BPToritePickaxe = (new ItemEPickaxe(398, "item_BronzePlatedToritePickaxe", ExtracraftToolMaterial.BPTORITE)).setUnlocalizedName("BPToritePickaxe");
+		BPToriteShovel = (new ItemEShovel(399, "item_BronzePlatedToriteShovel", ExtracraftToolMaterial.BPTORITE)).setUnlocalizedName("BPToriteShovel");
+		BPToriteHoe = (new ItemEHoe(400, "item_BronzePlatedToriteHoe",ExtracraftToolMaterial.BPTORITE)).setUnlocalizedName("BPToriteHoe");
+		BPToriteAxe = (new ItemEAxe(401, "item_BronzePlatedToriteAxe",ExtracraftToolMaterial.BPTORITE)).setUnlocalizedName("BPToriteAxe");
 		
-		BPToriteHelmet = (new ItemExtracraftHelmet(402, "item_BronzePlatedToriteHelmet",MaterialBPTorite, proxy.addArmor("BPtorite"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPToriteHelmet");
-		BPToriteChest = (new ItemExtracraftChest(403, "item_BronzePlatedToriteChestplate",MaterialBPTorite, proxy.addArmor("BPtorite"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPToriteChest");
-		BPToritePants = (new ItemExtracraftPants(404, "item_BronzePlatedToriteLeggings",MaterialBPTorite, proxy.addArmor("BPtorite"),2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPToritePants");
-		BPToriteBoots = (new ItemExtracraftBoots(405, "item_BronzePlatedToriteBoots",MaterialBPTorite, proxy.addArmor("BPtorite"),3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPToriteBoots");
+		BPToriteHelmet = (new ItemExtracraftHelmet(402, "item_BronzePlatedToriteHelmet",MaterialBPTorite, proxy.addArmor("BPtorite"), 0)).setUnlocalizedName("BPToriteHelmet");
+		BPToriteChest = (new ItemExtracraftChest(403, "item_BronzePlatedToriteChestplate",MaterialBPTorite, proxy.addArmor("BPtorite"), 1)).setUnlocalizedName("BPToriteChest");
+		BPToritePants = (new ItemExtracraftPants(404, "item_BronzePlatedToriteLeggings",MaterialBPTorite, proxy.addArmor("BPtorite"),2)).setUnlocalizedName("BPToritePants");
+		BPToriteBoots = (new ItemExtracraftBoots(405, "item_BronzePlatedToriteBoots",MaterialBPTorite, proxy.addArmor("BPtorite"),3)).setUnlocalizedName("BPToriteBoots");
 		
-		BPBlaziumSword = (new ItemESword(406, "item_BronzePlatedFireSword", ExtracraftToolMaterial.BPBLAZIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBlaziumSword");
-		BPBlaziumPickaxe = (new ItemEPickaxe(407, "item_BronzePlatedFirePickaxe", ExtracraftToolMaterial.BPBLAZIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBlaziumPickaxe");
-		BPBlaziumShovel = (new ItemEShovel(408, "item_BronzePlatedFireShovel",ExtracraftToolMaterial.BPBLAZIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBlaziumShovel");
-		BPBlaziumHoe = (new ItemEHoe(409, "item_BronzePlatedFireHoe",ExtracraftToolMaterial.BPBLAZIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBlaziumHoe");
-		BPBlaziumAxe = (new ItemEAxe(410, "item_BronzePlatedFireAxe",ExtracraftToolMaterial.BPBLAZIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBlaziumAxe");
+		BPBlaziumSword = (new ItemESword(406, "item_BronzePlatedFireSword", ExtracraftToolMaterial.BPBLAZIUM)).setUnlocalizedName("BPBlaziumSword");
+		BPBlaziumPickaxe = (new ItemEPickaxe(407, "item_BronzePlatedFirePickaxe", ExtracraftToolMaterial.BPBLAZIUM)).setUnlocalizedName("BPBlaziumPickaxe");
+		BPBlaziumShovel = (new ItemEShovel(408, "item_BronzePlatedFireShovel",ExtracraftToolMaterial.BPBLAZIUM)).setUnlocalizedName("BPBlaziumShovel");
+		BPBlaziumHoe = (new ItemEHoe(409, "item_BronzePlatedFireHoe",ExtracraftToolMaterial.BPBLAZIUM)).setUnlocalizedName("BPBlaziumHoe");
+		BPBlaziumAxe = (new ItemEAxe(410, "item_BronzePlatedFireAxe",ExtracraftToolMaterial.BPBLAZIUM)).setUnlocalizedName("BPBlaziumAxe");
 		
-		BPBlaziumHelmet = (new ItemExtracraftHelmet(411,"item_BronzePlatedFireHelmet", MaterialBPBlazium, proxy.addArmor("BPfire"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBlaziumHelmet");
-		BPBlaziumChest = (new ItemExtracraftChest(412, "item_BronzePlatedFireChestplate",MaterialBPBlazium, proxy.addArmor("BPfire"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBlaziumChest");
-		BPBlaziumPants = (new ItemExtracraftPants(413, "item_BronzePlatedFireLeggings",MaterialBPBlazium, proxy.addArmor("BPfire"),2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBlaziumPants");
-		BPBlaziumBoots = (new ItemExtracraftBoots(414, "item_BronzePlatedFireBoots",MaterialBPBlazium, proxy.addArmor("BPfire"),3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBlaziumBoots");
+		BPBlaziumHelmet = (new ItemExtracraftHelmet(411,"item_BronzePlatedFireHelmet", MaterialBPBlazium, proxy.addArmor("BPfire"), 0)).setUnlocalizedName("BPBlaziumHelmet");
+		BPBlaziumChest = (new ItemExtracraftChest(412, "item_BronzePlatedFireChestplate",MaterialBPBlazium, proxy.addArmor("BPfire"), 1)).setUnlocalizedName("BPBlaziumChest");
+		BPBlaziumPants = (new ItemExtracraftPants(413, "item_BronzePlatedFireLeggings",MaterialBPBlazium, proxy.addArmor("BPfire"),2)).setUnlocalizedName("BPBlaziumPants");
+		BPBlaziumBoots = (new ItemExtracraftBoots(414, "item_BronzePlatedFireBoots",MaterialBPBlazium, proxy.addArmor("BPfire"),3)).setUnlocalizedName("BPBlaziumBoots");
 		
-		BPCopperSword = (new ItemESword(415, "item_BronzePlatedCopperSword",ExtracraftToolMaterial.BPCOPPER)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPCopperSword");
-		BPCopperPickaxe = (new ItemEPickaxe(416, "item_BronzePlatedCopperPickaxe",ExtracraftToolMaterial.BPCOPPER)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPCopperPickaxe");
-		BPCopperShovel = (new ItemEShovel(417, "item_BronzePlatedCopperShovel",ExtracraftToolMaterial.BPCOPPER)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPCopperShovel");
-		BPCopperHoe = (new ItemEHoe(418, "item_BronzePlatedCopperHoe",ExtracraftToolMaterial.BPCOPPER)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPCopperHoe");
-		BPCopperAxe = (new ItemEAxe(419, "item_BronzePlatedCopperAxe",ExtracraftToolMaterial.BPCOPPER)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPCopperAxe");
+		BPCopperSword = (new ItemESword(415, "item_BronzePlatedCopperSword",ExtracraftToolMaterial.BPCOPPER)).setUnlocalizedName("BPCopperSword");
+		BPCopperPickaxe = (new ItemEPickaxe(416, "item_BronzePlatedCopperPickaxe",ExtracraftToolMaterial.BPCOPPER)).setUnlocalizedName("BPCopperPickaxe");
+		BPCopperShovel = (new ItemEShovel(417, "item_BronzePlatedCopperShovel",ExtracraftToolMaterial.BPCOPPER)).setUnlocalizedName("BPCopperShovel");
+		BPCopperHoe = (new ItemEHoe(418, "item_BronzePlatedCopperHoe",ExtracraftToolMaterial.BPCOPPER)).setUnlocalizedName("BPCopperHoe");
+		BPCopperAxe = (new ItemEAxe(419, "item_BronzePlatedCopperAxe",ExtracraftToolMaterial.BPCOPPER)).setUnlocalizedName("BPCopperAxe");
 		
-		BPTinHelmet = (new ItemExtracraftHelmet(420,"item_BronzePlatedTinHelmet", MaterialBPTin, proxy.addArmor("BPtin"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTinHelmet");
-		BPTinChest = (new ItemExtracraftChest(421, "item_BronzePlatedTinChestplate",MaterialBPTin, proxy.addArmor("BPtin"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTinChest");
-		BPTinPants = (new ItemExtracraftPants(422, "item_BronzePlatedTinLeggings",MaterialBPTin, proxy.addArmor("BPtin"),2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTinPants");
-		BPTinBoots = (new ItemExtracraftBoots(423, "item_BronzePlatedTinBoots",MaterialBPTin, proxy.addArmor("BPtin"),3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTinBoots");
+		BPTinHelmet = (new ItemExtracraftHelmet(420,"item_BronzePlatedTinHelmet", MaterialBPTin, proxy.addArmor("BPtin"), 0)).setUnlocalizedName("BPTinHelmet");
+		BPTinChest = (new ItemExtracraftChest(421, "item_BronzePlatedTinChestplate",MaterialBPTin, proxy.addArmor("BPtin"), 1)).setUnlocalizedName("BPTinChest");
+		BPTinPants = (new ItemExtracraftPants(422, "item_BronzePlatedTinLeggings",MaterialBPTin, proxy.addArmor("BPtin"),2)).setUnlocalizedName("BPTinPants");
+		BPTinBoots = (new ItemExtracraftBoots(423, "item_BronzePlatedTinBoots",MaterialBPTin, proxy.addArmor("BPtin"),3)).setUnlocalizedName("BPTinBoots");
 		
-		BPSteelPickaxe = (new ItemEPickaxe(424, "item_BronzePlatedSteelPickaxe",ExtracraftToolMaterial.BPSTEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSteelPickaxe");
-		BPSteelShovel = (new ItemEShovel(425, "item_BronzePlatedSteelShovel",ExtracraftToolMaterial.BPSTEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSteelShovel");
-		BPSteelAxe = (new ItemEAxe(426, "item_BronzePlatedSteelAxe",ExtracraftToolMaterial.BPSTEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSteelAxe");
-		BPSteelHoe = (new ItemEHoe(427, "item_BronzePlatedSteelHoe",ExtracraftToolMaterial.BPSTEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSteelHoe");
-		BPSteelSword = (new ItemESword(428, "item_BronzePlatedSteelSword",ExtracraftToolMaterial.BPSTEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSteelSword");
+		BPSteelPickaxe = (new ItemEPickaxe(424, "item_BronzePlatedSteelPickaxe",ExtracraftToolMaterial.BPSTEEL)).setUnlocalizedName("BPSteelPickaxe");
+		BPSteelShovel = (new ItemEShovel(425, "item_BronzePlatedSteelShovel",ExtracraftToolMaterial.BPSTEEL)).setUnlocalizedName("BPSteelShovel");
+		BPSteelAxe = (new ItemEAxe(426, "item_BronzePlatedSteelAxe",ExtracraftToolMaterial.BPSTEEL)).setUnlocalizedName("BPSteelAxe");
+		BPSteelHoe = (new ItemEHoe(427, "item_BronzePlatedSteelHoe",ExtracraftToolMaterial.BPSTEEL)).setUnlocalizedName("BPSteelHoe");
+		BPSteelSword = (new ItemESword(428, "item_BronzePlatedSteelSword",ExtracraftToolMaterial.BPSTEEL)).setUnlocalizedName("BPSteelSword");
 		
-		BPSteelHelmet = (new ItemExtracraftHelmet(429,"item_BronzePlatedSteelHelmet", MaterialBPSteel, proxy.addArmor("BPsteel"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSteelHelmet");
-		BPSteelChest = (new ItemExtracraftChest(430, "item_BronzePlatedSteelChestplate",MaterialBPSteel, proxy.addArmor("BPsteel"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSteelChest");
-		BPSteelPants = (new ItemExtracraftPants(431, "item_BronzePlatedSteelLeggings",MaterialBPSteel, proxy.addArmor("BPsteel"), 2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSteelPants");
-		BPSteelBoots = (new ItemExtracraftBoots(432, "item_BronzePlatedSteelBoots",MaterialBPSteel, proxy.addArmor("BPsteel"), 3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSteelBoots");
+		BPSteelHelmet = (new ItemExtracraftHelmet(429,"item_BronzePlatedSteelHelmet", MaterialBPSteel, proxy.addArmor("BPsteel"), 0)).setUnlocalizedName("BPSteelHelmet");
+		BPSteelChest = (new ItemExtracraftChest(430, "item_BronzePlatedSteelChestplate",MaterialBPSteel, proxy.addArmor("BPsteel"), 1)).setUnlocalizedName("BPSteelChest");
+		BPSteelPants = (new ItemExtracraftPants(431, "item_BronzePlatedSteelLeggings",MaterialBPSteel, proxy.addArmor("BPsteel"), 2)).setUnlocalizedName("BPSteelPants");
+		BPSteelBoots = (new ItemExtracraftBoots(432, "item_BronzePlatedSteelBoots",MaterialBPSteel, proxy.addArmor("BPsteel"), 3)).setUnlocalizedName("BPSteelBoots");
 		
-		BPSandstonePickaxe = (new ItemEPickaxe(433,"item_BronzePlatedSandstonePickaxe", ExtracraftToolMaterial.BPSANDSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSandstonePickaxe");
-		BPSandstoneShovel = (new ItemEShovel(434, "item_BronzePlatedSandstoneShovel",ExtracraftToolMaterial.BPSANDSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSandstoneShovel");
-		BPSandstoneAxe = (new ItemEAxe(435, "item_BronzePlatedSandstoneAxe", ExtracraftToolMaterial.BPSANDSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSandstoneAxe");
-		BPSandstoneHoe = (new ItemEHoe(436, "item_BronzePlatedSandstoneHoe",ExtracraftToolMaterial.BPSANDSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSandstoneHoe");
-		BPSandstoneSword = (new ItemESword(437, "item_BronzePlatedSandstoneSword",ExtracraftToolMaterial.BPSANDSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPSandstoneSword");
+		BPSandstonePickaxe = (new ItemEPickaxe(433,"item_BronzePlatedSandstonePickaxe", ExtracraftToolMaterial.BPSANDSTONE)).setUnlocalizedName("BPSandstonePickaxe");
+		BPSandstoneShovel = (new ItemEShovel(434, "item_BronzePlatedSandstoneShovel",ExtracraftToolMaterial.BPSANDSTONE)).setUnlocalizedName("BPSandstoneShovel");
+		BPSandstoneAxe = (new ItemEAxe(435, "item_BronzePlatedSandstoneAxe", ExtracraftToolMaterial.BPSANDSTONE)).setUnlocalizedName("BPSandstoneAxe");
+		BPSandstoneHoe = (new ItemEHoe(436, "item_BronzePlatedSandstoneHoe",ExtracraftToolMaterial.BPSANDSTONE)).setUnlocalizedName("BPSandstoneHoe");
+		BPSandstoneSword = (new ItemESword(437, "item_BronzePlatedSandstoneSword",ExtracraftToolMaterial.BPSANDSTONE)).setUnlocalizedName("BPSandstoneSword");
 		
-		BPBedrockPickaxe = (new ItemEPickaxe(438, "item_BronzePlatedBedrockPickaxe", ExtracraftToolMaterial.BPBEDROCK)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBedrockPickaxe");
-		BPBedrockShovel = (new ItemEShovel(439, "item_BronzePlatedBedrockShovel",ExtracraftToolMaterial.BPBEDROCK)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBedrockShovel");
-		BPBedrockAxe = (new ItemEAxe(440, "item_BronzePlatedBedrockAxe",ExtracraftToolMaterial.BPBEDROCK)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBedrockAxe");
-		BPBedrockHoe = (new ItemEHoe(441, "item_BronzePlatedBedrockHoe",ExtracraftToolMaterial.BPBEDROCK)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPBedrockHoe");
+		BPBedrockPickaxe = (new ItemEPickaxe(438, "item_BronzePlatedBedrockPickaxe", ExtracraftToolMaterial.BPBEDROCK)).setUnlocalizedName("BPBedrockPickaxe");
+		BPBedrockShovel = (new ItemEShovel(439, "item_BronzePlatedBedrockShovel",ExtracraftToolMaterial.BPBEDROCK)).setUnlocalizedName("BPBedrockShovel");
+		BPBedrockAxe = (new ItemEAxe(440, "item_BronzePlatedBedrockAxe",ExtracraftToolMaterial.BPBEDROCK)).setUnlocalizedName("BPBedrockAxe");
+		BPBedrockHoe = (new ItemEHoe(441, "item_BronzePlatedBedrockHoe",ExtracraftToolMaterial.BPBEDROCK)).setUnlocalizedName("BPBedrockHoe");
 		
-		BPGranitePickaxe = (new ItemEPickaxe(442, "item_BronzePlatedGranitePickaxe",ExtracraftToolMaterial.BPGRANITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGranitePickaxe");
-		BPGraniteShovel = (new ItemEShovel(443, "item_BronzePlatedGraniteShovel",ExtracraftToolMaterial.BPGRANITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGraniteShovel");
-		BPGraniteAxe = (new ItemEAxe(444, "item_BronzePlatedGraniteAxe",ExtracraftToolMaterial.BPGRANITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGraniteAxe");
-		BPGraniteHoe = (new ItemEHoe(445, "item_BronzePlatedGraniteHoe",ExtracraftToolMaterial.BPGRANITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGraniteHoe");
-		BPGraniteSword = (new ItemESword(446, "item_BronzePlatedGraniteSword",ExtracraftToolMaterial.BPGRANITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGraniteSword");
+		BPGranitePickaxe = (new ItemEPickaxe(442, "item_BronzePlatedGranitePickaxe",ExtracraftToolMaterial.BPGRANITE)).setUnlocalizedName("BPGranitePickaxe");
+		BPGraniteShovel = (new ItemEShovel(443, "item_BronzePlatedGraniteShovel",ExtracraftToolMaterial.BPGRANITE)).setUnlocalizedName("BPGraniteShovel");
+		BPGraniteAxe = (new ItemEAxe(444, "item_BronzePlatedGraniteAxe",ExtracraftToolMaterial.BPGRANITE)).setUnlocalizedName("BPGraniteAxe");
+		BPGraniteHoe = (new ItemEHoe(445, "item_BronzePlatedGraniteHoe",ExtracraftToolMaterial.BPGRANITE)).setUnlocalizedName("BPGraniteHoe");
+		BPGraniteSword = (new ItemESword(446, "item_BronzePlatedGraniteSword",ExtracraftToolMaterial.BPGRANITE)).setUnlocalizedName("BPGraniteSword");
 		
-		BPWoodPickaxe = (new ItemEPickaxe(447, "item_BronzePlatedWoodPickaxe",ExtracraftToolMaterial.BPWOOD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPWoodPickaxe");
-		BPWoodShovel = (new ItemEShovel(448, "item_BronzePlatedWoodShovel",ExtracraftToolMaterial.BPWOOD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPWoodShovel");
-		BPWoodAxe = (new ItemEAxe(449, "item_BronzePlatedWoodAxe",ExtracraftToolMaterial.BPWOOD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPWoodAxe");
-		BPWoodHoe = (new ItemEHoe(450, "item_BronzePlatedWoodHoe",ExtracraftToolMaterial.BPWOOD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPWoodHoe");
-		BPWoodSword = (new ItemESword(451, "item_BronzePlatedWoodSword",ExtracraftToolMaterial.BPWOOD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPWoodSword");
+		BPWoodPickaxe = (new ItemEPickaxe(447, "item_BronzePlatedWoodPickaxe",ExtracraftToolMaterial.BPWOOD)).setUnlocalizedName("BPWoodPickaxe");
+		BPWoodShovel = (new ItemEShovel(448, "item_BronzePlatedWoodShovel",ExtracraftToolMaterial.BPWOOD)).setUnlocalizedName("BPWoodShovel");
+		BPWoodAxe = (new ItemEAxe(449, "item_BronzePlatedWoodAxe",ExtracraftToolMaterial.BPWOOD)).setUnlocalizedName("BPWoodAxe");
+		BPWoodHoe = (new ItemEHoe(450, "item_BronzePlatedWoodHoe",ExtracraftToolMaterial.BPWOOD)).setUnlocalizedName("BPWoodHoe");
+		BPWoodSword = (new ItemESword(451, "item_BronzePlatedWoodSword",ExtracraftToolMaterial.BPWOOD)).setUnlocalizedName("BPWoodSword");
 		
-		BPClothHelmet = (new ItemExtracraftHelmet(452,"item_BronzePlatedLeatherHelmet", MaterialBPCloth, proxy.addArmor("BPcloth"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPClothHelmet");
-		BPClothChest = (new ItemExtracraftChest(453, "item_BronzePlatedLeatherChestplate",MaterialBPCloth, proxy.addArmor("BPcloth"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPClothChest");
-		BPClothPants = (new ItemExtracraftPants(454, "item_BronzePlatedLeatherLeggings",MaterialBPCloth, proxy.addArmor("BPcloth"), 2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPClothPants");
-		BPClothBoots = (new ItemExtracraftBoots(455, "item_BronzePlatedLeatherBoots",MaterialBPCloth, proxy.addArmor("BPcloth"), 3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPClothBoots");
+		BPClothHelmet = (new ItemExtracraftHelmet(452,"item_BronzePlatedLeatherHelmet", MaterialBPCloth, proxy.addArmor("BPcloth"), 0)).setUnlocalizedName("BPClothHelmet");
+		BPClothChest = (new ItemExtracraftChest(453, "item_BronzePlatedLeatherChestplate",MaterialBPCloth, proxy.addArmor("BPcloth"), 1)).setUnlocalizedName("BPClothChest");
+		BPClothPants = (new ItemExtracraftPants(454, "item_BronzePlatedLeatherLeggings",MaterialBPCloth, proxy.addArmor("BPcloth"), 2)).setUnlocalizedName("BPClothPants");
+		BPClothBoots = (new ItemExtracraftBoots(455, "item_BronzePlatedLeatherBoots",MaterialBPCloth, proxy.addArmor("BPcloth"), 3)).setUnlocalizedName("BPClothBoots");
 		
-		BPStonePickaxe = (new ItemEPickaxe(456, "item_BronzePlatedStonePickaxe",ExtracraftToolMaterial.BPSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPStonePickaxe");
-		BPStoneShovel = (new ItemEShovel(457, "item_BronzePlatedStoneShovel",ExtracraftToolMaterial.BPSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPStoneShovel");
-		BPStoneAxe = (new ItemEAxe(458, "item_BronzePlatedStoneAxe",ExtracraftToolMaterial.BPSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPStoneAxe");
-		BPStoneHoe = (new ItemEHoe(459, "item_BronzePlatedStoneHoe",ExtracraftToolMaterial.BPSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPStoneHoe");
-		BPStoneSword = (new ItemESword(460, "item_BronzePlatedStoneSword",ExtracraftToolMaterial.BPSTONE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPStoneSword");
+		BPStonePickaxe = (new ItemEPickaxe(456, "item_BronzePlatedStonePickaxe",ExtracraftToolMaterial.BPSTONE)).setUnlocalizedName("BPStonePickaxe");
+		BPStoneShovel = (new ItemEShovel(457, "item_BronzePlatedStoneShovel",ExtracraftToolMaterial.BPSTONE)).setUnlocalizedName("BPStoneShovel");
+		BPStoneAxe = (new ItemEAxe(458, "item_BronzePlatedStoneAxe",ExtracraftToolMaterial.BPSTONE)).setUnlocalizedName("BPStoneAxe");
+		BPStoneHoe = (new ItemEHoe(459, "item_BronzePlatedStoneHoe",ExtracraftToolMaterial.BPSTONE)).setUnlocalizedName("BPStoneHoe");
+		BPStoneSword = (new ItemESword(460, "item_BronzePlatedStoneSword",ExtracraftToolMaterial.BPSTONE)).setUnlocalizedName("BPStoneSword");
 		
-		BPChainHelmet = (new ItemExtracraftHelmet(461,"item_BronzePlatedChainHelmet", MaterialBPChain, proxy.addArmor("BPchain"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPChainHelmet");
-		BPChainChest = (new ItemExtracraftChest(462, "item_BronzePlatedChainChestplate",MaterialBPChain, proxy.addArmor("BPchain"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPChainChest");
-		BPChainPants = (new ItemExtracraftPants(463, "item_BronzePlatedChainLeggings",MaterialBPChain, proxy.addArmor("BPchain"), 2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPChainPants");
-		BPChainBoots = (new ItemExtracraftBoots(464, "item_BronzePlatedChainBoots",MaterialBPChain, proxy.addArmor("BPchain"), 3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPChainBoots");
+		BPChainHelmet = (new ItemExtracraftHelmet(461,"item_BronzePlatedChainHelmet", MaterialBPChain, proxy.addArmor("BPchain"), 0)).setUnlocalizedName("BPChainHelmet");
+		BPChainChest = (new ItemExtracraftChest(462, "item_BronzePlatedChainChestplate",MaterialBPChain, proxy.addArmor("BPchain"), 1)).setUnlocalizedName("BPChainChest");
+		BPChainPants = (new ItemExtracraftPants(463, "item_BronzePlatedChainLeggings",MaterialBPChain, proxy.addArmor("BPchain"), 2)).setUnlocalizedName("BPChainPants");
+		BPChainBoots = (new ItemExtracraftBoots(464, "item_BronzePlatedChainBoots",MaterialBPChain, proxy.addArmor("BPchain"), 3)).setUnlocalizedName("BPChainBoots");
 		
-		BPIronPickaxe = (new ItemEPickaxe(465, "item_BronzePlatedIronPickaxe",ExtracraftToolMaterial.BPIRON)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPIronPickaxe");
-		BPIronShovel = (new ItemEShovel(466, "item_BronzePlatedIronShovel",ExtracraftToolMaterial.BPIRON)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPIronShovel");
-		BPIronAxe = (new ItemEAxe(467, "item_BronzePlatedIronAxe",ExtracraftToolMaterial.BPIRON)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPIronAxe");
-		BPIronHoe = (new ItemEHoe(468, "item_BronzePlatedIronHoe",ExtracraftToolMaterial.BPIRON)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPIronHoe");
-		BPIronSword = (new ItemESword(469, "item_BronzePlatedIronSword",ExtracraftToolMaterial.BPIRON)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPStoneSword");
+		BPIronPickaxe = (new ItemEPickaxe(465, "item_BronzePlatedIronPickaxe",ExtracraftToolMaterial.BPIRON)).setUnlocalizedName("BPIronPickaxe");
+		BPIronShovel = (new ItemEShovel(466, "item_BronzePlatedIronShovel",ExtracraftToolMaterial.BPIRON)).setUnlocalizedName("BPIronShovel");
+		BPIronAxe = (new ItemEAxe(467, "item_BronzePlatedIronAxe",ExtracraftToolMaterial.BPIRON)).setUnlocalizedName("BPIronAxe");
+		BPIronHoe = (new ItemEHoe(468, "item_BronzePlatedIronHoe",ExtracraftToolMaterial.BPIRON)).setUnlocalizedName("BPIronHoe");
+		BPIronSword = (new ItemESword(469, "item_BronzePlatedIronSword",ExtracraftToolMaterial.BPIRON)).setUnlocalizedName("BPStoneSword");
 		
-		BPIronHelmet = (new ItemExtracraftHelmet(470,"item_BronzePlatedIronHelmet", MaterialBPIron, proxy.addArmor("BPiron"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPIronHelmet");
-		BPIronChest = (new ItemExtracraftChest(471, "item_BronzePlatedIronChestplate",MaterialBPIron, proxy.addArmor("BPiron"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPIronChest");
-		BPIronPants = (new ItemExtracraftPants(472, "item_BronzePlatedIronLeggings",MaterialBPIron, proxy.addArmor("BPiron"), 2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPIronPants");
-		BPIronBoots = (new ItemExtracraftBoots(473, "item_BronzePlatedIronBoots",MaterialBPIron, proxy.addArmor("BPiron"), 3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPIronBoots");
+		BPIronHelmet = (new ItemExtracraftHelmet(470,"item_BronzePlatedIronHelmet", MaterialBPIron, proxy.addArmor("BPiron"), 0)).setUnlocalizedName("BPIronHelmet");
+		BPIronChest = (new ItemExtracraftChest(471, "item_BronzePlatedIronChestplate",MaterialBPIron, proxy.addArmor("BPiron"), 1)).setUnlocalizedName("BPIronChest");
+		BPIronPants = (new ItemExtracraftPants(472, "item_BronzePlatedIronLeggings",MaterialBPIron, proxy.addArmor("BPiron"), 2)).setUnlocalizedName("BPIronPants");
+		BPIronBoots = (new ItemExtracraftBoots(473, "item_BronzePlatedIronBoots",MaterialBPIron, proxy.addArmor("BPiron"), 3)).setUnlocalizedName("BPIronBoots");
 		
-		BPGoldPickaxe = (new ItemEPickaxe(474, "item_BronzePlatedGoldPickaxe",ExtracraftToolMaterial.BPGOLD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGoldPickaxe");
-		BPGoldShovel = (new ItemEShovel(475, "item_BronzePlatedGoldShovel",ExtracraftToolMaterial.BPGOLD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGoldShovel");
-		BPGoldAxe = (new ItemEAxe(476, "item_BronzePlatedGoldAxe",ExtracraftToolMaterial.BPGOLD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGoldAxe");
-		BPGoldHoe = (new ItemEHoe(477, "item_BronzePlatedGoldHoe",ExtracraftToolMaterial.BPGOLD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGoldHoe");
-		BPGoldSword = (new ItemESword(478, "item_BronzePlatedGoldSword",ExtracraftToolMaterial.BPGOLD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGoldSword");
+		BPGoldPickaxe = (new ItemEPickaxe(474, "item_BronzePlatedGoldPickaxe",ExtracraftToolMaterial.BPGOLD)).setUnlocalizedName("BPGoldPickaxe");
+		BPGoldShovel = (new ItemEShovel(475, "item_BronzePlatedGoldShovel",ExtracraftToolMaterial.BPGOLD)).setUnlocalizedName("BPGoldShovel");
+		BPGoldAxe = (new ItemEAxe(476, "item_BronzePlatedGoldAxe",ExtracraftToolMaterial.BPGOLD)).setUnlocalizedName("BPGoldAxe");
+		BPGoldHoe = (new ItemEHoe(477, "item_BronzePlatedGoldHoe",ExtracraftToolMaterial.BPGOLD)).setUnlocalizedName("BPGoldHoe");
+		BPGoldSword = (new ItemESword(478, "item_BronzePlatedGoldSword",ExtracraftToolMaterial.BPGOLD)).setUnlocalizedName("BPGoldSword");
 		
-		BPGoldHelmet = (new ItemExtracraftHelmet(479,"item_BronzePlatedGoldHelmet", MaterialBPGold, proxy.addArmor("BPgold"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGoldHelmet");
-		BPGoldChest = (new ItemExtracraftChest(480, "item_BronzePlatedGoldChestplate",MaterialBPGold, proxy.addArmor("BPgold"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGoldChest");
-		BPGoldPants = (new ItemExtracraftPants(481, "item_BronzePlatedGoldLeggings",MaterialBPGold, proxy.addArmor("BPgold"), 2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGoldPants");
-		BPGoldBoots = (new ItemExtracraftBoots(482, "item_BronzePlatedGoldBoots",MaterialBPGold, proxy.addArmor("BPgold"), 3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPGoldBoots");
+		BPGoldHelmet = (new ItemExtracraftHelmet(479,"item_BronzePlatedGoldHelmet", MaterialBPGold, proxy.addArmor("BPgold"), 0)).setUnlocalizedName("BPGoldHelmet");
+		BPGoldChest = (new ItemExtracraftChest(480, "item_BronzePlatedGoldChestplate",MaterialBPGold, proxy.addArmor("BPgold"), 1)).setUnlocalizedName("BPGoldChest");
+		BPGoldPants = (new ItemExtracraftPants(481, "item_BronzePlatedGoldLeggings",MaterialBPGold, proxy.addArmor("BPgold"), 2)).setUnlocalizedName("BPGoldPants");
+		BPGoldBoots = (new ItemExtracraftBoots(482, "item_BronzePlatedGoldBoots",MaterialBPGold, proxy.addArmor("BPgold"), 3)).setUnlocalizedName("BPGoldBoots");
 		
-		BPDiamondPickaxe = (new ItemEPickaxe(483, "item_BronzePlatedDiamondPickaxe",ExtracraftToolMaterial.BPEMERALD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPDiamondPickaxe");
-		BPDiamondShovel = (new ItemEShovel(484, "item_BronzePlatedDiamondShovel",ExtracraftToolMaterial.BPEMERALD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPDiamondShovel");
-		BPDiamondAxe = (new ItemEAxe(485, "item_BronzePlatedDiamondAxe",ExtracraftToolMaterial.BPEMERALD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPDiamondAxe");
-		BPDiamondHoe = (new ItemEHoe(486, "item_BronzePlatedDiamondHoe",ExtracraftToolMaterial.BPEMERALD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPDiamondHoe");
-		BPDiamondSword = (new ItemESword(487, "item_BronzePlatedDiamondSword",ExtracraftToolMaterial.BPEMERALD)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPDiamondSword");
+		BPDiamondPickaxe = (new ItemEPickaxe(483, "item_BronzePlatedDiamondPickaxe",ExtracraftToolMaterial.BPEMERALD)).setUnlocalizedName("BPDiamondPickaxe");
+		BPDiamondShovel = (new ItemEShovel(484, "item_BronzePlatedDiamondShovel",ExtracraftToolMaterial.BPEMERALD)).setUnlocalizedName("BPDiamondShovel");
+		BPDiamondAxe = (new ItemEAxe(485, "item_BronzePlatedDiamondAxe",ExtracraftToolMaterial.BPEMERALD)).setUnlocalizedName("BPDiamondAxe");
+		BPDiamondHoe = (new ItemEHoe(486, "item_BronzePlatedDiamondHoe",ExtracraftToolMaterial.BPEMERALD)).setUnlocalizedName("BPDiamondHoe");
+		BPDiamondSword = (new ItemESword(487, "item_BronzePlatedDiamondSword",ExtracraftToolMaterial.BPEMERALD)).setUnlocalizedName("BPDiamondSword");
 		
-		BPDiamondHelmet = (new ItemExtracraftHelmet(488,"item_BronzePlatedDiamondHelmet", MaterialBPDiamond, proxy.addArmor("BPdiamond"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPDiamondHelmet");
-		BPDiamondChest = (new ItemExtracraftChest(489, "item_BronzePlatedDiamondChestplate",MaterialBPDiamond, proxy.addArmor("BPdiamond"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPDiamondChest");
-		BPDiamondPants = (new ItemExtracraftPants(490, "item_BronzePlatedDiamondLeggings",MaterialBPDiamond, proxy.addArmor("BPdiamond"), 2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPDiamondPants");
-		BPDiamondBoots = (new ItemExtracraftBoots(491, "item_BronzePlatedDiamondBoots",MaterialBPDiamond, proxy.addArmor("BPdiamond"), 3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPDiamondBoots");
+		BPDiamondHelmet = (new ItemExtracraftHelmet(488,"item_BronzePlatedDiamondHelmet", MaterialBPDiamond, proxy.addArmor("BPdiamond"), 0)).setUnlocalizedName("BPDiamondHelmet");
+		BPDiamondChest = (new ItemExtracraftChest(489, "item_BronzePlatedDiamondChestplate",MaterialBPDiamond, proxy.addArmor("BPdiamond"), 1)).setUnlocalizedName("BPDiamondChest");
+		BPDiamondPants = (new ItemExtracraftPants(490, "item_BronzePlatedDiamondLeggings",MaterialBPDiamond, proxy.addArmor("BPdiamond"), 2)).setUnlocalizedName("BPDiamondPants");
+		BPDiamondBoots = (new ItemExtracraftBoots(491, "item_BronzePlatedDiamondBoots",MaterialBPDiamond, proxy.addArmor("BPdiamond"), 3)).setUnlocalizedName("BPDiamondBoots");
 		
 		SmoothRadiantQuartz = (new EOBlock(800, "block_SmoothRadiantQuartz", Material.rock)).setHardness(6F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setCreativeTab(ExtraOres.tabOresBlocks).setLightValue(0.5F).setUnlocalizedName("SmoothRadiantQuartz");
 		ChiseledRadiantQuartz = (new EOBlock(801, "block_ChiseledRadiantQuartz", Material.rock)).setHardness(6F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setCreativeTab(ExtraOres.tabOresBlocks).setLightValue(0.5F).setUnlocalizedName("ChiseledRadiantQuartz");
