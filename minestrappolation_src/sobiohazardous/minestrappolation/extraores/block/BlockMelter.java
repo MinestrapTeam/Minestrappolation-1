@@ -2,6 +2,8 @@ package sobiohazardous.minestrappolation.extraores.block;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
+import java.util.List;
 import java.util.Random;
 
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
@@ -20,6 +22,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityFurnace;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
@@ -309,5 +312,9 @@ public class BlockMelter extends BlockContainer
         }
 
         super.breakBlock(par1World, par2, par3, par4, par5, par6);
+    }
+    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) 
+    {
+    	par3List.add(EnumChatFormatting.RED + "WIP");
     }
 }
