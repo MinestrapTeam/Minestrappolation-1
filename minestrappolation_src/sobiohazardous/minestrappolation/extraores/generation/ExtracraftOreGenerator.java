@@ -56,7 +56,7 @@ public class ExtracraftOreGenerator implements IWorldGenerator
 			int j1 = rand.nextInt(28); //layer it spawns in
 			int k1 = chunkz + rand.nextInt(16);
 		
-		(new WorldGenMinable(ExtraOres.ZirconiumOre.blockID, 5)).generate(world, rand, i1, j1, k1); //5 = how much in a vain
+		(new WorldGenMinable(ExtraOres.meuroditeOre.blockID, 5)).generate(world, rand, i1, j1, k1); //5 = how much in a vain
 		}
 		//Uranium Ore
 		for(int o = 0; o<8; o++)

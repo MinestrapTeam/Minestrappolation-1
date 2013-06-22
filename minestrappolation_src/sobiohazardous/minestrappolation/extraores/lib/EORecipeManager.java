@@ -20,51 +20,51 @@ public class EORecipeManager
 	public static void loadRecipes()
 	{
 		
-		GameRegistry.addSmelting(ExtraOres.ZirconiumOre.blockID, new ItemStack(ExtraOres.ZirconiumIngot, 1), 1.0F);
+		GameRegistry.addSmelting(ExtraOres.meuroditeOre.blockID, new ItemStack(ExtraOres.meuroditeIngot, 1), 1.0F);
 		
-		GameRegistry.addRecipe(new ItemStack(ExtraOres.ZirconiumSword, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraOres.meuroditeSword, 1), new Object[]
 				{
-			" Z ", " Z ", " S ", Character.valueOf('Z'), ExtraOres.ZirconiumIngot, Character.valueOf('S'), Item.stick
+			" Z ", " Z ", " S ", Character.valueOf('Z'), ExtraOres.meuroditeIngot, Character.valueOf('S'), Item.stick
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraOres.ZirconiumShovel, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraOres.meuroditeShovel, 1), new Object[]
 				{
-			" Z ", " S ", " S ", Character.valueOf('Z'), ExtraOres.ZirconiumIngot, Character.valueOf('S'), Item.stick
+			" Z ", " S ", " S ", Character.valueOf('Z'), ExtraOres.meuroditeIngot, Character.valueOf('S'), Item.stick
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraOres.ZirconiumAxe, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraOres.meuroditeAxe, 1), new Object[]
 				{
-			"ZZ ", "ZS ", " S ", Character.valueOf('Z'), ExtraOres.ZirconiumIngot, Character.valueOf('S'), Item.stick
+			"ZZ ", "ZS ", " S ", Character.valueOf('Z'), ExtraOres.meuroditeIngot, Character.valueOf('S'), Item.stick
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraOres.ZirconiumPickaxe, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraOres.meuroditePickaxe, 1), new Object[]
 				{
-			"ZZZ", " S ", " S ", Character.valueOf('Z'), ExtraOres.ZirconiumIngot, Character.valueOf('S'), Item.stick
+			"ZZZ", " S ", " S ", Character.valueOf('Z'), ExtraOres.meuroditeIngot, Character.valueOf('S'), Item.stick
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraOres.ZirconiumHoe, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraOres.meuroditeHoe, 1), new Object[]
 				{
-			"ZZ ", " S ", " S ", Character.valueOf('Z'), ExtraOres.ZirconiumIngot, Character.valueOf('S'), Item.stick
+			"ZZ ", " S ", " S ", Character.valueOf('Z'), ExtraOres.meuroditeIngot, Character.valueOf('S'), Item.stick
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraOres.ZirconiumHelmet, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraOres.meuroditeHelmet, 1), new Object[]
 				{
-			"ZZZ", "Z Z", Character.valueOf('Z'), ExtraOres.ZirconiumIngot,
+			"ZZZ", "Z Z", Character.valueOf('Z'), ExtraOres.meuroditeIngot,
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraOres.ZirconiumChest, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraOres.meuroditeChest, 1), new Object[]
 				{
-			"Z Z", "ZZZ", "ZZZ", Character.valueOf('Z'), ExtraOres.ZirconiumIngot,
+			"Z Z", "ZZZ", "ZZZ", Character.valueOf('Z'), ExtraOres.meuroditeIngot,
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraOres.ZirconiumPants, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraOres.meuroditePants, 1), new Object[]
 				{
-			"ZZZ", "Z Z", "Z Z", Character.valueOf('Z'), ExtraOres.ZirconiumIngot,
+			"ZZZ", "Z Z", "Z Z", Character.valueOf('Z'), ExtraOres.meuroditeIngot,
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraOres.ZirconiumBoots, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraOres.meuroditeBoots, 1), new Object[]
 				{
-			"Z Z", "Z Z", Character.valueOf('Z'), ExtraOres.ZirconiumIngot,
+			"Z Z", "Z Z", Character.valueOf('Z'), ExtraOres.meuroditeIngot,
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraOres.ZirconiumBlock, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraOres.meuroditeBlock, 1), new Object[]
 				{
-			"ZZZ", "ZZZ", "ZZZ", Character.valueOf('Z'), ExtraOres.ZirconiumIngot,
+			"ZZZ", "ZZZ", "ZZZ", Character.valueOf('Z'), ExtraOres.meuroditeIngot,
 				});
-		GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.ZirconiumIngot, 9), new Object[]
+		GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.meuroditeIngot, 9), new Object[]
 				{
-			ExtraOres.ZirconiumBlock,
+			ExtraOres.meuroditeBlock,
 				});
 		
 		
@@ -612,41 +612,41 @@ public class EORecipeManager
 	
 		
 		
-		GameRegistry.addRecipe(new ItemStack(ExtraOres.BPZirconiumPickaxe, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraOres.BPMeuroditePickaxe, 1), new Object[]
 				{
-			"PPP", "PIP", "PPP", Character.valueOf('P'), ExtraOres.BronzePlateItem, Character.valueOf('I'), ExtraOres.ZirconiumPickaxe
+			"PPP", "PIP", "PPP", Character.valueOf('P'), ExtraOres.BronzePlateItem, Character.valueOf('I'), ExtraOres.meuroditePickaxe
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraOres.BPZirconiumAxe, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraOres.BPMeuroditeAxe, 1), new Object[]
 				{
-			"PPP", "PIP", "PPP", Character.valueOf('P'), ExtraOres.BronzePlateItem, Character.valueOf('I'), ExtraOres.ZirconiumAxe
+			"PPP", "PIP", "PPP", Character.valueOf('P'), ExtraOres.BronzePlateItem, Character.valueOf('I'), ExtraOres.meuroditeAxe
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraOres.BPZirconiumShovel, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraOres.BPMeuroditeShovel, 1), new Object[]
 				{
-			"PPP", "PIP", "PPP", Character.valueOf('P'), ExtraOres.BronzePlateItem, Character.valueOf('I'), ExtraOres.ZirconiumShovel
+			"PPP", "PIP", "PPP", Character.valueOf('P'), ExtraOres.BronzePlateItem, Character.valueOf('I'), ExtraOres.meuroditeShovel
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraOres.BPZirconiumHoe, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraOres.BPMeuroditeHoe, 1), new Object[]
 				{
-			"PPP", "PIP", "PPP", Character.valueOf('P'), ExtraOres.BronzePlateItem, Character.valueOf('I'), ExtraOres.ZirconiumHoe
+			"PPP", "PIP", "PPP", Character.valueOf('P'), ExtraOres.BronzePlateItem, Character.valueOf('I'), ExtraOres.meuroditeHoe
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraOres.BPZirconiumSword, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraOres.BPMeuroditeSword, 1), new Object[]
 				{
-			"PPP", "PIP", "PPP", Character.valueOf('P'), ExtraOres.BronzePlateItem, Character.valueOf('I'), ExtraOres.ZirconiumSword
+			"PPP", "PIP", "PPP", Character.valueOf('P'), ExtraOres.BronzePlateItem, Character.valueOf('I'), ExtraOres.meuroditeSword
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraOres.BPZirconiumHelmet, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraOres.BPMeuroditeHelmet, 1), new Object[]
 				{
-			"PPP", "PIP", "PPP", Character.valueOf('P'), ExtraOres.BronzePlateItem, Character.valueOf('I'), ExtraOres.ZirconiumHelmet
+			"PPP", "PIP", "PPP", Character.valueOf('P'), ExtraOres.BronzePlateItem, Character.valueOf('I'), ExtraOres.meuroditeHelmet
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraOres.BPZirconiumChest, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraOres.BPMeuroditeChest, 1), new Object[]
 				{
-			"PPP", "PIP", "PPP", Character.valueOf('P'), ExtraOres.BronzePlateItem, Character.valueOf('I'), ExtraOres.ZirconiumChest
+			"PPP", "PIP", "PPP", Character.valueOf('P'), ExtraOres.BronzePlateItem, Character.valueOf('I'), ExtraOres.meuroditeChest
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraOres.BPZirconiumPants, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraOres.BPMeuroditePants, 1), new Object[]
 				{
-			"PPP", "PIP", "PPP", Character.valueOf('P'), ExtraOres.BronzePlateItem, Character.valueOf('I'), ExtraOres.ZirconiumPants
+			"PPP", "PIP", "PPP", Character.valueOf('P'), ExtraOres.BronzePlateItem, Character.valueOf('I'), ExtraOres.meuroditePants
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraOres.BPZirconiumBoots, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraOres.BPMeuroditeBoots, 1), new Object[]
 				{
-			"PPP", "PIP", "PPP", Character.valueOf('P'), ExtraOres.BronzePlateItem, Character.valueOf('I'), ExtraOres.ZirconiumBoots
+			"PPP", "PIP", "PPP", Character.valueOf('P'), ExtraOres.BronzePlateItem, Character.valueOf('I'), ExtraOres.meuroditeBoots
 				});
 		
 		
@@ -1145,6 +1145,86 @@ public class EORecipeManager
         GameRegistry.addRecipe(new ItemStack(ExtraOres.PinkQuartzSingleSlab, 6), new Object[]
         		{
         	"SSS", Character.valueOf('S'), ExtraOres.SmoothQuartzite
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.graniteBrickStairs, 4), new Object[]
+        		{
+        	"  S", " SS", "SSS", Character.valueOf('S'), ExtraOres.GraniteBrick
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.graniteBrickSingleSlab, 6), new Object[]
+        		{
+        	"SSS", Character.valueOf('S'), ExtraOres.GraniteBrick
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.tinPlatedCobbleStairs, 4), new Object[]
+        		{
+        	"  S", " SS", "SSS", Character.valueOf('S'), ExtraOres.TinPlatedCobble
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.tinPlatedCobbleSingleSlab, 6), new Object[]
+        		{
+        	"SSS", Character.valueOf('S'), ExtraOres.TinPlatedCobble
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.steelPlatedCobbleStairs, 4), new Object[]
+        		{
+        	"  S", " SS", "SSS", Character.valueOf('S'), ExtraOres.SteelPlatedCobble
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.steelPlatedCobbleSingleSlab, 6), new Object[]
+        		{
+        	"SSS", Character.valueOf('S'), ExtraOres.SteelPlatedCobble
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.bronzePlatedCobbleStairs, 4), new Object[]
+        		{
+        	"  S", " SS", "SSS", Character.valueOf('S'), ExtraOres.BronzePlatedCobble
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.bronzePlatedCobbleSingleSlab, 6), new Object[]
+        		{
+        	"SSS", Character.valueOf('S'), ExtraOres.BronzePlatedCobble
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.tinPlatedStoneBrickStairs, 4), new Object[]
+        		{
+        	"  S", " SS", "SSS", Character.valueOf('S'), ExtraOres.TinPlatedStoneBrick
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.tinPlatedStoneBrickSingleSlab, 6), new Object[]
+        		{
+        	"SSS", Character.valueOf('S'), ExtraOres.TinPlatedStoneBrick
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.steelPlatedStoneBrickStairs, 4), new Object[]
+        		{
+        	"  S", " SS", "SSS", Character.valueOf('S'), ExtraOres.SteelPlatedStoneBrick
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.steelPlatedStoneBrickSingleSlab, 6), new Object[]
+        		{
+        	"SSS", Character.valueOf('S'), ExtraOres.SteelPlatedStoneBrick
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.bronzePlatedStoneBrickStairs, 4), new Object[]
+        		{
+        	"  S", " SS", "SSS", Character.valueOf('S'), ExtraOres.BronzePlatedStoneBrick
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.bronzePlatedStoneBrickSingleSlab, 6), new Object[]
+        		{
+        	"SSS", Character.valueOf('S'), ExtraOres.BronzePlatedStoneBrick
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.tinPlatedGraniteBrickStairs, 4), new Object[]
+        		{
+        	"  S", " SS", "SSS", Character.valueOf('S'), ExtraOres.TinPlatedGranite
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.tinPlatedGraniteBrickSingleSlab, 6), new Object[]
+        		{
+        	"SSS", Character.valueOf('S'), ExtraOres.TinPlatedGranite
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.steelPlatedGraniteBrickStairs, 4), new Object[]
+        		{
+        	"  S", " SS", "SSS", Character.valueOf('S'), ExtraOres.SteelPlatedGranite
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.steelPlatedGraniteBrickSingleSlab, 6), new Object[]
+        		{
+        	"SSS", Character.valueOf('S'), ExtraOres.SteelPlatedGranite
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.bronzePlatedGraniteBrickStairs, 4), new Object[]
+        		{
+        	"  S", " SS", "SSS", Character.valueOf('S'), ExtraOres.BronzePlatedGranite
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.bronzePlatedGraniteBrickSingleSlab, 6), new Object[]
+        		{
+        	"SSS", Character.valueOf('S'), ExtraOres.BronzePlatedGranite
         		});
 	}
 	

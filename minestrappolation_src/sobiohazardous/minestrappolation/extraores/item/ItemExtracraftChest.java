@@ -18,11 +18,11 @@ public class ItemExtracraftChest extends ItemArmor implements IArmorTextureProvi
 	
 	public String getArmorTextureFile(ItemStack par1)
 	{
-		if(par1.itemID==ExtraOres.ZirconiumHelmet.itemID||par1.itemID==ExtraOres.ZirconiumChest.itemID||par1.itemID==ExtraOres.ZirconiumBoots.itemID)
+		if(par1.itemID==ExtraOres.meuroditeHelmet.itemID||par1.itemID==ExtraOres.meuroditeChest.itemID||par1.itemID==ExtraOres.meuroditeBoots.itemID)
 		{
 			return "/armor/zirconium_1.png";
 		}
-		if(par1.itemID==ExtraOres.ZirconiumPants.itemID)
+		if(par1.itemID==ExtraOres.meuroditePants.itemID)
 		{
 			return "/armor/zirconium_2.png";
 		}
@@ -75,11 +75,11 @@ public class ItemExtracraftChest extends ItemArmor implements IArmorTextureProvi
 			return "/armor/steel_2.png";
 		}
 		
-		if(par1.itemID==ExtraOres.BPZirconiumHelmet.itemID||par1.itemID==ExtraOres.BPZirconiumChest.itemID||par1.itemID==ExtraOres.BPZirconiumBoots.itemID)
+		if(par1.itemID==ExtraOres.BPMeuroditeHelmet.itemID||par1.itemID==ExtraOres.BPMeuroditeChest.itemID||par1.itemID==ExtraOres.BPMeuroditeBoots.itemID)
 		{
 			return "/armor/zirconium_plated_1.png";
 		}
-		if(par1.itemID==ExtraOres.BPZirconiumPants.itemID)
+		if(par1.itemID==ExtraOres.BPMeuroditePants.itemID)
 		{
 			return "/armor/zirconium_plated_2.png";
 		}

@@ -9,8 +9,8 @@ public class EOBlockRegister
 	public static void registerBlocks()
 	{
     	//Extra Ores
-    	ModLoader.registerBlock(ExtraOres.ZirconiumOre);
-		ModLoader.registerBlock(ExtraOres.ZirconiumBlock);
+    	ModLoader.registerBlock(ExtraOres.meuroditeOre);
+		ModLoader.registerBlock(ExtraOres.meuroditeBlock);
 		ModLoader.registerBlock(ExtraOres.UraniumOre);
 		ModLoader.registerBlock(ExtraOres.PlutoniumOre);
 		ModLoader.registerBlock(ExtraOres.TitaniumBlock);
@@ -73,6 +73,36 @@ public class EOBlockRegister
 		ModLoader.registerBlock(ExtraOres.PinkQuartzStairs);
 		ModLoader.registerBlock(ExtraOres.PinkQuartzSingleSlab);
 		ModLoader.registerBlock(ExtraOres.PinkQuartzDoubleSlab);
+		ModLoader.registerBlock(ExtraOres.graniteBrickStairs);
+		ModLoader.registerBlock(ExtraOres.graniteBrickSingleSlab);
+		ModLoader.registerBlock(ExtraOres.graniteBrickDoubleSlab);
+		ModLoader.registerBlock(ExtraOres.tinPlatedCobbleStairs);
+		ModLoader.registerBlock(ExtraOres.tinPlatedCobbleSingleSlab);
+		ModLoader.registerBlock(ExtraOres.tinPlatedCobbleDoubleSlab);
+		ModLoader.registerBlock(ExtraOres.steelPlatedCobbleStairs);
+		ModLoader.registerBlock(ExtraOres.steelPlatedCobbleSingleSlab);
+		ModLoader.registerBlock(ExtraOres.steelPlatedCobbleDoubleSlab);
+		ModLoader.registerBlock(ExtraOres.bronzePlatedCobbleStairs);
+		ModLoader.registerBlock(ExtraOres.bronzePlatedCobbleSingleSlab);
+		ModLoader.registerBlock(ExtraOres.bronzePlatedCobbleDoubleSlab);
+		ModLoader.registerBlock(ExtraOres.tinPlatedStoneBrickStairs);
+		ModLoader.registerBlock(ExtraOres.tinPlatedStoneBrickSingleSlab);
+		ModLoader.registerBlock(ExtraOres.tinPlatedStoneBrickDoubleSlab);
+		ModLoader.registerBlock(ExtraOres.steelPlatedStoneBrickStairs);
+		ModLoader.registerBlock(ExtraOres.steelPlatedStoneBrickSingleSlab);
+		ModLoader.registerBlock(ExtraOres.steelPlatedStoneBrickDoubleSlab);
+		ModLoader.registerBlock(ExtraOres.bronzePlatedStoneBrickStairs);
+		ModLoader.registerBlock(ExtraOres.bronzePlatedStoneBrickSingleSlab);
+		ModLoader.registerBlock(ExtraOres.bronzePlatedStoneBrickDoubleSlab);
+		ModLoader.registerBlock(ExtraOres.tinPlatedGraniteBrickStairs);
+		ModLoader.registerBlock(ExtraOres.tinPlatedGraniteBrickSingleSlab);
+		ModLoader.registerBlock(ExtraOres.tinPlatedGraniteBrickDoubleSlab);
+		ModLoader.registerBlock(ExtraOres.steelPlatedGraniteBrickStairs);
+		ModLoader.registerBlock(ExtraOres.steelPlatedGraniteBrickSingleSlab);
+		ModLoader.registerBlock(ExtraOres.steelPlatedGraniteBrickDoubleSlab);
+		ModLoader.registerBlock(ExtraOres.bronzePlatedGraniteBrickStairs);
+		ModLoader.registerBlock(ExtraOres.bronzePlatedGraniteBrickSingleSlab);
+		ModLoader.registerBlock(ExtraOres.bronzePlatedGraniteBrickDoubleSlab);
 	}
 	
 }

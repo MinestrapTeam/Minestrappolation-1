@@ -1,8 +1,7 @@
 package sobiohazardous.minestrappolation.extraores.lib;
 
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
-import sobiohazardous.minestrappolation.extraores.block.PinkQuartzSlab;
-import sobiohazardous.minestrappolation.extraores.block.RadiantQuartzSlab;
+import sobiohazardous.minestrappolation.extraores.block.*;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.src.ModLoader;
@@ -21,21 +20,21 @@ public class EONameManager
 	public static void loadNames()
 	{
 		//TODO: Change Modloader to LanguageRegistry
-		ModLoader.addName(ExtraOres.ZirconiumOre, "Zirconium Ore");
+		ModLoader.addName(ExtraOres.meuroditeOre, "Meurodite Ore");
 
-		ModLoader.addName(ExtraOres.ZirconiumBlock, "Zirconium Block");
-		ModLoader.addName(ExtraOres.ZirconiumIngot, "Zirconium Ingot");
+		ModLoader.addName(ExtraOres.meuroditeBlock, "Meurodite Block");
+		ModLoader.addName(ExtraOres.meuroditeIngot, "Meurodite Ingot");
 		
-		ModLoader.addName(ExtraOres.ZirconiumSword, "Zirconium Sword");
-		ModLoader.addName(ExtraOres.ZirconiumPickaxe, "Zirconium Pickaxe");
-		ModLoader.addName(ExtraOres.ZirconiumShovel, "Zirconium Shovel");
-		ModLoader.addName(ExtraOres.ZirconiumHoe, "Zirconium Hoe");
-		ModLoader.addName(ExtraOres.ZirconiumAxe, "Zirconium Axe");
+		ModLoader.addName(ExtraOres.meuroditeSword, "Meurodite Sword");
+		ModLoader.addName(ExtraOres.meuroditePickaxe, "Meurodite Pickaxe");
+		ModLoader.addName(ExtraOres.meuroditeShovel, "Meurodite Shovel");
+		ModLoader.addName(ExtraOres.meuroditeHoe, "Meurodite Hoe");
+		ModLoader.addName(ExtraOres.meuroditeAxe, "Meurodite Axe");
 		
-		ModLoader.addName(ExtraOres.ZirconiumHelmet, "Zirconium Helmet");
-		ModLoader.addName(ExtraOres.ZirconiumChest, "Zirconium Chestplate");
-		ModLoader.addName(ExtraOres.ZirconiumPants, "Zirconium Leggings");
-		ModLoader.addName(ExtraOres.ZirconiumBoots, "Zirconium Boots");
+		ModLoader.addName(ExtraOres.meuroditeHelmet, "Meurodite Helmet");
+		ModLoader.addName(ExtraOres.meuroditeChest, "Meurodite Chestplate");
+		ModLoader.addName(ExtraOres.meuroditePants, "Meurodite Leggings");
+		ModLoader.addName(ExtraOres.meuroditeBoots, "Meurodite Boots");
 		
 
 		ModLoader.addName(ExtraOres.UraniumOre, "Uranium Ore");
@@ -91,9 +90,9 @@ public class EONameManager
 		ModLoader.addName(ExtraOres.GraniteBrick, "Granite Brick");
 		
 
-		ModLoader.addName(ExtraOres.Quartzite, "Pink Quartz Block");
+		ModLoader.addName(ExtraOres.Quartzite, "Desert Quartz Block");
 
-		ModLoader.addName(ExtraOres.QuartziteTile, "Rough Pink Quartz Tile");
+		ModLoader.addName(ExtraOres.QuartziteTile, "Rough Desert Quartz Tile");
 		
 
 		ModLoader.addName(ExtraOres.BlaziumOre, "Blazium Ore");
@@ -161,11 +160,11 @@ public class EONameManager
 		ModLoader.addName(ExtraOres.SoulOre, "Soul Ore");
 		ModLoader.addName(ExtraOres.SoulGem, "Soul Gem");
 		
-		ModLoader.addName(ExtraOres.SmoothQuartzite, "Smooth Pink Quartz Block");
-		ModLoader.addName(ExtraOres.PillarQuartzite, "Pink Quartz Pillar");
-		ModLoader.addName(ExtraOres.ChiseledQuartzite, "Chiseled Pink Quartz Block");
-		ModLoader.addName(ExtraOres.SmoothQuartzTile, "Refined Pink Quartz Tile");
-		ModLoader.addName(ExtraOres.PinkQuartz, "Pink Quartz");
+		ModLoader.addName(ExtraOres.SmoothQuartzite, "Smooth Desert Quartz Block");
+		ModLoader.addName(ExtraOres.PillarQuartzite, "Desert Quartz Pillar");
+		ModLoader.addName(ExtraOres.ChiseledQuartzite, "Chiseled Desert Quartz Block");
+		ModLoader.addName(ExtraOres.SmoothQuartzTile, "Refined Desert Quartz Tile");
+		ModLoader.addName(ExtraOres.PinkQuartz, "Desert Quartz");
 		
 		ModLoader.addName(ExtraOres.SandstonePickaxe, "Sandstone Pickaxe");
 		ModLoader.addName(ExtraOres.SandstoneShovel, "Sandstone Shovel");
@@ -227,16 +226,16 @@ public class EONameManager
 		ModLoader.addName(ExtraOres.melterIdle, "Melter");
 			
 		
-		ModLoader.addName(ExtraOres.BPZirconiumSword, "Bronze-Plated Zirconium Sword");
-		ModLoader.addName(ExtraOres.BPZirconiumPickaxe, "Bronze-Plated Zirconium Pickaxe");
-		ModLoader.addName(ExtraOres.BPZirconiumShovel, "Bronze-Plated Zirconium Shovel");
-		ModLoader.addName(ExtraOres.BPZirconiumHoe, "Bronze-Plated Zirconium Hoe");
-		ModLoader.addName(ExtraOres.BPZirconiumAxe, "Bronze-Plated Zirconium Axe");
+		ModLoader.addName(ExtraOres.BPMeuroditeSword, "Bronze-Plated Meurodite Sword");
+		ModLoader.addName(ExtraOres.BPMeuroditePickaxe, "Bronze-Plated Meurodite Pickaxe");
+		ModLoader.addName(ExtraOres.BPMeuroditeShovel, "Bronze-Plated Meurodite Shovel");
+		ModLoader.addName(ExtraOres.BPMeuroditeHoe, "Bronze-Plated Meurodite Hoe");
+		ModLoader.addName(ExtraOres.BPMeuroditeAxe, "Bronze-Plated Meurodite Axe");
 		
-		ModLoader.addName(ExtraOres.BPZirconiumHelmet, "Bronze-Plated Zirconium Helmet");
-		ModLoader.addName(ExtraOres.BPZirconiumChest, "Bronze-Plated Zirconium Chestplate");
-		ModLoader.addName(ExtraOres.BPZirconiumPants, "Bronze-Plated Zirconium Leggings");
-		ModLoader.addName(ExtraOres.BPZirconiumBoots, "Bronze-Plated Zirconium Boots");
+		ModLoader.addName(ExtraOres.BPMeuroditeHelmet, "Bronze-Plated Meurodite Helmet");
+		ModLoader.addName(ExtraOres.BPMeuroditeChest, "Bronze-Plated Meurodite Chestplate");
+		ModLoader.addName(ExtraOres.BPMeuroditePants, "Bronze-Plated Meurodite Leggings");
+		ModLoader.addName(ExtraOres.BPMeuroditeBoots, "Bronze-Plated Meurodite Boots");
 		
 		ModLoader.addName(ExtraOres.BPTitaniumAxe, "Bronze-Plated Titanium Axe");
 		ModLoader.addName(ExtraOres.BPTitaniumHoe, "Bronze-Plated Titanium Hoe");
@@ -377,13 +376,64 @@ public class EONameManager
 		
 		ModLoader.addName(ExtraOres.RadiantQuartzStairs, "Radiant Quartz Stairs");
 		
-		ModLoader.addName(ExtraOres.PinkQuartzStairs, "Pink Quartz Stairs");
+		ModLoader.addName(ExtraOres.PinkQuartzStairs, "Desert Quartz Stairs");
 		
 		LanguageRegistry.addName(ExtraOres.RadiantQuartzDoubleSlab,"Radiant Quartz DoubleSlab");
 		LanguageRegistry.instance().addStringLocalization(((RadiantQuartzSlab)ExtraOres.RadiantQuartzSingleSlab).getFullSlabName(0)+".name", "Radiant Quartz Slab");
 	
-		LanguageRegistry.addName(ExtraOres.PinkQuartzDoubleSlab,"Pink Quartz DoubleSlab");
-		LanguageRegistry.instance().addStringLocalization(((PinkQuartzSlab)ExtraOres.PinkQuartzSingleSlab).getFullSlabName(0)+".name", "Pink Quartz Slab");
+		LanguageRegistry.addName(ExtraOres.PinkQuartzDoubleSlab,"Desert Quartz DoubleSlab");
+		LanguageRegistry.instance().addStringLocalization(((PinkQuartzSlab)ExtraOres.PinkQuartzSingleSlab).getFullSlabName(0)+".name", "Desert Quartz Slab");
+	
+		ModLoader.addName(ExtraOres.graniteBrickStairs, "Granite Brick Stairs");
+		
+		LanguageRegistry.addName(ExtraOres.graniteBrickDoubleSlab,"Granite Brick DoubleSlab");
+		LanguageRegistry.instance().addStringLocalization(((GraniteBrickSlab)ExtraOres.graniteBrickSingleSlab).getFullSlabName(0)+".name", "Granite Brick Slab");
+		
+		ModLoader.addName(ExtraOres.tinPlatedCobbleStairs, "Tin Plated Cobble Stairs");
+		
+		LanguageRegistry.addName(ExtraOres.tinPlatedCobbleDoubleSlab,"Tin Plated Cobble DoubleSlab");
+		LanguageRegistry.instance().addStringLocalization(((TinPlatedCobbleSlab)ExtraOres.tinPlatedCobbleSingleSlab).getFullSlabName(0)+".name", "Tin Plated Cobble Slab");
+		
+		ModLoader.addName(ExtraOres.steelPlatedCobbleStairs, "Steel Plated Cobble Stairs");
+		
+		LanguageRegistry.addName(ExtraOres.steelPlatedCobbleDoubleSlab,"Steel Plated Cobble DoubleSlab");
+		LanguageRegistry.instance().addStringLocalization(((SteelPlatedCobbleSlab)ExtraOres.steelPlatedCobbleSingleSlab).getFullSlabName(0)+".name", "Steel Plated Cobble Slab");
+		
+		ModLoader.addName(ExtraOres.bronzePlatedCobbleStairs, "Bronze Plated Cobble Stairs");
+		
+		LanguageRegistry.addName(ExtraOres.bronzePlatedCobbleDoubleSlab,"Bronze Plated Cobble DoubleSlab");
+		LanguageRegistry.instance().addStringLocalization(((BronzePlatedCobbleSlab)ExtraOres.bronzePlatedCobbleSingleSlab).getFullSlabName(0)+".name", "Bronze Plated Cobble Slab");	
+	
+		ModLoader.addName(ExtraOres.tinPlatedStoneBrickStairs, "Tin Plated Stone Brick Stairs");
+		
+		LanguageRegistry.addName(ExtraOres.tinPlatedStoneBrickDoubleSlab,"Tin Plated Stone Brick DoubleSlab");
+		LanguageRegistry.instance().addStringLocalization(((TinPlatedStoneBrickSlab)ExtraOres.tinPlatedStoneBrickSingleSlab).getFullSlabName(0)+".name", "Tin Plated Stone Brick Slab");	
+		
+		ModLoader.addName(ExtraOres.steelPlatedStoneBrickStairs, "Steel Plated Stone Brick Stairs");
+		
+		LanguageRegistry.addName(ExtraOres.steelPlatedStoneBrickDoubleSlab,"Steel Plated Stone Brick DoubleSlab");
+		LanguageRegistry.instance().addStringLocalization(((SteelPlatedStoneBrickSlab)ExtraOres.steelPlatedStoneBrickSingleSlab).getFullSlabName(0)+".name", "Steel Plated Stone Brick Slab");	
+		
+		ModLoader.addName(ExtraOres.bronzePlatedStoneBrickStairs, "Bronze Plated Stone Brick Stairs");
+		
+		LanguageRegistry.addName(ExtraOres.bronzePlatedStoneBrickDoubleSlab,"Bronze Plated Stone Brick DoubleSlab");
+		LanguageRegistry.instance().addStringLocalization(((BronzePlatedStoneBrickSlab)ExtraOres.bronzePlatedStoneBrickSingleSlab).getFullSlabName(0)+".name", "Bronze Plated Stone Brick Slab");	
+		
+		ModLoader.addName(ExtraOres.tinPlatedGraniteBrickStairs, "Tin Plated Granite Brick Stairs");
+		
+		LanguageRegistry.addName(ExtraOres.tinPlatedGraniteBrickDoubleSlab,"Tin Plated Granite Brick DoubleSlab");
+		LanguageRegistry.instance().addStringLocalization(((TinPlatedGraniteBrickSlab)ExtraOres.tinPlatedGraniteBrickSingleSlab).getFullSlabName(0)+".name", "Tin Plated Granite Brick Slab");	
+		
+		ModLoader.addName(ExtraOres.steelPlatedGraniteBrickStairs, "Steel Plated Granite Brick Stairs");
+		
+		LanguageRegistry.addName(ExtraOres.steelPlatedGraniteBrickDoubleSlab,"Steel Plated Granite Brick DoubleSlab");
+		LanguageRegistry.instance().addStringLocalization(((SteelPlatedGraniteBrickSlab)ExtraOres.steelPlatedGraniteBrickSingleSlab).getFullSlabName(0)+".name", "Steel Plated Granite Brick Slab");	
+		
+		ModLoader.addName(ExtraOres.bronzePlatedGraniteBrickStairs, "Bronze Plated Granite Brick Stairs");
+		
+		LanguageRegistry.addName(ExtraOres.bronzePlatedGraniteBrickDoubleSlab,"Bronze Plated Granite Brick DoubleSlab");
+		LanguageRegistry.instance().addStringLocalization(((BronzePlatedGraniteBrickSlab)ExtraOres.bronzePlatedGraniteBrickSingleSlab).getFullSlabName(0)+".name", "Bronze Plated Granite Brick Slab");	
+		
 	}
 	
 }

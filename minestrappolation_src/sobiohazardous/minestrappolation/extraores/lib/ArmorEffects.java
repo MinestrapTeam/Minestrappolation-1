@@ -22,7 +22,7 @@ public class ArmorEffects
 			  ItemStack pants = player.getCurrentItemOrArmor(2);
 			  ItemStack boots = player.getCurrentItemOrArmor(1);
 			  
-			  if (helmet.getItem() == ExtraOres.ZirconiumHelmet && chest.getItem() == ExtraOres.ZirconiumChest && pants.getItem() == ExtraOres.ZirconiumPants && boots.getItem() == ExtraOres.ZirconiumBoots) 
+			  if (helmet.getItem() == ExtraOres.meuroditeHelmet && chest.getItem() == ExtraOres.meuroditeChest && pants.getItem() == ExtraOres.meuroditePants && boots.getItem() == ExtraOres.meuroditeBoots) 
 			  {	
 				  player.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 40, 1));
 			  }

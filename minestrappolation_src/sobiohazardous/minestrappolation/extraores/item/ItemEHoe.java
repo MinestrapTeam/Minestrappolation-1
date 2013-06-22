@@ -26,7 +26,6 @@ public class ItemEHoe extends Item
         this.theToolMaterial = par2EnumToolMaterial;
         this.maxStackSize = 1;
         this.setMaxDamage(par2EnumToolMaterial.getMaxUses());
-        this.setCreativeTab(CreativeTabs.tabTools);
         this.texture = "extraores:" + texture;
     }
 	

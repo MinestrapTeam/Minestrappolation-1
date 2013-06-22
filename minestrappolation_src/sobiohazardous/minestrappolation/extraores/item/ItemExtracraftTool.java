@@ -32,7 +32,6 @@ public class ItemExtracraftTool extends Item
         this.setMaxDamage(par3ExtracraftToolMaterial.getMaxUses());
         this.efficiencyOnProperMaterial = par3ExtracraftToolMaterial.getEfficiencyOnProperMaterial();
         this.damageVsEntity = par2 + par3ExtracraftToolMaterial.getDamageVsEntity();
-        this.setCreativeTab(ExtraOres.tabOresItems);
     }
 
     /**

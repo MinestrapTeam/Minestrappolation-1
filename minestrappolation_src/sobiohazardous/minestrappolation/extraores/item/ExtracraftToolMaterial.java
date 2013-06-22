@@ -6,7 +6,7 @@ import net.minecraft.item.Item;
 
 public enum ExtracraftToolMaterial
 {
-    ZIRCONIUM(2, 805, 7.0F, 2, 15),
+    MEURODITE(2, 805, 7.0F, 2, 15),
     TITANIUM(4, 2999, 10.0F, 5, 11),
     TORITE(2, 699, 6.0F, 3, 20),
     BLAZIUM(2, 799, 8.0F, 3, 18),
@@ -16,7 +16,7 @@ public enum ExtracraftToolMaterial
     STEEL(2, 300, 7.5F, 3, 15),
     BEDROCK(4, 6247, 7F, 2, 5),
     GRANITE(1, 199, 4.3F, 2, 4),
-    BPZIRCONIUM(2, 1610, 7.0F, 2, 15),
+    BPMEURODITE(2, 1610, 7.0F, 2, 15),
     BPTITANIUM(4, 5998, 10.0F, 5, 11),
     BPTORITE(2, 1398, 6.0F, 3, 20),
     BPBLAZIUM(2, 1598, 8.0F, 3, 18),
@@ -109,7 +109,7 @@ public enum ExtracraftToolMaterial
     {
         switch (this)
         {
-            case ZIRCONIUM:    return ExtraOres.ZirconiumIngot.itemID;
+            case MEURODITE:    return ExtraOres.meuroditeIngot.itemID;
             case TITANIUM:     return ExtraOres.TitaniumIngot.itemID;
             case TORITE:       return ExtraOres.ToriteIngot.itemID;
             case BLAZIUM:      return ExtraOres.BlaziumIngot.itemID;
@@ -119,7 +119,7 @@ public enum ExtracraftToolMaterial
             case STEEL:        return ExtraOres.SteelIngot.itemID;
             case BEDROCK:      return ExtraOres.ExtraOresBedrock.blockID;
             case GRANITE:      return ExtraOres.Granite.blockID;
-            case BPZIRCONIUM:  return ExtraOres.ZirconiumIngot.itemID;
+            case BPMEURODITE:  return ExtraOres.meuroditeIngot.itemID;
             case BPTITANIUM:   return ExtraOres.TitaniumIngot.itemID;
             case BPTORITE:     return ExtraOres.ToriteIngot.itemID;
             case BPBLAZIUM:    return ExtraOres.BlaziumIngot.itemID;

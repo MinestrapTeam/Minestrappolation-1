@@ -31,7 +31,6 @@ public class ItemESword extends Item
         maxStackSize = 1;
         setMaxDamage(par2EnumToolMaterial.getMaxUses());
         weaponDamage = 4 + par2EnumToolMaterial.getDamageVsEntity();
-        this.setCreativeTab(ExtraOres.tabOresItems);
         this.texture = "extraores:" + texture;
     }
 
