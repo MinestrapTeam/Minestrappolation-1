@@ -98,7 +98,7 @@ public class EOBlock extends Block
     //Makes Extra Ores Bedrock and Invincium impervious to the Ender Dragon.
     public boolean canDragonDestroy(World world, int x, int y, int z)
     {
-        return blockID != obsidian.blockID && blockID != whiteStone.blockID && blockID != bedrock.blockID && blockID != ExtraOres.Invincium.blockID && blockID != ExtraOres.ExtraOresBedrock.blockID;
+        return blockID != obsidian.blockID && blockID != whiteStone.blockID && blockID != bedrock.blockID && blockID != ExtraOres.Invincium.blockID;
     }
     //Allows for "Ingot Blocks" to be used in Beacon base.
     public boolean isBeaconBase(World worldObj, int x, int y, int z, int beaconX, int beaconY, int beaconZ)
