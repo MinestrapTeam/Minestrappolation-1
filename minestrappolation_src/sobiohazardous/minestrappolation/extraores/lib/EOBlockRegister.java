@@ -49,6 +49,7 @@ public class EOBlockRegister
 		ModLoader.registerBlock(ExtraOres.BronzePlatedChiseled);
 		ModLoader.registerBlock(ExtraOres.BronzePlatedGranite);
 		ModLoader.registerBlock(ExtraOres.Invincium);
+		ModLoader.registerBlock(ExtraOres.ExtraOresBedrock);
 		ModLoader.registerBlock(ExtraOres.SteelBlock);
 		ModLoader.registerBlock(ExtraOres.SteelPlatedCobble);
 		ModLoader.registerBlock(ExtraOres.SteelPlatedMossy);

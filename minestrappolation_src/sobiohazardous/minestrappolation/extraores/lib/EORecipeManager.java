@@ -523,19 +523,19 @@ public class EORecipeManager
         
         GameRegistry.addRecipe(new ItemStack(ExtraOres.BedrockPickaxe, 1), new Object[]
         		{
-        	"ZZZ", " S ", " S ", Character.valueOf('Z'), Block.bedrock, Character.valueOf('S'), Item.stick
+        	"ZZZ", " S ", " S ", Character.valueOf('Z'), ExtraOres.ExtraOresBedrock, Character.valueOf('S'), Item.stick
         		});
         GameRegistry.addRecipe(new ItemStack(ExtraOres.BedrockShovel, 1), new Object[]
         		{
-        	" Z ", " S ", " S ", Character.valueOf('Z'), Block.bedrock, Character.valueOf('S'), Item.stick
+        	" Z ", " S ", " S ", Character.valueOf('Z'), ExtraOres.ExtraOresBedrock, Character.valueOf('S'), Item.stick
         		});
         GameRegistry.addRecipe(new ItemStack(ExtraOres.BedrockAxe, 1), new Object[]
         		{
-        	"ZZ ", "ZS ", " S ", Character.valueOf('Z'), Block.bedrock, Character.valueOf('S'), Item.stick
+        	"ZZ ", "ZS ", " S ", Character.valueOf('Z'), ExtraOres.ExtraOresBedrock, Character.valueOf('S'), Item.stick
         		});
         GameRegistry.addRecipe(new ItemStack(ExtraOres.BedrockHoe, 1), new Object[]
         		{
-        	"ZZ ", " S ", " S ", Character.valueOf('Z'), Block.bedrock, Character.valueOf('S'), Item.stick
+        	"ZZ ", " S ", " S ", Character.valueOf('Z'), ExtraOres.ExtraOresBedrock, Character.valueOf('S'), Item.stick
         		});
         
         GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.SteelPlatedCobble, 8), new Object[]

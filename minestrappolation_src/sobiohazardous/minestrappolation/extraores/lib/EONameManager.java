@@ -197,6 +197,7 @@ public class EONameManager
 		ModLoader.addName(ExtraOres.BronzePlatedGranite, "Bronze-Plated Granite Brick");
 		
 		ModLoader.addName(ExtraOres.Invincium, "Invincium");
+		ModLoader.addName(ExtraOres.ExtraOresBedrock, "Bedrock");
 		ModLoader.addName(Block.bedrock, "Invincible Bedrock");
 		ModLoader.addName(ExtraOres.BedrockPickaxe, "Bedrock Pickaxe");
 		ModLoader.addName(ExtraOres.BedrockShovel, "Bedrock Shovel");

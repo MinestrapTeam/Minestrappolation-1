@@ -35,6 +35,8 @@ import sobiohazardous.minestrappolation.extraores.misc.PlutoniumFuelHandler;
 import sobiohazardous.minestrappolation.extraores.misc.UraniumFuelHandler;
 import sobiohazardous.minestrappolation.extraores.plate.*;
 import sobiohazardous.minestrappolation.extraores.proxy.CommonProxy;
+import sobiohazardous.potionapi.PotionAPI;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.BlockStairs;
@@ -239,6 +241,7 @@ public class ExtraOres
 	bronzePlatedChiseledId,
 	bronzePlatedGraniteId,
 	invinciumId,
+	extraOresBedrockId,
 	bedrockPickaxeId,
 	bedrockAxeId,
 	bedrockShovelId,
@@ -582,6 +585,7 @@ public class ExtraOres
 	public static Block BronzePlatedGranite;
 	
 	public static Block Invincium;
+	public static Block ExtraOresBedrock;
 	
 	public static Item BedrockPickaxe;
 	public static Item BedrockAxe;
@@ -975,6 +979,7 @@ public class ExtraOres
 		bronzePlatedChiseledId = config.getBlock("Bronze Plated Chiseled", 3041).getInt();
 		bronzePlatedGraniteId = config.getBlock("Bronze Plated Granite", 3042).getInt();
 		invinciumId = config.getBlock("Invincium", 3043).getInt();
+		extraOresBedrockId = config.getBlock("Extra Ores Bedrock", 3044).getInt();
 		bedrockPickaxeId = config.getItem("Bedrock Pickaxe", 1086).getInt();
 		bedrockAxeId = config.getItem("Bedrock Axe", 1087).getInt();
 		bedrockShovelId = config.getItem("Bedrock Shovel", 1088).getInt();
@@ -1334,7 +1339,10 @@ public class ExtraOres
 		BronzePlatedGranite = (new EOBlock(bronzePlatedGraniteId, "block_BronzeGraniteBrick", Material.rock)).setHardness(6F).setResistance(30.0F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("BronzePlatedGranite");
 		
 		Invincium = (new EOBlock(invinciumId, "block_Invincium", Material.rock)).setBlockUnbreakable().setResistance(12000000.0F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("Invincium");
-			
+		ExtraOresBedrock = (new EOBlock(extraOresBedrockId, "block_NewBedrock", Material.rock)).setHardness(80F).setResistance(24000000.0F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("ExtraOresBedrock");
+		//Replacement block for vanilla Bedrock to make it breakable. Currently modifies net.minecraft.world.gen.ChunkProviderGenerate, net.minecraft.world.gen.ChunkProviderHell, and net.minecraft.world.gen.feature.WorldGenSpikes.
+		//TODO: Find a solution to removing Bedrock invincibility that doesn't edit base classes.
+		
 		SteelPlatedCobble = (new EOBlock(steelPlatedCobbleId, "block_SteelCobble", Material.rock)).setHardness(2.0F).setResistance(20.0F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("SteelPlatedCobble");
 		SteelPlatedMossy = (new EOBlock(steelPlatedMossyId, "block_SteelMossy", Material.rock)).setHardness(2.0F).setResistance(20.0F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("SteelPlatedMossy");
 		SteelPlatedStoneBrick = (new EOBlock(steelPlatedStoneBrickId, "block_SteelStoneBrick", Material.rock)).setHardness(1.5F).setResistance(20.0F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("SteelPlatedStoneBrick");
@@ -1609,6 +1617,7 @@ public class ExtraOres
 		MinecraftForge.setBlockHarvestLevel(BronzePlatedStoneBrick, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(BronzePlatedChiseled, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(BronzePlatedGranite, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(ExtraOresBedrock, "pickaxe", 4);
 		MinecraftForge.setBlockHarvestLevel(SteelPlatedCobble, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(SteelPlatedMossy, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(SteelPlatedStoneBrick, "pickaxe", 1);
