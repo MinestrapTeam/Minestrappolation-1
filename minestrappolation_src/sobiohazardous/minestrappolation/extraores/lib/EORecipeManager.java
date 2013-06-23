@@ -1226,6 +1226,14 @@ public class EORecipeManager
         		{
         	"SSS", Character.valueOf('S'), ExtraOres.BronzePlatedGranite
         		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.plutoniumInsulated, 1), new Object[]
+        		{
+        	"SSS", "GPG", "SSS", Character.valueOf('S'), ExtraOres.SteelIngot, Character.valueOf('G'), Block.thinGlass, Character.valueOf('P'), ExtraOres.RawPlutoniumBlock
+        		});
+        GameRegistry.addRecipe(new ItemStack(ExtraOres.uraniumInsulated, 1), new Object[]
+        		{
+        	"SSS", "GPG", "SSS", Character.valueOf('S'), ExtraOres.SteelIngot, Character.valueOf('G'), Block.thinGlass, Character.valueOf('P'), ExtraOres.RawUraniumBlock
+        		});
 	}
 	
 }

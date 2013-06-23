@@ -103,6 +103,8 @@ public class EOBlockRegister
 		ModLoader.registerBlock(ExtraOres.bronzePlatedGraniteBrickStairs);
 		ModLoader.registerBlock(ExtraOres.bronzePlatedGraniteBrickSingleSlab);
 		ModLoader.registerBlock(ExtraOres.bronzePlatedGraniteBrickDoubleSlab);
+		ModLoader.registerBlock(ExtraOres.plutoniumInsulated);
+		ModLoader.registerBlock(ExtraOres.uraniumInsulated);
 	}
 	
 }

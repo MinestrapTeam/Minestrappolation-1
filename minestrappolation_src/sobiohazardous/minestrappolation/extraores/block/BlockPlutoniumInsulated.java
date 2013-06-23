@@ -4,13 +4,17 @@ import java.util.List;
 import java.util.Random;
 
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
+import sobiohazardous.minestrappolation.extraores.entity.EntityNukePrimed;
 import sobiohazardous.minestrappolation.extraores.entity.EntityPlutoniumPrimed;
 import sobiohazardous.minestrappolation.util.BlockFunctions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.item.EntityTNTPrimed;
+import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -18,25 +22,64 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.src.ModLoader;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-public class BlockUraniumRaw extends Block
-{
-public BlockUraniumRaw instance;
-public EntityPlayer player;
-public EntityLiving living;
-public EntityZombie zombie;
+import net.minecraftforge.common.ForgeDirection;
 
-public BlockUraniumRaw(int par1, Material par3Material)
+public class BlockPlutoniumInsulated extends Block
+{
+	private static final EntityLiving par6EntityLiving = null;
+	public BlockPlutoniumInsulated instance;
+	public EntityPlayer player;
+	public EntityLiving living;
+	public EntitySkeleton skeleton;
+	public EntityZombie zombie;
+	public World world;
+	private Icon topbottom;
+	
+	public BlockPlutoniumInsulated(int par1, Material par3Material)
         {
                 super(par1, par3Material);
                 this.setCreativeTab(CreativeTabs.tabBlock);
         }
-   
+
 		public void registerIcons(IconRegister iconRegister)
 		{
-				blockIcon = iconRegister.registerIcon("extraores:block_UraniumRaw");
+				blockIcon = iconRegister.registerIcon("extraores:block_PlutoniumInsulatedSide");
+				topbottom = iconRegister.registerIcon("blockIron");
 		}
-        /**
+		
+		public Icon getIcon(int i, int j)
+	    {
+	    	if (i == 0)//bottom
+	            
+	            return topbottom;
+	    	if (i == 1)//top
+	           
+	            return topbottom;
+	   
+	    	if (i == 2) // side
+	           
+	            return blockIcon;
+	    	if (i == 3)//side 
+	           
+	            return blockIcon;
+	    	if (i == 4) //side
+	   
+	    		return blockIcon;
+	    	if (i == 5) //side
+	   
+	    		return blockIcon;
+
+	    	if (j ==1)
+	    	{
+	    		return blockIcon;
+	    	}
+			return blockIcon;
+	    }
+	    
+        
+		/**
          * Returns the ID of the items to drop on destruction.
          */
         public int idDropped(int par1, Random par2Random, int par3)
@@ -58,13 +101,11 @@ public BlockUraniumRaw(int par1, Material par3Material)
         //                par1World.setBlockMetadataWithNotify(i, j, k, blockIndexInTexture);
         //                par1World.scheduleBlockUpdate(i, j, k, blockID, tickRate());
         //}
-        
         public void onBlockAdded(World par1World, int par2, int par3, int par4)
         {
                         par1World.setBlockMetadataWithNotify(par2, par3, par4, blockID, par4);
-                        par1World.scheduleBlockUpdate(par2, par3, par4, blockID, tickRate());
+                        par1World.scheduleBlockUpdate(par2, par3, par4, blockID, tickRate());       
         }
-        
    
         public int tickRate()
         {
@@ -82,6 +123,8 @@ public BlockUraniumRaw(int par1, Material par3Material)
    
         public void updateTick(World world, int i, int j, int k, Random random)
         {
+        	if (!world.isRemote && world.isBlockIndirectlyGettingPowered(i, j, k))
+        	{
          world.scheduleBlockUpdate(i, j, k, blockID, tickRate());
                 int l = world.getBlockMetadata(i, j, k);
                 int i1 = 0;
@@ -209,64 +252,37 @@ public BlockUraniumRaw(int par1, Material par3Material)
                     {
                 	    //System.out.println("close");
                 	    living = (EntityLiving)var6.next();
-                        living.addPotionEffect(new PotionEffect(Potion.poison.getId(), 180, 2, false));
+                        living.addPotionEffect(new PotionEffect(Potion.wither.getId(), 40, 2, false));
                 	    //varEntityLiving.addPotionEffect(new PotionEffect(Potion.poison.getId(),200,10));          
                     }
                 }
-                List list2 = world.getEntitiesWithinAABB(EntityZombie.class, axisalignedbb);
+                List list2 = world.getEntitiesWithinAABB(EntitySkeleton.class, axisalignedbb);
                 Iterator var8 = list2.iterator();
-                EntityZombie var9;
                 if(list2.isEmpty() && world.getBlockMetadata(i, j, k) > 5)
                 {
-                    //System.out.println("far");
+                    //far
                 }
                 else
                 	while (var8.hasNext())
                     {
-                	    //System.out.println("close");
-                	    zombie = (EntityZombie)var8.next();
-                        zombie.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 300, 2, false));
-                        zombie.addPotionEffect(new PotionEffect(Potion.damageBoost.getId(), 300, 1, false));
+                		//close
+                	    skeleton = (EntitySkeleton)var8.next();
+                        skeleton.addPotionEffect(new PotionEffect(Potion.resistance.getId(), 180, 2, false));
+                        skeleton.addPotionEffect(new PotionEffect(Potion.damageBoost.getId(), 180, 1, false));
+                        skeleton.removePotionEffect(Potion.wither.getId());
                 	    //varEntityLiving.addPotionEffect(new PotionEffect(Potion.poison.getId(),200,10));          
                     }
+        	}
         }
         
-        public boolean canBlockStay(World par1World, int par2, int par3, int par4)
-        {
-            return this.canPlaceBlockAt(par1World, par2, par3, par4);
-        }
-        
-        public boolean canPlaceBlockAt(World par1World, int par2, int par3, int par4)
-        {
-            if (BlockFunctions.isWaterTouchingAllSides(par1World, par2, par3, par4))
-            {
-            	return true;
-            }
-            else
-            {
-            	 if (!par1World.isRemote)
-                 {                    
-   
-            		 EntityPlutoniumPrimed entitytntprimed = new EntityPlutoniumPrimed(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), player);
-                         par1World.spawnEntityInWorld(entitytntprimed);
-                         par1World.playSoundAtEntity(entitytntprimed, "random.fuse", 1.0F, 1.0F);
-                 }
-            	 
-            }
-            return true;
-        }
-      
         public void onNeighborBlockChange(World par1World, int par2, int par3, int par4, int par5)
         {
-        	 if (!BlockFunctions.isWaterTouchingAllSides(par1World, par2, par3, par4))
-        	 {
-        		 if (!par1World.isRemote)
-                 {                    
-   
-            		 EntityPlutoniumPrimed entitytntprimed = new EntityPlutoniumPrimed(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), player);
-                         par1World.spawnEntityInWorld(entitytntprimed);
-                         par1World.playSoundAtEntity(entitytntprimed, "random.fuse", 1.0F, 1.0F);
-                 }
-        	 }
+            if (!par1World.isRemote)
+            {
+                if (par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
+                {
+                    par1World.scheduleBlockUpdate(par2, par3, par4, this.blockID, 4);
+                }
+            }
         }
 }

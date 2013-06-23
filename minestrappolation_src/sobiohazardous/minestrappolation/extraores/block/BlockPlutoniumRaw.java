@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Random;
 
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
+import sobiohazardous.minestrappolation.extraores.entity.EntityNukePrimed;
+import sobiohazardous.minestrappolation.extraores.entity.EntityPlutoniumPrimed;
+import sobiohazardous.minestrappolation.util.BlockFunctions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -35,12 +38,7 @@ public BlockPlutoniumRaw(int par1, Material par3Material)
         {
                 super(par1, par3Material);
                 this.setCreativeTab(CreativeTabs.tabBlock);
-                fuse = 80;
         }
-
-		public int fuse;
-        public int explodeTime = 120;
-
 		public void registerIcons(IconRegister iconRegister)
 		{
 				blockIcon = iconRegister.registerIcon("extraores:block_PlutoniumRaw");
@@ -90,7 +88,7 @@ public BlockPlutoniumRaw(int par1, Material par3Material)
    
         public void updateTick(World world, int i, int j, int k, Random random)
         {
-        	this.fuse --;
+    
          world.scheduleBlockUpdate(i, j, k, blockID, tickRate());
                 int l = world.getBlockMetadata(i, j, k);
                 int i1 = 0;
@@ -240,7 +238,7 @@ public BlockPlutoniumRaw(int par1, Material par3Material)
                 	    //varEntityLiving.addPotionEffect(new PotionEffect(Potion.poison.getId(),200,10));          
                     }
         }
-        /*
+     
         public boolean canBlockStay(World par1World, int par2, int par3, int par4)
         {
             return this.canPlaceBlockAt(par1World, par2, par3, par4);
@@ -248,7 +246,7 @@ public BlockPlutoniumRaw(int par1, Material par3Material)
         
         public boolean canPlaceBlockAt(World par1World, int par2, int par3, int par4)
         {
-            if (BlockFunctions.isWaterNearby(par1World, par2, par3, par4))
+            if (BlockFunctions.isWaterTouchingAllSides(par1World, par2, par3, par4))
             {
             	return true;
             }
@@ -257,13 +255,27 @@ public BlockPlutoniumRaw(int par1, Material par3Material)
             	 if (!par1World.isRemote)
                  {                    
    
-            		 EntityNukePrimed entitytntprimed = new EntityNukePrimed(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), player);
+            		 EntityPlutoniumPrimed entitytntprimed = new EntityPlutoniumPrimed(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), player);
                          par1World.spawnEntityInWorld(entitytntprimed);
                          par1World.playSoundAtEntity(entitytntprimed, "random.fuse", 1.0F, 1.0F);
                  }
+            	 
             }
-            return false;
+            return true;
         }
-        */
+      
+        public void onNeighborBlockChange(World par1World, int par2, int par3, int par4, int par5)
+        {
+        	 if (!BlockFunctions.isWaterTouchingAllSides(par1World, par2, par3, par4))
+        	 {
+        		 if (!par1World.isRemote)
+                 {                    
+   
+            		 EntityPlutoniumPrimed entitytntprimed = new EntityPlutoniumPrimed(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), player);
+                         par1World.spawnEntityInWorld(entitytntprimed);
+                         par1World.playSoundAtEntity(entitytntprimed, "random.fuse", 1.0F, 1.0F);
+                 }
+        	 }
+        }
 
 }

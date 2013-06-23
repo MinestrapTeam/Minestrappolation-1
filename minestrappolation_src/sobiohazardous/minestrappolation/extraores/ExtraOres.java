@@ -417,7 +417,9 @@ public class ExtraOres
 	steelPlatedGraniteBrickDoubleSlabId,
 	bronzePlatedGraniteBrickStairsId,
 	bronzePlatedGraniteBrickSingleSlabId,
-	bronzePlatedGraniteBrickDoubleSlabId;
+	bronzePlatedGraniteBrickDoubleSlabId,
+	plutoniumInsulatedId,
+	uraniumInsulatedId;
 	
 	public static Block meuroditeOre;
 	public static Block meuroditeBlock;
@@ -807,6 +809,9 @@ public class ExtraOres
 	public static BlockHalfSlab bronzePlatedGraniteBrickSingleSlab;
 	public static BlockHalfSlab bronzePlatedGraniteBrickDoubleSlab;
 	
+	public static Block plutoniumInsulated;
+	public static Block uraniumInsulated;
+	
 	public static int plateRenderId = RenderingRegistry.getNextAvailableRenderId();
 	
 	public static CreativeTabs tabOresBlocks = new CreativeTabExtraoresBlocks(CreativeTabs.getNextID(),"Extrappolated Ores - Blocks");
@@ -1151,6 +1156,8 @@ public class ExtraOres
 	    bronzePlatedGraniteBrickStairsId = config.getBlock("Bronze Plated Granite Brick Stairs", 3091).getInt();
 	    bronzePlatedGraniteBrickSingleSlabId = config.getBlock("Bronze Plated Granite Brick Slab", 3092).getInt();
 	    bronzePlatedGraniteBrickDoubleSlabId = config.getBlock("Bronze Plated Granite Brick Double Slab", 3093).getInt();
+	    plutoniumInsulatedId = config.getBlock("Insulated Plutonium Block", 3094).getInt();
+	    uraniumInsulatedId = config.getBlock("Insulated Uranium Block", 3095).getInt();
 	    
 	    config.save();
 	    
@@ -1560,6 +1567,9 @@ public class ExtraOres
 		bronzePlatedGraniteBrickStairs = new EOBlockStairs(bronzePlatedGraniteBrickStairsId, this.BronzePlatedGranite, 0).setUnlocalizedName("bronzePlatedGraniteBrickStairs");
 		bronzePlatedGraniteBrickSingleSlab = (BlockHalfSlab) new BronzePlatedGraniteBrickSlab(bronzePlatedGraniteBrickSingleSlabId, false).setUnlocalizedName("bronzePlatedGraniteBrickSingleSlab").setCreativeTab(tabOresBlocks);
 		bronzePlatedGraniteBrickDoubleSlab = (BlockHalfSlab) new BronzePlatedGraniteBrickSlab(bronzePlatedGraniteBrickDoubleSlabId, true).setUnlocalizedName("bronzePlatedGraniteBrickDoubleSlab");
+		
+		plutoniumInsulated = (new BlockPlutoniumInsulated(plutoniumInsulatedId, Material.iron)).setHardness(6F).setResistance(9F).setCreativeTab(tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("plutoniumInsulated");
+		uraniumInsulated = (new BlockUraniumInsulated(uraniumInsulatedId, Material.iron)).setHardness(6F).setResistance(9F).setCreativeTab(tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("uraniumInsulated");
 		
         TickRegistry.registerTickHandler(new ClientTickHandler(EnumSet.of(TickType.CLIENT)), Side.CLIENT);
         TickRegistry.registerTickHandler(new ServerTickHandler(EnumSet.of(TickType.PLAYER)), Side.SERVER);

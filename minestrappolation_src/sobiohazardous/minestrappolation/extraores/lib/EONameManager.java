@@ -434,6 +434,8 @@ public class EONameManager
 		LanguageRegistry.addName(ExtraOres.bronzePlatedGraniteBrickDoubleSlab,"Bronze Plated Granite Brick DoubleSlab");
 		LanguageRegistry.instance().addStringLocalization(((BronzePlatedGraniteBrickSlab)ExtraOres.bronzePlatedGraniteBrickSingleSlab).getFullSlabName(0)+".name", "Bronze Plated Granite Brick Slab");	
 		
+		ModLoader.addName(ExtraOres.plutoniumInsulated, "Insulated Plutonium Block");
+		ModLoader.addName(ExtraOres.uraniumInsulated, "Insulated Uranium Block");
 	}
 	
 }

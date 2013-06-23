@@ -103,6 +103,34 @@ public class BlockFunctions
 	}
 	
 	/**
+	 * This checks and returns if the current block is touching the left the block ID specified
+	 * @param The world
+	 * @param Block x
+	 * @param Block y
+	 * @param Block z
+	 * @param BlockIdtouching - What block to check if touching?
+	 * @return
+	 */
+	public static boolean isWaterTouchingAllSides(World par1World, int x, int y, int z)
+	{
+		for (int i = x - 1; i <= x + 1; ++ i)//x
+		{
+			for (int i1 = y; i1 <= y + 0; ++i1)//y
+            {
+                for (int j1 = z - 1; j1 <= z + 1; ++j1)//z
+                {
+                	 if (par1World.getBlockMaterial(i, i1, j1) == Material.water)
+                     {
+                         return true;
+                     }
+                }
+            }
+		}
+		
+		return false;
+	}
+	
+	/**
 	 * Checks if specified block material is within 4x1x4
 	 * @param par1World
 	 * @param x
