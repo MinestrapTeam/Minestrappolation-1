@@ -43,7 +43,7 @@ public class EDBlock extends Block
     }
     public int getFlammability(IBlockAccess world, int x, int y, int z, int metadata, ForgeDirection face)
     {
-    	if(blockID == ExtraDecor.oakPanel.blockID || blockID == ExtraDecor.birchPanel.blockID || blockID == ExtraDecor.sprucePanel.blockID || blockID == ExtraDecor.junglePanel.blockID || blockID == ExtraDecor.oakBeveled.blockID || blockID == ExtraDecor.birchBeveled.blockID || blockID == ExtraDecor.spruceBeveled.blockID || blockID == ExtraDecor.jungleBeveled.blockID)
+    	if(blockID == ExtraDecor.woodPanel.blockID || blockID == ExtraDecor.woodBeveled.blockID)
     	{
     		if(face == ForgeDirection.UP || face == ForgeDirection.DOWN || face == ForgeDirection.NORTH || face == ForgeDirection.SOUTH || face == ForgeDirection.EAST || face == ForgeDirection.WEST)
     		{

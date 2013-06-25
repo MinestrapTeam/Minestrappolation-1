@@ -25,17 +25,14 @@ public class EDRecipeManager
 				{
 			"SS", "SS", Character.valueOf('S'), ExtraDecor.stoneBlockRefined
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stoneLamp, 8), new Object[]
-				{
-			"SSS", "SGS", "SSS", Character.valueOf('S'), ExtraDecor.stoneBlockRefined, Character.valueOf('G'), Block.glowStone
-				});
+		
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.edgeStoneBrick, 4), new Object[]
 				{
 			"SG", "SG", Character.valueOf('S'), new ItemStack(Block.stoneBrick, 1, 0), Character.valueOf('G'), new ItemStack(Block.blockNetherQuartz, 1, 0)
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.brickPattern, 2), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.brickPattern, 9), new Object[]
 				{
-			"SSS", "SSS", "SSS", Character.valueOf('S'), Item.brick
+			"SSS", "SSS", "SSS", Character.valueOf('S'), Block.brick
 				});
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.obsidianTile, 4), new Object[]
 				{
@@ -82,43 +79,55 @@ public class EDRecipeManager
 		
 		
 		
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.oakPanel, 9), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodPanel, 9, 0), new Object[]
 				{
 			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(Block.planks, 1, 0)
 				});
 		
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.birchPanel, 9), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodPanel, 9, 1), new Object[]
 				{
 			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(Block.planks, 1, 1)
 				});
 		
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.sprucePanel, 9), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodPanel, 9,2), new Object[]
 				{
 			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(Block.planks, 1, 2)
 				});
 		
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.junglePanel, 9), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodPanel, 9,3), new Object[]
 				{
 			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(Block.planks, 1, 3)
 				});
 		
 		
 		
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.oakBeveled, 4), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodBeveled, 4, 0), new Object[]
 				{
-			"SS", "SS", Character.valueOf('S'), ExtraDecor.oakPanel
+			"SS", "SS", Character.valueOf('S'), new ItemStack(ExtraDecor.woodPanel, 1 , 0)
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.birchBeveled, 4), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodBeveled, 4, 1), new Object[]
 				{
-			"SS", "SS", Character.valueOf('S'), ExtraDecor.birchPanel
+			"SS", "SS", Character.valueOf('S'), new ItemStack(ExtraDecor.woodPanel, 1 , 1)
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.spruceBeveled, 4), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodBeveled, 4, 2), new Object[]
 				{
-			"SS", "SS", Character.valueOf('S'), ExtraDecor.sprucePanel
+			"SS", "SS", Character.valueOf('S'), new ItemStack(ExtraDecor.woodPanel, 1 , 2)
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.jungleBeveled, 4), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodBeveled, 4, 3), new Object[]
 				{
-			"SS", "SS", Character.valueOf('S'), ExtraDecor.junglePanel
+			"SS", "SS", Character.valueOf('S'), new ItemStack(ExtraDecor.woodPanel, 1 , 3)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stoneLamp, 8, 0), new Object[]
+				{
+			"SSS", "SGS", "SSS", Character.valueOf('S'), ExtraDecor.stoneBlockRefined, Character.valueOf('G'), Block.glowStone
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.netherBrickPattern, 9), new Object[]
+				{
+			"SSS", "SSS", "SSS", Character.valueOf('S'), Block.netherBrick
+				});
+		GameRegistry.addRecipe(new ItemStack(Block.stoneBrick, 2), new Object[]
+				{
+			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(Block.stoneBrick, 1, 0)
 				});
 	}
 }

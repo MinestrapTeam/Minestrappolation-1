@@ -27,16 +27,11 @@ public class EDBlockRegistry
 		GameRegistry.registerBlock(ExtraDecor.gunpowderBlock, "gunpowderBlock");
 		GameRegistry.registerBlock(ExtraDecor.rope, "rope");
 		GameRegistry.registerBlock(ExtraDecor.ropeCoil, "ropeCoil");
-		GameRegistry.registerBlock(ExtraDecor.oakPanel, "oakPanel");
-		GameRegistry.registerBlock(ExtraDecor.birchPanel, "birchPanel");
-		GameRegistry.registerBlock(ExtraDecor.sprucePanel, "sprucePanel");
-		GameRegistry.registerBlock(ExtraDecor.junglePanel, "junglePanel");
-		GameRegistry.registerBlock(ExtraDecor.oakBeveled, "oakBeveled");
-		GameRegistry.registerBlock(ExtraDecor.birchBeveled, "birchBeveled");
-		GameRegistry.registerBlock(ExtraDecor.spruceBeveled, "spruceBeveled");
-		GameRegistry.registerBlock(ExtraDecor.jungleBeveled, "jungleBeveled");
+		GameRegistry.registerBlock(ExtraDecor.woodPanel, "woodPanel");
+		GameRegistry.registerBlock(ExtraDecor.woodBeveled, "woodBeveled");
 		GameRegistry.registerBlock(ExtraDecor.oozeSlime, "oozeSlime");
-		
+		GameRegistry.registerBlock(ExtraDecor.netherBrickPattern, "netherBrickPattern");
+		GameRegistry.registerBlock(ExtraDecor.sandstoneBrick, "sandstoneBrick");
 	}
 	
 }
