@@ -189,4 +189,23 @@ public class BlockFunctions
         return false;
     }
 	
+	public static boolean isBlockAbove(World par1World, int x, int y, int z, int BlockIdtouching)
+	{
+		for (int i = x - 0; i <= x + 0; ++ i)//x
+		{
+			for (int i1 = y; i1 <= y + 1; ++i1)//y
+            {
+                for (int j1 = 0 - 0; j1 <= z + 0; ++j1)//z
+                {
+                    if (par1World.getBlockId(i, i1, j1) == BlockIdtouching)
+                    {
+                        return true;
+                    }
+                }
+            }
+		}
+		
+		return false;
+	}
+	
 }

@@ -1,7 +1,6 @@
 package sobiohazardous.minestrappolation.extradecor.lib;
 
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
-import sobiohazardous.minestrappolation.extraores.ExtraOres;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -64,7 +63,7 @@ public class EDRecipeManager
 				{
 			"SSS", "SSS","SSS", Character.valueOf('S'), Item.gunpowder
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.rope, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.itemRope, 1), new Object[]
 				{
 			"S", "S", "S", Character.valueOf('S'), Item.silk
 				});
@@ -77,8 +76,6 @@ public class EDRecipeManager
 			"SSS", "SSS", "SSS", Character.valueOf('S'), Item.slimeBall
 				});
 		
-		
-		
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodPanel, 9, 0), new Object[]
 				{
 			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(Block.planks, 1, 0)
@@ -86,20 +83,18 @@ public class EDRecipeManager
 		
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodPanel, 9, 1), new Object[]
 				{
-			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(Block.planks, 1, 1)
+			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(Block.planks, 1, 2)
 				});
 		
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodPanel, 9,2), new Object[]
 				{
-			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(Block.planks, 1, 2)
+			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(Block.planks, 1, 1)
 				});
 		
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodPanel, 9,3), new Object[]
 				{
 			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(Block.planks, 1, 3)
 				});
-		
-		
 		
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodBeveled, 4, 0), new Object[]
 				{
@@ -128,6 +123,35 @@ public class EDRecipeManager
 		GameRegistry.addRecipe(new ItemStack(Block.stoneBrick, 2), new Object[]
 				{
 			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(Block.stoneBrick, 1, 0)
+				});
+		//TODO add sandstone brick recipes
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.sandstonePillar, 2), new Object[]
+				{
+			"S", "S", Character.valueOf('S'), Block.sandStone
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodBoards, 16, 0), new Object[]
+				{
+			"SS", "SS", Character.valueOf('S'), new ItemStack(Block.wood, 1 , 0)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodBoards, 16, 1), new Object[]
+				{
+			"SS", "SS", Character.valueOf('S'), new ItemStack(Block.wood, 1 , 2)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodBoards, 16, 2), new Object[]
+				{
+			"SS", "SS", Character.valueOf('S'), new ItemStack(Block.wood, 1 , 1)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodBoards, 16, 3), new Object[]
+				{
+			"SS", "SS", Character.valueOf('S'), new ItemStack(Block.wood, 1 , 3)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.flintTile, 4), new Object[]
+				{
+			"FF", "FF", Character.valueOf('F'), ExtraDecor.flintBlock
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.netherQuartzTile, 4), new Object[]
+				{
+			"FF", "FF", Character.valueOf('F'), Block.blockNetherQuartz
 				});
 	}
 }

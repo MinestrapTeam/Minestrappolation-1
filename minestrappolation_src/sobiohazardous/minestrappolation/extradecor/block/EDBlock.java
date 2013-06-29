@@ -3,8 +3,6 @@ package sobiohazardous.minestrappolation.extradecor.block;
 import java.util.Random;
 
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
-import sobiohazardous.minestrappolation.extraores.ExtraOres;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;

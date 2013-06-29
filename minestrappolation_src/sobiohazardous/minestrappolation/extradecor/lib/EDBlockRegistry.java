@@ -1,6 +1,7 @@
 package sobiohazardous.minestrappolation.extradecor.lib;
 
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
+import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class EDBlockRegistry 
@@ -31,7 +32,11 @@ public class EDBlockRegistry
 		GameRegistry.registerBlock(ExtraDecor.woodBeveled, "woodBeveled");
 		GameRegistry.registerBlock(ExtraDecor.oozeSlime, "oozeSlime");
 		GameRegistry.registerBlock(ExtraDecor.netherBrickPattern, "netherBrickPattern");
-		GameRegistry.registerBlock(ExtraDecor.sandstoneBrick, "sandstoneBrick");
+		GameRegistry.registerBlock(ExtraDecor.sandstoneBricks, "sandstoneBrick");
+		GameRegistry.registerBlock(ExtraDecor.sandstonePillar, "sandstonePillar");
+		GameRegistry.registerBlock(ExtraDecor.woodBoards, "woodBoards");
+		GameRegistry.registerBlock(ExtraDecor.flintTile, "flintTile");
+		GameRegistry.registerBlock(ExtraDecor.netherQuartzTile, "netherQuartzTile");
 	}
 	
 }

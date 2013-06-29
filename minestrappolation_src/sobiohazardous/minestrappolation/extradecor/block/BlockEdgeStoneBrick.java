@@ -70,17 +70,19 @@ public class BlockEdgeStoneBrick extends Block
 		return blockIcon;
     }
 	
+    /*
     public void onBlockPlacedBy(World par1World, int par2, int par3, int par4, EntityLiving par5EntityLiving, ItemStack par6ItemStack)
     {
-    	/*
+    	
     	 * TODO:
     	 * -Add isBlockTouchingFront and isBlockTouchingBack methods to BlockFunctions.
     	 * -Make the block change textures based on the stone brick position, rather than changing what block it is.
     	 * -Improve logic to allow for corner edges, etc.
-    	 */
+    	 
     }
+	*/
     
-	/*public void onBlockPlacedBy(World par1World, int par2, int par3, int par4, EntityLiving par5EntityLiving, ItemStack par6ItemStack)
+	public void onBlockPlacedBy(World par1World, int par2, int par3, int par4, EntityLiving par5EntityLiving, ItemStack par6ItemStack)
 	{
 		if(BlockFunctions.isBlockTouchingLeft(par1World, par2, par3, par4, Block.stoneBrick.blockID))
 		{
@@ -92,9 +94,9 @@ public class BlockEdgeStoneBrick extends Block
 			par1World.setBlock(par2, par3, par4, ExtraDecor.edgeStoneBrickRight.blockID);
 		}
 		
-	}*/
+	}
 	
-	/*public void onNeighborBlockChange(World par1World, int par2, int par3, int par4, int neighborBlockId)
+	public void onNeighborBlockChange(World par1World, int par2, int par3, int par4, int neighborBlockId)
 	{
 		if (neighborBlockId == Block.stoneBrick.blockID)
 		{
@@ -105,5 +107,5 @@ public class BlockEdgeStoneBrick extends Block
 		{
 			par1World.setBlock(par2, par3, par4, ExtraDecor.edgeStoneBrickRight.blockID);
 		}
-	}  */  
+	}    
 }

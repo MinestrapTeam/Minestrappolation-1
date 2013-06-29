@@ -14,16 +14,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 
-public class BlockSandstoneBrick extends Block
+public class BlockWoodBoards extends Block
 {
     @SideOnly(Side.CLIENT)
     private Icon[] iconArray;
-    public static final String[] brickTextures = new String[] {"extradecor:block_SandstoneBrick", "extradecor:block_SandstoneBrickChiseled", "extradecor:block_SandstoneBrickMossy", "extradecor:block_SandstoneHeiroglyph1", "extradecor:block_SandstoneHeiroglyph2"};
-    public static final String[] sandType = new String[] {"brick", "chiseled", "mossy", "heiroglyph", "heiroglyph_2"};
+    public static final String[] boardTextures = new String[] {"extradecor:block_BoardsOak", "extradecor:block_BoardsBirch", "extradecor:block_BoardsSpruce", "extradecor:block_BoardsJungle"};
+    public static final String[] woodType = new String[] {"oak", "birch", "spruce", "jungle"};
     
-    public BlockSandstoneBrick(int id)
+    public BlockWoodBoards(int id)
     {
-        super(id, Material.sand);
+        super(id, Material.wood);
         this.setCreativeTab(ExtraDecor.tabDecorBlocks);
     }
 
@@ -61,7 +61,6 @@ public class BlockSandstoneBrick extends Block
     	par3List.add(new ItemStack(par1, 1, 1));
     	par3List.add(new ItemStack(par1, 1, 2));
     	par3List.add(new ItemStack(par1, 1, 3));
-    	par3List.add(new ItemStack(par1, 1, 4));
     }
 
     @SideOnly(Side.CLIENT)
@@ -72,11 +71,11 @@ public class BlockSandstoneBrick extends Block
      */
     public void registerIcons(IconRegister par1IconRegister)
     {
-        this.iconArray = new Icon[brickTextures.length];
+        this.iconArray = new Icon[boardTextures.length];
 
         for (int i = 0; i < this.iconArray.length; ++i)
         {
-            this.iconArray[i] = par1IconRegister.registerIcon(brickTextures[i]);
+            this.iconArray[i] = par1IconRegister.registerIcon(boardTextures[i]);
         }
     }
 }

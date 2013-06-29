@@ -4,8 +4,6 @@ import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
 import sobiohazardous.minestrappolation.extradecor.block.BlockGlassRefinedPane;
 import sobiohazardous.minestrappolation.extradecor.block.BlockRope;
-import sobiohazardous.minestrappolation.extraores.ExtraOres;
-import sobiohazardous.minestrappolation.extraores.plate.Plate;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.BlockPane;

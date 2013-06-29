@@ -37,9 +37,17 @@ public class EDNameManager
 		LanguageRegistry.instance().addStringLocalization("tile.woodBeveled.jungle.name", "Beveled Jungle Wood Panel");
 		LanguageRegistry.addName(ExtraDecor.netherBrickPattern, "Patterned Nether Brick");
 		LanguageRegistry.instance().addStringLocalization("tile.sandstoneBrick.brick.name", "Sandstone Brick");
+		LanguageRegistry.instance().addStringLocalization("tile.sandstoneBrick.chiseled.name", "Chiseled Sandstone Brick");
 		LanguageRegistry.instance().addStringLocalization("tile.sandstoneBrick.mossy.name", "Mossy Sandstone Brick");
 		LanguageRegistry.instance().addStringLocalization("tile.sandstoneBrick.heiroglyph.name", "Heiroglyph Sandstone Brick");
 		LanguageRegistry.instance().addStringLocalization("tile.sandstoneBrick.heiroglyph_2.name", "Heiroglyph Sandstone Brick");
+		LanguageRegistry.addName(ExtraDecor.sandstonePillar, "Sandstone Pillar");
+		LanguageRegistry.instance().addStringLocalization("tile.woodBoards.oak.name", "Oak Wood Boards");
+		LanguageRegistry.instance().addStringLocalization("tile.woodBoards.birch.name", "Birch Wood Boards");
+		LanguageRegistry.instance().addStringLocalization("tile.woodBoards.spruce.name", "Spruce Wood Boards");
+		LanguageRegistry.instance().addStringLocalization("tile.woodBoards.jungle.name", "Jungle Wood Boards");
+		LanguageRegistry.addName(ExtraDecor.flintTile, "Flint Tile");
+		LanguageRegistry.addName(ExtraDecor.netherQuartzTile, "Nether Quartz Tile");
 	}
 	
 }

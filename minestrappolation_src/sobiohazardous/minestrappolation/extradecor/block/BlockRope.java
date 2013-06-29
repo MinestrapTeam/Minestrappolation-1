@@ -3,8 +3,10 @@ package sobiohazardous.minestrappolation.extradecor.block;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import java.util.List;
+import java.util.Random;
 
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
+import sobiohazardous.minestrappolation.util.BlockFunctions;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -100,5 +102,31 @@ public class BlockRope extends Block
     public boolean isLadder(World world, int x, int y, int z)
     {
         return true;
+    }
+    
+    public void onNeighborBlockChange(World par1World, int par2, int par3, int par4, int par5)
+    {
+    	if(BlockFunctions.isBlockAbove(par1World, par2, par3, par4, 0))
+    	{
+    		par1World.destroyBlock(par2, par3, par4, true);
+    	}
+    }
+    
+    public boolean canBlockStay(World par1World, int par2, int par3, int par4)
+    {
+    	if(BlockFunctions.isBlockAbove(par1World, par2, par3, par4, 0))
+    	{
+    		return true;
+    	}
+    	
+    	return false;
+    }
+    
+    /**
+     * Returns the ID of the items to drop on destruction.
+     */
+    public int idDropped(int par1, Random par2Random, int par3)
+    {
+        return ExtraDecor.itemRope.itemID;
     }
 }
