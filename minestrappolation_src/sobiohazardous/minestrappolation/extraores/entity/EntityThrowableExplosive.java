@@ -6,6 +6,7 @@ import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
@@ -28,7 +29,7 @@ public abstract class EntityThrowableExplosive extends Entity implements IProjec
     /**
      * Is the entity that throws this 'thing' (snowball, ender pearl, eye of ender or potion)
      */
-    private EntityLiving thrower;
+    private EntityLivingBase thrower;
     private String throwerName = null;
     private int ticksInGround;
     private int ticksInAir = 0;
@@ -58,7 +59,7 @@ public abstract class EntityThrowableExplosive extends Entity implements IProjec
         return par1 < d1 * d1;
     }
 
-    public EntityThrowableExplosive(World par1World, EntityLiving par2EntityLiving)
+    public EntityThrowableExplosive(World par1World, EntityLivingBase par2EntityLiving)
     {
         super(par1World);
         this.thrower = par2EntityLiving;
@@ -255,7 +256,7 @@ public abstract class EntityThrowableExplosive extends Entity implements IProjec
         return 0.0F;
     }
 
-    public EntityLiving getThrower()
+    public EntityLivingBase getThrower()
     {
         if (this.thrower == null && this.throwerName != null && this.throwerName.length() > 0)
         {

@@ -3,7 +3,7 @@ package sobiohazardous.minestrappolation.extraores.entity;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 
@@ -11,19 +11,17 @@ public class EntityNukePrimed extends Entity
 {
     /** How long the fuse is */
     public int fuse;
-    private EntityLiving tntPlacedBy;
-    private String texture;
+    private EntityLivingBase tntPlacedBy;
 
     public EntityNukePrimed(World par1World)
     {
         super(par1World);
-        this.fuse = 0;
         this.preventEntitySpawning = true;
         this.setSize(0.98F, 0.98F);
         this.yOffset = this.height / 2.0F;
     }
 
-    public EntityNukePrimed(World par1World, double par2, double par4, double par6, EntityLiving par8EntityLiving)
+    public EntityNukePrimed(World par1World, double par2, double par4, double par6, EntityLivingBase par8EntityLivingBase)
     {
         this(par1World);
         this.setPosition(par2, par4, par6);
@@ -35,7 +33,7 @@ public class EntityNukePrimed extends Entity
         this.prevPosX = par2;
         this.prevPosY = par4;
         this.prevPosZ = par6;
-        this.tntPlacedBy = par8EntityLiving;
+        this.tntPlacedBy = par8EntityLivingBase;
     }
 
     protected void entityInit() {}
@@ -121,16 +119,11 @@ public class EntityNukePrimed extends Entity
         return 0.0F;
     }
 
-    public EntityLiving func_94083_c()
+    /**
+     * returns null or the entityliving it was placed or ignited by
+     */
+    public EntityLivingBase getTntPlacedBy()
     {
         return this.tntPlacedBy;
     }
-    
-
-    public String getTexture()
-    {
-        return "/mods/extraores/textures/blocks/block_NukeSide.png";
-    }
-
-    
 }

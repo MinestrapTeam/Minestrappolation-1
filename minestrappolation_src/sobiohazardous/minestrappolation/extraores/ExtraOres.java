@@ -18,7 +18,7 @@ import sobiohazardous.minestrappolation.extraores.entity.EntityGrenade;
 import sobiohazardous.minestrappolation.extraores.entity.EntityGrenadeImpact;
 import sobiohazardous.minestrappolation.extraores.entity.EntityGrenadeSticky;
 import sobiohazardous.minestrappolation.extraores.entity.EntityNukePrimed;
-import sobiohazardous.minestrappolation.extraores.entity.EntityPlutoniumPrimed;
+import sobiohazardous.minestrappolation.extraores.entity.EntityExplosion;
 import sobiohazardous.minestrappolation.extraores.entity.RenderGrenade;
 import sobiohazardous.minestrappolation.extraores.entity.RenderNukePrimed;
 import sobiohazardous.minestrappolation.extraores.generation.ExtracraftOreGenerator;
@@ -843,7 +843,7 @@ public class ExtraOres
 	
 	@PreInit  // never before implemented
     public void myNewPreLoadMethod(FMLPreInitializationEvent evt)	
-   {
+   {    
 		//blocks 3000
 		//items 1000;
 		Configuration config = new Configuration(evt.getSuggestedConfigurationFile());
@@ -1162,7 +1162,7 @@ public class ExtraOres
 	    config.save();
 	    
 		GameRegistry.registerWorldGenerator(new ExtracraftOreGenerator());
-		EntityRegistry.registerModEntity(EntityPlutoniumPrimed.class, "Plutonium", 4, this, 350, 5, false);
+		EntityRegistry.registerModEntity(EntityExplosion.class, "Plutonium", 4, this, 350, 5, false);
 		EntityRegistry.registerModEntity(EntityGrenade.class, "Grenade", 2, this, 40, 3, true);
 		EntityRegistry.registerModEntity(EntityNukePrimed.class, "NukePrimed", 3, this, 350, 5, false);
 		EntityRegistry.registerModEntity(EntityGrenadeImpact.class, "GrenadeImpact", 4, this, 40, 3, true);

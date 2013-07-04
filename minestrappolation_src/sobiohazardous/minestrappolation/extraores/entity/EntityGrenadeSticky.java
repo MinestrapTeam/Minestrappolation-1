@@ -7,6 +7,7 @@ import sobiohazardous.minestrappolation.extraores.item.ItemGrenade;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.AxisAlignedBB;
@@ -26,7 +27,7 @@ public class EntityGrenadeSticky extends EntityThrowableExplosive
         super(par1World);
     }
 
-    public EntityGrenadeSticky(World par1World, EntityLiving par2EntityLiving)
+    public EntityGrenadeSticky(World par1World, EntityLivingBase par2EntityLiving)
     {
         super(par1World, par2EntityLiving);
     }

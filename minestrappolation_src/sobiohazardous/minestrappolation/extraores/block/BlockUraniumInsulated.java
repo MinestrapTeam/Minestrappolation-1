@@ -5,7 +5,7 @@ import java.util.Random;
 
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
 import sobiohazardous.minestrappolation.extraores.entity.EntityNukePrimed;
-import sobiohazardous.minestrappolation.extraores.entity.EntityPlutoniumPrimed;
+import sobiohazardous.minestrappolation.extraores.entity.EntityExplosion;
 import sobiohazardous.minestrappolation.util.BlockFunctions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

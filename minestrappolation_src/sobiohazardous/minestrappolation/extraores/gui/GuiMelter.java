@@ -1,6 +1,7 @@
 package sobiohazardous.minestrappolation.extraores.gui;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.resources.ResourceLocation;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.StatCollector;
 
@@ -30,9 +31,9 @@ public class GuiMelter extends GuiContainer
          */
 	protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3)
 	{
-         int i = mc.renderEngine.getTexture("/Block/goldOvenGUI.png");
          GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-         this.mc.renderEngine.bindTexture("/gui/melter.png");
+         ResourceLocation gui = new ResourceLocation("/assets/extraores/textures/gui/melter.png");
+         this.mc.renderEngine.func_110577_a(gui);
          int j = (width - xSize) / 2;
          int k = (height - ySize) / 2;
          drawTexturedModalRect(j, k, 0, 0, xSize, ySize);

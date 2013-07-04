@@ -6,6 +6,7 @@ import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.item.Item;
@@ -28,7 +29,7 @@ public class EntityGrenade extends EntityThrowableExplosive
         super(par1World);
     }
 
-    public EntityGrenade(World par1World, EntityLiving par2EntityLiving)
+    public EntityGrenade(World par1World, EntityLivingBase par2EntityLiving)
     {
         super(par1World, par2EntityLiving);
     }
@@ -84,9 +85,4 @@ public class EntityGrenade extends EntityThrowableExplosive
         }*/
     }
 
-    public String getTexture()
-    {
-        return "/mods/extraores/textures/items/item_NukeGrenade.png";
-    }
-   
 }

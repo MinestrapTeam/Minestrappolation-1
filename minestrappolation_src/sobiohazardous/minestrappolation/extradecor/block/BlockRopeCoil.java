@@ -11,6 +11,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
@@ -67,7 +68,7 @@ public class BlockRopeCoil extends Block
     }
     
     @Override
-    public boolean isLadder(World world, int x, int y, int z)
+    public boolean isLadder(World world, int x, int y, int z, EntityLivingBase entity)
     {
         return true;
     }

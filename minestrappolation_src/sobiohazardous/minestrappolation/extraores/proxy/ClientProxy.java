@@ -7,7 +7,7 @@ import sobiohazardous.minestrappolation.extraores.entity.EntityGrenade;
 import sobiohazardous.minestrappolation.extraores.entity.EntityGrenadeImpact;
 import sobiohazardous.minestrappolation.extraores.entity.EntityGrenadeSticky;
 import sobiohazardous.minestrappolation.extraores.entity.EntityNukePrimed;
-import sobiohazardous.minestrappolation.extraores.entity.EntityPlutoniumPrimed;
+import sobiohazardous.minestrappolation.extraores.entity.EntityExplosion;
 import sobiohazardous.minestrappolation.extraores.entity.RenderGrenade;
 import sobiohazardous.minestrappolation.extraores.entity.RenderNukePrimed;
 import sobiohazardous.minestrappolation.extraores.lib.EOBlockRegister;

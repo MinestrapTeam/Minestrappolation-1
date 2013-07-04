@@ -5,12 +5,13 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.client.renderer.texture.TextureMap;
+import net.minecraft.client.resources.ResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityTNTPrimed;
 import org.lwjgl.opengl.GL11;
 
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
-import sobiohazardous.minestrappolation.extraores.block.BlockNuke;
 
 @SideOnly(Side.CLIENT)
 public class RenderNukePrimed extends Render
@@ -49,7 +50,7 @@ public class RenderNukePrimed extends Render
         }
 
         f2 = (1.0F - ((float)par1EntityTNTPrimed.fuse - par9 + 1.0F) / 100.0F) * 0.8F;
-        this.loadTexture("/mods/extraores/textures/blocks/block_NukeSide.png");
+        this.func_110777_b(par1EntityTNTPrimed);
         this.blockRenderer.renderBlockAsItem(ExtraOres.nuke, 0, par1EntityTNTPrimed.getBrightness(par9));
 
         if (par1EntityTNTPrimed.fuse / 5 % 2 == 0)
@@ -69,6 +70,16 @@ public class RenderNukePrimed extends Render
         GL11.glPopMatrix();
     }
 
+    protected ResourceLocation func_110808_a(EntityNukePrimed par1EntityTNTPrimed)
+    {
+        return TextureMap.field_110575_b;
+    }
+
+    protected ResourceLocation func_110775_a(Entity par1Entity)
+    {
+        return this.func_110808_a((EntityNukePrimed)par1Entity);
+    }
+
     /**
      * Actually renders the given argument. This is a synthetic bridge method, always casting down its argument and then
      * handing it off to a worker function which does the actual work. In all probabilty, the class Render is generic
@@ -78,10 +89,5 @@ public class RenderNukePrimed extends Render
     public void doRender(Entity par1Entity, double par2, double par4, double par6, float par8, float par9)
     {
         this.renderPrimedTNT((EntityNukePrimed)par1Entity, par2, par4, par6, par8, par9);
-    }
-    
-    protected void loadTexture(String par1Str)
-    {
-        this.renderManager.renderEngine.bindTexture(par1Str);
     }
 }

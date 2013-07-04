@@ -2,12 +2,12 @@ package sobiohazardous.minestrappolation.extraores.item;
 
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.IArmorTextureProvider;
 
-public class ItemExtracraftChest extends ItemArmor implements IArmorTextureProvider
+public class ItemExtracraftChest extends ItemArmor
 {
 	private String texture;
 	public ItemExtracraftChest(int par1, String texture, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4) 
@@ -16,7 +16,7 @@ public class ItemExtracraftChest extends ItemArmor implements IArmorTextureProvi
 		this.texture = "extraores:" + texture;
 	}
 	
-	public String getArmorTextureFile(ItemStack par1)
+	public String getArmorTexture(ItemStack par1, Entity entity, int slot, int layer)
 	{
 		if(par1.itemID==ExtraOres.meuroditeHelmet.itemID||par1.itemID==ExtraOres.meuroditeChest.itemID||par1.itemID==ExtraOres.meuroditeBoots.itemID)
 		{

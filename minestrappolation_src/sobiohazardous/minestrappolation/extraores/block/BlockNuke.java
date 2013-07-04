@@ -14,6 +14,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
@@ -126,16 +127,16 @@ public class BlockNuke extends Block
      */
     public void onBlockDestroyedByPlayer(World par1World, int par2, int par3, int par4, int par5)
     {
-        this.func_94391_a(par1World, par2, par3, par4, par5, (EntityLiving)null);
+        this.func_94391_a(par1World, par2, par3, par4, par5, (EntityLivingBase)null);
     }
 
-    public void func_94391_a(World par1World, int par2, int par3, int par4, int par5, EntityLiving par6EntityLiving)
+    public void func_94391_a(World par1World, int par2, int par3, int par4, int par5, EntityLivingBase par6EntityLivingBase)
     {
         if (!par1World.isRemote)
         {
             if ((par5 & 1) == 1)
             {
-                EntityNukePrimed entitytntprimed = new EntityNukePrimed(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), par6EntityLiving);
+                EntityNukePrimed entitytntprimed = new EntityNukePrimed(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), par6EntityLivingBase);
                 par1World.spawnEntityInWorld(entitytntprimed);
                 par1World.playSoundAtEntity(entitytntprimed, "random.fuse", 1.0F, 1.0F);
             }
@@ -151,6 +152,7 @@ public class BlockNuke extends Block
         {
             this.func_94391_a(par1World, par2, par3, par4, 1, par5EntityPlayer);
             par1World.setBlockToAir(par2, par3, par4);
+            par5EntityPlayer.getCurrentEquippedItem().damageItem(1, par5EntityPlayer);
             return true;
         }
         else
@@ -170,7 +172,7 @@ public class BlockNuke extends Block
 
             if (entityarrow.isBurning())
             {
-                this.func_94391_a(par1World, par2, par3, par4, 1, entityarrow.shootingEntity instanceof EntityLiving ? (EntityLiving)entityarrow.shootingEntity : null);
+                this.func_94391_a(par1World, par2, par3, par4, 1, entityarrow.shootingEntity instanceof EntityLivingBase ? (EntityLivingBase)entityarrow.shootingEntity : null);
                 par1World.setBlockToAir(par2, par3, par4);
             }
         }
@@ -183,4 +185,5 @@ public class BlockNuke extends Block
     {
         return false;
     }
+
 }

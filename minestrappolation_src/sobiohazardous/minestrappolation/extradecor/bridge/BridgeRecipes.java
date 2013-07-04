@@ -4,7 +4,6 @@ import java.lang.reflect.Field;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
-import sobiohazardous.minestrappolation.extraores.ExtraOres;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 /**
@@ -22,7 +21,7 @@ public class BridgeRecipes
 		{
 			GameRegistry.addRecipe(new ItemStack(ExtraDecor.stoneLamp, 8, 1), new Object[]
 					{
-				"SSS", "SGS", "SSS", Character.valueOf('S'), ExtraDecor.stoneBlockRefined, Character.valueOf('G'), ExtraOres.Sunstone
+				"SSS", "SGS", "SSS", Character.valueOf('S'), ExtraDecor.stoneBlockRefined, Character.valueOf('G'), GameRegistry.findItem("ExtraOres", "Sunstone")
 					});
 		}
 	}

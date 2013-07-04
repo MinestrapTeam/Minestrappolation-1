@@ -4,6 +4,8 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.client.renderer.texture.TextureMap;
+import net.minecraft.client.resources.ResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.EntityPotion;
 import net.minecraft.item.Item;
@@ -19,15 +21,15 @@ public class RenderGrenade extends Render
     private Item field_94151_a;
     private int field_94150_f;
 
-    public RenderGrenade(Item par1, int par2)
+    public RenderGrenade(Item par1Item, int par2)
     {
-        this.field_94151_a = par1;
+        this.field_94151_a = par1Item;
         this.field_94150_f = par2;
     }
 
-    public RenderGrenade(Item par1)
+    public RenderGrenade(Item par1Item)
     {
-        this(par1, 0);
+        this(par1Item, 0);
     }
 
     /**
@@ -46,10 +48,10 @@ public class RenderGrenade extends Render
             GL11.glTranslatef((float)par2, (float)par4, (float)par6);
             GL11.glEnable(GL12.GL_RESCALE_NORMAL);
             GL11.glScalef(0.5F, 0.5F, 0.5F);
-            this.loadTexture("/gui/items.png");
+            this.func_110777_b(par1Entity);
             Tessellator tessellator = Tessellator.instance;
 
-            if (icon == ItemPotion.func_94589_d("potion_splash"))
+            if (icon == ItemPotion.func_94589_d("bottle_splash"))
             {
                 int i = PotionHelper.func_77915_a(((EntityPotion)par1Entity).getPotionDamage(), false);
                 float f2 = (float)(i >> 16 & 255) / 255.0F;
@@ -57,7 +59,7 @@ public class RenderGrenade extends Render
                 float f4 = (float)(i & 255) / 255.0F;
                 GL11.glColor3f(f2, f3, f4);
                 GL11.glPushMatrix();
-                this.func_77026_a(tessellator, ItemPotion.func_94589_d("potion_contents"));
+                this.func_77026_a(tessellator, ItemPotion.func_94589_d("overlay"));
                 GL11.glPopMatrix();
                 GL11.glColor3f(1.0F, 1.0F, 1.0F);
             }
@@ -66,6 +68,11 @@ public class RenderGrenade extends Render
             GL11.glDisable(GL12.GL_RESCALE_NORMAL);
             GL11.glPopMatrix();
         }
+    }
+
+    protected ResourceLocation func_110775_a(Entity par1Entity)
+    {
+        return TextureMap.field_110576_c;
     }
 
     private void func_77026_a(Tessellator par1Tessellator, Icon par2Icon)
