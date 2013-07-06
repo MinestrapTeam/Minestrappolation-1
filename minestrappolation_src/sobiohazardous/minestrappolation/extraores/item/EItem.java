@@ -14,8 +14,7 @@ public class EItem extends Item
         {
                 super(i);
                 this.setCreativeTab(ExtraOres.tabOresItems);
-                this.itemTexture = "extraores:" + texture;
-                this.setPotionEffect("potion.testPotion");
+                this.itemTexture = "ExtraOres:" + texture;
         }
 		
 		public void registerIcons(IconRegister iconRegister)

@@ -5,18 +5,13 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
 
-/*
-*This class is for additional block functions i think we will need in the future
-*feel free to use any of them
-*all written by SoBiohazardous (Domenic)
-*/
-
 /**
+ *This class is for additional block functions i think we will need in the future
+ *feel free to use any of them
+ *all written by SoBiohazardous (Domenic)
+ * @author SoBiohazardous
  * 
- * 
- * 
- * @author Crzyguitardude
- */
+*/
 public class BlockFunctions 
 {
 	/**

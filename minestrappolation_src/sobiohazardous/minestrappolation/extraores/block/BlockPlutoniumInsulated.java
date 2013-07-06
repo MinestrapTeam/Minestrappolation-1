@@ -46,7 +46,7 @@ public class BlockPlutoniumInsulated extends Block
 		public void registerIcons(IconRegister iconRegister)
 		{
 				blockIcon = iconRegister.registerIcon("extraores:block_PlutoniumInsulatedSide");
-				topbottom = iconRegister.registerIcon("blockIron");
+				topbottom = iconRegister.registerIcon("iron_block");
 		}
 		
 		public Icon getIcon(int i, int j)

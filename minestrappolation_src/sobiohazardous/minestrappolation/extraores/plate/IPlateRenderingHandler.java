@@ -35,18 +35,18 @@ public class IPlateRenderingHandler extends RenderBlocks implements ISimpleBlock
          return ExtraOres.plateRenderId;
     }
     
-    public boolean renderTinPlate(Plate par1BlockRail, RenderBlocks renderblocks, IBlockAccess iblockaccess, int par2, int par3, int par4, Block block, int modelId)
+    public boolean renderTinPlate(Plate par1BlockRailBase, RenderBlocks renderblocks, IBlockAccess iblockaccess, int par2, int par3, int par4, Block block, int modelId)
     {
     	Tessellator tessellator = Tessellator.instance;
-        int l = iblockaccess.getBlockMetadata(par2, par3, par4);
-        Icon icon = this.getBlockIconFromSideAndMetadata(par1BlockRail, 1, l);
+        int l = this.blockAccess.getBlockMetadata(par2, par3, par4);
+        Icon icon = this.getBlockIconFromSideAndMetadata(par1BlockRailBase, 0, l);
 
         if (this.hasOverrideBlockTexture())
         {
             icon = this.overrideBlockTexture;
         }
 
-        tessellator.setBrightness(par1BlockRail.getMixedBrightnessForBlock(iblockaccess, par2, par3, par4));
+        tessellator.setBrightness(par1BlockRailBase.getMixedBrightnessForBlock(this.blockAccess, par2, par3, par4));
         tessellator.setColorOpaque_F(1.0F, 1.0F, 1.0F);
         double d0 = (double)icon.getMinU();
         double d1 = (double)icon.getMinV();

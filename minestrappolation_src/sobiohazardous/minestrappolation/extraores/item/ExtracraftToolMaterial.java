@@ -117,7 +117,7 @@ public enum ExtracraftToolMaterial
             case SANDSTONE:    return Block.sandStone.blockID;
             case BRONZE:       return ExtraOres.BronzeIngot.itemID;
             case STEEL:        return ExtraOres.SteelIngot.itemID;
-            case BEDROCK:      return ExtraOres.ExtraOresBedrock.blockID;
+            case BEDROCK:      return Block.bedrock.blockID;
             case GRANITE:      return ExtraOres.Granite.blockID;
             case BPMEURODITE:  return ExtraOres.meuroditeIngot.itemID;
             case BPTITANIUM:   return ExtraOres.TitaniumIngot.itemID;
@@ -126,7 +126,7 @@ public enum ExtracraftToolMaterial
             case BPCOPPER:     return ExtraOres.CopperIngot.itemID;
             case BPSANDSTONE:  return Block.sandStone.blockID;
             case BPSTEEL:      return ExtraOres.SteelIngot.itemID;
-            case BPBEDROCK:    return ExtraOres.ExtraOresBedrock.blockID;
+            case BPBEDROCK:    return Block.bedrock.blockID;
             case BPGRANITE:    return ExtraOres.Granite.blockID;
             case BPWOOD:       return Block.planks.blockID;
             case BPSTONE:      return Block.cobblestone.blockID;

@@ -20,7 +20,7 @@ public class EDBlock extends Block
     {
         super(par1, material);
         this.setCreativeTab(ExtraDecor.tabDecorBlocks);
-        this.texture = "extradecor:" + texture;
+        this.texture = "ExtraDecor:" + texture;
     }
 
     /**

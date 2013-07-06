@@ -21,7 +21,7 @@ public class BridgeRecipes
 		{
 			GameRegistry.addRecipe(new ItemStack(ExtraDecor.stoneLamp, 8, 1), new Object[]
 					{
-				"SSS", "SGS", "SSS", Character.valueOf('S'), ExtraDecor.stoneBlockRefined, Character.valueOf('G'), GameRegistry.findItem("ExtraOres", "Sunstone")
+				"SSS", "SGS", "SSS", Character.valueOf('S'), ExtraDecor.stoneBlockRefined, Character.valueOf('G'), sobiohazardous.minestrappolation.extraores.ExtraOres.Sunstone
 					});
 		}
 	}

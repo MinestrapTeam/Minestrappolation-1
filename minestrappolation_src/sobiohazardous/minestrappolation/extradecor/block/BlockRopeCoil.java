@@ -34,8 +34,8 @@ public class BlockRopeCoil extends Block
      */
     public void registerIcons(IconRegister par1IconRegister)
     {
-        this.blockIcon = par1IconRegister.registerIcon("extradecor:block_RopeCoilSide");
-        this.top = par1IconRegister.registerIcon("extradecor:block_RopeCoilTop");
+        this.blockIcon = par1IconRegister.registerIcon("ExtraDecor:block_RopeCoilSide");
+        this.top = par1IconRegister.registerIcon("ExtraDecor:block_RopeCoilTop");
     }
     
     public Icon getIcon(int i, int j)

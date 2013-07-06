@@ -18,7 +18,7 @@ public class BlockWoodPanel extends Block
 {
     @SideOnly(Side.CLIENT)
     private Icon[] iconArray;
-    public static final String[] panelTextures = new String[] {"extradecor:block_PanelOak", "extradecor:block_PanelBirch", "extradecor:block_PanelSpruce", "extradecor:block_PanelJungle"};
+    public static final String[] panelTextures = new String[] {"ExtraDecor:block_PanelOak", "ExtraDecor:block_PanelBirch", "ExtraDecor:block_PanelSpruce", "ExtraDecor:block_PanelJungle"};
     public static final String[] woodType = new String[] {"oak", "birch", "spruce", "jungle"};
     
     public BlockWoodPanel(int id)

@@ -36,9 +36,9 @@ public class BlockEdgeStoneBrick extends Block
 	
 	public void registerIcons(IconRegister par1IconRegister)
     {
-        this.blockIcon = par1IconRegister.registerIcon("extradecor:block_EdgeStoneFull");
-        this.left = par1IconRegister.registerIcon("extradecor:block_EdgeStoneLeft");
-        this.right = par1IconRegister.registerIcon("extradecor:block_EdgeStoneRight");
+        this.blockIcon = par1IconRegister.registerIcon("ExtraDecor:block_EdgeStoneFull");
+        this.left = par1IconRegister.registerIcon("ExtraDecor:block_EdgeStoneLeft");
+        this.right = par1IconRegister.registerIcon("ExtraDecor:block_EdgeStoneRight");
     }
     
     public Icon getIcon(int i, int j)

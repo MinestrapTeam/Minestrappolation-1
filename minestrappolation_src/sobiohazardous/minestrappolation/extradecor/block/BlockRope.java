@@ -96,7 +96,7 @@ public class BlockRope extends Block
      */
     public void registerIcons(IconRegister par1IconRegister)
     {
-        this.blockIcon = par1IconRegister.registerIcon("extradecor:block_RopeCoilSide");
+        this.blockIcon = par1IconRegister.registerIcon("ExtraDecor:block_RopeCoilSide");
     }
     
     @Override

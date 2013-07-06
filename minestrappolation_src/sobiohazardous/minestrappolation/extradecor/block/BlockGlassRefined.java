@@ -62,6 +62,6 @@ public class BlockGlassRefined extends BlockBreakable
     
     public void registerIcons(IconRegister par1IconRegister)
     {
-        blockIcon = par1IconRegister.registerIcon("extradecor:block_ClearGlass");
+        blockIcon = par1IconRegister.registerIcon("ExtraDecor:block_ClearGlass");
     } 
 }

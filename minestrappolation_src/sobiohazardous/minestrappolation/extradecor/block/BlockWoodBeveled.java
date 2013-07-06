@@ -18,7 +18,7 @@ public class BlockWoodBeveled extends Block
 {
     @SideOnly(Side.CLIENT)
     private Icon[] iconArray;
-    public static final String[] panelTextures = new String[] {"extradecor:block_BeveledOak", "extradecor:block_BeveledBirch", "extradecor:block_BeveledSpruce", "extradecor:block_BeveledJungle"};
+    public static final String[] panelTextures = new String[] {"ExtraDecor:block_BeveledOak", "ExtraDecor:block_BeveledBirch", "ExtraDecor:block_BeveledSpruce", "ExtraDecor:block_BeveledJungle"};
     public static final String[] woodType = new String[] {"oak", "birch", "spruce", "jungle"};
     
     public BlockWoodBeveled(int id)

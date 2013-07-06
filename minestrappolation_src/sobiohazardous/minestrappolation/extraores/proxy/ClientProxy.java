@@ -38,16 +38,16 @@ public class ClientProxy extends CommonProxy
          * use RenderingRegistry.registerEntityRenderingHandler for entities
          * look at RenderingRegistry for more
          */
-		
-		RenderingRegistry.instance().registerBlockHandler(new IPlateRenderingHandler());
-		EntityRegistry.registerGlobalEntityID(EntityNukePrimed.class, "NukePrimed", ModLoader.getUniqueEntityId());
-		
-		RenderingRegistry.instance().registerEntityRenderingHandler(EntityNukePrimed.class, new RenderNukePrimed());
-		RenderingRegistry.instance().registerEntityRenderingHandler(EntityGrenade.class, new RenderGrenade(ExtraOres.grenade));
-		RenderingRegistry.instance().registerEntityRenderingHandler(EntityGrenadeImpact.class, new RenderGrenade(ExtraOres.grenadeImpact));
-		RenderingRegistry.instance().registerEntityRenderingHandler(EntityGrenadeSticky.class, new RenderGrenade(ExtraOres.grenadeSticky));
-    
 		RenderingRegistry.registerBlockHandler(new IPlateRenderingHandler());
+
+		EntityRegistry.registerGlobalEntityID(EntityNukePrimed.class, "NukePrimed", ModLoader.getUniqueEntityId());
+				
+		RenderingRegistry.registerEntityRenderingHandler(EntityNukePrimed.class, new RenderNukePrimed());
+		RenderingRegistry.registerEntityRenderingHandler(EntityGrenade.class, new RenderGrenade(ExtraOres.grenade));
+		RenderingRegistry.registerEntityRenderingHandler(EntityGrenadeImpact.class, new RenderGrenade(ExtraOres.grenadeImpact));
+		RenderingRegistry.registerEntityRenderingHandler(EntityGrenadeSticky.class, new RenderGrenade(ExtraOres.grenadeSticky));
+
+
     }
     
    public static int addArmor(String armor)

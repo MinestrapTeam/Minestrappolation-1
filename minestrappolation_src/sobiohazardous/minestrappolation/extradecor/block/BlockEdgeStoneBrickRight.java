@@ -34,7 +34,7 @@ public class BlockEdgeStoneBrickRight extends Block
 	
 	public void registerIcons(IconRegister iconRegister)
 	{
-	         blockIcon = iconRegister.registerIcon("extradecor:block_EdgeStoneSideRight");
+	         blockIcon = iconRegister.registerIcon("ExtraDecor:block_EdgeStoneSideRight");
 	}    
 	
 	public int idDropped(int par1, Random par2Random, int par3)

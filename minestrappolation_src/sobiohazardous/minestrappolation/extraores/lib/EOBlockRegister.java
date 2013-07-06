@@ -1,5 +1,6 @@
 package sobiohazardous.minestrappolation.extraores.lib;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
 import net.minecraft.src.ModLoader;
 
@@ -9,7 +10,7 @@ public class EOBlockRegister
 	public static void registerBlocks()
 	{
     	//Extra Ores
-    	ModLoader.registerBlock(ExtraOres.meuroditeOre);
+    	GameRegistry.registerBlock(ExtraOres.meuroditeOre, "meuroditeOre");
 		ModLoader.registerBlock(ExtraOres.meuroditeBlock);
 		ModLoader.registerBlock(ExtraOres.UraniumOre);
 		ModLoader.registerBlock(ExtraOres.PlutoniumOre);
@@ -29,9 +30,9 @@ public class EOBlockRegister
 		ModLoader.registerBlock(ExtraOres.CopperBlock);
 		ModLoader.registerBlock(ExtraOres.TinOre);
 		ModLoader.registerBlock(ExtraOres.TinBlock);
-		ModLoader.registerBlock(ExtraOres.TinPlate);
-		ModLoader.registerBlock(ExtraOres.BronzePlate);
-		ModLoader.registerBlock(ExtraOres.SteelPlate);
+		GameRegistry.registerBlock(ExtraOres.TinPlate, "TinPlate");
+		GameRegistry.registerBlock(ExtraOres.BronzePlate, "BronzePlate");
+		GameRegistry.registerBlock(ExtraOres.SteelPlate, "SteelPlate");
 		ModLoader.registerBlock(ExtraOres.SoulOre);
 		ModLoader.registerBlock(ExtraOres.SmoothQuartzite);
 		ModLoader.registerBlock(ExtraOres.PillarQuartzite);
@@ -49,7 +50,6 @@ public class EOBlockRegister
 		ModLoader.registerBlock(ExtraOres.BronzePlatedChiseled);
 		ModLoader.registerBlock(ExtraOres.BronzePlatedGranite);
 		ModLoader.registerBlock(ExtraOres.Invincium);
-		ModLoader.registerBlock(ExtraOres.ExtraOresBedrock);
 		ModLoader.registerBlock(ExtraOres.SteelBlock);
 		ModLoader.registerBlock(ExtraOres.SteelPlatedCobble);
 		ModLoader.registerBlock(ExtraOres.SteelPlatedMossy);

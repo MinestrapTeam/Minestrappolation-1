@@ -26,7 +26,7 @@ public class BlockSlimeOoze extends Block
     
     public void registerIcons(IconRegister par1IconRegister)
     {
-        blockIcon = par1IconRegister.registerIcon("extradecor:block_SlimeOoze");
+        blockIcon = par1IconRegister.registerIcon("ExtraDecor:block_SlimeOoze");
     }
     
     /**

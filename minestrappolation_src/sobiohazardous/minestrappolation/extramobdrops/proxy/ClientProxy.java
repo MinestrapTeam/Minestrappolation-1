@@ -2,8 +2,6 @@ package sobiohazardous.minestrappolation.extramobdrops.proxy;
 
 import java.util.EnumSet;
 import java.util.Map;
-
-import sobiohazardous.potionapi.PotionAPI;
 import net.minecraft.src.ModLoader;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;

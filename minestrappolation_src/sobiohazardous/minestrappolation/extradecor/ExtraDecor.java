@@ -3,7 +3,6 @@ package sobiohazardous.minestrappolation.extradecor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
-import sobiohazardous.minestrappolation.creativetabs.CreativeTabExtraDecorBlocks;
 import sobiohazardous.minestrappolation.extradecor.block.*;
 import sobiohazardous.minestrappolation.extradecor.bridge.BridgeRecipes;
 import sobiohazardous.minestrappolation.extradecor.handler.ClientPacketHandler;
@@ -46,8 +45,8 @@ import cpw.mods.fml.common.network.NetworkMod.SidedPacketHandler;
  * @author SoBiohazardous
  */
 @NetworkMod(clientSideRequired = true, serverSideRequired = false,
-clientPacketHandlerSpec = @SidedPacketHandler(channels = {"extraoresChan"}, packetHandler = ClientPacketHandler.class),
-serverPacketHandlerSpec = @SidedPacketHandler(channels = {"extroresChan"}, packetHandler = ServerPacketHandler.class))
+clientPacketHandlerSpec = @SidedPacketHandler(channels = {"extradecorChan"}, packetHandler = ClientPacketHandler.class),
+serverPacketHandlerSpec = @SidedPacketHandler(channels = {"extradecorChanS"}, packetHandler = ServerPacketHandler.class))
 @Mod ( modid = "ExtraDecor", name="Extrappolated Decor", version="B1.0")
 public class ExtraDecor 
 {
@@ -140,7 +139,7 @@ public class ExtraDecor
 	public static int paneRenderId = RenderingRegistry.getNextAvailableRenderId();
 	public static int ropeRenderId = RenderingRegistry.getNextAvailableRenderId();
 	
-	@PreInit
+	@Mod.EventHandler
 	public void preLoad(FMLPreInitializationEvent event)
 	{
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
@@ -177,14 +176,7 @@ public class ExtraDecor
 		flintTileId = config.getBlock("Flint Tile", 727).getInt();
 		netherQuartzTileId = config.getBlock("Nether Quartz Tile", 728).getInt();
 		
-		config.save();
-	}
-	
-	
-	@Init
-	public void load(FMLInitializationEvent event)
-	{
-		proxy.registerRenderThings();	
+		config.save();		
 		
 		stoneBlockRefined = (new EDBlock(stoneBlockRefinedId, Material.rock, "block_StoneRefined")).setHardness(2F).setResistance(5F).setCreativeTab(tabDecorBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("stoneBlockRefined");
 		stonePillar = (new BlockPillar(stonePillarId, "block_StonePillar", "block_StoneRefined")).setHardness(2F).setResistance(5F).setCreativeTab(tabDecorBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("stonePillar");
@@ -233,10 +225,17 @@ public class ExtraDecor
 		flintTile = new EDBlock(flintTileId, Material.rock, "block_FlintTile").setUnlocalizedName("flintTile").setHardness(3.0F).setResistance(5.0F).setCreativeTab(tabDecorBlocks);
 		
 		netherQuartzTile = new EDBlock(netherQuartzTileId, Material.rock, "block_NetherTile").setUnlocalizedName("netherQuartzTile");
-		
+	
 		EDBlockRegistry.registerBlocks();
 		EDNameManager.registerNames();
 		EDRecipeManager.loadAllRecipes();
+	}
+	
+	
+	@Mod.EventHandler
+	public void load(FMLInitializationEvent event)
+	{
+		proxy.registerRenderThings();	
 		
 		MinecraftForge.setBlockHarvestLevel(snowBrick, "shovel", 0);
 		MinecraftForge.setBlockHarvestLevel(flintBlock, "pickaxe", 1);
@@ -248,7 +247,7 @@ public class ExtraDecor
 		
 	}
 
-	@PostInit
+	@Mod.EventHandler
     public void postLoad(FMLPostInitializationEvent evt)
 	{
 		Item.itemsList[stoneLamp.blockID] = (new ItemMultiTextureTile(stoneLamp.blockID - 256, stoneLamp, BlockStoneLamp.lampType)).setUnlocalizedName("stoneLamp");
@@ -262,6 +261,7 @@ public class ExtraDecor
 			BridgeRecipes.loadBridgeRecipes();
 		} catch (Exception e) 
 		{
+			System.err.println("ExtraDecor: Could not load bridge recipes");
 			e.printStackTrace();
 		}
 	}

@@ -11,8 +11,6 @@ import java.util.logging.Level;
 
 import javax.swing.text.html.parser.Entity;
 import org.lwjgl.input.Keyboard;
-import sobiohazardous.minestrappolation.creativetabs.CreativeTabExtraoresBlocks;
-import sobiohazardous.minestrappolation.creativetabs.CreativeTabExtraoresItems;
 import sobiohazardous.minestrappolation.extraores.block.*;
 import sobiohazardous.minestrappolation.extraores.entity.EntityGrenade;
 import sobiohazardous.minestrappolation.extraores.entity.EntityGrenadeImpact;
@@ -33,9 +31,9 @@ import sobiohazardous.minestrappolation.extraores.lib.EONameManager;
 import sobiohazardous.minestrappolation.extraores.lib.EORecipeManager;
 import sobiohazardous.minestrappolation.extraores.misc.PlutoniumFuelHandler;
 import sobiohazardous.minestrappolation.extraores.misc.UraniumFuelHandler;
-import sobiohazardous.minestrappolation.extraores.plate.*;
+import sobiohazardous.minestrappolation.extraores.plate.IPlateRenderingHandler;
+import sobiohazardous.minestrappolation.extraores.plate.Plate;
 import sobiohazardous.minestrappolation.extraores.proxy.CommonProxy;
-import sobiohazardous.potionapi.PotionAPI;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHalfSlab;
@@ -78,11 +76,9 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.TickType;
-import cpw.mods.fml.common.Mod.Init;
-import cpw.mods.fml.common.Mod.PostInit;
-import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.Mod.ServerStarted;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartedEvent;
@@ -98,7 +94,7 @@ import cpw.mods.fml.relauncher.Side;
  * 
  * 
  * 
- * @author Crzyguitardude
+ * @author SoBiohazardous
  */
 
 @NetworkMod(clientSideRequired = true, serverSideRequired = true,
@@ -585,8 +581,7 @@ public class ExtraOres
 	public static Block BronzePlatedGranite;
 	
 	public static Block Invincium;
-	public static Block ExtraOresBedrock;
-	
+
 	public static Item BedrockPickaxe;
 	public static Item BedrockAxe;
 	public static Item BedrockShovel;
@@ -841,7 +836,7 @@ public class ExtraOres
 	
 	private EOGuiHandler guiHandler = new EOGuiHandler();
 	
-	@PreInit  // never before implemented
+	@Mod.EventHandler
     public void myNewPreLoadMethod(FMLPreInitializationEvent evt)	
    {    
 		//blocks 3000
@@ -1161,6 +1156,8 @@ public class ExtraOres
 	    
 	    config.save();
 	    
+	    Block.bedrock.setHardness(80F);
+	    
 		GameRegistry.registerWorldGenerator(new ExtracraftOreGenerator());
 		EntityRegistry.registerModEntity(EntityExplosion.class, "Plutonium", 4, this, 350, 5, false);
 		EntityRegistry.registerModEntity(EntityGrenade.class, "Grenade", 2, this, 40, 3, true);
@@ -1168,11 +1165,6 @@ public class ExtraOres
 		EntityRegistry.registerModEntity(EntityGrenadeImpact.class, "GrenadeImpact", 4, this, 40, 3, true);
 		EntityRegistry.registerModEntity(EntityGrenadeSticky.class, "GrenadeSticky", 5, this, 40, 3, true);
 		
-   }
-	
-	@Init
-    public void loadNew(FMLInitializationEvent event)
-	{
 		meuroditeOre = (new EOBlock(meuroditeOreId, "block_MeuroditeOre", Material.rock)).setHardness(5F).setCreativeTab(tabOresBlocks).setResistance(10F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("MeuroditeOre");
 		meuroditeBlock = (new EOBlock(meuroditeBlockId, "block_Meurodite", Material.iron)).setHardness(5F).setCreativeTab(tabOresBlocks).setResistance(10F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("MeuroditeBlock");
 		meuroditeIngot = (new EItem(meuroditeIngotId, "item_MeuroditeIngot")).setCreativeTab(tabOresItems).setUnlocalizedName("MeuroditeIngot");
@@ -1339,7 +1331,6 @@ public class ExtraOres
 		BronzePlatedGranite = (new EOBlock(bronzePlatedGraniteId, "block_BronzeGraniteBrick", Material.rock)).setHardness(6F).setResistance(30.0F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("BronzePlatedGranite");
 		
 		Invincium = (new EOBlock(invinciumId, "block_Invincium", Material.rock)).setBlockUnbreakable().setResistance(12000000.0F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("Invincium");
-		ExtraOresBedrock = (new EOBlock(extraOresBedrockId, "block_NewBedrock", Material.rock)).setHardness(80F).setResistance(24000000.0F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("ExtraOresBedrock");
 		//Replacement block for vanilla Bedrock to make it breakable. Currently modifies net.minecraft.world.gen.ChunkProviderGenerate, net.minecraft.world.gen.ChunkProviderHell, and net.minecraft.world.gen.feature.WorldGenSpikes.
 		//TODO: Find a solution to removing Bedrock invincibility that doesn't edit base classes.
 		
@@ -1365,9 +1356,7 @@ public class ExtraOres
 		nuke = (new BlockNuke(nukeId)).setHardness(0.0F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("nuke");
 		grenade = (new ItemGrenade(grenadeId)).setUnlocalizedName("grenade");
 		grenadeImpact = (new ItemGrenadeImpact(grenadeImpactId)).setUnlocalizedName("grenadeImpact");
-		grenadeSticky = (new ItemGrenadeSticky(grenadeStickyId)).setUnlocalizedName("grenadeSticky");	
-	
-		
+		grenadeSticky = (new ItemGrenadeSticky(grenadeStickyId)).setUnlocalizedName("grenadeSticky");		
 		
 		BPMeuroditeSword = (new ItemESword(BPmeuroditeSwordId, "item_BronzePlatedMeuroditeSword", ExtracraftToolMaterial.BPMEURODITE)).setUnlocalizedName("BPMeuroditeSword");
 		BPMeuroditePickaxe = (new ItemEPickaxe(BPmeuroditePickaxeId, "item_BronzePlatedMeuroditePickaxe", ExtracraftToolMaterial.BPMEURODITE)).setUnlocalizedName("BPMeuroditePickaxe");
@@ -1505,8 +1494,7 @@ public class ExtraOres
 		BPDiamondHelmet = (new ItemExtracraftHelmet(BPDiamondHelmetId,"item_BronzePlatedDiamondHelmet", MaterialBPDiamond, proxy.addArmor("BPdiamond"), 0)).setUnlocalizedName("BPDiamondHelmet");
 		BPDiamondChest = (new ItemExtracraftChest(BPDiamondChestId, "item_BronzePlatedDiamondChestplate",MaterialBPDiamond, proxy.addArmor("BPdiamond"), 1)).setUnlocalizedName("BPDiamondChest");
 		BPDiamondPants = (new ItemExtracraftPants(BPDiamondPantsId, "item_BronzePlatedDiamondLeggings",MaterialBPDiamond, proxy.addArmor("BPdiamond"), 2)).setUnlocalizedName("BPDiamondPants");
-		BPDiamondBoots = (new ItemExtracraftBoots(BPDiamondBootsId, "item_BronzePlatedDiamondBoots",MaterialBPDiamond, proxy.addArmor("BPdiamond"), 3)).setUnlocalizedName("BPDiamondBoots");	
-		
+		BPDiamondBoots = (new ItemExtracraftBoots(BPDiamondBootsId, "item_BronzePlatedDiamondBoots",MaterialBPDiamond, proxy.addArmor("BPdiamond"), 3)).setUnlocalizedName("BPDiamondBoots");		
 		
 		SmoothRadiantQuartz = (new EOBlock(smoothRadiantQuartzId, "block_SmoothRadiantQuartz", Material.rock)).setHardness(6F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setCreativeTab(ExtraOres.tabOresBlocks).setLightValue(0.5F).setUnlocalizedName("SmoothRadiantQuartz");
 		ChiseledRadiantQuartz = (new EOBlock(chiseledRadiantQuartzId, "block_ChiseledRadiantQuartz", Material.rock)).setHardness(6F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setCreativeTab(ExtraOres.tabOresBlocks).setLightValue(0.5F).setUnlocalizedName("ChiseledRadiantQuartz");
@@ -1570,18 +1558,24 @@ public class ExtraOres
 		
 		plutoniumInsulated = (new BlockPlutoniumInsulated(plutoniumInsulatedId, Material.iron)).setHardness(6F).setResistance(9F).setCreativeTab(tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("plutoniumInsulated");
 		uraniumInsulated = (new BlockUraniumInsulated(uraniumInsulatedId, Material.iron)).setHardness(6F).setResistance(9F).setCreativeTab(tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("uraniumInsulated");
-		
-        TickRegistry.registerTickHandler(new ClientTickHandler(EnumSet.of(TickType.CLIENT)), Side.CLIENT);
-        TickRegistry.registerTickHandler(new ServerTickHandler(EnumSet.of(TickType.PLAYER)), Side.SERVER);
-        proxy.registerRenderThings(); //this allows seperate renderings for server and client
-        
-        GameRegistry.registerFuelHandler(new UraniumFuelHandler());
-        GameRegistry.registerFuelHandler(new PlutoniumFuelHandler());
-        
+          
         EONameManager.loadNames();
 		EORecipeManager.loadRecipes();
-		EOBlockRegister.registerBlocks();
-		
+		EOBlockRegister.registerBlocks();		
+
+   }
+	
+	@Mod.EventHandler
+    public void loadNew(FMLInitializationEvent event)
+    {		
+        proxy.registerRenderThings(); //this allows seperate renderings for server and client
+        
+        TickRegistry.registerTickHandler(new ClientTickHandler(EnumSet.of(TickType.CLIENT)), Side.CLIENT);
+        TickRegistry.registerTickHandler(new ServerTickHandler(EnumSet.of(TickType.PLAYER)), Side.SERVER);
+
+        GameRegistry.registerFuelHandler(new UraniumFuelHandler());
+        GameRegistry.registerFuelHandler(new PlutoniumFuelHandler());
+
 		MinecraftForge.setBlockHarvestLevel(CopperOre, "pickaxe", 0);
 		MinecraftForge.setBlockHarvestLevel(CopperBlock, "pickaxe", 0);
 		MinecraftForge.setBlockHarvestLevel(TinOre, "pickaxe", 1);
@@ -1617,7 +1611,6 @@ public class ExtraOres
 		MinecraftForge.setBlockHarvestLevel(BronzePlatedStoneBrick, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(BronzePlatedChiseled, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(BronzePlatedGranite, "pickaxe", 1);
-		MinecraftForge.setBlockHarvestLevel(ExtraOresBedrock, "pickaxe", 4);
 		MinecraftForge.setBlockHarvestLevel(SteelPlatedCobble, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(SteelPlatedMossy, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(SteelPlatedStoneBrick, "pickaxe", 1);
@@ -1636,7 +1629,7 @@ public class ExtraOres
 		
 	}
 	
-	@PostInit // like the modsLoaded thing from ModLoader
+	@Mod.EventHandler
     public void myNewPostLoadMethod(FMLPostInitializationEvent evt)
     {
 		Item.itemsList[this.RadiantQuartzSingleSlab.blockID] = (new ItemSlab(this.RadiantQuartzSingleSlab.blockID - 256, (BlockHalfSlab)RadiantQuartzSingleSlab, (BlockHalfSlab)RadiantQuartzDoubleSlab, false));

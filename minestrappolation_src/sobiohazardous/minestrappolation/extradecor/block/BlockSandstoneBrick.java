@@ -18,7 +18,7 @@ public class BlockSandstoneBrick extends Block
 {
     @SideOnly(Side.CLIENT)
     private Icon[] iconArray;
-    public static final String[] brickTextures = new String[] {"extradecor:block_SandstoneBrick", "extradecor:block_SandstoneBrickChiseled", "extradecor:block_SandstoneBrickMossy", "extradecor:block_SandstoneHeiroglyph1", "extradecor:block_SandstoneHeiroglyph2"};
+    public static final String[] brickTextures = new String[] {"ExtraDecor:block_SandstoneBrick", "ExtraDecor:block_SandstoneBrickChiseled", "ExtraDecor:block_SandstoneBrickMossy", "ExtraDecor:block_SandstoneHeiroglyph1", "ExtraDecor:block_SandstoneHeiroglyph2"};
     public static final String[] sandType = new String[] {"brick", "chiseled", "mossy", "heiroglyph", "heiroglyph_2"};
     
     public BlockSandstoneBrick(int id)

@@ -37,9 +37,9 @@ public class BlockGlassRefinedPane extends Block
     public BlockGlassRefinedPane(int par1, String texture, String topTexture, Material par4Material, boolean par5)
     {
         super(par1, par4Material);
-        this.sideTextureIndex = "extradecor:" + topTexture;
+        this.sideTextureIndex = "ExtraDecor:" + topTexture;
         this.canDropItself = par5;
-        this.field_94402_c = "extradecor:" + texture;
+        this.field_94402_c = "ExtraDecor:" + texture;
         this.setCreativeTab(CreativeTabs.tabDecorations);
     }
 

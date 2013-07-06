@@ -18,7 +18,7 @@ public class BlockStoneLamp extends Block
 {
     @SideOnly(Side.CLIENT)
     private Icon[] iconArray;
-    public static final String[] stoneLampTextures = new String[] {"extradecor:block_StoneLampGlowstone", "extradecor:block_StoneLampSunstone"};
+    public static final String[] stoneLampTextures = new String[] {"ExtraDecor:block_StoneLampGlowstone", "ExtraDecor:block_StoneLampSunstone"};
     public static final String[] lampType = new String[] {"glowstone", "sunstone"};
     
     public BlockStoneLamp(int id)

@@ -30,8 +30,8 @@ public class BlockPillar extends Block
 
 	public void registerIcons(IconRegister iconRegister)
 	{
-	         blockIcon = iconRegister.registerIcon("extradecor:"+sidesImg);
-	         this.top = iconRegister.registerIcon("extradecor:"+topImg);    
+	         blockIcon = iconRegister.registerIcon("ExtraDecor:"+sidesImg);
+	         this.top = iconRegister.registerIcon("ExtraDecor:"+topImg);    
 	}
     
     /**

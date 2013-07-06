@@ -18,7 +18,7 @@ public class ItemBlockPlacer extends Item
     {
         super(par1);
         this.spawnID = par2Block.blockID;
-        this.texture = "extradecor:" + texture;
+        this.texture = "ExtraDecor:" + texture;
     }
     
     public void registerIcons(IconRegister iconRegister)
