@@ -12,21 +12,18 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.stats.StatList;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class BlockSlimeOoze extends Block
+public class BlockOoze extends EDBlock
 {
 	
-	public BlockSlimeOoze(int par1)
+	public BlockOoze(int par1, Material material, String texture)
     {
-        super(par1, Material.web);
+        super(par1, material, texture);
         this.setCreativeTab(ExtraDecor.tabDecorBlocks);
-    }
-    
-    public void registerIcons(IconRegister par1IconRegister)
-    {
-        blockIcon = par1IconRegister.registerIcon("ExtraDecor:block_SlimeOoze");
+        
     }
     
     /**
@@ -34,7 +31,7 @@ public class BlockSlimeOoze extends Block
      */
     public int getRenderBlockPass()
     {
-        return 0;
+        return 1;
     }
 
     /**
@@ -56,6 +53,11 @@ public class BlockSlimeOoze extends Block
     public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
     {
         par5Entity.setInWeb();
+        par5Entity.attackEntityFrom(DamageSource.inWall, 1.0F);
+        if(blockID == ExtraDecor.magmaOoze.blockID)
+        {
+        	par5Entity.setFire(1);
+        }
     }
     
     public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)

@@ -48,6 +48,11 @@ public class EDNameManager
 		LanguageRegistry.instance().addStringLocalization("tile.woodBoards.jungle.name", "Jungle Wood Boards");
 		LanguageRegistry.addName(ExtraDecor.flintTile, "Flint Tile");
 		LanguageRegistry.addName(ExtraDecor.netherQuartzTile, "Nether Quartz Tile");
+		LanguageRegistry.addName(ExtraDecor.sugarBlock, "Sugar Block");
+		LanguageRegistry.addName(ExtraDecor.meatBlock, "Meat Block");
+		LanguageRegistry.addName(ExtraDecor.magmaOoze, "Magma Ooze");
+		LanguageRegistry.addName(ExtraDecor.enderBlock, "Ender Block");
+		LanguageRegistry.addName(ExtraDecor.crate, "Crate");
 	}
 	
 }

@@ -1,4 +1,4 @@
-package sobiohazardous.minestrappolation.extraores.gui;
+package sobiohazardous.minestrappolation.extraores.client.gui;
 
 import java.util.Iterator;
 import java.util.List;

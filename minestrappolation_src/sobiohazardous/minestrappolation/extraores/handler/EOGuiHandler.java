@@ -3,8 +3,8 @@
 package sobiohazardous.minestrappolation.extraores.handler;
 
 // These are all the imports you will need
-import sobiohazardous.minestrappolation.extraores.gui.ContainerMelter;
-import sobiohazardous.minestrappolation.extraores.gui.GuiMelter;
+import sobiohazardous.minestrappolation.extraores.client.gui.ContainerMelter;
+import sobiohazardous.minestrappolation.extraores.client.gui.GuiMelter;
 import sobiohazardous.minestrappolation.extraores.tileentity.TileEntityMelter;
 import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;

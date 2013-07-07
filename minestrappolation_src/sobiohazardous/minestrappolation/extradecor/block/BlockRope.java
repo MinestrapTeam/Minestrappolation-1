@@ -14,6 +14,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -107,20 +108,29 @@ public class BlockRope extends Block
     
     public void onNeighborBlockChange(World par1World, int par2, int par3, int par4, int par5)
     {
-    	if(BlockFunctions.isBlockAbove(par1World, par2, par3, par4, 0))
+    	if(par1World.getBlockId(par2, par3 +1, par4) == 0)
     	{
-    		par1World.destroyBlock(par2, par3, par4, true);
+    		par1World.setBlockToAir(par2, par3, par4);
+            par1World.scheduleBlockUpdate(par2, par3, par4, this.blockID, 4);
     	}
     }
     
     public boolean canBlockStay(World par1World, int par2, int par3, int par4)
     {
-    	if(BlockFunctions.isBlockAbove(par1World, par2, par3, par4, 0))
+    	if(par1World.getBlockId(par2, par3 +1, par4) == 0)
     	{
-    		return true;
+            par1World.scheduleBlockUpdate(par2, par3, par4, this.blockID, 4);
+    		return false;
     	}
     	
-    	return false;
+    	return true;
+    }
+    public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
+    {
+    	if(par1World.getBlockId(par2, par3 +1, par4) == 0)
+    	{
+    		par1World.setBlockToAir(par2, par3, par4);
+    	}
     }
     
     /**
@@ -129,5 +139,14 @@ public class BlockRope extends Block
     public int idDropped(int par1, Random par2Random, int par3)
     {
         return ExtraDecor.itemRope.itemID;
+    }
+    
+    public void onBlockPlacedBy(World par1World, int par2, int par3, int par4, EntityLivingBase par5EntityLivingBase, ItemStack par6ItemStack)
+    {
+    	if(par1World.getBlockId(par2, par3 +1, par4) == 0)
+    	{
+    		par1World.setBlockToAir(par2, par3, par4);
+            par1World.scheduleBlockUpdate(par2, par3, par4, this.blockID, 4);
+    	}
     }
 }

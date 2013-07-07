@@ -1,4 +1,4 @@
-package sobiohazardous.minestrappolation.extraores.gui;
+package sobiohazardous.minestrappolation.extraores.client.gui;
 
 import sobiohazardous.minestrappolation.extraores.MelterRecipes;
 import net.minecraft.entity.item.EntityXPOrb;

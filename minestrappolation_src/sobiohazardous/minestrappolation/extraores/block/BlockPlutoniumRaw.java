@@ -217,7 +217,8 @@ public BlockPlutoniumRaw(int par1, Material par3Material)
                 	    //System.out.println("close");
                 	    living = (EntityLiving)var6.next();
                         living.addPotionEffect(new PotionEffect(Potion.wither.getId(), 40, 2, false));
-                	    //varEntityLiving.addPotionEffect(new PotionEffect(Potion.poison.getId(),200,10));          
+                	    //varEntityLiving.addPotionEffect(new PotionEffect(Potion.poison.getId(),200,10)); 
+                        
                     }
                 }
                 List list2 = world.getEntitiesWithinAABB(EntitySkeleton.class, axisalignedbb);

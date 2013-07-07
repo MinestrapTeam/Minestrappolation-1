@@ -3,7 +3,7 @@ package sobiohazardous.minestrappolation.extraores;
 import java.util.HashMap;
 import java.util.Map;
 
-import sobiohazardous.minestrappolation.extraores.gui.ContainerMelter;
+import sobiohazardous.minestrappolation.extraores.client.gui.ContainerMelter;
 import sobiohazardous.minestrappolation.extraores.tileentity.TileEntityMelter;
 
 import net.minecraft.block.Block;

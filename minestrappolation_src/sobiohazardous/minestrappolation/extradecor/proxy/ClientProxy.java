@@ -25,5 +25,6 @@ public class ClientProxy extends CommonProxy
          */
     	RenderingRegistry.registerBlockHandler(new PaneRender());
     	RenderingRegistry.registerBlockHandler(new RopeRender());
+    	
     }
 }

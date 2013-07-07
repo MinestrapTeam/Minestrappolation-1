@@ -6,18 +6,21 @@ import java.lang.reflect.Modifier;
 import sobiohazardous.minestrappolation.extradecor.block.*;
 import sobiohazardous.minestrappolation.extradecor.bridge.BridgeRecipes;
 import sobiohazardous.minestrappolation.extradecor.handler.ClientPacketHandler;
+import sobiohazardous.minestrappolation.extradecor.handler.EDGuiHandler;
 import sobiohazardous.minestrappolation.extradecor.handler.ServerPacketHandler;
 import sobiohazardous.minestrappolation.extradecor.item.ItemBlockPlacer;
 import sobiohazardous.minestrappolation.extradecor.lib.EDBlockRegistry;
 import sobiohazardous.minestrappolation.extradecor.lib.EDNameManager;
 import sobiohazardous.minestrappolation.extradecor.lib.EDRecipeManager;
 import sobiohazardous.minestrappolation.extradecor.proxy.CommonProxy;
+import sobiohazardous.minestrappolation.extradecor.tileentity.TileEntityCrate;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.BlockGlowStone;
 import net.minecraft.block.BlockObsidian;
 import net.minecraft.block.BlockPane;
 import net.minecraft.block.BlockWood;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -37,6 +40,10 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkMod.SidedPacketHandler;
+import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.EntityRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
+import sobiohazardous.minestrappolation.extradecor.material.*;
 
 /**
  * 
@@ -85,7 +92,12 @@ public class ExtraDecor
 	sandstonePillarId,
 	woodBoardsId,
 	flintTileId,
-	netherQuartzTileId;
+	netherQuartzTileId,
+	sugarBlockId,
+	meatBlockId,
+	magmaOozeId,
+	enderBlockId,
+	crateId;
 	
 	public static Block stoneBlockRefined;
 	public static Block stonePillar;
@@ -134,10 +146,21 @@ public class ExtraDecor
 	
 	public static Block netherQuartzTile;
 	
+	public static Block sugarBlock;
+	public static Block meatBlock;
+	
+	public static Block magmaOoze;
+	
+	public static Block enderBlock;
+	
+	public static Block crate;
+	
 	public static CreativeTabs tabDecorBlocks = new CreativeTabExtraDecorBlocks(CreativeTabs.getNextID(),"Extrappolated Decor - Blocks");
 	
 	public static int paneRenderId = RenderingRegistry.getNextAvailableRenderId();
 	public static int ropeRenderId = RenderingRegistry.getNextAvailableRenderId();
+	
+	public static final Material materialOoze = new MaterialOoze(MapColor.foliageColor);
 	
 	@Mod.EventHandler
 	public void preLoad(FMLPreInitializationEvent event)
@@ -175,6 +198,11 @@ public class ExtraDecor
 		woodBoardsId = config.getBlock("Wood Boards", 726).getInt();
 		flintTileId = config.getBlock("Flint Tile", 727).getInt();
 		netherQuartzTileId = config.getBlock("Nether Quartz Tile", 728).getInt();
+		sugarBlockId = config.getBlock("Sugar Block", 729).getInt();
+		meatBlockId = config.getBlock("Meat Block", 730).getInt();
+		magmaOozeId = config.getBlock("Magma Ooze", 731).getInt();
+		enderBlockId = config.getBlock("Ender Block", 732).getInt();
+		crateId = config.getBlock("Crate", 733).getInt();
 		
 		config.save();		
 		
@@ -208,7 +236,7 @@ public class ExtraDecor
 		itemRope = (new ItemBlockPlacer(itemRopeId, "item_Rope", rope)).setUnlocalizedName("itemRope").setCreativeTab(tabDecorBlocks);
 		ropeCoil = (new BlockRopeCoil(ropeCoilId)).setHardness(2.0F).setResistance(5.0F).setCreativeTab(tabDecorBlocks).setStepSound(Block.soundLadderFootstep).setUnlocalizedName("ropeCoil");
 		
-		oozeSlime = (new BlockSlimeOoze(oozeSlimeId)).setHardness(2.0F).setResistance(2.0F).setUnlocalizedName("oozeSlime");
+		oozeSlime = (new BlockOoze(oozeSlimeId, this.materialOoze, "block_SlimeOoze")).setHardness(5.0F).setResistance(2.0F).setUnlocalizedName("oozeSlime");
 		
 		woodPanel = (new BlockWoodPanel(woodPanelId)).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("woodPanel");
 			
@@ -226,16 +254,29 @@ public class ExtraDecor
 		
 		netherQuartzTile = new EDBlock(netherQuartzTileId, Material.rock, "block_NetherTile").setUnlocalizedName("netherQuartzTile");
 	
+		sugarBlock = new BlockSugarBlock(sugarBlockId, "block_SugarBlock").setResistance(0.8F).setResistance(1F).setUnlocalizedName("sugarBlock");
+		meatBlock = new BlockMeatBlock(meatBlockId, "block_MeatBlock").setHardness(0.8F).setResistance(1.0F).setUnlocalizedName("meatBlock");
+		
+		magmaOoze = new BlockOoze(magmaOozeId, this.materialOoze, "block_MagmaOoze").setHardness(5.0F).setResistance(3.0F).setUnlocalizedName("magmaOoze");
+		
+		enderBlock = new BlockEnderblock(enderBlockId).setHardness(3.0F).setResistance(4.0F).setUnlocalizedName("enderBlock").setCreativeTab(tabDecorBlocks);
+		
+		crate = new BlockCrate(crateId).setHardness(2.0F).setResistance(2.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(tabDecorBlocks).setUnlocalizedName("crate");
+		
 		EDBlockRegistry.registerBlocks();
 		EDNameManager.registerNames();
 		EDRecipeManager.loadAllRecipes();
+		
 	}
 	
 	
 	@Mod.EventHandler
 	public void load(FMLInitializationEvent event)
 	{
-		proxy.registerRenderThings();	
+		proxy.registerRenderThings();
+		
+		NetworkRegistry.instance().registerGuiHandler(this, new EDGuiHandler());
+		GameRegistry.registerTileEntity(TileEntityCrate.class, "tileEntityCrate");
 		
 		MinecraftForge.setBlockHarvestLevel(snowBrick, "shovel", 0);
 		MinecraftForge.setBlockHarvestLevel(flintBlock, "pickaxe", 1);
@@ -261,7 +302,7 @@ public class ExtraDecor
 			BridgeRecipes.loadBridgeRecipes();
 		} catch (Exception e) 
 		{
-			System.err.println("ExtraDecor: Could not load bridge recipes");
+			System.err.println("ExtraDecor: Could not load bridge recipes.");
 			e.printStackTrace();
 		}
 	}

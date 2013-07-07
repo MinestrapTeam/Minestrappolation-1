@@ -37,6 +37,11 @@ public class EDBlockRegistry
 		GameRegistry.registerBlock(ExtraDecor.woodBoards, "woodBoards");
 		GameRegistry.registerBlock(ExtraDecor.flintTile, "flintTile");
 		GameRegistry.registerBlock(ExtraDecor.netherQuartzTile, "netherQuartzTile");
+		GameRegistry.registerBlock(ExtraDecor.sugarBlock, "sugarBlock");
+		GameRegistry.registerBlock(ExtraDecor.meatBlock, "meatBlock");
+		GameRegistry.registerBlock(ExtraDecor.magmaOoze, "magmaOoze");
+		GameRegistry.registerBlock(ExtraDecor.enderBlock, "enderBlock");
+		GameRegistry.registerBlock(ExtraDecor.crate, "crate");
 	}
 	
 }

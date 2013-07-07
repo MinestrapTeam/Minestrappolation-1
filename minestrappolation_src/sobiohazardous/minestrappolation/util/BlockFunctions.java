@@ -184,7 +184,15 @@ public class BlockFunctions
         return false;
     }
 	
-	public static boolean isBlockAbove(World par1World, int x, int y, int z, int BlockIdtouching)
+	/**
+	 * Returns if a block is touching the top or not, doesn't know which block.
+	 * @param par1World
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @return
+	 */
+	public static boolean isBlockAbove(World par1World, int x, int y, int z)
 	{
 		for (int i = x - 0; i <= x + 0; ++ i)//x
 		{
@@ -192,9 +200,15 @@ public class BlockFunctions
             {
                 for (int j1 = 0 - 0; j1 <= z + 0; ++j1)//z
                 {
-                    if (par1World.getBlockId(i, i1, j1) == BlockIdtouching)
+                    /*
+                	if (par1World.getBlockId(i, i1, j1) == BlockIdtouching)
                     {
                         return true;
+                    }
+                    */
+                    if(par1World.blockExists(i,  i1, j1))
+                    {
+                    	return true;
                     }
                 }
             }
