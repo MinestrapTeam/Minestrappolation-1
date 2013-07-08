@@ -189,5 +189,9 @@ public class EDRecipeManager
 				{
 			"WWW","SSS","WWW", Character.valueOf('S'), Item.stick, Character.valueOf('W'), Block.planks
 				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.barrel), new Object[]
+				{
+			"I", "C", "I", Character.valueOf('I'), Item.ingotIron, Character.valueOf('C'), ExtraDecor.crate
+				});
 	}
 }

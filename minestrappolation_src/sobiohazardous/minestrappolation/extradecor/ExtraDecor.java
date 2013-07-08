@@ -97,7 +97,8 @@ public class ExtraDecor
 	meatBlockId,
 	magmaOozeId,
 	enderBlockId,
-	crateId;
+	crateId,
+	barrelId;
 	
 	public static Block stoneBlockRefined;
 	public static Block stonePillar;
@@ -154,6 +155,7 @@ public class ExtraDecor
 	public static Block enderBlock;
 	
 	public static Block crate;
+	public static Block barrel;
 	
 	public static CreativeTabs tabDecorBlocks = new CreativeTabExtraDecorBlocks(CreativeTabs.getNextID(),"Extrappolated Decor - Blocks");
 	
@@ -203,6 +205,7 @@ public class ExtraDecor
 		magmaOozeId = config.getBlock("Magma Ooze", 731).getInt();
 		enderBlockId = config.getBlock("Ender Block", 732).getInt();
 		crateId = config.getBlock("Crate", 733).getInt();
+		barrelId = config.getBlock("Barrel", 734).getInt();
 		
 		config.save();		
 		
@@ -262,6 +265,7 @@ public class ExtraDecor
 		enderBlock = new BlockEnderblock(enderBlockId).setHardness(3.0F).setResistance(4.0F).setUnlocalizedName("enderBlock").setCreativeTab(tabDecorBlocks);
 		
 		crate = new BlockCrate(crateId).setHardness(2.0F).setResistance(2.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(tabDecorBlocks).setUnlocalizedName("crate");
+		barrel = new BlockBarrel(barrelId).setHardness(4.0F).setResistance(6.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(tabDecorBlocks).setUnlocalizedName("barrel");
 		
 		EDBlockRegistry.registerBlocks();
 		EDNameManager.registerNames();

@@ -1,8 +1,8 @@
 package sobiohazardous.minestrappolation.extradecor.handler;
 
-import sobiohazardous.minestrappolation.extradecor.container.ContainerCrate;
-import sobiohazardous.minestrappolation.extradecor.gui.GuiCrate;
-import sobiohazardous.minestrappolation.extradecor.tileentity.TileEntityCrate;
+import sobiohazardous.minestrappolation.extradecor.container.*;
+import sobiohazardous.minestrappolation.extradecor.gui.*;
+import sobiohazardous.minestrappolation.extradecor.tileentity.*;
 import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.src.*;
@@ -15,12 +15,12 @@ public class EDGuiHandler implements IGuiHandler
 	@Override
 	public Object getServerGuiElement(int id, EntityPlayer player, World world, int x, int y, int z)
 	{
-		// This gets the TileEntity the player is currently activating
 		TileEntity tile_entity = world.getBlockTileEntity(x, y, z);
-		// This checks if the TileEntity is the TileTutorial
-		if(tile_entity instanceof TileEntityCrate){
-			// If it is it returns a new ContainerTutorial instance
-			return new ContainerCrate((TileEntityCrate) tile_entity, player.inventory);
+		
+		switch(id)
+		{
+			case 0: return tile_entity instanceof TileEntityCrate ? new ContainerCrate((TileEntityCrate) tile_entity, player.inventory) : null;
+			case 1: return tile_entity instanceof TileEntityBarrel ? new ContainerBarrel((TileEntityBarrel)tile_entity, player.inventory) : null;
 		}
 		return null;
 	}
@@ -28,16 +28,14 @@ public class EDGuiHandler implements IGuiHandler
 	@Override
 	public Object getClientGuiElement(int id, EntityPlayer player, World world, int x, int y, int z)
 	{
-		// This gets the TIleEntity the player is currently activating
 		TileEntity tile_entity = world.getBlockTileEntity(x, y, z);
-
-		// This checks if the TileEntity is the TileTutorial
-		if(tile_entity instanceof TileEntityCrate){
-			// If it is it returns a new GuiTutorial instance
-			return new GuiCrate(player.inventory, (TileEntityCrate) tile_entity);
+		
+		switch(id)
+		{
+			case 0: return tile_entity instanceof TileEntityCrate ? new GuiCrate(player.inventory, (TileEntityCrate)tile_entity) : null;
+			case 1: return tile_entity instanceof TileEntityBarrel ?  new GuiBarrel(player.inventory, (TileEntityBarrel)tile_entity) : null;
 		}
-
-		// Returns null if not
+		
 		return null;
 	}
 

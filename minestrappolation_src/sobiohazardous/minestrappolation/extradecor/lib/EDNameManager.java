@@ -53,6 +53,7 @@ public class EDNameManager
 		LanguageRegistry.addName(ExtraDecor.magmaOoze, "Magma Ooze");
 		LanguageRegistry.addName(ExtraDecor.enderBlock, "Ender Block");
 		LanguageRegistry.addName(ExtraDecor.crate, "Crate");
+		LanguageRegistry.addName(ExtraDecor.barrel, "Barrel");
 	}
 	
 }

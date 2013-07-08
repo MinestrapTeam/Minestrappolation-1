@@ -42,6 +42,7 @@ public class EDBlockRegistry
 		GameRegistry.registerBlock(ExtraDecor.magmaOoze, "magmaOoze");
 		GameRegistry.registerBlock(ExtraDecor.enderBlock, "enderBlock");
 		GameRegistry.registerBlock(ExtraDecor.crate, "crate");
+		GameRegistry.registerBlock(ExtraDecor.barrel, "barrel");
 	}
 	
 }
