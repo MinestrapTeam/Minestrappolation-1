@@ -1,4 +1,4 @@
-package sobiohazardous.minestrappolation.extradecor.gui;
+package sobiohazardous.minestrappolation.extradecor.client.gui;
 
 import org.lwjgl.opengl.GL11;
 

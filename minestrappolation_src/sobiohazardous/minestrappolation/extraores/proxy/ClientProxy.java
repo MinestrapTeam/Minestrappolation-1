@@ -39,8 +39,6 @@ public class ClientProxy extends CommonProxy
          * look at RenderingRegistry for more
          */
 		RenderingRegistry.registerBlockHandler(new IPlateRenderingHandler());
-
-		EntityRegistry.registerGlobalEntityID(EntityNukePrimed.class, "NukePrimed", ModLoader.getUniqueEntityId());
 				
 		RenderingRegistry.registerEntityRenderingHandler(EntityNukePrimed.class, new RenderNukePrimed());
 		RenderingRegistry.registerEntityRenderingHandler(EntityGrenade.class, new RenderGrenade(ExtraOres.grenade));

@@ -1,4 +1,4 @@
-package sobiohazardous.minestrappolation.extradecor.gui;
+package sobiohazardous.minestrappolation.extradecor.client.gui;
 
 import org.lwjgl.opengl.GL11;
 
@@ -23,8 +23,8 @@ public class GuiCrate extends GuiContainer
 	@Override
     protected void drawGuiContainerForegroundLayer(int param1, int param2) 
 	{
-		fontRenderer.drawString("Crate", 6, 6, 0xffffff);
-		fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 6, ySize - 96 + 2, 0xffffff);
+		fontRenderer.drawString("Crate", 6, 6, 4210752);
+		fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 6, ySize - 111, 4210752);
 	}
 
 	@Override

@@ -1,7 +1,7 @@
 package sobiohazardous.minestrappolation.extradecor.handler;
 
+import sobiohazardous.minestrappolation.extradecor.client.gui.*;
 import sobiohazardous.minestrappolation.extradecor.container.*;
-import sobiohazardous.minestrappolation.extradecor.gui.*;
 import sobiohazardous.minestrappolation.extradecor.tileentity.*;
 import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
