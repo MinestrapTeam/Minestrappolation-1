@@ -14,7 +14,7 @@ public class TileEntityBarrel extends TileEntity implements IInventory
 	private ItemStack[] inventory;
 
 	public TileEntityBarrel(){
-		inventory = new ItemStack[18];
+		inventory = new ItemStack[36];
 	}
 
 	@Override

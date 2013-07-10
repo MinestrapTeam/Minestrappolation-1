@@ -22,11 +22,11 @@ protected TileEntityBarrel tile_entity;
         int j;
         int k;
 
-        for (j = 0; j < 2; ++j)
+        for (j = 0; j < 4; ++j)
         {
             for (k = 0; k < 9; ++k)
             {
-                this.addSlotToContainer(new Slot(tile_entity, k + j * 9, 8 + k * 18, 18 + j * 18 - 1));
+                this.addSlotToContainer(new Slot(tile_entity, k + j * 9, 8 + k * 18, 18 + j * 18 - 9));
             }
         }
 
@@ -41,20 +41,20 @@ protected TileEntityBarrel tile_entity;
 
 	protected void bindPlayerInventory(InventoryPlayer par1IInventory)
 	{
-		int i = -2 * 18 - 1;
+		int i = (-2 * 18) - 1;
 		int j;
 		int k;
 		for (j = 0; j < 3; ++j)
         {
             for (k = 0; k < 9; ++k)
             {
-                this.addSlotToContainer(new Slot(par1IInventory, k + j * 9 + 9, 8 + k * 18, 103 + j * 18 + i));
+                this.addSlotToContainer(new Slot(par1IInventory, k + j * 9 + 9, 8 + k * 18, 103 + j * 18 + i + 28));
             }
         }
 
         for (j = 0; j < 9; ++j)
         {
-            this.addSlotToContainer(new Slot(par1IInventory, j, 8 + j * 18, 161 + i));
+            this.addSlotToContainer(new Slot(par1IInventory, j, 8 + j * 18, 161 + i + 28));
         }
 	}
 

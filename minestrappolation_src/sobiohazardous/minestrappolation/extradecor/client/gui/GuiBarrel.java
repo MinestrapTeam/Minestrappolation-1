@@ -15,6 +15,8 @@ import net.minecraft.util.StatCollector;
 
 public class GuiBarrel extends GuiContainer
 {
+	/** The Y size of the inventory window in pixels. */
+    protected int ySize = 185;
 
 	public GuiBarrel(InventoryPlayer player_inventory, TileEntityBarrel tile_entity)
 	{
@@ -25,8 +27,8 @@ public class GuiBarrel extends GuiContainer
 	@Override
     protected void drawGuiContainerForegroundLayer(int param1, int param2) 
 	{
-		fontRenderer.drawString("Barrel", 6, 6, 0xffffff);
-		fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 6, ySize - 96 + 2, 0xffffff);
+		fontRenderer.drawString("Barrel", 6, -2, 4210752);
+		fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 6, ySize - 102, 4210752);
 	}
 
 	@Override
