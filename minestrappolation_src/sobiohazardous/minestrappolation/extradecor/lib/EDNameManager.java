@@ -35,12 +35,12 @@ public class EDNameManager
 		LanguageRegistry.instance().addStringLocalization("tile.woodBeveled.birch.name", "Beveled Birch Wood Panel");
 		LanguageRegistry.instance().addStringLocalization("tile.woodBeveled.spruce.name", "Spruce Oak Wood Panel");
 		LanguageRegistry.instance().addStringLocalization("tile.woodBeveled.jungle.name", "Beveled Jungle Wood Panel");
-		LanguageRegistry.addName(ExtraDecor.netherBrickPattern, "Patterned Nether Brick");
-		LanguageRegistry.instance().addStringLocalization("tile.sandstoneBrick.brick.name", "Sandstone Brick");
-		LanguageRegistry.instance().addStringLocalization("tile.sandstoneBrick.chiseled.name", "Chiseled Sandstone Brick");
-		LanguageRegistry.instance().addStringLocalization("tile.sandstoneBrick.mossy.name", "Mossy Sandstone Brick");
-		LanguageRegistry.instance().addStringLocalization("tile.sandstoneBrick.heiroglyph.name", "Heiroglyph Sandstone Brick");
-		LanguageRegistry.instance().addStringLocalization("tile.sandstoneBrick.heiroglyph_2.name", "Heiroglyph Sandstone Brick");
+		LanguageRegistry.addName(ExtraDecor.netherBrickPattern, "Patterned Nether Bricks");
+		LanguageRegistry.instance().addStringLocalization("tile.sandstoneBrick.brick.name", "Sandstone Bricks");
+		LanguageRegistry.instance().addStringLocalization("tile.sandstoneBrick.chiseled.name", "Chiseled Sandstone Bricks");
+		LanguageRegistry.instance().addStringLocalization("tile.sandstoneBrick.mossy.name", "Mossy Sandstone Bricks");
+		LanguageRegistry.instance().addStringLocalization("tile.sandstoneBrick.heiroglyph.name", "Heiroglyph Sandstone Bricks");
+		LanguageRegistry.instance().addStringLocalization("tile.sandstoneBrick.heiroglyph_2.name", "Heiroglyph Sandstone Bricks");
 		LanguageRegistry.addName(ExtraDecor.sandstonePillar, "Sandstone Pillar");
 		LanguageRegistry.instance().addStringLocalization("tile.woodBoards.oak.name", "Oak Wood Boards");
 		LanguageRegistry.instance().addStringLocalization("tile.woodBoards.birch.name", "Birch Wood Boards");
@@ -57,6 +57,8 @@ public class EDNameManager
 		LanguageRegistry.addName(ExtraDecor.cardboardItem, "Cardboard");
 		LanguageRegistry.addName(ExtraDecor.cardboardBlock, "Cardboard Block");
 		LanguageRegistry.addName(ExtraDecor.cardboardWet, "Wet Cardboard");
+		LanguageRegistry.addName(ExtraDecor.sandstoneBrickItem, "Sandstone Brick");
+		LanguageRegistry.addName(ExtraDecor.stoneBrickItem, "Stone Brick");
 	}
 	
 }

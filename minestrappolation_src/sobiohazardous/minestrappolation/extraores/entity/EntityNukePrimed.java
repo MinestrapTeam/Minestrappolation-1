@@ -93,7 +93,7 @@ public class EntityNukePrimed extends Entity
 
     private void explode()
     {
-        float f = 4.0F * 4;
+        float f = 4.0F * 5;
         this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, f, true);
     }
 

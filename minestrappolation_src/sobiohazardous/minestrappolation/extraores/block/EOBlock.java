@@ -44,7 +44,7 @@ public class EOBlock extends Block
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return this.blockID == ExtraOres.BlaziumOre.blockID ? Item.blazePowder.itemID : (this.blockID == ExtraOres.SunstoneOre.blockID ? ExtraOres.SunstoneDust.itemID : (this.blockID == ExtraOres.SoulOre.blockID ? ExtraOres.SoulGem.itemID : (this.blockID == ExtraOres.PlutoniumOre.blockID ? ExtraOres.Plutonium.itemID : (this.blockID == ExtraOres.UraniumOre.blockID ? ExtraOres.Uranium.itemID : (this.blockID == ExtraOres.Quartzite.blockID ? ExtraOres.PinkQuartz.itemID : this.blockID)))));
+        return this.blockID == ExtraOres.BlaziumOre.blockID ? Item.blazePowder.itemID : (this.blockID == ExtraOres.SunstoneOre.blockID ? ExtraOres.SunstoneDust.itemID : (this.blockID == ExtraOres.SoulOre.blockID ? ExtraOres.SoulGem.itemID : (this.blockID == ExtraOres.PlutoniumOre.blockID ? ExtraOres.Plutonium.itemID : (this.blockID == ExtraOres.UraniumOre.blockID ? ExtraOres.Uranium.itemID : (this.blockID == ExtraOres.Quartzite.blockID ? ExtraOres.PinkQuartz.itemID : this.blockID == ExtraOres.meuroditeOre.blockID ? ExtraOres.meuroditeIngot.itemID : this.blockID)))));
     }
 
     /**

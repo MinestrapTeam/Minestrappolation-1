@@ -8,6 +8,7 @@ import sobiohazardous.minestrappolation.extradecor.bridge.BridgeRecipes;
 import sobiohazardous.minestrappolation.extradecor.handler.ClientPacketHandler;
 import sobiohazardous.minestrappolation.extradecor.handler.EDGuiHandler;
 import sobiohazardous.minestrappolation.extradecor.handler.ServerPacketHandler;
+import sobiohazardous.minestrappolation.extradecor.item.EDItem;
 import sobiohazardous.minestrappolation.extradecor.item.ItemBlockPlacer;
 import sobiohazardous.minestrappolation.extradecor.lib.EDBlockRegistry;
 import sobiohazardous.minestrappolation.extradecor.lib.EDNameManager;
@@ -102,7 +103,9 @@ public class ExtraDecor
 	cardboardId,
 	cardboardItemId,
 	cardboardBlockId,
-	cardboardWetId;
+	cardboardWetId,
+	sandstoneBrickItemId,
+	stoneBrickItemId;
 	
 	public static Block stoneBlockRefined;
 	public static Block stonePillar;
@@ -166,6 +169,9 @@ public class ExtraDecor
 	public static Block cardboardBlock;
 	public static Block cardboardWet;
 	
+	public static Item sandstoneBrickItem;
+	public static Item stoneBrickItem;
+	
 	public static CreativeTabs tabDecorBlocks = new CreativeTabExtraDecorBlocks(CreativeTabs.getNextID(),"Extrappolated Decor - Blocks");
 	
 	public static int paneRenderId = RenderingRegistry.getNextAvailableRenderId();
@@ -173,6 +179,9 @@ public class ExtraDecor
 	
 	public static final Material materialOoze = new MaterialOoze(MapColor.foliageColor);
 	
+	/**
+	 * @param event
+	 */
 	@Mod.EventHandler
 	public void preLoad(FMLPreInitializationEvent event)
 	{
@@ -219,6 +228,8 @@ public class ExtraDecor
 		cardboardItemId = config.getItem("Cardboard Place", 25001).getInt();
 		cardboardBlockId = config.getBlock("Cardboard Block", 736).getInt();
 		cardboardWetId = config.getBlock("Wet Cardboard", 737).getInt();
+		sandstoneBrickItemId = config.getItem("Sandstone Brick Item", 25002).getInt();
+		stoneBrickItemId = config.getItem("Stone Brick Item", 25003).getInt();
 		
 		config.save();		
 		
@@ -285,10 +296,12 @@ public class ExtraDecor
 		cardboardBlock = new BlockCardboard(cardboardBlockId, Material.cloth, "block_CardboardBlock").setHardness(0.8F).setResistance(1.0F).setUnlocalizedName("cardboardBlock").setCreativeTab(tabDecorBlocks);
 		cardboardWet = new BlockCardboardWet(cardboardWetId, Material.cloth).setCreativeTab(tabDecorBlocks).setHardness(0.5F).setResistance(0.8F).setUnlocalizedName("cardboardWet");
 		
+		sandstoneBrickItem = new EDItem(sandstoneBrickItemId, "item_SandstoneBrick").setUnlocalizedName("sandstoneBrickItem");
+		stoneBrickItem = new EDItem(stoneBrickItemId, "item_StoneBrick").setUnlocalizedName("stoneBrickItem");
+		
 		EDBlockRegistry.registerBlocks();
 		EDNameManager.registerNames();
 		EDRecipeManager.loadAllRecipes();
-		
 	}
 	
 	

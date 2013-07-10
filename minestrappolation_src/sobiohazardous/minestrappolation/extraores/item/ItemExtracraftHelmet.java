@@ -14,17 +14,18 @@ public class ItemExtracraftHelmet extends ItemArmor
 	{
 		super(par1, par2EnumArmorMaterial, par3, par4);
 		this.texture = "extraores:" + texture;
+		this.setCreativeTab(null);
 	}
 	
 	public String getArmorTexture(ItemStack par1, Entity entity, int slot, int layer)
 	{
 		if(par1.itemID==ExtraOres.meuroditeHelmet.itemID||par1.itemID==ExtraOres.meuroditeChest.itemID||par1.itemID==ExtraOres.meuroditeBoots.itemID)
 		{
-			return "/armor/zirconium_1.png";
+			return "/armor/meurodite_1.png";
 		}
 		if(par1.itemID==ExtraOres.meuroditePants.itemID)
 		{
-			return "/armor/zirconium_2.png";
+			return "/armor/meurodite_2.png";
 		}
 		if(par1.itemID==ExtraOres.TitaniumHelmet.itemID||par1.itemID==ExtraOres.TitaniumChest.itemID||par1.itemID==ExtraOres.TitaniumBoots.itemID)
 		{
@@ -77,11 +78,11 @@ public class ItemExtracraftHelmet extends ItemArmor
 		
 		if(par1.itemID==ExtraOres.BPMeuroditeHelmet.itemID||par1.itemID==ExtraOres.BPMeuroditeChest.itemID||par1.itemID==ExtraOres.BPMeuroditeBoots.itemID)
 		{
-			return "/armor/zirconium_plated_1.png";
+			return "/armor/meurodite_plated_1.png";
 		}
 		if(par1.itemID==ExtraOres.BPMeuroditePants.itemID)
 		{
-			return "/armor/zirconium_plated_2.png";
+			return "/armor/meurodite_plated_2.png";
 		}
 		if(par1.itemID==ExtraOres.BPTitaniumHelmet.itemID||par1.itemID==ExtraOres.BPTitaniumChest.itemID||par1.itemID==ExtraOres.BPTitaniumBoots.itemID)
 		{

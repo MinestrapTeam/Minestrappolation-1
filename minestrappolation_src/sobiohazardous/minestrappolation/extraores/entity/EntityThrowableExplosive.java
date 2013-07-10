@@ -194,7 +194,7 @@ public abstract class EntityThrowableExplosive extends Entity implements IProjec
     	if(!exploded)
     	{
 	    	exploded = true;
-	        worldObj.createExplosion(null, posX, posY, posZ, 2F, true);
+	        worldObj.createExplosion(null, posX, posY, posZ, 4F, true);
     	}
     }
 

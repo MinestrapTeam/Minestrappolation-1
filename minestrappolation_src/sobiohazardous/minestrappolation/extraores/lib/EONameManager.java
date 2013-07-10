@@ -23,7 +23,7 @@ public class EONameManager
 		ModLoader.addName(ExtraOres.meuroditeOre, "Meurodite Ore");
 
 		ModLoader.addName(ExtraOres.meuroditeBlock, "Meurodite Block");
-		ModLoader.addName(ExtraOres.meuroditeIngot, "Meurodite Ingot");
+		ModLoader.addName(ExtraOres.meuroditeIngot, "Meurodite Gem");
 		
 		ModLoader.addName(ExtraOres.meuroditeSword, "Meurodite Sword");
 		ModLoader.addName(ExtraOres.meuroditePickaxe, "Meurodite Pickaxe");

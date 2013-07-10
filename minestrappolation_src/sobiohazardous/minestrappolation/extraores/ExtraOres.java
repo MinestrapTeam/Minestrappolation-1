@@ -839,6 +839,7 @@ public class ExtraOres
 	@Mod.EventHandler
     public void myNewPreLoadMethod(FMLPreInitializationEvent evt)	
    {    
+
 		//blocks 3000
 		//items 1000;
 		Configuration config = new Configuration(evt.getSuggestedConfigurationFile());
@@ -1167,7 +1168,7 @@ public class ExtraOres
 		
 		meuroditeOre = (new EOBlock(meuroditeOreId, "block_MeuroditeOre", Material.rock)).setHardness(5F).setCreativeTab(tabOresBlocks).setResistance(10F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("MeuroditeOre");
 		meuroditeBlock = (new EOBlock(meuroditeBlockId, "block_Meurodite", Material.iron)).setHardness(5F).setCreativeTab(tabOresBlocks).setResistance(10F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("MeuroditeBlock");
-		meuroditeIngot = (new EItem(meuroditeIngotId, "item_MeuroditeIngot")).setCreativeTab(tabOresItems).setUnlocalizedName("MeuroditeIngot");
+		meuroditeIngot = (new EOItem(meuroditeIngotId, "item_MeuroditeIngot")).setCreativeTab(tabOresItems).setUnlocalizedName("MeuroditeIngot");
 		
 		meuroditeSword = (new ItemESword(meuroditeSwordId, "item_MeuroditeSword", ExtracraftToolMaterial.MEURODITE)).setCreativeTab(tabOresItems).setUnlocalizedName("MeuroditeSword");
 		meuroditePickaxe = (new ItemEPickaxe(meuroditePickaxeId, "item_MeuroditePickaxe", ExtracraftToolMaterial.MEURODITE)).setCreativeTab(tabOresItems).setUnlocalizedName("MeuroditePickaxe");
@@ -1181,15 +1182,15 @@ public class ExtraOres
 		meuroditeBoots = (new ItemExtracraftBoots(meuroditeBootsId, "item_MeuroditeBoots", MaterialMeurodite, proxy.addArmor("Meurodite"),3)).setCreativeTab(tabOresItems).setUnlocalizedName("MeuroditeBoots");
 				
 		UraniumOre = (new BlockUraniumOre(uraniumOreId, Material.rock)).setHardness(5F).setResistance(10F).setCreativeTab(tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("UraniumOre");
-		Uranium = (new EItem(uraniumId, "item_Uranium")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("Uranium");
+		Uranium = (new EOItem(uraniumId, "item_Uranium")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("Uranium");
 		RawUraniumBlock = (new BlockUraniumRaw(rawUraniumBlockId, Material.rock)).setHardness(6F).setResistance(9F).setCreativeTab(tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("RawUraniumBlock");
 		
 		PlutoniumOre = (new BlockPlutoniumOre(plutoniumOreId, Material.rock)).setHardness(5F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("PlutoniumOre").setCreativeTab(tabOresBlocks);
-		Plutonium = (new EItem(plutoniumOreId, "item_Plutonium")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("Plutonium");
+		Plutonium = (new EOItem(plutoniumOreId, "item_Plutonium")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("Plutonium");
 		RawPlutoniumBlock = (new BlockPlutoniumRaw(rawPlutoniumBlockId, Material.rock)).setHardness(6F).setResistance(9F).setCreativeTab(tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("RawPlutoniumBlock");
 		
 		TitaniumOre = (new EOBlock(titaniumOreId, "block_TitaniumOre", Material.rock)).setHardness(10F).setResistance(15F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("TitaniumOre");
-		TitaniumIngot = (new EItem(titaniumIngotId, "item_TitaniumIngot")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("Titanium");
+		TitaniumIngot = (new EOItem(titaniumIngotId, "item_TitaniumIngot")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("Titanium");
 		
 		TitaniumSword = (new ItemESword(titaniumSwordId,"item_TitaniumSword", ExtracraftToolMaterial.TITANIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("TitaniumSword");
 		TitaniumPickaxe = (new ItemEPickaxe(titaniumPickaxeId, "item_TitaniumPickaxe", ExtracraftToolMaterial.TITANIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("TitaniumPickaxe");
@@ -1205,12 +1206,12 @@ public class ExtraOres
 		TitaniumBlock = (new EOBlock(titaniumBlockId, "block_Titanium", Material.iron)).setHardness(10F).setResistance(12000000.0F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("Titanium Block");
 		
 		Sunstone = (new BlockSunstone(sunstoneId,Material.glass)).setHardness(0.3F).setStepSound(Block.soundGlassFootstep).setCreativeTab(ExtraOres.tabOresBlocks).setLightValue(1.0F).setUnlocalizedName("Sunstone");
-		SunstoneDust = (new EItem(sunstoneDustId, "item_SunstoneShard")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SunstoneDust");
+		SunstoneDust = (new EOItem(sunstoneDustId, "item_SunstoneShard")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SunstoneDust");
 		SunstoneOre = (new EOBlock(sunstoneOreId, "block_SunstoneOre", Material.rock)).setHardness(7F).setResistance(11F).setStepSound(Block.soundMetalFootstep).setCreativeTab(ExtraOres.tabOresBlocks).setUnlocalizedName("SunstoneOre").setLightValue(1F);
 		//Old Sunstone Ore code: SunstoneOre = (new BlockSunstoneOre(212, 40)).setHardness(7F).setStepSound(Block.soundStoneFootstep).setCreativeTab(ExtraOres.tabExtra).setLightValue(1.0F).setBlockName("Sunstone Ore");
 		
 		ToriteOre = (new EOBlock(toriteOreId, "block_ToriteOre", Material.rock)).setHardness(7F).setResistance(11F).setStepSound(Block.soundMetalFootstep).setCreativeTab(ExtraOres.tabOresBlocks).setUnlocalizedName("ToriteOre");
-		ToriteIngot = (new EItem(toriteIngotId, "item_ToriteIngot")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("ToriteIngot");
+		ToriteIngot = (new EOItem(toriteIngotId, "item_ToriteIngot")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("ToriteIngot");
 		ToriteBlock = (new EOBlock(toriteBlockId, "block_Torite", Material.iron)).setHardness(6F).setResistance(10F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("ToriteBlock");
 	
 		ToriteSword = (new ItemESword(toriteSwordId, "item_ToriteSword", ExtracraftToolMaterial.TORITE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("ToriteSword");
@@ -1233,14 +1234,14 @@ public class ExtraOres
 		PillarQuartzite = (new BlockPinkPillar(pillarQuartziteId)).setHardness(6F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setCreativeTab(ExtraOres.tabOresBlocks).setUnlocalizedName("QuartzitePillar");
 		ChiseledQuartzite = (new BlockPinkChiseled(chiseledQuartziteId)).setHardness(6F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setCreativeTab(ExtraOres.tabOresBlocks).setUnlocalizedName("ChiseledQuartzite");
 		SmoothQuartzTile = (new EOBlock(smoothQuartzTileId, "block_PinkQuartzTileRefined", Material.rock)).setHardness(6F).setResistance(10F).setStepSound(Block.soundMetalFootstep).setCreativeTab(ExtraOres.tabOresBlocks).setUnlocalizedName("SmoothQuartzTile");
-		PinkQuartz = (new EItem(pinkQuartzId, "item_PinkQuartz")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("PinkQuartz");
+		PinkQuartz = (new EOItem(pinkQuartzId, "item_PinkQuartz")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("PinkQuartz");
 	    
 		BlaziumOre = (new EOBlock(blaziumOreId, "block_BlaziumOre", Material.rock)).setHardness(7F).setResistance(11F).setStepSound(Block.soundMetalFootstep).setCreativeTab(ExtraOres.tabOresBlocks).setUnlocalizedName("BlaziumOre").setLightValue(0.5F);
 		//Experimental Blazium Ore Code: BlaziumOre = (new BlockBlaziumOre(204, 5)).setHardness(7F).setResistance(11F).setStepSound(Block.soundMetalFootstep).setCreativeTab(ExtraOres.tabExtra).setLightValue(0.5F).setBlockName("Blazium Ore");
 		BlaziumBlock = (new BlockBlazium(blaziumBlockId, Material.iron)).setHardness(8F).setResistance(12F).setStepSound(Block.soundMetalFootstep).setCreativeTab(ExtraOres.tabOresBlocks).setUnlocalizedName("BlaziumBlock").setLightValue(0.7F);
 		
-		BlaziumIngot = (new EItem(blaziumIngotId, "item_BlaziumIngot")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BlaziumIngot");
-		BlazeShard = (new EItem(blaziumShardId, "item_BlazeShard")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BlazeShard");
+		BlaziumIngot = (new EOItem(blaziumIngotId, "item_BlaziumIngot")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BlaziumIngot");
+		BlazeShard = (new EOItem(blaziumShardId, "item_BlazeShard")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BlazeShard");
 	
 		BlaziumSword = (new ItemESword(blaziumSwordId, "item_FireSword", ExtracraftToolMaterial.BLAZIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BlaziumSword");
 		BlaziumPickaxe = (new ItemEPickaxe(blaziumPickaxeId, "item_FirePickaxe", ExtracraftToolMaterial.BLAZIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BlaziumPickaxe");
@@ -1255,7 +1256,7 @@ public class ExtraOres
 	
 		CopperOre = (new EOBlock(copperOreId, "block_CopperOre", Material.rock)).setHardness(3F).setResistance(5F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("CopperOre");
 		CopperBlock = (new BlockCopper(copperBlockId, Material.iron)).setHardness(5F).setResistance(10F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("CopperBlock");
-		CopperIngot = (new EItem(copperBlockId, "item_CopperIngot")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("CopperIngot");
+		CopperIngot = (new EOItem(copperBlockId, "item_CopperIngot")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("CopperIngot");
 		
 		CopperBlockTarnished = (new BlockCopperTarnished(copperTarnishedId)).setHardness(6F).setResistance(12F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("CopperBlockTarnished");
 		
@@ -1267,7 +1268,7 @@ public class ExtraOres
 		
 		TinOre = (new EOBlock(tinOreId, "block_TinOre", Material.rock)).setHardness(3F).setResistance(5F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("TinOre");
 		TinBlock = (new EOBlock(tinBlockId, "block_Tin", Material.iron)).setHardness(3F).setResistance(2F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("TinBlock");
-		TinIngot = (new EItem(tinIngotId, "item_TinIngot")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("TinIngot");
+		TinIngot = (new EOItem(tinIngotId, "item_TinIngot")).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("TinIngot");
 
 		TinHelmet = (new ItemExtracraftHelmet(tinHelmetId,"item_TinHelmet", MaterialTin, proxy.addArmor("tin"), 0)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("TinHelmet");
 		TinChest = (new ItemExtracraftChest(tinChestId, "item_TinChestplate",MaterialTin, proxy.addArmor("tin"), 1)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("TinChest");
@@ -1281,8 +1282,8 @@ public class ExtraOres
 		BronzePlateItem = (new ItemBlockPlacer(bronzePlateItemId, "item_BronzePlate", BronzePlate)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzePlateItem");
 		SteelPlateItem = (new ItemBlockPlacer(steelPlateItemId,"item_SteelPlate", SteelPlate)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelPlateItem");
 		
-		CoalIronIngot = (new EItem(coalIronIngotId,"item_CoalIronIngot")).setCreativeTab(tabOresItems).setUnlocalizedName("CoalIronIngot");
-		SteelIngot = (new EItem(steelIngotId, "item_SteelIngot")).setCreativeTab(tabOresItems).setUnlocalizedName("SteelIngot");
+		CoalIronIngot = (new EOItem(coalIronIngotId,"item_CoalIronIngot")).setCreativeTab(tabOresItems).setUnlocalizedName("CoalIronIngot");
+		SteelIngot = (new EOItem(steelIngotId, "item_SteelIngot")).setCreativeTab(tabOresItems).setUnlocalizedName("SteelIngot");
 		
 		SteelPickaxe = (new ItemEPickaxe(steelPickaxeId, "item_SteelPickaxe",ExtracraftToolMaterial.STEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelPickaxe");
 		SteelShovel = (new ItemEShovel(steelShovelId, "item_SteelShovel",ExtracraftToolMaterial.STEEL)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelShovel");
@@ -1312,7 +1313,7 @@ public class ExtraOres
 		TinPlatedChiseled = (new EOBlock(tinPlatedChiseledId, "block_TinChiseled", Material.rock)).setHardness(1.5F).setResistance(10.0F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("TinPlatedChiseled");
 		TinPlatedGranite = (new EOBlock(tinPlatedGraniteId,"block_TinGraniteBrick", Material.rock)).setHardness(6F).setResistance(10.0F).setCreativeTab(ExtraOres.tabOresBlocks).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("TinPlatedGranite");
 		
-		BronzeIngot = (new EItem(bronzeIngotId, "item_BronzeIngot")).setCreativeTab(tabOresItems).setUnlocalizedName("BronzeIngot");
+		BronzeIngot = (new EOItem(bronzeIngotId, "item_BronzeIngot")).setCreativeTab(tabOresItems).setUnlocalizedName("BronzeIngot");
 		BronzePickaxe = (new ItemEPickaxe(bronzePickaxeId, "item_BronzePickaxe",ExtracraftToolMaterial.BRONZE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzePickaxe");
 		BronzeShovel = (new ItemEShovel(bronzeShovelId, "item_BronzeShovel",ExtracraftToolMaterial.BRONZE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzeShovel");
 		BronzeAxe = (new ItemEAxe(bronzeAxeId, "item_BronzeAxe",ExtracraftToolMaterial.BRONZE)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzeAxe");
@@ -1562,7 +1563,6 @@ public class ExtraOres
         EONameManager.loadNames();
 		EORecipeManager.loadRecipes();
 		EOBlockRegister.registerBlocks();		
-
    }
 	
 	@Mod.EventHandler

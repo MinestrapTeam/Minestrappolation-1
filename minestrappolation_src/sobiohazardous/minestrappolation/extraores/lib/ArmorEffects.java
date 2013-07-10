@@ -24,17 +24,17 @@ public class ArmorEffects
 			  
 			  if (helmet.getItem() == ExtraOres.meuroditeHelmet && chest.getItem() == ExtraOres.meuroditeChest && pants.getItem() == ExtraOres.meuroditePants && boots.getItem() == ExtraOres.meuroditeBoots) 
 			  {	
-				  player.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 40, 1));
+				  player.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 80, 0));
 			  }
 			  
 			  if (helmet.getItem() == ExtraOres.ToriteHelmet && chest.getItem() == ExtraOres.ToriteChest && pants.getItem() == ExtraOres.ToritePants && boots.getItem() == ExtraOres.ToriteBoots) 
 			  {	
-				  player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 40, 1));
+				  player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 80, 1));
 			  }
 			  
 			  if (helmet.getItem() == ExtraOres.TitaniumHelmet && chest.getItem() == ExtraOres.TitaniumChest && pants.getItem() == ExtraOres.TitaniumPants && boots.getItem() == ExtraOres.TitaniumBoots) 
 			  {	
-				  player.addPotionEffect(new PotionEffect(Potion.resistance.id, 40, 1));
+				  player.addPotionEffect(new PotionEffect(Potion.resistance.id, 80, 1));
 			  }			  
 		  }
 	}

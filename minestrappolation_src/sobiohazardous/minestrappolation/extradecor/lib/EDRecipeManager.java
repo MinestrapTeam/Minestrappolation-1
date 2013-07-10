@@ -201,5 +201,26 @@ public class EDRecipeManager
 				{
 			"CCC", " C ", " C ", Character.valueOf('C'), ExtraDecor.cardboardItem
 				});
+		GameRegistry.addSmelting(Block.sandStone.blockID, new ItemStack(ExtraDecor.sandstoneBrickItem, 4),  0.8F);
+		GameRegistry.addRecipe(new ItemStack(Block.stoneBrick, 1, 0), new Object[]
+				{
+			"BB", "BB", Character.valueOf('B'), ExtraDecor.stoneBrickItem
+				});
+		GameRegistry.addShapelessRecipe(new ItemStack(ExtraDecor.stoneBrickItem , 4), new Object[]
+				{
+			new ItemStack(Block.stoneBrick, 1 ,0)
+				});
+		GameRegistry.addRecipe(new ItemStack(Block.stoneBrick, 2, 3), new Object[]
+				{
+			"BBB", "BBB", "BBB", Character.valueOf('B'), ExtraDecor.stoneBrickItem
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.sandstoneBricks, 1, 0), new Object[]
+				{
+			"BB", "BB", Character.valueOf('B'), ExtraDecor.sandstoneBrickItem
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.sandstoneBricks, 2, 1), new Object[]
+				{
+			"BBB", "BBB", "BBB", Character.valueOf('B'), ExtraDecor.sandstoneBrickItem
+				});
 	}
 }

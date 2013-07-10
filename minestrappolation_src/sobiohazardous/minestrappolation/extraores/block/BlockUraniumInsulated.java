@@ -12,7 +12,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntityZombie;
@@ -28,10 +28,10 @@ import net.minecraftforge.common.ForgeDirection;
 
 public class BlockUraniumInsulated extends Block
 {
-	private static final EntityLiving par6EntityLiving = null;
+	private static final EntityLivingBase par6EntityLiving = null;
 	public BlockUraniumInsulated instance;
 	public EntityPlayer player;
-	public EntityLiving living;
+	public EntityLivingBase living;
 	public EntitySkeleton skeleton;
 	public EntityZombie zombie;
 	public World world;
@@ -239,9 +239,9 @@ public class BlockUraniumInsulated extends Block
                                 } while(true);
                 }
                 AxisAlignedBB axisalignedbb = getCollisionBoundingBoxFromPool(world, i, j, k).expand(6, 6, 6);
-                List list = world.getEntitiesWithinAABB(EntityLiving.class, axisalignedbb);
+                List list = world.getEntitiesWithinAABB(EntityLivingBase.class, axisalignedbb);
                 Iterator var6 = list.iterator();
-                EntityLiving var7;
+                EntityLivingBase var7;
                 if(list.isEmpty() && world.getBlockMetadata(i, j, k) > 5)
                 {
                     //System.out.println("far");
@@ -251,8 +251,8 @@ public class BlockUraniumInsulated extends Block
                 	while (var6.hasNext())
                     {
                 	    //System.out.println("close");
-                	    living = (EntityLiving)var6.next();
-                        living.addPotionEffect(new PotionEffect(Potion.wither.getId(), 40, 2, false));
+                	    living = (EntityLivingBase)var6.next();
+                        living.addPotionEffect(new PotionEffect(Potion.poison.getId(), 40, 8, false));
                 	    //varEntityLiving.addPotionEffect(new PotionEffect(Potion.poison.getId(),200,10));          
                     }
                 }
