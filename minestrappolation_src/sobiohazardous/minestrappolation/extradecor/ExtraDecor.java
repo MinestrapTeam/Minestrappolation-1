@@ -98,7 +98,11 @@ public class ExtraDecor
 	magmaOozeId,
 	enderBlockId,
 	crateId,
-	barrelId;
+	barrelId,
+	cardboardId,
+	cardboardItemId,
+	cardboardBlockId,
+	cardboardWetId;
 	
 	public static Block stoneBlockRefined;
 	public static Block stonePillar;
@@ -157,6 +161,11 @@ public class ExtraDecor
 	public static Block crate;
 	public static Block barrel;
 	
+	public static Block cardboard;
+	public static Item cardboardItem;	
+	public static Block cardboardBlock;
+	public static Block cardboardWet;
+	
 	public static CreativeTabs tabDecorBlocks = new CreativeTabExtraDecorBlocks(CreativeTabs.getNextID(),"Extrappolated Decor - Blocks");
 	
 	public static int paneRenderId = RenderingRegistry.getNextAvailableRenderId();
@@ -206,6 +215,10 @@ public class ExtraDecor
 		enderBlockId = config.getBlock("Ender Block", 732).getInt();
 		crateId = config.getBlock("Crate", 733).getInt();
 		barrelId = config.getBlock("Barrel", 734).getInt();
+		cardboardId = config.getBlock("Cardboard", 735).getInt();
+		cardboardItemId = config.getItem("Cardboard Place", 25001).getInt();
+		cardboardBlockId = config.getBlock("Cardboard Block", 736).getInt();
+		cardboardWetId = config.getBlock("Wet Cardboard", 737).getInt();
 		
 		config.save();		
 		
@@ -229,7 +242,7 @@ public class ExtraDecor
 		endstoneBrick = (new EDBlock(endstoneBrickId, Material.rock, "block_EndstoneBrick")).setHardness(3F).setResistance(15F).setCreativeTab(tabDecorBlocks).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("endstoneBrick");
 		
 		glassRefined = (new BlockGlassRefined(glassRefinedId, Material.glass, false)).setHardness(0.3F).setStepSound(Block.soundGlassFootstep).setCreativeTab(tabDecorBlocks).setUnlocalizedName("glassRefined");
-		glassRefinedPane = (new BlockGlassRefinedPane(glassRefinedPaneId, "block_ClearGlass", "block_ClearGlassTop", Material.glass, false)).setHardness(0.3F).setStepSound(Block.soundGlassFootstep).setCreativeTab(tabDecorBlocks).setUnlocalizedName("glassRefinedPane");
+		glassRefinedPane = (new EDBlockPane(glassRefinedPaneId, "block_ClearGlass", "block_ClearGlassTop", Material.glass, false)).setHardness(0.3F).setStepSound(Block.soundGlassFootstep).setCreativeTab(tabDecorBlocks).setUnlocalizedName("glassRefinedPane");
 		
 		flintBlock = (new EDBlock(flintBlockId, Material.ground, "block_FlintBlock")).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("flintBlock");
 		
@@ -266,6 +279,11 @@ public class ExtraDecor
 		
 		crate = new BlockCrate(crateId).setHardness(2.0F).setResistance(2.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(tabDecorBlocks).setUnlocalizedName("crate");
 		barrel = new BlockBarrel(barrelId).setHardness(4.0F).setResistance(6.0F).setStepSound(Block.soundWoodFootstep).setCreativeTab(tabDecorBlocks).setUnlocalizedName("barrel");
+		
+		cardboard = new EDBlockPane(cardboardId, "block_CardboardBlock", "block_CardboardEdge", Material.cloth, true).setHardness(0.3F).setUnlocalizedName("cardboard");
+		cardboardItem = new ItemBlockPlacer(cardboardItemId, "item_Cardboard", cardboard).setCreativeTab(tabDecorBlocks).setUnlocalizedName("cardboardItem");
+		cardboardBlock = new BlockCardboard(cardboardBlockId, Material.cloth, "block_CardboardBlock").setHardness(0.8F).setResistance(1.0F).setUnlocalizedName("cardboardBlock").setCreativeTab(tabDecorBlocks);
+		cardboardWet = new BlockCardboardWet(cardboardWetId, Material.cloth).setCreativeTab(tabDecorBlocks).setHardness(0.5F).setResistance(0.8F).setUnlocalizedName("cardboardWet");
 		
 		EDBlockRegistry.registerBlocks();
 		EDNameManager.registerNames();

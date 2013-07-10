@@ -13,6 +13,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
+import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.common.ForgeDirection;
 
 public class BlockWoodBeveled extends Block
 {
@@ -77,5 +79,20 @@ public class BlockWoodBeveled extends Block
         {
             this.iconArray[i] = par1IconRegister.registerIcon(panelTextures[i]);
         }
+    }
+    
+    public int getFlammability(IBlockAccess world, int x, int y, int z, int metadata, ForgeDirection face)
+    {
+    	if(blockID == ExtraDecor.woodPanel.blockID || blockID == ExtraDecor.woodBeveled.blockID)
+    	{
+    		if(face == ForgeDirection.UP || face == ForgeDirection.DOWN || face == ForgeDirection.NORTH || face == ForgeDirection.SOUTH || face == ForgeDirection.EAST || face == ForgeDirection.WEST)
+    		{
+                return 75;
+    		}
+    		else
+    			return 0;
+    	}
+    	else
+    		return 0;
     }
 }

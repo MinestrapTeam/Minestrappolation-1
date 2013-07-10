@@ -54,6 +54,9 @@ public class EDNameManager
 		LanguageRegistry.addName(ExtraDecor.enderBlock, "Ender Block");
 		LanguageRegistry.addName(ExtraDecor.crate, "Crate");
 		LanguageRegistry.addName(ExtraDecor.barrel, "Barrel");
+		LanguageRegistry.addName(ExtraDecor.cardboardItem, "Cardboard");
+		LanguageRegistry.addName(ExtraDecor.cardboardBlock, "Cardboard Block");
+		LanguageRegistry.addName(ExtraDecor.cardboardWet, "Wet Cardboard");
 	}
 	
 }

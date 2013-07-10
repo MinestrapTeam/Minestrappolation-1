@@ -2,7 +2,7 @@ package sobiohazardous.minestrappolation.extradecor.handler;
 
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
-import sobiohazardous.minestrappolation.extradecor.block.BlockGlassRefinedPane;
+import sobiohazardous.minestrappolation.extradecor.block.EDBlockPane;
 import sobiohazardous.minestrappolation.extradecor.block.BlockRope;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;
@@ -25,7 +25,7 @@ public class PaneRender extends RenderBlocks implements ISimpleBlockRenderingHan
 	{
 	    if (modelId == ExtraDecor.paneRenderId)
 		{
-				return renderBlockEDPane((BlockGlassRefinedPane)block, renderer, x, y, z);
+				return renderBlockEDPane((EDBlockPane)block, renderer, x, y, z);
 		}
 	    return false;
 	 }
@@ -40,7 +40,7 @@ public class PaneRender extends RenderBlocks implements ISimpleBlockRenderingHan
 	     return ExtraDecor.paneRenderId;
 	}
 	
-	public boolean renderBlockEDPane(BlockGlassRefinedPane par1BlockPane, RenderBlocks render, int par2, int par3, int par4)
+	public boolean renderBlockEDPane(EDBlockPane par1BlockPane, RenderBlocks render, int par2, int par3, int par4)
     {
         int l = render.blockAccess.getHeight();
         Tessellator tessellator = Tessellator.instance;

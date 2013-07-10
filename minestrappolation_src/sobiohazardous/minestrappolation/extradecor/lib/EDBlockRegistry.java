@@ -43,6 +43,9 @@ public class EDBlockRegistry
 		GameRegistry.registerBlock(ExtraDecor.enderBlock, "enderBlock");
 		GameRegistry.registerBlock(ExtraDecor.crate, "crate");
 		GameRegistry.registerBlock(ExtraDecor.barrel, "barrel");
+		GameRegistry.registerBlock(ExtraDecor.cardboard, "cardboard");
+		GameRegistry.registerBlock(ExtraDecor.cardboardBlock, "cardboardBlock");
+		GameRegistry.registerBlock(ExtraDecor.cardboardWet, "cardboardWet");
 	}
 	
 }

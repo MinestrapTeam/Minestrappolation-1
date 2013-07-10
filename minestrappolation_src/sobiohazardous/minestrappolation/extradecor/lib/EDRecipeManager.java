@@ -193,5 +193,13 @@ public class EDRecipeManager
 				{
 			"I", "C", "I", Character.valueOf('I'), Item.ingotIron, Character.valueOf('C'), ExtraDecor.crate
 				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.cardboardItem, 3), new Object[]
+				{
+			"SSS", "SSS", Character.valueOf('S'), Item.paper
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.cardboardBlock, 2), new Object[]
+				{
+			"CCC", " C ", " C ", Character.valueOf('C'), ExtraDecor.cardboardItem
+				});
 	}
 }

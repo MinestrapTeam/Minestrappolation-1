@@ -2,7 +2,7 @@ package sobiohazardous.minestrappolation.extradecor.handler;
 
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
-import sobiohazardous.minestrappolation.extradecor.block.BlockGlassRefinedPane;
+import sobiohazardous.minestrappolation.extradecor.block.EDBlockPane;
 import sobiohazardous.minestrappolation.extradecor.block.BlockRope;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;

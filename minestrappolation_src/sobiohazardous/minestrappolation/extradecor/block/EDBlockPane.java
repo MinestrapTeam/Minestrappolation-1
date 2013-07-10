@@ -18,7 +18,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockGlassRefinedPane extends Block
+public class EDBlockPane extends Block
 {
     /**
      * Holds the texture index of the side of the pane (the thin lateral side)
@@ -34,13 +34,12 @@ public class BlockGlassRefinedPane extends Block
     @SideOnly(Side.CLIENT)
     private Icon theIcon;
 
-    public BlockGlassRefinedPane(int par1, String texture, String topTexture, Material par4Material, boolean par5)
+    public EDBlockPane(int par1, String texture, String edgeTexture, Material par4Material, boolean par5)
     {
         super(par1, par4Material);
-        this.sideTextureIndex = "ExtraDecor:" + topTexture;
+        this.sideTextureIndex = "ExtraDecor:" + edgeTexture;
         this.canDropItself = par5;
         this.field_94402_c = "ExtraDecor:" + texture;
-        this.setCreativeTab(CreativeTabs.tabDecorations);
     }
 
     /**
@@ -48,7 +47,7 @@ public class BlockGlassRefinedPane extends Block
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return !this.canDropItself ? 0 : super.idDropped(par1, par2Random, par3);
+        return !this.canDropItself ? 0 : blockID == ExtraDecor.cardboard.blockID ? ExtraDecor.cardboardItem.itemID : super.idDropped(par1, par2Random, par3);
     }
 
     /**
@@ -213,7 +212,7 @@ public class BlockGlassRefinedPane extends Block
      */
     public final boolean canThisPaneConnectToThisBlockID(int par1)
     {
-        return Block.opaqueCubeLookup[par1] || par1 == this.blockID || par1 == Block.glass.blockID || par1 == ExtraDecor.glassRefined.blockID;
+        return Block.opaqueCubeLookup[par1] || par1 == this.blockID || par1 == Block.glass.blockID || par1 == ExtraDecor.glassRefined.blockID || par1 == ExtraDecor.cardboard.blockID;
     }
 
     /**
