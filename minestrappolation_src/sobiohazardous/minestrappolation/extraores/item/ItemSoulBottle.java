@@ -10,6 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.src.*;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.world.World;
 
 public class ItemSoulBottle extends Item
 {
@@ -23,17 +24,15 @@ public class ItemSoulBottle extends Item
     	{
     	         itemIcon = iconRegister.registerIcon("extraores:item_SoulBottle");
     	}
-        public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer)
+        public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par2EntityPlayer)
         {
-        	if (par2EntityPlayer.experienceTotal < 10 && !par2EntityPlayer.capabilities.isCreativeMode)
-            {
-        		return false;
-            }
-        	else
+        	par2EntityPlayer.addExperience(-3);
+        	if(par2EntityPlayer.experience > 1.0F)
         	{
-        		par2EntityPlayer.addExperienceLevel(1);
-        		return true;
+        		par2EntityPlayer.addExperienceLevel(-1);
+        		
         	}
+        	return par1ItemStack;	
         }
         
         public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) 
