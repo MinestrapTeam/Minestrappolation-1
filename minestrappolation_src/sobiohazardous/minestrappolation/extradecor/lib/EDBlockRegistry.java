@@ -46,6 +46,13 @@ public class EDBlockRegistry
 		GameRegistry.registerBlock(ExtraDecor.cardboard, "cardboard");
 		GameRegistry.registerBlock(ExtraDecor.cardboardBlock, "cardboardBlock");
 		GameRegistry.registerBlock(ExtraDecor.cardboardWet, "cardboardWet");
+		GameRegistry.registerBlock(ExtraDecor.checkerTile, "checkerTile");
+		GameRegistry.registerBlock(ExtraDecor.woodBoardsStairsOak, "woodBoardStairsOak");
+		GameRegistry.registerBlock(ExtraDecor.woodBoardsStairsBirch, "woodBoardStairsBirch");
+		GameRegistry.registerBlock(ExtraDecor.woodBoardsStairsSpruce, "woodBoardStairsSpruce");
+		GameRegistry.registerBlock(ExtraDecor.woodBoardsStairsJungle, "woodBoardStairsJungle");
+		GameRegistry.registerBlock(ExtraDecor.woodBoardsSingleSlab, "woodBoardsSingleSlab");
+		GameRegistry.registerBlock(ExtraDecor.woodBoardsDoubleSlab, "woodBoardsDoubleSlab");
 	}
 	
 }

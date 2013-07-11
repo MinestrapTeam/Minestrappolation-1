@@ -5,6 +5,7 @@ import java.lang.reflect.Modifier;
 
 import sobiohazardous.minestrappolation.extradecor.block.*;
 import sobiohazardous.minestrappolation.extradecor.bridge.BridgeRecipes;
+import sobiohazardous.minestrappolation.extradecor.gen.EDOreGenerator;
 import sobiohazardous.minestrappolation.extradecor.handler.ClientPacketHandler;
 import sobiohazardous.minestrappolation.extradecor.handler.EDGuiHandler;
 import sobiohazardous.minestrappolation.extradecor.handler.ServerPacketHandler;
@@ -18,15 +19,21 @@ import sobiohazardous.minestrappolation.extradecor.tileentity.TileEntityCrate;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.BlockGlowStone;
+import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.BlockObsidian;
 import net.minecraft.block.BlockPane;
+import net.minecraft.block.BlockStairs;
 import net.minecraft.block.BlockWood;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemMultiTextureTile;
+import net.minecraft.item.ItemSlab;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
+import net.minecraft.util.WeightedRandomChestContent;
+import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.client.registry.RenderingRegistry;
@@ -105,7 +112,14 @@ public class ExtraDecor
 	cardboardBlockId,
 	cardboardWetId,
 	sandstoneBrickItemId,
-	stoneBrickItemId;
+	stoneBrickItemId,
+	checkerTileId,
+	woodBoardsStairsOakId,
+	woodBoardsStairsBirchId,
+	woodBoardsStairsSpruceId,
+	woodBoardsStairsJungleId,
+	woodBoardsSingleSlabId,
+	woodBoardsDoubleSlabId;
 	
 	public static Block stoneBlockRefined;
 	public static Block stonePillar;
@@ -172,7 +186,16 @@ public class ExtraDecor
 	public static Item sandstoneBrickItem;
 	public static Item stoneBrickItem;
 	
-	public static CreativeTabs tabDecorBlocks = new CreativeTabExtraDecorBlocks(CreativeTabs.getNextID(),"Extrappolated Decor - Blocks");
+	public static Block checkerTile;
+	
+	public static Block woodBoardsStairsOak;
+	public static Block woodBoardsStairsBirch;
+	public static Block woodBoardsStairsSpruce;
+	public static Block woodBoardsStairsJungle;
+	public static BlockHalfSlab woodBoardsSingleSlab;
+	public static BlockHalfSlab woodBoardsDoubleSlab;
+	
+	public static CreativeTabs tabDecorBlocks = new CreativeTabExtraDecorBlocks(CreativeTabs.getNextID(),"Extrappolated Decor");
 	
 	public static int paneRenderId = RenderingRegistry.getNextAvailableRenderId();
 	public static int ropeRenderId = RenderingRegistry.getNextAvailableRenderId();
@@ -225,11 +248,18 @@ public class ExtraDecor
 		crateId = config.getBlock("Crate", 733).getInt();
 		barrelId = config.getBlock("Barrel", 734).getInt();
 		cardboardId = config.getBlock("Cardboard", 735).getInt();
-		cardboardItemId = config.getItem("Cardboard Place", 25001).getInt();
+		cardboardItemId = config.getItem("Cardboard Placer", 25001).getInt();
 		cardboardBlockId = config.getBlock("Cardboard Block", 736).getInt();
 		cardboardWetId = config.getBlock("Wet Cardboard", 737).getInt();
 		sandstoneBrickItemId = config.getItem("Sandstone Brick Item", 25002).getInt();
 		stoneBrickItemId = config.getItem("Stone Brick Item", 25003).getInt();
+		checkerTileId = config.getBlock("Checker Tile", 738).getInt();
+		woodBoardsStairsOakId = config.getBlock("Oak Board Stairs", 739).getInt();
+		woodBoardsStairsBirchId = config.getBlock("Birch Boards Stairs", 740).getInt();
+		woodBoardsStairsSpruceId = config.getBlock("Spruce Boards Stairs", 741).getInt();
+		woodBoardsStairsJungleId = config.getBlock("Jungle Boards Stairs", 742).getInt();
+		woodBoardsSingleSlabId = config.getBlock("Wood Boards Single Slab", 743).getInt();
+		woodBoardsDoubleSlabId = config.getBlock("Wood Boards Double Slab", 744).getInt();
 		
 		config.save();		
 		
@@ -246,7 +276,7 @@ public class ExtraDecor
 		
 		obsidianTile = (new EDBlock(obsidianTileId, Material.rock, "block_ObsidianTile")).setHardness(50.0F).setResistance(2000.0F).setCreativeTab(tabDecorBlocks).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("obsidianTile");
 		
-		snowBrick = (new EDBlock(snowBrickId, Material.rock, "block_SnowBrick")).setHardness(8.0F).setResistance(1.0F).setCreativeTab(tabDecorBlocks).setStepSound(Block.soundSnowFootstep).setUnlocalizedName("snowBrick");
+		snowBrick = (new EDBlock(snowBrickId, Material.snow, "block_SnowBrick")).setHardness(1F).setResistance(1.0F).setCreativeTab(tabDecorBlocks).setStepSound(Block.soundSnowFootstep).setUnlocalizedName("snowBrick");
 		
 		endstoneSmooth = (new EDBlock(endstoneSmoothId, Material.rock, "block_EndstoneSmooth")).setHardness(3F).setResistance(15F).setCreativeTab(tabDecorBlocks).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("endstoneSmooth");
 		endstoneRefined = (new EDBlock(endstoneRefinedId, Material.rock, "block_EndstoneRefined")).setHardness(3F).setResistance(15F).setCreativeTab(tabDecorBlocks).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("endstoneRefined");
@@ -299,9 +329,19 @@ public class ExtraDecor
 		sandstoneBrickItem = new EDItem(sandstoneBrickItemId, "item_SandstoneBrick").setUnlocalizedName("sandstoneBrickItem");
 		stoneBrickItem = new EDItem(stoneBrickItemId, "item_StoneBrick").setUnlocalizedName("stoneBrickItem");
 		
+		checkerTile = new EDBlock(checkerTileId, Material.rock, "block_CheckerTile").setUnlocalizedName("checkerTile").setHardness(3.0F);
+		
+		woodBoardsStairsOak = new EDBlockStairs(woodBoardsStairsOakId, woodBoards, 0).setUnlocalizedName("woodBoardsStairsOak");
+		woodBoardsStairsBirch = new EDBlockStairs(woodBoardsStairsBirchId, woodBoards, 1).setUnlocalizedName("woodBoardsStairsBirch");
+		woodBoardsStairsSpruce = new EDBlockStairs(woodBoardsStairsSpruceId, woodBoards, 2).setUnlocalizedName("woodBoardsStairsSpruce");
+		woodBoardsStairsJungle = new EDBlockStairs(woodBoardsStairsJungleId, woodBoards, 3).setUnlocalizedName("woodBoardsStairsJungle");
+		woodBoardsSingleSlab = (BlockHalfSlab) new BlockWoodBoardSlab(woodBoardsSingleSlabId, false).setUnlocalizedName("woodBoardsSingleSlab");
+		woodBoardsDoubleSlab = (BlockHalfSlab) new BlockWoodBoardSlab(woodBoardsDoubleSlabId, true).setUnlocalizedName("woodBoardsSingleSlab");
+	
 		EDBlockRegistry.registerBlocks();
 		EDNameManager.registerNames();
 		EDRecipeManager.loadAllRecipes();
+			
 	}
 	
 	
@@ -309,7 +349,7 @@ public class ExtraDecor
 	public void load(FMLInitializationEvent event)
 	{
 		proxy.registerRenderThings();
-		
+				
 		NetworkRegistry.instance().registerGuiHandler(this, new EDGuiHandler());
 		GameRegistry.registerTileEntity(TileEntityCrate.class, "tileEntityCrate");
 		
@@ -320,6 +360,8 @@ public class ExtraDecor
 		MinecraftForge.setBlockHarvestLevel(ropeCoil, "shears", 0);
 		MinecraftForge.setBlockHarvestLevel(rope, "shears", 0);
 		MinecraftForge.setBlockHarvestLevel(flintTile, "pickaxe", 1);
+		
+		GameRegistry.registerWorldGenerator(new EDOreGenerator());
 		
 	}
 
@@ -332,12 +374,15 @@ public class ExtraDecor
 		Item.itemsList[sandstoneBricks.blockID] = (new ItemMultiTextureTile(sandstoneBricks.blockID - 256, sandstoneBricks, BlockSandstoneBrick.sandType)).setUnlocalizedName("sandstoneBrick");
 		Item.itemsList[woodBoards.blockID] = (new ItemMultiTextureTile(woodBoards.blockID - 256, woodBoards, BlockWoodBoards.woodType)).setUnlocalizedName("woodBoards");
 		
+		//TODO Forms of adding slabs
+		Item.itemsList[this.woodBoardsSingleSlab.blockID] = (new ItemSlab(this.woodBoardsSingleSlab.blockID - 256, (BlockHalfSlab)woodBoardsSingleSlab, (BlockHalfSlab)woodBoardsDoubleSlab, false));
+		
 		try 
 		{
 			BridgeRecipes.loadBridgeRecipes();
 		} catch (Exception e) 
 		{
-			System.err.println("ExtraDecor: Could not load bridge recipes.");
+			System.err.println("ExtraDecor: Could not load bridge recipes. Heres why: ");
 			e.printStackTrace();
 		}
 	}

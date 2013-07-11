@@ -20,8 +20,8 @@ public class EDNameManager
 		LanguageRegistry.addName(ExtraDecor.endstoneBrick, "End Stone Brick");
 		LanguageRegistry.addName(ExtraDecor.glassRefined, "Refined Glass");
 		LanguageRegistry.addName(ExtraDecor.glassRefinedPane, "Refined Glass Pane");
-		LanguageRegistry.addName(ExtraDecor.flintBlock, "Flint Block");
-		LanguageRegistry.addName(ExtraDecor.gunpowderBlock, "Gunpowder Block");
+		LanguageRegistry.addName(ExtraDecor.flintBlock, "Block of Flint");
+		LanguageRegistry.addName(ExtraDecor.gunpowderBlock, "Block of Gunpowder");
 		LanguageRegistry.addName(ExtraDecor.itemRope, "Rope");
 		LanguageRegistry.addName(ExtraDecor.ropeCoil, "Rope Coil");
 		LanguageRegistry.addName(ExtraDecor.oozeSlime, "Slime Ooze");
@@ -33,7 +33,7 @@ public class EDNameManager
 		LanguageRegistry.instance().addStringLocalization("tile.woodPanel.jungle.name", "Jungle Wood Panel");
 		LanguageRegistry.instance().addStringLocalization("tile.woodBeveled.oak.name", "Beveled Oak Wood Panel");
 		LanguageRegistry.instance().addStringLocalization("tile.woodBeveled.birch.name", "Beveled Birch Wood Panel");
-		LanguageRegistry.instance().addStringLocalization("tile.woodBeveled.spruce.name", "Spruce Oak Wood Panel");
+		LanguageRegistry.instance().addStringLocalization("tile.woodBeveled.spruce.name", "Beveled Spruce Wood Panel");
 		LanguageRegistry.instance().addStringLocalization("tile.woodBeveled.jungle.name", "Beveled Jungle Wood Panel");
 		LanguageRegistry.addName(ExtraDecor.netherBrickPattern, "Patterned Nether Bricks");
 		LanguageRegistry.instance().addStringLocalization("tile.sandstoneBrick.brick.name", "Sandstone Bricks");
@@ -48,8 +48,8 @@ public class EDNameManager
 		LanguageRegistry.instance().addStringLocalization("tile.woodBoards.jungle.name", "Jungle Wood Boards");
 		LanguageRegistry.addName(ExtraDecor.flintTile, "Flint Tile");
 		LanguageRegistry.addName(ExtraDecor.netherQuartzTile, "Nether Quartz Tile");
-		LanguageRegistry.addName(ExtraDecor.sugarBlock, "Sugar Block");
-		LanguageRegistry.addName(ExtraDecor.meatBlock, "Meat Block");
+		LanguageRegistry.addName(ExtraDecor.sugarBlock, "Block of Sugar");
+		LanguageRegistry.addName(ExtraDecor.meatBlock, "Block of Meat");
 		LanguageRegistry.addName(ExtraDecor.magmaOoze, "Magma Ooze");
 		LanguageRegistry.addName(ExtraDecor.enderBlock, "Ender Block");
 		LanguageRegistry.addName(ExtraDecor.crate, "Crate");
@@ -59,6 +59,15 @@ public class EDNameManager
 		LanguageRegistry.addName(ExtraDecor.cardboardWet, "Wet Cardboard");
 		LanguageRegistry.addName(ExtraDecor.sandstoneBrickItem, "Sandstone Brick");
 		LanguageRegistry.addName(ExtraDecor.stoneBrickItem, "Stone Brick");
+		LanguageRegistry.addName(ExtraDecor.checkerTile, "Checker Tile");
+		LanguageRegistry.addName(ExtraDecor.woodBoardsStairsOak, "Oak Board Stairs");
+		LanguageRegistry.addName(ExtraDecor.woodBoardsStairsBirch, "Birch Board Stairs");
+		LanguageRegistry.addName(ExtraDecor.woodBoardsStairsSpruce, "Spruce Board Stairs");
+		LanguageRegistry.addName(ExtraDecor.woodBoardsStairsJungle, "Jungle Board Stairs");
+		LanguageRegistry.instance().addStringLocalization("tile.woodBoardsSingleSlab.oak.name", "Oak Wood Boards Slab");
+		LanguageRegistry.instance().addStringLocalization("tile.woodBoardsSingleSlab.birch.name", "birch Wood Boards Slab");
+		LanguageRegistry.instance().addStringLocalization("tile.woodBoardsSingleSlab.spruce.name", "spruce Wood Boards Slab");
+		LanguageRegistry.instance().addStringLocalization("tile.woodBoardsSingleSlab.jungle.name", "jungle Wood Boards Slab");	
 	}
 	
 }

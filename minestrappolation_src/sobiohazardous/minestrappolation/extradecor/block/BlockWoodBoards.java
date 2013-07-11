@@ -83,7 +83,7 @@ public class BlockWoodBoards extends Block
     
     public int getFlammability(IBlockAccess world, int x, int y, int z, int metadata, ForgeDirection face)
     {
-    	if(blockID == ExtraDecor.woodPanel.blockID || blockID == ExtraDecor.woodBeveled.blockID)
+    	if(blockID == ExtraDecor.woodPanel.blockID || blockID == ExtraDecor.woodBeveled.blockID || blockID == ExtraDecor.woodBoards.blockID)
     	{
     		if(face == ForgeDirection.UP || face == ForgeDirection.DOWN || face == ForgeDirection.NORTH || face == ForgeDirection.SOUTH || face == ForgeDirection.EAST || face == ForgeDirection.WEST)
     		{

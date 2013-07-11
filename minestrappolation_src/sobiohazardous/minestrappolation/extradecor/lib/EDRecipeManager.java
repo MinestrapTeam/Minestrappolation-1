@@ -218,9 +218,41 @@ public class EDRecipeManager
 				{
 			"BB", "BB", Character.valueOf('B'), ExtraDecor.sandstoneBrickItem
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.sandstoneBricks, 2, 1), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.checkerTile, 4), new Object[]
 				{
-			"BBB", "BBB", "BBB", Character.valueOf('B'), ExtraDecor.sandstoneBrickItem
+			"FQ", "QF", Character.valueOf('F'), ExtraDecor.flintTile, Character.valueOf('Q'), ExtraDecor.netherQuartzTile
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodBoardsSingleSlab, 6, 0), new Object[]
+				{
+			"FFF", Character.valueOf('F'), new ItemStack(ExtraDecor.woodBoards, 1, 0)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodBoardsSingleSlab, 6, 1), new Object[]
+				{
+			"FFF", Character.valueOf('F'), new ItemStack(ExtraDecor.woodBoards, 1, 1)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodBoardsSingleSlab, 6, 2), new Object[]
+				{
+			"FFF", Character.valueOf('F'), new ItemStack(ExtraDecor.woodBoards, 1, 2)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodBoardsSingleSlab, 6, 3), new Object[]
+				{
+			"FFF", Character.valueOf('F'), new ItemStack(ExtraDecor.woodBoards, 1, 3)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodBoardsStairsOak, 4), new Object[]
+				{
+			"  F", " FF", "FFF", Character.valueOf('F'), new ItemStack(ExtraDecor.woodBoards, 1, 0)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodBoardsStairsBirch, 4), new Object[]
+				{
+			"  F", " FF", "FFF", Character.valueOf('F'), new ItemStack(ExtraDecor.woodBoards, 1, 1)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodBoardsStairsSpruce, 4), new Object[]
+				{
+			"  F", " FF", "FFF", Character.valueOf('F'), new ItemStack(ExtraDecor.woodBoards, 1, 2)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodBoardsStairsJungle, 4), new Object[]
+				{
+			"  F", " FF", "FFF", Character.valueOf('F'), new ItemStack(ExtraDecor.woodBoards, 1, 3)
 				});
 	}
 }

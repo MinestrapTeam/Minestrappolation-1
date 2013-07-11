@@ -1,4 +1,4 @@
-package sobiohazardous.minestrappolation.extraores.generation;
+package sobiohazardous.minestrappolation.extraores.gen;
 
 import java.util.Random;
 
@@ -19,13 +19,13 @@ import net.minecraft.world.gen.feature.WorldGenMinable;
  * 
  * 
  * 
- * @author Crzyguitardude
+ * @author SoBiohazardous
  */
-public class ExtracraftOreGenerator implements IWorldGenerator
+public class EOOreGenerator implements IWorldGenerator
 {
 	public static ExtraOres BASEMOD;
 
-	public ExtracraftOreGenerator()
+	public EOOreGenerator()
 	{
 
 	}

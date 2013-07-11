@@ -22,6 +22,6 @@ public final class CreativeTabExtraoresBlocks extends CreativeTabs
    
         public String getTranslatedTabLabel()
         {
-         return "Extrappolated Ores - Blocks";
+         return "Extrapolated Ores - Blocks";
         }
 }

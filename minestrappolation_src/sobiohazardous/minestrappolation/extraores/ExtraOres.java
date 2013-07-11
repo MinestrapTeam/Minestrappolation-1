@@ -19,10 +19,12 @@ import sobiohazardous.minestrappolation.extraores.entity.EntityNukePrimed;
 import sobiohazardous.minestrappolation.extraores.entity.EntityExplosion;
 import sobiohazardous.minestrappolation.extraores.entity.RenderGrenade;
 import sobiohazardous.minestrappolation.extraores.entity.RenderNukePrimed;
-import sobiohazardous.minestrappolation.extraores.generation.ExtracraftOreGenerator;
+import sobiohazardous.minestrappolation.extraores.gen.EOOreGenerator;
 import sobiohazardous.minestrappolation.extraores.handler.ClientPacketHandler;
 import sobiohazardous.minestrappolation.extraores.handler.ClientTickHandler;
 import sobiohazardous.minestrappolation.extraores.handler.EOGuiHandler;
+import sobiohazardous.minestrappolation.extraores.handler.BlacksmithTrades;
+import sobiohazardous.minestrappolation.extraores.handler.PriestTrades;
 import sobiohazardous.minestrappolation.extraores.handler.ServerPacketHandler;
 import sobiohazardous.minestrappolation.extraores.handler.ServerTickHandler;
 import sobiohazardous.minestrappolation.extraores.item.*;
@@ -63,9 +65,11 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.src.BaseMod;
 import net.minecraft.src.ModLoader;
+import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
+import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
@@ -88,6 +92,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.TickRegistry;
+import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.relauncher.Side;
 
 /**
@@ -1159,7 +1164,7 @@ public class ExtraOres
 	    
 	    Block.bedrock.setHardness(80F);
 	    
-		GameRegistry.registerWorldGenerator(new ExtracraftOreGenerator());
+		GameRegistry.registerWorldGenerator(new EOOreGenerator());
 		EntityRegistry.registerModEntity(EntityExplosion.class, "Plutonium", 4, this, 350, 5, false);
 		EntityRegistry.registerModEntity(EntityGrenade.class, "Grenade", 2, this, 40, 3, true);
 		EntityRegistry.registerModEntity(EntityNukePrimed.class, "NukePrimed", 3, this, 350, 5, false);
@@ -1372,7 +1377,7 @@ public class ExtraOres
 		
 		BPTitaniumSword = (new ItemESword(BPTitaniumSwordId,"item_BronzePlatedTitaniumSword", ExtracraftToolMaterial.BPTITANIUM)).setUnlocalizedName("BPTitaniumSword");
 		BPTitaniumPickaxe = (new ItemEPickaxe(BPTitaniumPickaxeId, "item_BronzePlatedTitaniumPickaxe", ExtracraftToolMaterial.BPTITANIUM)).setUnlocalizedName("BPTitaniumPickaxe");
-		BPTitaniumShovel = (new ItemEShovel(BPTitaniumShovelId, "item_BronzePlatedTitaniumShovel", ExtracraftToolMaterial.BPTITANIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BPTitaniumShovel");
+		BPTitaniumShovel = (new ItemEShovel(BPTitaniumShovelId, "item_BronzePlatedTitaniumShovel", ExtracraftToolMaterial.BPTITANIUM)).setUnlocalizedName("BPTitaniumShovel");
 		BPTitaniumHoe = (new ItemEHoe(BPTitaniumHoeId, "item_BronzePlatedTitaniumHoe",ExtracraftToolMaterial.BPTITANIUM)).setUnlocalizedName("BPTitaniumHoe");
 		BPTitaniumAxe = (new ItemEAxe(BPTitaniumAxeId, "item_BronzePlatedTitaniumAxe",ExtracraftToolMaterial.BPTITANIUM)).setUnlocalizedName("BPTitaniumAxe");
 	
@@ -1576,6 +1581,65 @@ public class ExtraOres
         GameRegistry.registerFuelHandler(new UraniumFuelHandler());
         GameRegistry.registerFuelHandler(new PlutoniumFuelHandler());
 
+		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(this.CopperIngot),1,5,120));
+		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(this.TinIngot),1,5,120));
+		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(this.BronzeIngot),1,3,100));
+		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(this.CoalIronIngot),1,5,75));
+		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(this.SteelIngot),1,5,75));
+		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.CopperIngot),1,5,120));
+		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.TinIngot),1,5,120));
+		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.meuroditeIngot),1,4,60));
+		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.ToriteIngot),1,3,35));
+		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.TitaniumIngot),1,2,10));
+		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.SunstoneDust),1,7,100));
+		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.Uranium),1,2,40));
+		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.Plutonium),1,2,40));
+		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.BronzePickaxe),1,1,45));
+		ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.SteelPickaxe),1,1,45));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.CopperIngot),1,5,100));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.TinIngot),1,5,120));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.meuroditeIngot),1,4,60));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.ToriteIngot),1,3,35));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.TitaniumIngot),1,2,10));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.SunstoneDust),1,7,100));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.Uranium),1,2,40));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.Plutonium),1,2,40));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.BronzePickaxe),1,1,45));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.SteelPickaxe),1,1,45));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.CoalIronIngot),1,5,75));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.BronzeIngot),1,3,100));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.BlaziumIngot),1,2,30));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.SteelSword),1,1,45));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(this.BronzeSword),1,1,45));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(this.CopperIngot),1,5,100));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(this.TinIngot),1,5,120));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(this.meuroditeIngot),1,4,60));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(this.ToriteIngot),1,3,35));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(this.TitaniumIngot),1,2,10));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(this.SunstoneDust),1,7,100));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(this.Uranium),1,2,40));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(this.Plutonium),1,2,40));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(this.BronzePickaxe),1,1,45));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(this.SteelPickaxe),1,1,45));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(this.CoalIronIngot),1,5,75));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(this.BronzeIngot),1,3,100));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(this.BlaziumIngot),1,2,30));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(this.SteelSword),1,1,45));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(this.BronzeSword),1,1,45));
+		ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_LIBRARY).addItem(new WeightedRandomChestContent(new ItemStack(this.SoulGem),1,3,50));
+		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_JUNGLE_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(this.ToriteIngot),1,3,35));
+		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_JUNGLE_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(this.SunstoneDust),1,7,100));
+		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_DESERT_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(this.PinkQuartz),1,10,100));
+		ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_DESERT_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(this.RadiantQuartz),1,3,40));
+		ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH).addItem(new WeightedRandomChestContent(new ItemStack(this.CopperIngot),1,5,120));
+		ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH).addItem(new WeightedRandomChestContent(new ItemStack(this.TinIngot),1,5,120));
+		ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH).addItem(new WeightedRandomChestContent(new ItemStack(this.BronzeIngot),1,3,100));
+		ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH).addItem(new WeightedRandomChestContent(new ItemStack(this.CoalIronIngot),1,5,75));
+		ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH).addItem(new WeightedRandomChestContent(new ItemStack(this.SteelIngot),1,5,75));
+		
+		VillagerRegistry.instance().registerVillageTradeHandler(3, new BlacksmithTrades());
+		VillagerRegistry.instance().registerVillageTradeHandler(2, new PriestTrades());
+		
 		MinecraftForge.setBlockHarvestLevel(CopperOre, "pickaxe", 0);
 		MinecraftForge.setBlockHarvestLevel(CopperBlock, "pickaxe", 0);
 		MinecraftForge.setBlockHarvestLevel(TinOre, "pickaxe", 1);

@@ -15,11 +15,11 @@ public final class CreativeTabExtraDecorBlocks extends CreativeTabs
         @SideOnly(Side.CLIENT)
         public int getTabIconItemIndex()
         {
-                return ExtraDecor.stoneBlockRefined.blockID;
+                return ExtraDecor.checkerTile.blockID;
         }
    
         public String getTranslatedTabLabel()
         {
-         return "Extrappolated Decor - Blocks";
+         return "Extrapolated Decor";
         }
 }
