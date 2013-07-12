@@ -1,9 +1,13 @@
 package sobiohazardous.minestrappolation.extraores.item;
 
+import com.google.common.collect.Multimap;
+
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
@@ -222,6 +226,13 @@ public class ItemExtracraftTool extends Item
     		par3EntityPlayer.setItemInUse(par1ItemStack, getMaxItemUseDuration(par1ItemStack));
     	}
     	return par1ItemStack;
+    }
+
+    public Multimap func_111205_h()
+    {
+        Multimap multimap = super.func_111205_h();
+        multimap.put(SharedMonsterAttributes.field_111264_e.func_111108_a(), new AttributeModifier(field_111210_e, "Tool modifier", (double)this.damageVsEntity, 0));
+        return multimap;
     }
     
 }

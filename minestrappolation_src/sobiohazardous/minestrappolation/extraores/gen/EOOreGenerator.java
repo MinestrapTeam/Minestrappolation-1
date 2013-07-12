@@ -175,7 +175,7 @@ public class EOOreGenerator implements IWorldGenerator
 			(new WorldGenNetherExtracraft(ExtraOres.BlaziumOre.blockID, 5)).generate(world, rand, i5, j5, k5);
 		}
 		//soul ore
-		for(int h = 0; h<10; h++)
+		for(int h = 0; h<20; h++)
 		{
 			int i5 = chunkx + rand.nextInt(16);
 			int j5 = rand.nextInt(256);

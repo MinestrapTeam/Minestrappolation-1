@@ -43,5 +43,7 @@ public class ItemEPickaxe extends ItemExtracraftTool
     {
         return par2Block != null && (par2Block.blockMaterial == Material.iron || par2Block.blockMaterial == Material.anvil || par2Block.blockMaterial == Material.rock) ? this.efficiencyOnProperMaterial : super.getStrVsBlock(par1ItemStack, par2Block);
     }
+    
+    
 }
 

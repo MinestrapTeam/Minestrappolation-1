@@ -18,6 +18,7 @@ public class ItemSoulBottle extends Item
         {
                 super(i);
                 this.setCreativeTab(ExtraOres.tabOresItems);
+                this.setMaxStackSize(1);
         }
 
         public void registerIcons(IconRegister iconRegister)
@@ -30,7 +31,7 @@ public class ItemSoulBottle extends Item
         
             --par1ItemStack.stackSize;
             
-            return par1ItemStack.stackSize <= 0 ? new ItemStack(Item.expBottle, par1ItemStack.stackSize) : par1ItemStack;	   
+            return par1ItemStack.stackSize <= 0 ? new ItemStack(Item.expBottle) : par1ItemStack;	   
             
         }
         

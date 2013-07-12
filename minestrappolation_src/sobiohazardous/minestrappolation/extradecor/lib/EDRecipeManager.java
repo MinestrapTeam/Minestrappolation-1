@@ -267,5 +267,9 @@ public class EDRecipeManager
 				{
 			"  F", " FF", "FFF", Character.valueOf('F'), new ItemStack(ExtraDecor.woodBoards, 1, 3)
 				});
+		GameRegistry.addShapelessRecipe(new ItemStack(Item.enderPearl, 9), new Object[]
+				{
+			ExtraDecor.enderBlock
+				});
 	}
 }

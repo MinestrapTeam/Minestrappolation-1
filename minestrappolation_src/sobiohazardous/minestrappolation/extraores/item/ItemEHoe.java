@@ -91,7 +91,12 @@ public class ItemEHoe extends Item
     {
         return true;
     }
-	public String func_77842_f()
+	
+	/**
+     * Returns the name of the material this tool is made from as it is declared in EnumToolMaterial (meaning diamond
+     * would return "EMERALD")
+     */
+    public String getMaterialName()
     {
         return this.theToolMaterial.toString();
     }
