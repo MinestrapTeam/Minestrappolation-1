@@ -29,7 +29,7 @@ public class EntityExplosion extends Entity
         this.motionX = (double)(-((float)Math.sin((double)f)) * 0.02F);
         this.motionY = 0.20000000298023224D;
         this.motionZ = (double)(-((float)Math.cos((double)f)) * 0.02F);
-        this.fuse = 0;
+        this.fuse = 1;
         this.prevPosX = par2;
         this.prevPosY = par4;
         this.prevPosZ = par6;
@@ -76,7 +76,7 @@ public class EntityExplosion extends Entity
             this.motionY *= -0.5D;
         }
 
-        if (this.fuse-- <= 0)
+        if (this.fuse == 1)
         {
             this.setDead();
 

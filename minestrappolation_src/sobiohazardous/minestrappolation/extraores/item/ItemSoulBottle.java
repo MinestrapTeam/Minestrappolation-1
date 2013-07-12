@@ -26,13 +26,12 @@ public class ItemSoulBottle extends Item
     	}
         public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par2EntityPlayer)
         {
-        	par2EntityPlayer.addExperience(-3);
-        	if(par2EntityPlayer.experience > 1.0F)
-        	{
-        		par2EntityPlayer.addExperienceLevel(-1);
-        		
-        	}
-        	return par1ItemStack;	
+        	par2EntityPlayer.addExperience(-5);
+        
+            --par1ItemStack.stackSize;
+            
+            return par1ItemStack.stackSize <= 0 ? new ItemStack(Item.expBottle, par1ItemStack.stackSize) : par1ItemStack;	   
+            
         }
         
         public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) 

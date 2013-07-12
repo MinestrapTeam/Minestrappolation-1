@@ -22,6 +22,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.src.ModLoader;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 public class BlockPlutoniumRaw extends Block
@@ -250,11 +251,11 @@ public BlockPlutoniumRaw(int par1, Material par3Material)
             {
             	return true;
             }
-            else
+            else if (!BlockFunctions.isWaterTouchingAllSides(par1World, par2, par3, par4))
             {
             	 if (!par1World.isRemote)
                  {                    
-   
+  
             		 EntityExplosion entitytntprimed = new EntityExplosion(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), player);
                          par1World.spawnEntityInWorld(entitytntprimed);
                          par1World.playSoundAtEntity(entitytntprimed, "random.fuse", 1.0F, 1.0F);
@@ -278,4 +279,28 @@ public BlockPlutoniumRaw(int par1, Material par3Material)
         	 }
         }
 
+        /**
+         * Called upon the block being destroyed by an explosion
+         */
+        public void onBlockDestroyedByExplosion(World par1World, int par2, int par3, int par4, Explosion par5Explosion)
+        {
+            if (!par1World.isRemote)
+            {
+            	EntityExplosion entitytntprimed = new EntityExplosion(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), player);
+                par1World.spawnEntityInWorld(entitytntprimed);
+                par1World.playSoundAtEntity(entitytntprimed, "random.fuse", 1.0F, 1.0F);
+            }
+        }
+        
+        public void func_94391_a(World par1World, int par2, int par3, int par4, int par5, EntityLivingBase par6EntityLivingBase)
+        {
+            if (!par1World.isRemote)
+            {
+                if ((par5 & 1) == 1)
+                {
+                	EntityExplosion entitytntprimed = new EntityExplosion(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), player);
+                    par1World.spawnEntityInWorld(entitytntprimed);
+                    par1World.playSoundAtEntity(entitytntprimed, "random.fuse", 1.0F, 1.0F);                }
+            }
+        }
 }
