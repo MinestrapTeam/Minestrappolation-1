@@ -59,9 +59,13 @@ public class EDRecipeManager
 				{
 			"SS", "SS", Character.valueOf('S'), Item.flint
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.gunpowderBlock, 9), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.gunpowderBlock, 1), new Object[]
 				{
 			"SSS", "SSS","SSS", Character.valueOf('S'), Item.gunpowder
+				});
+		GameRegistry.addRecipe(new ItemStack(Item.gunpowder, 9), new Object[]
+				{
+			"S", Character.valueOf('S'), ExtraDecor.gunpowderBlock
 				});
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.itemRope, 1), new Object[]
 				{
@@ -120,10 +124,7 @@ public class EDRecipeManager
 				{
 			"SSS", "SSS", "SSS", Character.valueOf('S'), Block.netherBrick
 				});
-		GameRegistry.addRecipe(new ItemStack(Block.stoneBrick, 2), new Object[]
-				{
-			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(Block.stoneBrick, 1, 0)
-				});
+		
 		//TODO add sandstone brick recipes
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.sandstonePillar, 2), new Object[]
 				{
@@ -157,6 +158,10 @@ public class EDRecipeManager
 				{
 			"SSS","SSS","SSS", Character.valueOf('S'), Item.sugar
 				});
+		GameRegistry.addRecipe(new ItemStack(Item.sugar, 9), new Object[]
+				{
+			"S", Character.valueOf('S'), ExtraDecor.sugarBlock
+				});
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.meatBlock), new Object[]
 				{
 			"SSS","SSS","SSS", Character.valueOf('S'), Item.chickenRaw
@@ -185,7 +190,11 @@ public class EDRecipeManager
 				{
 			"SSS","SSS","SSS", Character.valueOf('S'), Item.enderPearl
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.enderBlock), new Object[]
+		GameRegistry.addRecipe(new ItemStack(Item.enderPearl, 9), new Object[]
+				{
+			"S", Character.valueOf('S'), ExtraDecor.enderBlock
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.crate), new Object[]
 				{
 			"WWW","SSS","WWW", Character.valueOf('S'), Item.stick, Character.valueOf('W'), Block.planks
 				});
@@ -199,7 +208,7 @@ public class EDRecipeManager
 				});
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.cardboardBlock, 2), new Object[]
 				{
-			"CCC", " C ", " C ", Character.valueOf('C'), ExtraDecor.cardboardItem
+			"CCC", " C ", " CC", Character.valueOf('C'), ExtraDecor.cardboardItem
 				});
 		GameRegistry.addSmelting(Block.sandStone.blockID, new ItemStack(ExtraDecor.sandstoneBrickItem, 4),  0.8F);
 		GameRegistry.addRecipe(new ItemStack(Block.stoneBrick, 1, 0), new Object[]
@@ -217,6 +226,10 @@ public class EDRecipeManager
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.sandstoneBricks, 1, 0), new Object[]
 				{
 			"BB", "BB", Character.valueOf('B'), ExtraDecor.sandstoneBrickItem
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.sandstoneBricks, 2, 1), new Object[]
+				{
+			"BBB", "BBB", "BBB", Character.valueOf('B'), ExtraDecor.sandstoneBrickItem
 				});
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.checkerTile, 4), new Object[]
 				{

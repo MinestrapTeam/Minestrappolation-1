@@ -52,6 +52,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import sobiohazardous.minestrappolation.extradecor.material.*;
+import sobiohazardous.minestrappolation.extraores.gen.EOOreGenerator;
 
 /**
  * 
@@ -285,15 +286,15 @@ public class ExtraDecor
 		glassRefined = (new BlockGlassRefined(glassRefinedId, Material.glass, false)).setHardness(0.3F).setStepSound(Block.soundGlassFootstep).setCreativeTab(tabDecorBlocks).setUnlocalizedName("glassRefined");
 		glassRefinedPane = (new EDBlockPane(glassRefinedPaneId, "block_ClearGlass", "block_ClearGlassTop", Material.glass, false)).setHardness(0.3F).setStepSound(Block.soundGlassFootstep).setCreativeTab(tabDecorBlocks).setUnlocalizedName("glassRefinedPane");
 		
-		flintBlock = (new EDBlock(flintBlockId, Material.ground, "block_FlintBlock")).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("flintBlock");
+		flintBlock = (new EDBlock(flintBlockId, Material.rock, "block_FlintBlock")).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("flintBlock");
 		
-		gunpowderBlock = (new BlockGunpowderBlock(gunpowderBlockId, Material.ground, "block_GunpowderBlock")).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("gunpowderBlock");
+		gunpowderBlock = (new BlockGunpowderBlock(gunpowderBlockId, Material.ground, "block_GunpowderBlock")).setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundGravelFootstep).setUnlocalizedName("gunpowderBlock");
 		
-		rope = (new BlockRope(ropeId)).setHardness(2.0F).setResistance(4.0F).setStepSound(Block.soundLadderFootstep).setUnlocalizedName("rope");
+		rope = (new BlockRope(ropeId)).setHardness(2.0F).setResistance(4.0F).setStepSound(Block.soundClothFootstep).setUnlocalizedName("rope");
 		itemRope = (new ItemBlockPlacer(itemRopeId, "item_Rope", rope)).setUnlocalizedName("itemRope").setCreativeTab(tabDecorBlocks);
-		ropeCoil = (new BlockRopeCoil(ropeCoilId)).setHardness(2.0F).setResistance(5.0F).setCreativeTab(tabDecorBlocks).setStepSound(Block.soundLadderFootstep).setUnlocalizedName("ropeCoil");
+		ropeCoil = (new BlockRopeCoil(ropeCoilId)).setHardness(2.0F).setResistance(5.0F).setCreativeTab(tabDecorBlocks).setStepSound(Block.soundClothFootstep).setUnlocalizedName("ropeCoil");
 		
-		oozeSlime = (new BlockOoze(oozeSlimeId, this.materialOoze, "block_SlimeOoze")).setHardness(5.0F).setResistance(2.0F).setUnlocalizedName("oozeSlime");
+		oozeSlime = (new BlockOoze(oozeSlimeId, Material.water, "block_SlimeOoze")).setHardness(5.0F).setResistance(2.0F).setStepSound(Block.soundSandFootstep).setUnlocalizedName("oozeSlime");
 		
 		woodPanel = (new BlockWoodPanel(woodPanelId)).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("woodPanel");
 			
@@ -311,10 +312,10 @@ public class ExtraDecor
 		
 		netherQuartzTile = new EDBlock(netherQuartzTileId, Material.rock, "block_NetherTile").setUnlocalizedName("netherQuartzTile");
 	
-		sugarBlock = new BlockSugarBlock(sugarBlockId, "block_SugarBlock").setResistance(0.8F).setResistance(1F).setUnlocalizedName("sugarBlock");
+		sugarBlock = new BlockSugarBlock(sugarBlockId, "block_SugarBlock").setHardness(3.0F).setResistance(5.0F).setStepSound(Block.soundGravelFootstep).setUnlocalizedName("sugarBlock");
 		meatBlock = new BlockMeatBlock(meatBlockId, "block_MeatBlock").setHardness(0.8F).setResistance(1.0F).setUnlocalizedName("meatBlock");
 		
-		magmaOoze = new BlockOoze(magmaOozeId, this.materialOoze, "block_MagmaOoze").setHardness(5.0F).setResistance(3.0F).setUnlocalizedName("magmaOoze");
+		magmaOoze = new BlockOoze(magmaOozeId, this.materialOoze, "block_MagmaOoze").setHardness(5.0F).setResistance(3.0F).setStepSound(Block.soundSandFootstep).setUnlocalizedName("magmaOoze");
 		
 		enderBlock = new BlockEnderblock(enderBlockId).setHardness(3.0F).setResistance(4.0F).setUnlocalizedName("enderBlock").setCreativeTab(tabDecorBlocks);
 		
@@ -353,10 +354,13 @@ public class ExtraDecor
 		NetworkRegistry.instance().registerGuiHandler(this, new EDGuiHandler());
 		GameRegistry.registerTileEntity(TileEntityCrate.class, "tileEntityCrate");
 		
+		MinecraftForge.setToolClass(Item.shears, "shears", 0);
+		
 		MinecraftForge.setBlockHarvestLevel(snowBrick, "shovel", 0);
 		MinecraftForge.setBlockHarvestLevel(flintBlock, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(obsidianTile, "pickaxe", 3);
 		MinecraftForge.setBlockHarvestLevel(gunpowderBlock, "shovel", 0);
+		MinecraftForge.setBlockHarvestLevel(sugarBlock, "shovel", 0);
 		MinecraftForge.setBlockHarvestLevel(ropeCoil, "shears", 0);
 		MinecraftForge.setBlockHarvestLevel(rope, "shears", 0);
 		MinecraftForge.setBlockHarvestLevel(flintTile, "pickaxe", 1);

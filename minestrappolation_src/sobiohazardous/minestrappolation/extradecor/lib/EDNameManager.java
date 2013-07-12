@@ -64,10 +64,10 @@ public class EDNameManager
 		LanguageRegistry.addName(ExtraDecor.woodBoardsStairsBirch, "Birch Board Stairs");
 		LanguageRegistry.addName(ExtraDecor.woodBoardsStairsSpruce, "Spruce Board Stairs");
 		LanguageRegistry.addName(ExtraDecor.woodBoardsStairsJungle, "Jungle Board Stairs");
-		LanguageRegistry.instance().addStringLocalization("tile.woodBoardsSingleSlab.oak.name", "Oak Wood Boards Slab");
-		LanguageRegistry.instance().addStringLocalization("tile.woodBoardsSingleSlab.birch.name", "birch Wood Boards Slab");
-		LanguageRegistry.instance().addStringLocalization("tile.woodBoardsSingleSlab.spruce.name", "spruce Wood Boards Slab");
-		LanguageRegistry.instance().addStringLocalization("tile.woodBoardsSingleSlab.jungle.name", "jungle Wood Boards Slab");	
+		LanguageRegistry.instance().addStringLocalization("tile.woodBoardsSingleSlab.oak.name", "Oak Board Slab");
+		LanguageRegistry.instance().addStringLocalization("tile.woodBoardsSingleSlab.birch.name", "Birch Board Slab");
+		LanguageRegistry.instance().addStringLocalization("tile.woodBoardsSingleSlab.spruce.name", "Spruce Board Slab");
+		LanguageRegistry.instance().addStringLocalization("tile.woodBoardsSingleSlab.jungle.name", "Jungle Board Slab");	
 	}
 	
 }

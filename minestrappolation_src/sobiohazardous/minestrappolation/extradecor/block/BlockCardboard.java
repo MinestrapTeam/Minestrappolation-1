@@ -13,7 +13,9 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ForgeDirection;
 
 public class BlockCardboard extends EDBlock
 {
@@ -51,6 +53,21 @@ public class BlockCardboard extends EDBlock
     	{
     		par1World.setBlock(par2, par3, par4, ExtraDecor.cardboardWet.blockID);
     	}
+    }
+    
+    public int getFlammability(IBlockAccess world, int x, int y, int z, int metadata, ForgeDirection face)
+    {
+    	if(blockID == ExtraDecor.cardboardBlock.blockID)
+    	{
+    		if(face == ForgeDirection.UP || face == ForgeDirection.DOWN || face == ForgeDirection.NORTH || face == ForgeDirection.SOUTH || face == ForgeDirection.EAST || face == ForgeDirection.WEST)
+    		{
+                return 100;
+    		}
+    		else
+    			return 0;
+    	}
+    	else
+    		return 0;
     }
 
 }

@@ -81,7 +81,7 @@ public class BlockEdgeStoneBrick extends Block
     	 
     }
 	*/
-    
+    /*
 	public void onBlockPlacedBy(World par1World, int par2, int par3, int par4, EntityLiving par5EntityLiving, ItemStack par6ItemStack)
 	{
 		if(BlockFunctions.isBlockTouchingLeft(par1World, par2, par3, par4, Block.stoneBrick.blockID))
@@ -108,4 +108,5 @@ public class BlockEdgeStoneBrick extends Block
 			par1World.setBlock(par2, par3, par4, ExtraDecor.edgeStoneBrickRight.blockID);
 		}
 	}    
+	*/
 }

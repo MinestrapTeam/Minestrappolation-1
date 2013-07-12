@@ -15,7 +15,7 @@ public final class CreativeTabExtraDecorBlocks extends CreativeTabs
         @SideOnly(Side.CLIENT)
         public int getTabIconItemIndex()
         {
-                return ExtraDecor.checkerTile.blockID;
+                return ExtraDecor.sandstoneBricks.blockID;
         }
    
         public String getTranslatedTabLabel()

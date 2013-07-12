@@ -10,29 +10,25 @@ public class WorldGenSandstone extends WorldGenerator
 {
     /** The block ID of the ore to be placed using this generator. */
     private int minableBlockId;
-    private int minableBlockMeta = 0;
+    private int minableBlockMeta;
 
     /** The number of blocks to generate. */
     private int numberOfBlocks;
     private int field_94523_c;
 
-    public WorldGenSandstone(int par1, int par2)
+    public WorldGenSandstone(int par1, int par1_5, int par2)
     {
-        this(par1, par2, Block.sandStone.blockID);
+        this(par1, par1_5, par2, Block.sandStone.blockID);
     }
 
-    public WorldGenSandstone(int par1, int par2, int par3)
+    public WorldGenSandstone(int par1, int par1_5, int par2, int par3)
     {
         this.minableBlockId = par1;
+        this.minableBlockMeta = par1_5;
         this.numberOfBlocks = par2;
         this.field_94523_c = par3;
     }
 
-    public WorldGenSandstone(int id, int meta, int number, int target)
-    {
-        this(id, number, target);
-        minableBlockMeta = meta;
-    }
 
     public boolean generate(World par1World, Random par2Random, int par3, int par4, int par5)
     {

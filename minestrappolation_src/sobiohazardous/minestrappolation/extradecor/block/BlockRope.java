@@ -24,7 +24,7 @@ public class BlockRope extends Block
 
     public BlockRope(int par1)
     {
-        super(par1, Material.circuits);
+        super(par1, Material.cloth);
     }
 
     /**

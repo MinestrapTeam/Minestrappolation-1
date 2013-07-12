@@ -17,6 +17,7 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ForgeDirection;
 
 public class EDBlockPane extends Block
 {
@@ -242,5 +243,20 @@ public class EDBlockPane extends Block
     {
         this.blockIcon = par1IconRegister.registerIcon(this.field_94402_c);
         this.theIcon = par1IconRegister.registerIcon(this.sideTextureIndex);
+    }
+    
+    public int getFlammability(IBlockAccess world, int x, int y, int z, int metadata, ForgeDirection face)
+    {
+    	if(blockID == ExtraDecor.cardboard.blockID)
+    	{
+    		if(face == ForgeDirection.UP || face == ForgeDirection.DOWN || face == ForgeDirection.NORTH || face == ForgeDirection.SOUTH || face == ForgeDirection.EAST || face == ForgeDirection.WEST)
+    		{
+                return 100;
+    		}
+    		else
+    			return 0;
+    	}
+    	else
+    		return 0;
     }
 }

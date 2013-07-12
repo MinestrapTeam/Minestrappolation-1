@@ -22,7 +22,7 @@ public class BlockRopeCoil extends Block
 	private Icon top;
     public BlockRopeCoil(int par1)
     {
-        super(par1, Material.circuits);
+        super(par1, Material.cloth);
     }
 
     

@@ -252,24 +252,24 @@ public class BlockUraniumInsulated extends Block
                     {
                 	    //System.out.println("close");
                 	    living = (EntityLivingBase)var6.next();
-                        living.addPotionEffect(new PotionEffect(Potion.poison.getId(), 40, 8, false));
-                	    //varEntityLiving.addPotionEffect(new PotionEffect(Potion.poison.getId(),200,10));          
+                        living.addPotionEffect(new PotionEffect(Potion.poison.getId(), 180, 2, false));
+                	    //varEntityLiving.addPotionEffect(new PotionEffect(Potion.poison.getId(),200,10));
                     }
                 }
-                List list2 = world.getEntitiesWithinAABB(EntitySkeleton.class, axisalignedbb);
+                List list2 = world.getEntitiesWithinAABB(EntityZombie.class, axisalignedbb);
                 Iterator var8 = list2.iterator();
+                EntityZombie var9;
                 if(list2.isEmpty() && world.getBlockMetadata(i, j, k) > 5)
                 {
-                    //far
+                    //System.out.println("far");
                 }
                 else
                 	while (var8.hasNext())
                     {
-                		//close
-                	    skeleton = (EntitySkeleton)var8.next();
-                        skeleton.addPotionEffect(new PotionEffect(Potion.resistance.getId(), 180, 2, false));
-                        skeleton.addPotionEffect(new PotionEffect(Potion.damageBoost.getId(), 180, 1, false));
-                        skeleton.removePotionEffect(Potion.wither.getId());
+                	    //System.out.println("close");
+                	    zombie = (EntityZombie)var8.next();
+                        zombie.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 300, 2, false));
+                        zombie.addPotionEffect(new PotionEffect(Potion.damageBoost.getId(), 300, 1, false));
                 	    //varEntityLiving.addPotionEffect(new PotionEffect(Potion.poison.getId(),200,10));          
                     }
         	}

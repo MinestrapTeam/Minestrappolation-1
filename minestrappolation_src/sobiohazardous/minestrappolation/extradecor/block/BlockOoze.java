@@ -9,6 +9,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.item.Item;
 import net.minecraft.stats.StatList;
 import net.minecraft.util.AxisAlignedBB;
@@ -53,7 +54,7 @@ public class BlockOoze extends EDBlock
     public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
     {
         par5Entity.setInWeb();
-        par5Entity.attackEntityFrom(DamageSource.inWall, 1.0F);
+        par5Entity.addVelocity(0, -0.3, 0);
         if(blockID == ExtraDecor.magmaOoze.blockID)
         {
         	par5Entity.setFire(1);

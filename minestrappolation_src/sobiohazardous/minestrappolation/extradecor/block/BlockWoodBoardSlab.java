@@ -12,6 +12,8 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.common.ForgeDirection;
 
 public class BlockWoodBoardSlab extends BlockHalfSlab
 {
@@ -87,4 +89,19 @@ public class BlockWoodBoardSlab extends BlockHalfSlab
      * is the only chance you get to register icons.
      */
     public void registerIcons(IconRegister par1IconRegister) {}
+    
+    public int getFlammability(IBlockAccess world, int x, int y, int z, int metadata, ForgeDirection face)
+    {
+    	if(blockID == ExtraDecor.woodBoardsSingleSlab.blockID || blockID == ExtraDecor.woodBoardsDoubleSlab.blockID)
+    	{
+    		if(face == ForgeDirection.UP || face == ForgeDirection.DOWN || face == ForgeDirection.NORTH || face == ForgeDirection.SOUTH || face == ForgeDirection.EAST || face == ForgeDirection.WEST)
+    		{
+                return 75;
+    		}
+    		else
+    			return 0;
+    	}
+    	else
+    		return 0;
+    }
 }

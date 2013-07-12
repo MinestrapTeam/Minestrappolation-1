@@ -3,6 +3,7 @@ package sobiohazardous.minestrappolation.extradecor.gen;
 import java.util.Random;
 
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
+import sobiohazardous.minestrappolation.extraores.ExtraOres;
 import cpw.mods.fml.common.IWorldGenerator;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.*;
@@ -48,22 +49,22 @@ public class EDOreGenerator implements IWorldGenerator
 
 	public void generateSurface(World world, Random rand, int chunkx, int chunkz)
 	{
-		for(int l = 0; l <1; l++) //5 = how much veins in a chunk (chunk = 16x16x128)
+		for(int l = 0; l <20; l++) //5 = how much veins in a chunk (chunk = 16x16x128)
 		{
 			int i1 = chunkx +rand.nextInt(16);
-			int j1 = rand.nextInt(256); //layer it spawns in
+			int j1 = rand.nextInt(80); //layer it spawns in
 			int k1 = chunkz + rand.nextInt(16);
 		
-		(new WorldGenSandstone(new ItemStack(ExtraDecor.sandstoneBricks, 1, 3).itemID, 6)).generate(world, rand, i1, j1, k1); //5 = how much in a vain
+		(new WorldGenSandstone(ExtraDecor.sandstoneBricks.blockID, 3, 6)).generate(world, rand, i1, j1, k1); //5 = how much in a vain
 		}
 		
-		for(int l1 = 0; l1 <1; l1++) //5 = how much veins in a chunk (chunk = 16x16x128)
+		for(int l1 = 0; l1 <20; l1++) //5 = how much veins in a chunk (chunk = 16x16x128)
 		{
 			int i1 = chunkx +rand.nextInt(16);
 			int j1 = rand.nextInt(256); //layer it spawns in
 			int k1 = chunkz + rand.nextInt(16);
 		
-		(new WorldGenSandstone(new ItemStack(ExtraDecor.sandstoneBricks, 1, 4).itemID, 6)).generate(world, rand, i1, j1, k1); //5 = how much in a vain
+		(new WorldGenSandstone(ExtraDecor.sandstoneBricks.blockID, 4, 6)).generate(world, rand, i1, j1, k1); //5 = how much in a vain
 		}
 		
 	}
