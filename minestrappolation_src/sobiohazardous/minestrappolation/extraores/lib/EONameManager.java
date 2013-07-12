@@ -22,7 +22,7 @@ public class EONameManager
 		//TODO: Change Modloader to LanguageRegistry
 		ModLoader.addName(ExtraOres.meuroditeOre, "Meurodite Ore");
 
-		ModLoader.addName(ExtraOres.meuroditeBlock, "Meurodite Block");
+		ModLoader.addName(ExtraOres.meuroditeBlock, "Block of Meurodite");
 		ModLoader.addName(ExtraOres.meuroditeIngot, "Meurodite Gem");
 		
 		ModLoader.addName(ExtraOres.meuroditeSword, "Meurodite Sword");
@@ -60,7 +60,7 @@ public class EONameManager
 		ModLoader.addName(ExtraOres.TitaniumBoots, "Titanium Boots");
 		
 
-		ModLoader.addName(ExtraOres.TitaniumBlock, "Titanium Block");
+		ModLoader.addName(ExtraOres.TitaniumBlock, "Block of Titanium");
 		
 
 		ModLoader.addName(ExtraOres.Sunstone, "Sunstone");
@@ -71,7 +71,7 @@ public class EONameManager
 		ModLoader.addName(ExtraOres.ToriteOre, "Torite Ore");
 		ModLoader.addName(ExtraOres.ToriteIngot, "Torite Ingot");
 
-		ModLoader.addName(ExtraOres.ToriteBlock, "Torite Block");
+		ModLoader.addName(ExtraOres.ToriteBlock, "Block of Torite");
 		
 		ModLoader.addName(ExtraOres.ToriteAxe, "Torite Axe");
 		ModLoader.addName(ExtraOres.ToriteHoe, "Torite Hoe");
@@ -98,8 +98,8 @@ public class EONameManager
 		ModLoader.addName(ExtraOres.BlaziumOre, "Blazium Ore");
 		
 
-		ModLoader.addName(ExtraOres.BlaziumBlock, "Blazium Block");
-		ModLoader.addName(ExtraOres.BlaziumIngot, "Blaze Ingot");
+		ModLoader.addName(ExtraOres.BlaziumBlock, "Block of Blazium");
+		ModLoader.addName(ExtraOres.BlaziumIngot, "Blazium Ingot");
 		ModLoader.addName(ExtraOres.BlazeShard, "Blaze Shard");
 		
 		ModLoader.addName(ExtraOres.BlaziumAxe, "Fire Axe");
@@ -114,10 +114,10 @@ public class EONameManager
 		ModLoader.addName(ExtraOres.BlaziumBoots, "Fire Boots");
 		
 
-		ModLoader.addName(ExtraOres.CopperOre, "Copper Ore (Extracraft)");
+		ModLoader.addName(ExtraOres.CopperOre, "Copper Ore (Minestrappolation)");
 
-		ModLoader.addName(ExtraOres.CopperBlock, "Copper Block (Extracraft)");
-		ModLoader.addName(ExtraOres.CopperIngot, "Copper Ingot (Extracraft)");
+		ModLoader.addName(ExtraOres.CopperBlock, "Block of Copper (Minestrappolation)");
+		ModLoader.addName(ExtraOres.CopperIngot, "Copper Ingot (Minestrappolation)");
 		
 		ModLoader.addName(ExtraOres.CopperBlockTarnished, "Tarnished Copper Block");
 		
@@ -128,9 +128,9 @@ public class EONameManager
 		ModLoader.addName(ExtraOres.CopperSword, "Copper Sword");
 		
 
-		ModLoader.addName(ExtraOres.TinOre, "Tin Ore (Extracraft)");
-		ModLoader.addName(ExtraOres.TinBlock, "Tin Block (Extracraft)");
-		ModLoader.addName(ExtraOres.TinIngot, "Tin Ingot (Extracraft)");
+		ModLoader.addName(ExtraOres.TinOre, "Tin Ore (Minestrappolation)");
+		ModLoader.addName(ExtraOres.TinBlock, "Block of Tin (Minestrappolation)");
+		ModLoader.addName(ExtraOres.TinIngot, "Tin Ingot (Minestrappolation)");
 		
 		ModLoader.addName(ExtraOres.TinHelmet, "Tin Helmet");
 		ModLoader.addName(ExtraOres.TinChest, "Tin Chestplate");
@@ -155,7 +155,7 @@ public class EONameManager
 		ModLoader.addName(ExtraOres.SteelChest, "Steel Chestplate");
 		ModLoader.addName(ExtraOres.SteelPants, "Steel Leggings");
 		ModLoader.addName(ExtraOres.SteelBoots, "Steel Boots");
-		ModLoader.addName(ExtraOres.SteelBlock, "Steel Block");
+		ModLoader.addName(ExtraOres.SteelBlock, "Block of Steel");
 		
 		ModLoader.addName(ExtraOres.SoulOre, "Soul Ore");
 		ModLoader.addName(ExtraOres.SoulGem, "Soul Gem");
@@ -188,7 +188,7 @@ public class EONameManager
 		ModLoader.addName(ExtraOres.BronzeChest, "Bronze Chestplate");
 		ModLoader.addName(ExtraOres.BronzePants, "Bronze Leggings");
 		ModLoader.addName(ExtraOres.BronzeBoots, "Bronze Boots");
-		ModLoader.addName(ExtraOres.BronzeBlock, "Bronze Block");
+		ModLoader.addName(ExtraOres.BronzeBlock, "Block of Bronze");
 		
 		ModLoader.addName(ExtraOres.BronzePlatedCobble, "Bronze-Plated Cobblestone");
 		ModLoader.addName(ExtraOres.BronzePlatedMossy, "Mossy Bronze-Plated Cobblestone");
@@ -197,7 +197,6 @@ public class EONameManager
 		ModLoader.addName(ExtraOres.BronzePlatedGranite, "Bronze-Plated Granite Brick");
 		
 		ModLoader.addName(ExtraOres.Invincium, "Invincium");
-		ModLoader.addName(Block.bedrock, "Invincible Bedrock");
 		ModLoader.addName(ExtraOres.BedrockPickaxe, "Bedrock Pickaxe");
 		ModLoader.addName(ExtraOres.BedrockShovel, "Bedrock Shovel");
 		ModLoader.addName(ExtraOres.BedrockAxe, "Bedrock Axe");

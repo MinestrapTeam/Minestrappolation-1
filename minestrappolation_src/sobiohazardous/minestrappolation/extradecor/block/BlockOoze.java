@@ -19,7 +19,7 @@ import net.minecraft.world.World;
 
 public class BlockOoze extends EDBlock
 {
-	
+	private int ticks = 0;
 	public BlockOoze(int par1, Material material, String texture)
     {
         super(par1, material, texture);
@@ -55,10 +55,27 @@ public class BlockOoze extends EDBlock
     {
         par5Entity.setInWeb();
         par5Entity.addVelocity(0, -0.3, 0);
+        /*
+        if(blockID == ExtraDecor.oozeSlime.blockID)
+        {
+        	ticks++;
+        	System.out.println(ticks);
+        	if(ticks<=10)
+        	{
+        		par5Entity.setAir(300); 
+        		System.out.println("set");
+        	}
+        	if(ticks>=11)
+        	{
+        		par5Entity.setAir(par5Entity.getAir() - 1);
+        	}
+        }
+        */
         if(blockID == ExtraDecor.magmaOoze.blockID)
         {
         	par5Entity.setFire(1);
         }
+        
     }
     
     public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)

@@ -121,12 +121,11 @@ public class BlockGunpowderBlock extends EDBlock
      */
     public void onFinishFalling(World par1World, int par2, int par3, int par4, int par5) {}
     
-    /**
-     * Called upon block activation (right click on the block.)
-     */
+    
+    
     public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
     {
-        if (par5EntityPlayer.getCurrentEquippedItem() != null && par5EntityPlayer.getCurrentEquippedItem().itemID == Item.flintAndSteel.itemID)
+        if (par5EntityPlayer.getCurrentEquippedItem() != null && (par5EntityPlayer.getCurrentEquippedItem().itemID == Item.flintAndSteel.itemID || par5EntityPlayer.getCurrentEquippedItem().itemID == Item.fireballCharge.itemID))
         {
         	if (!par1World.isRemote)
         	{
@@ -140,4 +139,7 @@ public class BlockGunpowderBlock extends EDBlock
             return super.onBlockActivated(par1World, par2, par3, par4, par5EntityPlayer, par6, par7, par8, par9);
         }
     }
+    
+    
+    
 }

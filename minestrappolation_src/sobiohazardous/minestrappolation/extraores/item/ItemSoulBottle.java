@@ -27,11 +27,18 @@ public class ItemSoulBottle extends Item
     	}
         public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par2EntityPlayer)
         {
-        	par2EntityPlayer.addExperience(-5);
+        	if (par2EntityPlayer.experienceTotal >= 10)
+        	{
+        		par2EntityPlayer.addExperience(-10);
         
-            --par1ItemStack.stackSize;
-            
-            return par1ItemStack.stackSize <= 0 ? new ItemStack(Item.expBottle) : par1ItemStack;	   
+            	--par1ItemStack.stackSize;
+            	
+            	return par1ItemStack.stackSize <= 0 ? new ItemStack(Item.expBottle) : par1ItemStack;	   
+        	}
+        	else
+        	{
+        		return par1ItemStack.stackSize <= 0 ? new ItemStack(ExtraOres.SoulBottle) : par1ItemStack;
+        	}
             
         }
         

@@ -29,9 +29,9 @@ public class EDRecipeManager
 				{
 			"SG", "SG", Character.valueOf('S'), new ItemStack(Block.stoneBrick, 1, 0), Character.valueOf('G'), new ItemStack(Block.blockNetherQuartz, 1, 0)
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.brickPattern, 9), new Object[]
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.brickPattern, 2), new Object[]
 				{
-			"SSS", "SSS", "SSS", Character.valueOf('S'), Block.brick
+			"SSS", "SSS", "SSS", Character.valueOf('S'), Item.brick
 				});
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.obsidianTile, 4), new Object[]
 				{
@@ -59,6 +59,10 @@ public class EDRecipeManager
 				{
 			"SS", "SS", Character.valueOf('S'), Item.flint
 				});
+		GameRegistry.addRecipe(new ItemStack(Item.flint, 2), new Object[]
+				{
+			"S", Character.valueOf('S'), ExtraDecor.flintBlock
+				});
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.gunpowderBlock, 1), new Object[]
 				{
 			"SSS", "SSS","SSS", Character.valueOf('S'), Item.gunpowder
@@ -75,9 +79,17 @@ public class EDRecipeManager
 				{
 			"SSS", "SSS", "SSS", Character.valueOf('S'), ExtraDecor.itemRope
 				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.itemRope, 9), new Object[]
+				{
+			"S", Character.valueOf('S'), ExtraDecor.ropeCoil
+				});
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.oozeSlime, 1), new Object[]
 				{
 			"SSS", "SSS", "SSS", Character.valueOf('S'), Item.slimeBall
+				});
+		GameRegistry.addRecipe(new ItemStack(Item.slimeBall, 9), new Object[]
+				{
+			"S", Character.valueOf('S'), ExtraDecor.oozeSlime
 				});
 		
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodPanel, 9, 0), new Object[]
@@ -122,7 +134,7 @@ public class EDRecipeManager
 				});
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.netherBrickPattern, 9), new Object[]
 				{
-			"SSS", "SSS", "SSS", Character.valueOf('S'), Block.netherBrick
+			"SSS", "SSS", "SSS", Character.valueOf('S'), Item.netherrackBrick
 				});
 		
 		//TODO add sandstone brick recipes
@@ -185,6 +197,10 @@ public class EDRecipeManager
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.magmaOoze), new Object[]
 				{
 			"SSS","SSS","SSS", Character.valueOf('S'), Item.magmaCream
+				});
+		GameRegistry.addRecipe(new ItemStack(Item.magmaCream, 9), new Object[]
+				{
+			"S", Character.valueOf('S'), ExtraDecor.magmaOoze
 				});
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.enderBlock), new Object[]
 				{

@@ -41,7 +41,7 @@ protected TileEntityBarrel tile_entity;
 
 	protected void bindPlayerInventory(InventoryPlayer par1IInventory)
 	{
-		int i = (-2 * 18) - 1;
+		int i = (-2 * 18) - 2;
 		int j;
 		int k;
 		for (j = 0; j < 3; ++j)
