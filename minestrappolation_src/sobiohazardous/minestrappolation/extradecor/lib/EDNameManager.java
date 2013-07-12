@@ -68,6 +68,7 @@ public class EDNameManager
 		LanguageRegistry.instance().addStringLocalization("tile.woodBoardsSingleSlab.birch.name", "Birch Board Slab");
 		LanguageRegistry.instance().addStringLocalization("tile.woodBoardsSingleSlab.spruce.name", "Spruce Board Slab");
 		LanguageRegistry.instance().addStringLocalization("tile.woodBoardsSingleSlab.jungle.name", "Jungle Board Slab");	
+		LanguageRegistry.addName(ExtraDecor.checkerTileStairs, "Checker Tile Stairs");
 	}
 	
 }

@@ -120,7 +120,8 @@ public class ExtraDecor
 	woodBoardsStairsSpruceId,
 	woodBoardsStairsJungleId,
 	woodBoardsSingleSlabId,
-	woodBoardsDoubleSlabId;
+	woodBoardsDoubleSlabId,
+	checkerTileStairsId;
 	
 	public static Block stoneBlockRefined;
 	public static Block stonePillar;
@@ -196,6 +197,8 @@ public class ExtraDecor
 	public static BlockHalfSlab woodBoardsSingleSlab;
 	public static BlockHalfSlab woodBoardsDoubleSlab;
 	
+	public static Block checkerTileStairs;
+	
 	public static CreativeTabs tabDecorBlocks = new CreativeTabExtraDecorBlocks(CreativeTabs.getNextID(),"Extrappolated Decor");
 	
 	public static int paneRenderId = RenderingRegistry.getNextAvailableRenderId();
@@ -203,9 +206,6 @@ public class ExtraDecor
 	
 	public static final Material materialOoze = new MaterialOoze(MapColor.foliageColor);
 	
-	/**
-	 * @param event
-	 */
 	@Mod.EventHandler
 	public void preLoad(FMLPreInitializationEvent event)
 	{
@@ -261,6 +261,7 @@ public class ExtraDecor
 		woodBoardsStairsJungleId = config.getBlock("Jungle Boards Stairs", 742).getInt();
 		woodBoardsSingleSlabId = config.getBlock("Wood Boards Single Slab", 743).getInt();
 		woodBoardsDoubleSlabId = config.getBlock("Wood Boards Double Slab", 744).getInt();
+		checkerTileStairsId = config.getBlock("Checker Tile Stairs", 745).getInt();
 		
 		config.save();		
 		
@@ -339,6 +340,8 @@ public class ExtraDecor
 		woodBoardsSingleSlab = (BlockHalfSlab) new BlockWoodBoardSlab(woodBoardsSingleSlabId, false).setUnlocalizedName("woodBoardsSingleSlab");
 		woodBoardsDoubleSlab = (BlockHalfSlab) new BlockWoodBoardSlab(woodBoardsDoubleSlabId, true).setUnlocalizedName("woodBoardsSingleSlab");
 	
+		checkerTileStairs = new EDBlockStairs(checkerTileStairsId, checkerTile, 0).setUnlocalizedName("checkerTileStairs").setHardness(3.0F);
+		
 		EDBlockRegistry.registerBlocks();
 		EDNameManager.registerNames();
 		EDRecipeManager.loadAllRecipes();

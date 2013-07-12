@@ -271,5 +271,9 @@ public class EDRecipeManager
 				{
 			ExtraDecor.enderBlock
 				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.checkerTileStairs, 4), new Object[]
+				{
+			"  T",  " TT", "TTT", Character.valueOf('T'), ExtraDecor.checkerTile
+				});
 	}
 }
