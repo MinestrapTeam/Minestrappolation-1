@@ -26,7 +26,7 @@ protected TileEntityBarrel tile_entity;
         {
             for (k = 0; k < 9; ++k)
             {
-                this.addSlotToContainer(new Slot(tile_entity, k + j * 9, 8 + k * 18, 18 + j * 18 - 9));
+                this.addSlotToContainer(new Slot(tile_entity, k + j * 9, 8 + k * 18, 18 + j * 18 - 10));
             }
         }
 
