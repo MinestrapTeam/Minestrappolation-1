@@ -1,7 +1,6 @@
 package sobiohazardous.minestrappolation.extradecor.tileentity;
 
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
-import sobiohazardous.minestrappolation.extradecor.block.BlockCardboardWet;
 import sobiohazardous.minestrappolation.extraores.block.BlockCopper;
 import sobiohazardous.minestrappolation.util.BlockFunctions;
 import net.minecraft.block.Block;

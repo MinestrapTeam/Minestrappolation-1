@@ -52,7 +52,6 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import sobiohazardous.minestrappolation.extradecor.material.*;
-import sobiohazardous.minestrappolation.extraores.gen.EOOreGenerator;
 
 /**
  * 

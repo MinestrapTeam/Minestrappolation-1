@@ -3,7 +3,6 @@ package sobiohazardous.minestrappolation.extradecor.gen;
 import java.util.Random;
 
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
-import sobiohazardous.minestrappolation.extraores.ExtraOres;
 import cpw.mods.fml.common.IWorldGenerator;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.*;
