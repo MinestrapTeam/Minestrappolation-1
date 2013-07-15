@@ -23,6 +23,6 @@ public final class CreativeTabExtraMobDropsBlocks extends CreativeTabs
    
         public String getTranslatedTabLabel()
         {
-        	return "Extrappolated Mob Drops - Items";
+        	return "Extrappolated Mob Drops - Blocks";
         }
 }
