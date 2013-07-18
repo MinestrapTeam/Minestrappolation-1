@@ -59,19 +59,35 @@ public class ExtraMobDrops
 	friedBreadId,
 	friedCarrotId,
 	friedCookieId,
-	friedFleshId;
+	friedFleshId,
+	animalBonesId,
+	cowHoofId,
+	hornId,
+	hornSwordWoodId,
+	hornSwordStoneId,
+	hornSwordIronId,
+	hornSwordDiamondId;
 	
 	public static Item snout;
 	public static Item pigHoof;
 	public static Item fat;
 	public static Item grease;
 	
-	public Item friedApple;
-	public Item friedBeef;
-	public Item friedBread;
-	public Item friedCarrot;
-	public Item friedCookie;
-	public Item friedFlesh;
+	public static Item friedApple;
+	public static Item friedBeef;
+	public static Item friedBread;
+	public static Item friedCarrot;
+	public static Item friedCookie;
+	public static Item friedFlesh;
+	
+	public static Item animalBones;
+	public static Item cowHoof;
+	public static Item horn;
+	
+	public static Item hornSwordWood;
+	public static Item hornSwordStone;
+	public static Item hornSwordIron;
+	public static Item hornSwordDiamond;
 	
 	@Mod.EventHandler
 	public void preLoad(FMLPreInitializationEvent e)
@@ -89,17 +105,39 @@ public class ExtraMobDrops
 		friedCarrotId = config.getItem("Fried Carrot", 4007).getInt();
 		friedCookieId = config.getItem("Fried Cookie", 4008).getInt();
 		friedFleshId = config.getItem("Fried Flesh", 4009).getInt();
+		animalBonesId = config.getItem("Animal Bones", 4010).getInt();
+		cowHoofId = config.getItem("Cow Hoof", 4011).getInt();
+		hornId = config.getItem("Horn", 4012).getInt();
+		hornSwordWoodId = config.getItem("Horned Wood Sword", 4013).getInt();
+		hornSwordStoneId = config.getItem("Horned Stone Sword", 4014).getInt();
+		hornSwordIronId = config.getItem("Horned Iron Sword", 4015).getInt();
+		hornSwordDiamondId = config.getItem("Horned Diamond Sword", 4016).getInt();
+
 		
 		config.save();
 		
-		snout = new EMDItem(snoutId, "snout").setUnlocalizedName("snout");
+		snout = new EMDItemFood(snoutId, 3, 0.2F, "snout").setPotionEffect(Potion.hunger.id, 10 * 20, 1, 0.25F).setUnlocalizedName("snout");
 		pigHoof = new EMDItem(pigHoofId, "pig_foot").setUnlocalizedName("pigHoof");
-		fat = new EMDItem(fatId, "fat").setUnlocalizedName("fat");
+		fat = new EMDItemFood(fatId, 8, 0.2F, "fat").setPotionEffect(Potion.hunger.id, 25 * 20, 1, 1.0F).setUnlocalizedName("fat");
 		grease = new EMDItem(greaseId, "grease").setUnlocalizedName("grease");
 		
-		friedApple = new EMDItemFood(friedAppleId, 8, 0.3F, "grease_apple").setPotionEffect(Potion.hunger.id, 10 * 20, 1, 1.0F).setUnlocalizedName("friedApple");
-		friedBread = new EMDItemFood(friedBreadId, 10, 0.6F, "grease_bread").setPotionEffect(Potion.hunger.id, 10 * 20, 1, 1.0F).setUnlocalizedName("friedBread");
+		friedApple = new EMDItemFood(friedAppleId, 8, 0.3F, "grease_apple").setPotionEffect(Potion.hunger.id, 15 * 20, 1, 0.4F).setUnlocalizedName("friedApple");
+		friedBeef = new EMDItemFood(friedBeefId, 16, 0.8F, "grease_beef").setPotionEffect(Potion.hunger.id, 15 * 20, 1, 0.4F).setUnlocalizedName("friedBeef");
+		friedBread = new EMDItemFood(friedBreadId, 10, 0.6F, "grease_bread").setPotionEffect(Potion.hunger.id, 15 * 20, 1, 0.4F).setUnlocalizedName("friedBread");
+		friedCarrot = new EMDItemFood(friedCarrotId, 8, 0.6F, "grease_carrot").setPotionEffect(Potion.hunger.id, 15 * 20, 1, 0.4F).setUnlocalizedName("friedCarrot");
+		friedCookie = new EMDItemFood(friedCookieId, 8, 0.6F, "grease_cookie").setPotionEffect(Potion.hunger.id, 15 * 20, 1, 0.4F).setUnlocalizedName("friedCookie");
+		friedFlesh = new EMDItemFood(friedFleshId, 8, 0.6F, "grease_flesh").setPotionEffect(Potion.hunger.id, 15 * 20, 1, 0.4F).setUnlocalizedName("friedFlesh");
 		
+		animalBones = new EMDItem(animalBonesId, "animal_bones").setUnlocalizedName("animalBones");
+		cowHoof = new EMDItem(cowHoofId, "cow_hoof").setUnlocalizedName("cowHoof");
+		
+		horn = new EMDItem(hornId, "horn").setUnlocalizedName("horn");
+		
+		hornSwordWood = new ItemHornSword(hornSwordWoodId, "horned_wood_sword", EnumHornSwordMaterial.WOODH).setUnlocalizedName("hornedSwordWood");
+		hornSwordStone = new ItemHornSword(hornSwordStoneId, "horned_stone_sword", EnumHornSwordMaterial.STONEH).setUnlocalizedName("hornedSwordStone");
+		hornSwordIron = new ItemHornSword(hornSwordIronId, "horned_iron_sword", EnumHornSwordMaterial.IRONH).setUnlocalizedName("hornedSwordIron");
+		hornSwordDiamond = new ItemHornSword(hornSwordDiamondId, "horned_diamond_sword", EnumHornSwordMaterial.EMERALDH).setUnlocalizedName("hornedSwordDiamond");
+
 		EMDNameManager.loadNames();
 		EMDRecipeManager.loadRecipes();
 	}

@@ -2,6 +2,9 @@ package sobiohazardous.minestrappolation.extraores.block;
 
 import java.util.Random;
 
+import cpw.mods.fml.common.Loader;
+import cpw.mods.fml.common.registry.GameRegistry;
+
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
 
 
@@ -10,6 +13,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.src.*;
 import net.minecraft.util.AxisAlignedBB;
@@ -61,5 +65,26 @@ public class BlockCopperTarnished extends Block
     		return blockIcon;
     	}
 		return top;
+    }
+    
+    public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
+    { 	
+    	//TODO Fix because grease is returning null, i think its because the mod hasn't been completly loaded in preinit
+    	Item grease = GameRegistry.findItem("ExtraMobDrops", "grease");
+        
+        if(grease != null)
+        {
+        	if (par5EntityPlayer.getCurrentEquippedItem() != null && (par5EntityPlayer.getCurrentEquippedItem().itemID == grease.itemID || par5EntityPlayer.getCurrentEquippedItem().itemID == Item.fireballCharge.itemID))
+            {
+            	par1World.setBlock(par2, par3, par4, ExtraOres.CopperBlock.blockID);   
+            	
+            }
+        	return true;
+        }    
+  		
+        else
+        {
+            return super.onBlockActivated(par1World, par2, par3, par4, par5EntityPlayer, par6, par7, par8, par9);
+        }    	
     }
 }

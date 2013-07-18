@@ -111,6 +111,8 @@ public class ExtraOres
 	@SidedProxy(clientSide = "sobiohazardous.minestrappolation.extraores.proxy.ClientProxy", serverSide = "sobiohazardous.minestrappolation.extraores.proxy.CommonProxy")
     public static CommonProxy proxy;
 	
+	public static Item grease;
+	
 	public static int 
 	meuroditeOreId, 
 	meuroditeBlockId, 
