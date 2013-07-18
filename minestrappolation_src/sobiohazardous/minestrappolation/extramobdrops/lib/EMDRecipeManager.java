@@ -54,5 +54,9 @@ public class EMDRecipeManager
 				{
 			ExtraMobDrops.horn, ExtraMobDrops.horn, Item.swordDiamond
 				});
+		GameRegistry.addShapelessRecipe(new ItemStack(ExtraMobDrops.hornSwordGold), new Object[]
+				{
+			ExtraMobDrops.horn, ExtraMobDrops.horn, Item.swordGold
+				});
 	}
 }

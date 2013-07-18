@@ -24,5 +24,15 @@ public class EMDNameManager
 		LanguageRegistry.addName(ExtraMobDrops.hornSwordStone, "Horned Stone Sword");
 		LanguageRegistry.addName(ExtraMobDrops.hornSwordIron, "Horned Iron Sword");
 		LanguageRegistry.addName(ExtraMobDrops.hornSwordDiamond, "Horned Diamond Sword");
+		LanguageRegistry.addName(ExtraMobDrops.hornSwordGold, "Horned Gold Sword");
+		LanguageRegistry.addName(ExtraMobDrops.hornSandstone, "Horned Sanstone Sword");
+		LanguageRegistry.addName(ExtraMobDrops.hornGranite, "Horned Granite Sword");
+		LanguageRegistry.addName(ExtraMobDrops.hornCopper, "Horned Copper Sword");
+		LanguageRegistry.addName(ExtraMobDrops.hornSteel, "Horned Steel Sword");
+		LanguageRegistry.addName(ExtraMobDrops.hornBronze, "Horned Bronze Sword");
+		LanguageRegistry.addName(ExtraMobDrops.hornMeurodite, "Horned Meurodite Sword");
+		LanguageRegistry.addName(ExtraMobDrops.hornTorite, "Horned Torite Sword");
+		LanguageRegistry.addName(ExtraMobDrops.hornBlazium, "Horned Blazium Sword");
+		LanguageRegistry.addName(ExtraMobDrops.hornTitanium, "Horned Titanium Sword");
 	}
 }

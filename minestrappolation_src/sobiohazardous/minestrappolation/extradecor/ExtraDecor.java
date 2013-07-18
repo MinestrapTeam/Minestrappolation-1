@@ -4,7 +4,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
 import sobiohazardous.minestrappolation.extradecor.block.*;
-import sobiohazardous.minestrappolation.extradecor.bridge.BridgeRecipes;
+import sobiohazardous.minestrappolation.extradecor.bridge.EDBridgeRecipes;
 import sobiohazardous.minestrappolation.extradecor.gen.EDOreGenerator;
 import sobiohazardous.minestrappolation.extradecor.handler.ClientPacketHandler;
 import sobiohazardous.minestrappolation.extradecor.handler.EDGuiHandler;
@@ -387,7 +387,7 @@ public class ExtraDecor
 		
 		try 
 		{
-			BridgeRecipes.loadBridgeRecipes();
+			EDBridgeRecipes.loadBridgeRecipes();
 		} catch (Exception e) 
 		{
 			System.err.println("ExtraDecor: Could not load bridge recipes. Heres why: ");

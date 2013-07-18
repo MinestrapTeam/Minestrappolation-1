@@ -11,7 +11,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
  * @author SoBiohazardous
  *
  */
-public class BridgeRecipes 
+public class EDBridgeRecipes 
 {
 	private static boolean hasExtraOres = Loader.isModLoaded("ExtraOres");
 	

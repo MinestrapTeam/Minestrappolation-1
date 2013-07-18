@@ -2,6 +2,7 @@ package sobiohazardous.minestrappolation.extramobdrops;
 
 import java.util.EnumSet;
 
+import sobiohazardous.minestrappolation.extramobdrops.bridge.EMDBridgeRecipes;
 import sobiohazardous.minestrappolation.extramobdrops.handler.ClientPacketHandler;
 import sobiohazardous.minestrappolation.extramobdrops.handler.EMDEventHandler;
 import sobiohazardous.minestrappolation.extramobdrops.handler.OverallTickHandler;
@@ -66,7 +67,17 @@ public class ExtraMobDrops
 	hornSwordWoodId,
 	hornSwordStoneId,
 	hornSwordIronId,
-	hornSwordDiamondId;
+	hornSwordDiamondId,
+	hornSwordGoldId,
+	hornSandstoneId,
+	hornGraniteId,
+	hornCopperId,
+	hornSteelId,
+	hornBronzeId,
+	hornMeuroditeId,
+	hornToriteId,
+	hornBlaziumId,
+	hornTitaniumId;
 	
 	public static Item snout;
 	public static Item pigHoof;
@@ -88,6 +99,17 @@ public class ExtraMobDrops
 	public static Item hornSwordStone;
 	public static Item hornSwordIron;
 	public static Item hornSwordDiamond;
+	public static Item hornSwordGold;
+	
+	public static Item hornSandstone;
+	public static Item hornGranite;
+	public static Item hornCopper;
+	public static Item hornSteel;
+	public static Item hornBronze;
+	public static Item hornMeurodite;
+	public static Item hornTorite;
+	public static Item hornBlazium;
+	public static Item hornTitanium;
 	
 	@Mod.EventHandler
 	public void preLoad(FMLPreInitializationEvent e)
@@ -112,7 +134,16 @@ public class ExtraMobDrops
 		hornSwordStoneId = config.getItem("Horned Stone Sword", 4014).getInt();
 		hornSwordIronId = config.getItem("Horned Iron Sword", 4015).getInt();
 		hornSwordDiamondId = config.getItem("Horned Diamond Sword", 4016).getInt();
-
+		hornSwordGoldId = config.getItem("Horned Gold Sword", 4026).getInt();
+		hornSandstoneId = config.getItem("Horned Sandstone Sword", 4017).getInt();
+		hornGraniteId = config.getItem("Horned Granite Sword", 4018).getInt();
+		hornCopperId = config.getItem("Horned Copper Sword", 4019).getInt();
+		hornSteelId = config.getItem("Horned Steel Sword", 4020).getInt();
+		hornBronzeId = config.getItem("Horned Bronze Sword", 4021).getInt();
+		hornMeuroditeId = config.getItem("Horned Meurodite Sword", 4022).getInt();
+		hornToriteId = config.getItem("Horned Torite Sword", 4023).getInt();
+		hornBlaziumId = config.getItem("Horned Blazium Sword", 4024).getInt();
+		hornTitaniumId = config.getItem("Horned Titanium Sword", 4025).getInt();
 		
 		config.save();
 		
@@ -137,7 +168,18 @@ public class ExtraMobDrops
 		hornSwordStone = new ItemHornSword(hornSwordStoneId, "horned_stone_sword", EnumHornSwordMaterial.STONEH).setUnlocalizedName("hornedSwordStone");
 		hornSwordIron = new ItemHornSword(hornSwordIronId, "horned_iron_sword", EnumHornSwordMaterial.IRONH).setUnlocalizedName("hornedSwordIron");
 		hornSwordDiamond = new ItemHornSword(hornSwordDiamondId, "horned_diamond_sword", EnumHornSwordMaterial.EMERALDH).setUnlocalizedName("hornedSwordDiamond");
+		hornSwordGold = new ItemHornSword(hornSwordGoldId, "horned_gold_sword", EnumHornSwordMaterial.GOLDH).setUnlocalizedName("hornedSwordGold");
 
+		hornSandstone = new ItemHornSword(hornSandstoneId, "horned_sandstone_sword", EnumHornSwordMaterial.SANDSTONEH).setUnlocalizedName("hornedSwordSandstone");
+		hornGranite= new ItemHornSword(hornGraniteId, "horned_granite_sword", EnumHornSwordMaterial.GRANITEH).setUnlocalizedName("hornedSwordGranite");
+		hornCopper= new ItemHornSword(hornCopperId, "horned_copper_sword", EnumHornSwordMaterial.COPPERH).setUnlocalizedName("hornedSwordCopper");
+		hornSteel= new ItemHornSword(hornSteelId, "horned_steel_sword", EnumHornSwordMaterial.STEELH).setUnlocalizedName("hornedSwordSteel");
+		hornBronze= new ItemHornSword(hornBronzeId, "horned_bronze_sword", EnumHornSwordMaterial.BRONZEH).setUnlocalizedName("hornedSwordBronze");
+		hornMeurodite= new ItemHornSword(hornMeuroditeId, "horned_meurodite_sword", EnumHornSwordMaterial.MEURODITEH).setUnlocalizedName("hornedSwordMeurodite");
+		hornTorite= new ItemHornSword(hornToriteId, "horned_torite_sword", EnumHornSwordMaterial.TORITEH).setUnlocalizedName("hornedSwordTorite");
+		hornBlazium= new ItemHornSword(hornBlaziumId, "horned_fire_sword", EnumHornSwordMaterial.BLAZIUMH).setUnlocalizedName("hornedSwordBlazium");
+		hornTitanium= new ItemHornSword(hornTitaniumId, "horned_titanium_sword", EnumHornSwordMaterial.TITANIUMH).setUnlocalizedName("hornedSwordTitanium");
+		
 		EMDNameManager.loadNames();
 		EMDRecipeManager.loadRecipes();
 	}
@@ -153,6 +195,15 @@ public class ExtraMobDrops
 	@Mod.EventHandler
 	public void postLoad(FMLPostInitializationEvent e)
 	{
+		try
+		{
+			EMDBridgeRecipes.loadBridgeRecipes();
+		}
+		catch(Exception ex)
+		{
+			System.err.println("ExtraMobDrops: Could not load bridge recipes. Heres why: ");
+			ex.printStackTrace();
+		}
 		
 	}
 }
