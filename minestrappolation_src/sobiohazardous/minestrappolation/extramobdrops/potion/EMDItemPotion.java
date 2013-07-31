@@ -1,4 +1,4 @@
-package sobiohazardous.minestrappolation.api.potionapi;
+package sobiohazardous.minestrappolation.extramobdrops.potion;
 
 import com.google.common.collect.HashMultimap;
 import cpw.mods.fml.relauncher.Side;
@@ -17,7 +17,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityPotion;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -30,7 +29,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 
-public class PAItemPotion extends Item
+public class EMDItemPotion extends Item
 {
     /** maps potion damage values to lists of effect names */
     private HashMap effectCache = new HashMap();
@@ -42,7 +41,7 @@ public class PAItemPotion extends Item
     @SideOnly(Side.CLIENT)
     private Icon field_94592_ct;
 
-    public PAItemPotion(int par1)
+    public EMDItemPotion(int par1)
     {
         super(par1);
         this.setMaxStackSize(1);
@@ -75,7 +74,7 @@ public class PAItemPotion extends Item
 
             if (list == null)
             {
-                list = PAPotionHelper.getPotionEffects(par1ItemStack.getItemDamage(), false);
+                list = EMDPotionHelper.getPotionEffects(par1ItemStack.getItemDamage(), false);
                 this.effectCache.put(Integer.valueOf(par1ItemStack.getItemDamage()), list);
             }
 
@@ -92,7 +91,7 @@ public class PAItemPotion extends Item
 
         if (list == null)
         {
-            list = PAPotionHelper.getPotionEffects(par1, false);
+            list = EMDPotionHelper.getPotionEffects(par1, false);
             this.effectCache.put(Integer.valueOf(par1), list);
         }
 
@@ -167,7 +166,7 @@ public class PAItemPotion extends Item
 
             if (!par2World.isRemote)
             {
-                par2World.spawnEntityInWorld(new EntityPotion(par2World, par3EntityPlayer, par1ItemStack));
+                par2World.spawnEntityInWorld(new EMDEntityPotion(par2World, par3EntityPlayer, par1ItemStack));
             }
 
             return par1ItemStack;
@@ -219,7 +218,7 @@ public class PAItemPotion extends Item
     @SideOnly(Side.CLIENT)
     public int getColorFromDamage(int par1)
     {
-        return PAPotionHelper.func_77915_a(par1, false);
+        return EMDPotionHelper.func_77915_a(par1, false);
     }
 
     @SideOnly(Side.CLIENT)
@@ -290,7 +289,7 @@ public class PAItemPotion extends Item
             }
             else
             {
-                s1 = PAPotionHelper.func_77905_c(par1ItemStack.getItemDamage());
+                s1 = EMDPotionHelper.func_77905_c(par1ItemStack.getItemDamage());
                 return StatCollector.translateToLocal(s1).trim() + " " + super.getItemDisplayName(par1ItemStack);
             }
         }
@@ -445,7 +444,7 @@ public class PAItemPotion extends Item
                             }
                         }
 
-                        List list1 = PAPotionHelper.getPotionEffects(j1, false);
+                        List list1 = EMDPotionHelper.getPotionEffects(j1, false);
 
                         if (list1 != null && !list1.isEmpty())
                         {

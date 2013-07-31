@@ -1,4 +1,4 @@
-package sobiohazardous.minestrappolation.api.potionapi;
+package sobiohazardous.minestrappolation.extramobdrops.potion;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -12,10 +12,11 @@ import sobiohazardous.minestrappolation.extramobdrops.ExtraMobDrops;
 
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.potion.PotionHelper;
 
-public class PAPotionHelper
+public class EMDPotionHelper
 {
-	public static String greaseEffect;
+	public static final String greaseEffect;
     public static final String field_77924_a = null;
     public static final HashMap potionRequirementsEMD = new HashMap();
 
@@ -571,59 +572,9 @@ public class PAPotionHelper
 
     static
     {
-    	//OPEN ID'S: 
-    	//+0+1+2-3 = 1
-    	//-0+1-2-3 = 2
-    	//0+1-2-3 = 3
-    	//-0-1+2-3 = 4
-    	//+0-1+2-3 = 5
-    	//-0+1+2-3 = 6
-    	//+0+1+2-3 = 7
-    	//-0-1-2+3 = 8
-    	//+0-1-2+3 = 9
-    	//-0+1-2+3 = 10
-    	//+0+1-2+3 = 11
-    	//-0-1+2+3 = 12 
-    	//+0-1+2+3 = 13
-    	//-0+1+2+3 = 14
-    	//+0+1+2+3 = 15
-
-    	//DONT USE 0-1-2-3
-    	
-    	/*
-        potionRequirements.put(Integer.valueOf(Potion.regeneration.getId()), "0 & !1 & !2 & !3 & 0+6");
-        sugarEffect = "-0+1-2-3&4-4+13";
-        potionRequirements.put(Integer.valueOf(Potion.moveSpeed.getId()), "!0 & 1 & !2 & !3 & 1+6");
-        magmaCreamEffect = "+0+1-2-3&4-4+13";
-        potionRequirements.put(Integer.valueOf(Potion.fireResistance.getId()), "0 & 1 & !2 & !3 & 0+6");
-        speckledMelonEffect = "+0-1+2-3&4-4+13";
-        potionRequirements.put(Integer.valueOf(Potion.heal.getId()), "0 & !1 & 2 & !3");
-        spiderEyeEffect = "-0-1+2-3&4-4+13";
-        potionRequirements.put(Integer.valueOf(Potion.poison.getId()), "!0 & !1 & 2 & !3 & 2+6");
-        fermentedSpiderEyeEffect = "-0+3-4+13";
-        potionRequirements.put(Integer.valueOf(Potion.weakness.getId()), "!0 & !1 & !2 & 3 & 3+6");
-        potionRequirements.put(Integer.valueOf(Potion.harm.getId()), "!0 & !1 & 2 & 3");
-        potionRequirements.put(Integer.valueOf(Potion.moveSlowdown.getId()), "!0 & 1 & !2 & 3 & 3+6");
-        blazePowderEffect = "+0-1-2+3&4-4+13";
-        potionRequirements.put(Integer.valueOf(Potion.damageBoost.getId()), "0 & !1 & !2 & 3 & 3+6");
-        goldenCarrotEffect = "-0+1+2-3+13&4-4";
-        potionRequirements.put(Integer.valueOf(Potion.nightVision.getId()), "!0 & 1 & 2 & !3 & 2+6");
-        potionRequirements.put(Integer.valueOf(Potion.invisibility.getId()), "!0 & 1 & 2 & 3 & 2+6");
-        glowstoneEffect = "+5-6-7";
-        potionAmplifiers.put(Integer.valueOf(Potion.moveSpeed.getId()), "5");
-        potionAmplifiers.put(Integer.valueOf(Potion.digSpeed.getId()), "5");
-        potionAmplifiers.put(Integer.valueOf(Potion.damageBoost.getId()), "5");
-        potionAmplifiers.put(Integer.valueOf(Potion.regeneration.getId()), "5");
-        potionAmplifiers.put(Integer.valueOf(Potion.harm.getId()), "5");
-        potionAmplifiers.put(Integer.valueOf(Potion.heal.getId()), "5");
-        potionAmplifiers.put(Integer.valueOf(Potion.resistance.getId()), "5");
-        potionAmplifiers.put(Integer.valueOf(Potion.poison.getId()), "5");
-        redstoneEffect = "-5+6-7";
-        gunpowderEffect = "+14&13-13";
-        */
+		potionRequirementsEMD.put(Integer.valueOf(PotionManager.greasePotion.getId()), "!0 & 1 & !2 & !3 & 1+6");
     	greaseEffect = "-0+1-2-3&4-4+13";
-    	potionRequirementsEMD.put(Integer.valueOf(Potion.blindness.getId()), "!0 & 1 & !2 & !3 & 1+6");
-
+		
         field_77925_n = new HashMap();
         potionPrefixes = new String[] {"potion.prefix.mundane", "potion.prefix.uninteresting", "potion.prefix.bland", "potion.prefix.clear", "potion.prefix.milky", "potion.prefix.diffuse", "potion.prefix.artless", "potion.prefix.thin", "potion.prefix.awkward", "potion.prefix.flat", "potion.prefix.bulky", "potion.prefix.bungling", "potion.prefix.buttered", "potion.prefix.smooth", "potion.prefix.suave", "potion.prefix.debonair", "potion.prefix.thick", "potion.prefix.elegant", "potion.prefix.fancy", "potion.prefix.charming", "potion.prefix.dashing", "potion.prefix.refined", "potion.prefix.cordial", "potion.prefix.sparkling", "potion.prefix.potent", "potion.prefix.foul", "potion.prefix.odorless", "potion.prefix.rank", "potion.prefix.harsh", "potion.prefix.acrid", "potion.prefix.gross", "potion.prefix.stinky"};
     }

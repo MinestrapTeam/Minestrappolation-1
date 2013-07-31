@@ -1,4 +1,4 @@
-package sobiohazardous.minestrappolation.api.potionapi;
+package sobiohazardous.minestrappolation.extramobdrops.potion;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,10 +6,9 @@ import net.minecraft.potion.Potion;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 
-public class PAPotionEffect extends Potion 
+public class EMDPotionEffect extends Potion 
 {
-	
-	public PAPotionEffect(int par1, boolean par2) 
+	public EMDPotionEffect(int par1, boolean par2) 
 	{
 		super(par1, par2, 0);
 	}

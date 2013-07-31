@@ -2,6 +2,12 @@ package sobiohazardous.minestrappolation.extramobdrops.proxy;
 
 import java.util.EnumSet;
 import java.util.Map;
+
+import sobiohazardous.minestrappolation.extramobdrops.ExtraMobDrops;
+import sobiohazardous.minestrappolation.extramobdrops.potion.EMDEntityPotion;
+import sobiohazardous.minestrappolation.extramobdrops.potion.EMDRenderPotion;
+import net.minecraft.client.renderer.entity.RenderSnowball;
+import net.minecraft.item.Item;
 import net.minecraft.src.ModLoader;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;
@@ -28,7 +34,7 @@ public class ClientProxy extends CommonProxy
          * use RenderingRegistry.registerEntityRenderingHandler for entities
          * look at RenderingRegistry for more
          */        
-
+    	RenderingRegistry.registerEntityRenderingHandler(EMDEntityPotion.class, new EMDRenderPotion(ExtraMobDrops.potion, 16384));
     }
     
    public static int addArmor(String armor)

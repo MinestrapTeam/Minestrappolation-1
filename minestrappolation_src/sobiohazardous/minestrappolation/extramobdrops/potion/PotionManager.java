@@ -1,4 +1,4 @@
-package sobiohazardous.minestrappolation.api.potionapi;
+package sobiohazardous.minestrappolation.extramobdrops.potion;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -27,9 +27,25 @@ import cpw.mods.fml.relauncher.Side;
  * 
  * @author SoBiohazardous
  */
-public class PotionAPI 
+public class PotionManager 
 {
-	public static void initializePotionAPI()
+	public static Potion greasePotion;
+	
+	public static void loadPotionEffects()
+	{
+		greasePotion = new EMDPotionEffect(32, false).setIconIndex(0, 0).setPotionName("potion.grease");
+	}
+	
+	public static void loadPotionNames()
+	{
+		addPotionEffectName("potion.grease", "Grease Potion");
+		addPotionName("potion.grease", "Potion of Grease");
+	}
+	
+	/**
+	 * Uses Binary operators to expand to potionTypes array to 256
+	 */
+	public static void expandPotionEffectArray()
 	{	
 		Potion[] potionTypes = null;
 
@@ -50,17 +66,12 @@ public class PotionAPI
 			}
 			catch (Exception e) 
 			{
-				System.err.println("Potion API: Unable to initialize Potion API. Please report this to the mod author.");
+				System.err.println("ExtraMobDrops: Unable to expand potion effect array. Please report this to the mod author.");
 				System.err.println(e);
 			}
 		}
 	}
 	
-	@Deprecated
-	public void addBrewingRecipe()
-	{
-
-	}
 	
 	/**
 	 * Adds the name of the potion effect to display when the player has the effect
@@ -70,5 +81,15 @@ public class PotionAPI
 	public static void addPotionEffectName(String unlocalizedEffectName, String newname)
 	{
 		LanguageRegistry.instance().addStringLocalization(unlocalizedEffectName, newname);
+	}
+	
+	/**
+	 * Adds the name for the potion. Unlocalized name must have potion. prefix for this to work.
+	 * @param unlocalizedEffectName
+	 * @param newname
+	 */
+	public static void addPotionName(String unlocalizedEffectName, String newname)
+	{
+		LanguageRegistry.instance().addStringLocalization(unlocalizedEffectName + ".postfix", newname);
 	}
 }

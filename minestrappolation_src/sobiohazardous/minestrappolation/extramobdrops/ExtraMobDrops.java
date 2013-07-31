@@ -2,21 +2,27 @@ package sobiohazardous.minestrappolation.extramobdrops;
 
 import java.util.EnumSet;
 
-import sobiohazardous.minestrappolation.api.potionapi.PAItemPotion;
-import sobiohazardous.minestrappolation.api.potionapi.PAPotionEffect;
-import sobiohazardous.minestrappolation.api.potionapi.PAPotionHelper;
-import sobiohazardous.minestrappolation.api.potionapi.PotionAPI;
 import sobiohazardous.minestrappolation.extramobdrops.bridge.EMDBridgeRecipes;
 import sobiohazardous.minestrappolation.extramobdrops.handler.ClientPacketHandler;
 import sobiohazardous.minestrappolation.extramobdrops.handler.EMDEventHandler;
 import sobiohazardous.minestrappolation.extramobdrops.handler.OverallTickHandler;
 import sobiohazardous.minestrappolation.extramobdrops.handler.ServerPacketHandler;
+import sobiohazardous.minestrappolation.extramobdrops.potion.EMDEntityPotion;
+import sobiohazardous.minestrappolation.extramobdrops.potion.EMDItemPotion;
+import sobiohazardous.minestrappolation.extramobdrops.potion.EMDPotionEffect;
+import sobiohazardous.minestrappolation.extramobdrops.potion.EMDPotionHelper;
+import sobiohazardous.minestrappolation.extramobdrops.potion.PotionManager;
 import sobiohazardous.minestrappolation.extramobdrops.proxy.CommonProxy;
+import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.projectile.EntityPotion;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemPotion;
 import net.minecraft.potion.Potion;
+import net.minecraft.src.ModLoader;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.TickType;
@@ -119,10 +125,8 @@ public class ExtraMobDrops
 	
 	public static Item beakChicken;
 	
-	public static PAItemPotion potion;
-	
-	public static Potion greasePotion;
-	
+	public static EMDItemPotion potion;
+		
 	@Mod.EventHandler
 	public void preLoad(FMLPreInitializationEvent e)
 	{
@@ -161,12 +165,13 @@ public class ExtraMobDrops
 		
 		config.save();
 		
-		PotionAPI.initializePotionAPI();
-		
+		PotionManager.expandPotionEffectArray();
+		PotionManager.loadPotionEffects();
+
 		snout = new EMDItemFood(snoutId, 3, 0.2F, "snout").setPotionEffect(Potion.hunger.id, 10 * 20, 1, 0.25F).setUnlocalizedName("snout");
 		pigHoof = new EMDItem(pigHoofId, "pig_foot").setUnlocalizedName("pigHoof");
 		fat = new EMDItemFood(fatId, 8, 0.2F, "fat").setPotionEffect(Potion.hunger.id, 25 * 20, 1, 1.0F).setUnlocalizedName("fat");
-		grease = new EMDItem(greaseId, "grease").setPotionEffect(PAPotionHelper.greaseEffect).setUnlocalizedName("grease");
+		grease = new EMDItem(greaseId, "grease").setPotionEffect(EMDPotionHelper.greaseEffect).setUnlocalizedName("grease");
 		
 		friedApple = new EMDItemFood(friedAppleId, 8, 0.3F, "grease_apple").setPotionEffect(Potion.hunger.id, 15 * 20, 1, 0.4F).setUnlocalizedName("friedApple");
 		friedBeef = new EMDItemFood(friedBeefId, 16, 0.8F, "grease_beef").setPotionEffect(Potion.hunger.id, 15 * 20, 1, 0.4F).setUnlocalizedName("friedBeef");
@@ -198,13 +203,13 @@ public class ExtraMobDrops
 		
 		beakChicken = new EMDItem(beakChickenId, "chicken_beak").setUnlocalizedName("beakChicken");
 		
-		potion = (PAItemPotion)new PAItemPotion(potionId).setUnlocalizedName("emdPotion").func_111206_d("potion");
-		greasePotion = new PAPotionEffect(32, false).setIconIndex(0, 0).setPotionName("potion.grease");
+		potion = (EMDItemPotion)new EMDItemPotion(potionId).setUnlocalizedName("emdPotion").func_111206_d("potion");
 		
-		PotionAPI.addPotionEffectName("potion.grease", "Grease Potion");
-		
+		EntityRegistry.registerModEntity(EMDEntityPotion.class, "EMDPotion", ModLoader.getUniqueEntityId(), this, 400, 400, true);
+
+		PotionManager.loadPotionNames();
 		EMDNameManager.loadNames();
-		EMDRecipeManager.loadRecipes();
+		EMDRecipeManager.loadRecipes();			
 	}
 	
 	@Mod.EventHandler
