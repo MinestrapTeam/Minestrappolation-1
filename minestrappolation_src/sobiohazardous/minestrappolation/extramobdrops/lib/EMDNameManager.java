@@ -34,5 +34,7 @@ public class EMDNameManager
 		LanguageRegistry.addName(ExtraMobDrops.hornTorite, "Horned Torite Sword");
 		LanguageRegistry.addName(ExtraMobDrops.hornBlazium, "Horned Blazium Sword");
 		LanguageRegistry.addName(ExtraMobDrops.hornTitanium, "Horned Titanium Sword");
+		LanguageRegistry.addName(ExtraMobDrops.beakChicken, "Chicken Beak");
+		LanguageRegistry.addName(ExtraMobDrops.potion, "EMD Potion");
 	}
 }

@@ -105,7 +105,7 @@ import cpw.mods.fml.relauncher.Side;
 @NetworkMod(clientSideRequired = true, serverSideRequired = true,
 clientPacketHandlerSpec = @SidedPacketHandler(channels = {"extraoresChan"}, packetHandler = ClientPacketHandler.class),
 serverPacketHandlerSpec = @SidedPacketHandler(channels = {"extroresChan"}, packetHandler = ServerPacketHandler.class))
-@Mod ( modid = "ExtraOres", name="Extrappolated Ores", version="B1.1")
+@Mod ( modid = "ExtraOres", name="Extrappolated Ores", version="B1.2")
 public class ExtraOres 
 {	
 	@SidedProxy(clientSide = "sobiohazardous.minestrappolation.extraores.proxy.ClientProxy", serverSide = "sobiohazardous.minestrappolation.extraores.proxy.CommonProxy")
@@ -1252,7 +1252,7 @@ public class ExtraOres
 	
 		BlaziumSword = (new ItemESword(blaziumSwordId, "item_FireSword", ExtracraftToolMaterial.BLAZIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BlaziumSword");
 		BlaziumPickaxe = (new ItemEPickaxe(blaziumPickaxeId, "item_FirePickaxe", ExtracraftToolMaterial.BLAZIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BlaziumPickaxe");
-		BlaziumShovel = (new ItemEShovel(blaziumShardId, "item_FireShovel",ExtracraftToolMaterial.BLAZIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BlaziumShovel");
+		BlaziumShovel = (new ItemEShovel(blaziumShovelId, "item_FireShovel",ExtracraftToolMaterial.BLAZIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BlaziumShovel");
 		BlaziumHoe = (new ItemEHoe(blaziumHoeId, "item_FireHoe",ExtracraftToolMaterial.BLAZIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BlaziumHoe");
 		BlaziumAxe = (new ItemEAxe(blaziumAxeId, "item_FireAxe",ExtracraftToolMaterial.BLAZIUM)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BlaziumAxe");
 		

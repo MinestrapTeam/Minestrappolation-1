@@ -31,7 +31,8 @@ public class TileEntityMelter extends TileEntity implements IInventory
 
 	public int front;
 	
-	public boolean hasBucket;
+	public static boolean hasBucket;
+	public static boolean needBucket;
 
 	public TileEntityMelter()
 	{
@@ -236,8 +237,20 @@ public class TileEntityMelter extends TileEntity implements IInventory
          */
 	public void updateEntity()
 	{
+		System.out.println(needBucket);
          boolean var1 = this.goldBurnTime > 0;
          boolean var2 = false;
+         
+         if(goldItemStacks[3]==null)
+    	 {
+    		 hasBucket = false;
+    	 }
+    	 
+    	 if(goldItemStacks[3] != null && goldItemStacks[3].getItemDamage() == ((new ItemStack(Item.bucketEmpty, 0).getItemDamage())))
+    	 {
+    		 hasBucket = true;
+    	 }
+    	 
          if (this.goldBurnTime > 0)
          {
                  --this.goldBurnTime;
@@ -326,30 +339,22 @@ public class TileEntityMelter extends TileEntity implements IInventory
                  return true;
          }
          
-         if (hasBucket == true)
+         if (needBucket == true)
          {
-        	 if(goldItemStacks[3]==null)
-        	 {
-        		 return false;
-        	 }
-        	 
-        	 if(goldItemStacks[3].getItemDamage() == ((new ItemStack(Item.bucketEmpty, 1).getItemDamage())))
+    
+        	 if(hasBucket == true)
         	 {
         		 return true;
-        	 }
+        	 }     	         	
          }
          
-         if(hasBucket == false)
+         if (needBucket == false)
          {
-        	 if(goldItemStacks[3]==null)
-        	 {
-        		 return true;
-        	 }
-        	 
-        	 if(goldItemStacks[3].getItemDamage() == ((new ItemStack(Item.bucketEmpty, 1).getItemDamage())))
+    
+        	 if(hasBucket == false)
         	 {
         		 return false;
-        	 }
+        	 }     	         	
          }
 
          return goldItemStacks[2].stackSize < itemstack.getMaxStackSize();

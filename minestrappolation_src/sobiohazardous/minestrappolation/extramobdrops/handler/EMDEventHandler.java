@@ -153,6 +153,10 @@ public class EMDEventHandler
 				{
 					event.entityLiving.dropItem(ExtraMobDrops.animalBones.itemID, 2);
 				}
+				if(rand2 < 0.15D)
+				{
+					event.entityLiving.dropItem(ExtraMobDrops.beakChicken.itemID, 1);
+				}
 			}
 			
 			if(event.entityLiving instanceof EntitySpider)

@@ -41,11 +41,13 @@ private Map melterExperience = new HashMap();
 		{
 			melterList.put(Integer.valueOf(id), itemStack);
 			this.melterExperience.put(Integer.valueOf(itemStack.itemID), Float.valueOf(experience));
+			TileEntityMelter.needBucket = true;
 		}
 		else
 		{
 			melterList.put(Integer.valueOf(id), itemStack);
 			this.melterExperience.put(Integer.valueOf(itemStack.itemID), Float.valueOf(experience));
+			TileEntityMelter.needBucket = false;
 		}
 		
 		

@@ -44,7 +44,7 @@ public class EOBlock extends Block
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return this.blockID == ExtraOres.BlaziumOre.blockID ? Item.blazePowder.itemID : (this.blockID == ExtraOres.SunstoneOre.blockID ? ExtraOres.SunstoneDust.itemID : (this.blockID == ExtraOres.SoulOre.blockID ? ExtraOres.SoulGem.itemID : (this.blockID == ExtraOres.PlutoniumOre.blockID ? ExtraOres.Plutonium.itemID : (this.blockID == ExtraOres.UraniumOre.blockID ? ExtraOres.Uranium.itemID : (this.blockID == ExtraOres.Quartzite.blockID ? ExtraOres.PinkQuartz.itemID : this.blockID == ExtraOres.meuroditeOre.blockID ? ExtraOres.meuroditeIngot.itemID : this.blockID)))));
+        return this.blockID == ExtraOres.RadiantQuartzOre.blockID ? ExtraOres.RadiantQuartz.itemID : this.blockID == ExtraOres.BlaziumOre.blockID ? Item.blazePowder.itemID : (this.blockID == ExtraOres.SunstoneOre.blockID ? ExtraOres.SunstoneDust.itemID : (this.blockID == ExtraOres.SoulOre.blockID ? ExtraOres.SoulGem.itemID : (this.blockID == ExtraOres.PlutoniumOre.blockID ? ExtraOres.Plutonium.itemID : (this.blockID == ExtraOres.UraniumOre.blockID ? ExtraOres.Uranium.itemID : (this.blockID == ExtraOres.Quartzite.blockID ? ExtraOres.PinkQuartz.itemID : this.blockID == ExtraOres.meuroditeOre.blockID ? ExtraOres.meuroditeIngot.itemID : this.blockID)))));
     }
 
     /**
@@ -52,7 +52,7 @@ public class EOBlock extends Block
      */
     public int quantityDropped(Random par1Random)
     {
-    	return this.blockID == ExtraOres.BlaziumOre.blockID ? 1 + par1Random.nextInt(3) : (this.blockID == ExtraOres.SunstoneOre.blockID ? 2 + par1Random.nextInt(4) : (this.blockID == ExtraOres.SoulOre.blockID ? 2 + par1Random.nextInt(3) : (this.blockID == ExtraOres.PlutoniumOre.blockID ? 1 + par1Random.nextInt(2) : (this.blockID == ExtraOres.UraniumOre.blockID ? 1 + par1Random.nextInt(2) : (this.blockID == ExtraOres.Quartzite.blockID ? 2 + par1Random.nextInt(3) : 1)))));
+    	return this.blockID == ExtraOres.RadiantQuartzOre.blockID ? 1 : this.blockID == ExtraOres.BlaziumOre.blockID ? 1 + par1Random.nextInt(3) : (this.blockID == ExtraOres.SunstoneOre.blockID ? 2 + par1Random.nextInt(4) : (this.blockID == ExtraOres.SoulOre.blockID ? 2 + par1Random.nextInt(3) : (this.blockID == ExtraOres.PlutoniumOre.blockID ? 1 + par1Random.nextInt(2) : (this.blockID == ExtraOres.UraniumOre.blockID ? 1 + par1Random.nextInt(2) : (this.blockID == ExtraOres.Quartzite.blockID ? 2 + par1Random.nextInt(3) : 1)))));
     }
 
     public int quantityDroppedWithBonus(int par1, Random par2Random)
@@ -84,7 +84,7 @@ public class EOBlock extends Block
     //code for Soul Ore slow effect
     public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
     {
-        if(blockID == 216)
+        if(blockID == ExtraOres.SoulOre.blockID)
         {
         	par5Entity.motionX *= 0.4D;
             par5Entity.motionZ *= 0.4D;

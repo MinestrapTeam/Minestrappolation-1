@@ -2,6 +2,10 @@ package sobiohazardous.minestrappolation.extramobdrops;
 
 import java.util.EnumSet;
 
+import sobiohazardous.minestrappolation.api.potionapi.PAItemPotion;
+import sobiohazardous.minestrappolation.api.potionapi.PAPotionEffect;
+import sobiohazardous.minestrappolation.api.potionapi.PAPotionHelper;
+import sobiohazardous.minestrappolation.api.potionapi.PotionAPI;
 import sobiohazardous.minestrappolation.extramobdrops.bridge.EMDBridgeRecipes;
 import sobiohazardous.minestrappolation.extramobdrops.handler.ClientPacketHandler;
 import sobiohazardous.minestrappolation.extramobdrops.handler.EMDEventHandler;
@@ -47,7 +51,7 @@ public class ExtraMobDrops
 	@SidedProxy(clientSide = "sobiohazardous.minestrappolation.extramobdrops.proxy.ClientProxy", serverSide = "sobiohazardous.minestrappolation.extramobdrops.proxy.CommonProxy")
     public static CommonProxy proxy;
 	public static CreativeTabs tabItems = new CreativeTabExtraMobDropsItems(CreativeTabs.getNextID(), "Extrappolated Mob Drops - Items");
-	public static CreativeTabs tabBlocks = new CreativeTabExtraMobDropsBlocks(CreativeTabs.getNextID(), "Extrappolated Mob Drops - Blocks");
+	public static CreativeTabs tabPotions = new CreativeTabExtraMobDropsPotions(CreativeTabs.getNextID(), "Extrappolated Mob Drops - Potions");
 	@Instance("ExtraMobDrops")
 	public static ExtraMobDrops instance;
 	
@@ -77,7 +81,9 @@ public class ExtraMobDrops
 	hornMeuroditeId,
 	hornToriteId,
 	hornBlaziumId,
-	hornTitaniumId;
+	hornTitaniumId,
+	beakChickenId,
+	potionId;
 	
 	public static Item snout;
 	public static Item pigHoof;
@@ -110,6 +116,12 @@ public class ExtraMobDrops
 	public static Item hornTorite;
 	public static Item hornBlazium;
 	public static Item hornTitanium;
+	
+	public static Item beakChicken;
+	
+	public static PAItemPotion potion;
+	
+	public static Potion greasePotion;
 	
 	@Mod.EventHandler
 	public void preLoad(FMLPreInitializationEvent e)
@@ -144,13 +156,17 @@ public class ExtraMobDrops
 		hornToriteId = config.getItem("Horned Torite Sword", 4023).getInt();
 		hornBlaziumId = config.getItem("Horned Blazium Sword", 4024).getInt();
 		hornTitaniumId = config.getItem("Horned Titanium Sword", 4025).getInt();
+		beakChickenId = config.getItem("Chicken Beak", 4026).getInt();
+		potionId = config.getItem("Potion", 4027).getInt();
 		
 		config.save();
+		
+		PotionAPI.initializePotionAPI();
 		
 		snout = new EMDItemFood(snoutId, 3, 0.2F, "snout").setPotionEffect(Potion.hunger.id, 10 * 20, 1, 0.25F).setUnlocalizedName("snout");
 		pigHoof = new EMDItem(pigHoofId, "pig_foot").setUnlocalizedName("pigHoof");
 		fat = new EMDItemFood(fatId, 8, 0.2F, "fat").setPotionEffect(Potion.hunger.id, 25 * 20, 1, 1.0F).setUnlocalizedName("fat");
-		grease = new EMDItem(greaseId, "grease").setUnlocalizedName("grease");
+		grease = new EMDItem(greaseId, "grease").setPotionEffect(PAPotionHelper.greaseEffect).setUnlocalizedName("grease");
 		
 		friedApple = new EMDItemFood(friedAppleId, 8, 0.3F, "grease_apple").setPotionEffect(Potion.hunger.id, 15 * 20, 1, 0.4F).setUnlocalizedName("friedApple");
 		friedBeef = new EMDItemFood(friedBeefId, 16, 0.8F, "grease_beef").setPotionEffect(Potion.hunger.id, 15 * 20, 1, 0.4F).setUnlocalizedName("friedBeef");
@@ -179,6 +195,13 @@ public class ExtraMobDrops
 		hornTorite= new ItemHornSword(hornToriteId, "horned_torite_sword", EnumHornSwordMaterial.TORITEH).setUnlocalizedName("hornedSwordTorite");
 		hornBlazium= new ItemHornSword(hornBlaziumId, "horned_fire_sword", EnumHornSwordMaterial.BLAZIUMH).setUnlocalizedName("hornedSwordBlazium");
 		hornTitanium= new ItemHornSword(hornTitaniumId, "horned_titanium_sword", EnumHornSwordMaterial.TITANIUMH).setUnlocalizedName("hornedSwordTitanium");
+		
+		beakChicken = new EMDItem(beakChickenId, "chicken_beak").setUnlocalizedName("beakChicken");
+		
+		potion = (PAItemPotion)new PAItemPotion(potionId).setUnlocalizedName("emdPotion").func_111206_d("potion");
+		greasePotion = new PAPotionEffect(32, false).setIconIndex(0, 0).setPotionName("potion.grease");
+		
+		PotionAPI.addPotionEffectName("potion.grease", "Grease Potion");
 		
 		EMDNameManager.loadNames();
 		EMDRecipeManager.loadRecipes();

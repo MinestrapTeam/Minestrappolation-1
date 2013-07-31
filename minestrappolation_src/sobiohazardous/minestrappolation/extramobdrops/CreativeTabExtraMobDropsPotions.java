@@ -6,9 +6,9 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 
-public final class CreativeTabExtraMobDropsBlocks extends CreativeTabs
+public final class CreativeTabExtraMobDropsPotions extends CreativeTabs
 {
-        public CreativeTabExtraMobDropsBlocks(int par1, String par2Str)
+        public CreativeTabExtraMobDropsPotions(int par1, String par2Str)
         {
                 super(par1, par2Str);
         }
@@ -23,6 +23,6 @@ public final class CreativeTabExtraMobDropsBlocks extends CreativeTabs
    
         public String getTranslatedTabLabel()
         {
-        	return "Extrappolated Mob Drops - Blocks";
+        	return "Extrappolated Mob Drops - Potions";
         }
 }
