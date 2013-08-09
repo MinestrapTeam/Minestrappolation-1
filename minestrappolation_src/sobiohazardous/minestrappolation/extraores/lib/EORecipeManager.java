@@ -424,23 +424,23 @@ public class EORecipeManager
         
         
         
-        GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.TinPlatedCobble, 1), new Object[]
+        GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.TinPlatedCobble, 8), new Object[]
 				{
 			Block.cobblestone, ExtraOres.TinPlateItem,Block.cobblestone,Block.cobblestone,Block.cobblestone,Block.cobblestone,Block.cobblestone,Block.cobblestone,Block.cobblestone,
 				});
-        GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.TinPlatedMossy, 1), new Object[]
+        GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.TinPlatedMossy, 8), new Object[]
 				{
 			Block.cobblestoneMossy, ExtraOres.TinPlateItem,Block.cobblestoneMossy,Block.cobblestoneMossy,Block.cobblestoneMossy,Block.cobblestoneMossy,Block.cobblestoneMossy,Block.cobblestoneMossy,Block.cobblestoneMossy,
 				});
-        GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.TinPlatedStoneBrick, 1), new Object[]
+        GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.TinPlatedStoneBrick, 8), new Object[]
 				{
 			new ItemStack(Block.stoneBrick, 1, 0), ExtraOres.TinPlateItem,new ItemStack(Block.stoneBrick, 1, 0),new ItemStack(Block.stoneBrick, 1, 0),new ItemStack(Block.stoneBrick, 1, 0),new ItemStack(Block.stoneBrick, 1, 0),new ItemStack(Block.stoneBrick, 1, 0),new ItemStack(Block.stoneBrick, 1, 0),new ItemStack(Block.stoneBrick, 1, 0),
 				});
-        GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.TinPlatedChiseled, 1), new Object[]
+        GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.TinPlatedChiseled, 8), new Object[]
 				{
 			new ItemStack(Block.stoneBrick, 1, 3), ExtraOres.TinPlateItem,new ItemStack(Block.stoneBrick, 1, 3),new ItemStack(Block.stoneBrick, 1, 3),new ItemStack(Block.stoneBrick, 1, 3),new ItemStack(Block.stoneBrick, 1, 3),new ItemStack(Block.stoneBrick, 1, 3),new ItemStack(Block.stoneBrick, 1, 3),new ItemStack(Block.stoneBrick, 1, 3),
 				});
-        GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.TinPlatedGranite, 1), new Object[]
+        GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.TinPlatedGranite, 8), new Object[]
 				{
 			ExtraOres.GraniteBrick, ExtraOres.TinPlateItem,ExtraOres.GraniteBrick,ExtraOres.GraniteBrick,ExtraOres.GraniteBrick,ExtraOres.GraniteBrick,ExtraOres.GraniteBrick,ExtraOres.GraniteBrick,ExtraOres.GraniteBrick,
 				});
@@ -498,23 +498,23 @@ public class EORecipeManager
 		
 		
 		
-		GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.BronzePlatedCobble, 1), new Object[]
+		GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.BronzePlatedCobble, 8), new Object[]
 				{
 			Block.cobblestone, ExtraOres.BronzePlateItem,Block.cobblestone,Block.cobblestone,Block.cobblestone,Block.cobblestone,Block.cobblestone,Block.cobblestone,Block.cobblestone,
 				});
-        GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.BronzePlatedMossy, 1), new Object[]
+        GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.BronzePlatedMossy, 8), new Object[]
 				{
 			Block.cobblestoneMossy, ExtraOres.BronzePlateItem,Block.cobblestoneMossy,Block.cobblestoneMossy,Block.cobblestoneMossy,Block.cobblestoneMossy,Block.cobblestoneMossy,Block.cobblestoneMossy,Block.cobblestoneMossy,
 				});
-        GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.BronzePlatedStoneBrick, 1), new Object[]
+        GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.BronzePlatedStoneBrick, 8), new Object[]
 				{
 			new ItemStack(Block.stoneBrick, 1, 0), ExtraOres.BronzePlateItem,new ItemStack(Block.stoneBrick, 1, 0), new ItemStack(Block.stoneBrick, 1, 0), new ItemStack(Block.stoneBrick, 1, 0), new ItemStack(Block.stoneBrick, 1, 0), new ItemStack(Block.stoneBrick, 1, 0), new ItemStack(Block.stoneBrick, 1, 0), new ItemStack(Block.stoneBrick, 1, 0), 
 				});
-        GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.BronzePlatedChiseled, 1), new Object[]
+        GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.BronzePlatedChiseled, 8), new Object[]
 				{
 			new ItemStack(Block.stoneBrick, 1, 3), ExtraOres.BronzePlateItem,new ItemStack(Block.stoneBrick, 1, 3),new ItemStack(Block.stoneBrick, 1, 3),new ItemStack(Block.stoneBrick, 1, 3),new ItemStack(Block.stoneBrick, 1, 3),new ItemStack(Block.stoneBrick, 1, 3),new ItemStack(Block.stoneBrick, 1, 3),new ItemStack(Block.stoneBrick, 1, 3),
 				});
-        GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.BronzePlatedGranite, 1), new Object[]
+        GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.BronzePlatedGranite, 8), new Object[]
 				{
 			ExtraOres.GraniteBrick, ExtraOres.BronzePlateItem,ExtraOres.GraniteBrick,ExtraOres.GraniteBrick,ExtraOres.GraniteBrick,ExtraOres.GraniteBrick,ExtraOres.GraniteBrick,ExtraOres.GraniteBrick,ExtraOres.GraniteBrick,
 				});
