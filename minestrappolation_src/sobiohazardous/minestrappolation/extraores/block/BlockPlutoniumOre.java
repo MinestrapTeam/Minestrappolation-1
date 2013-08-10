@@ -193,7 +193,7 @@ public BlockPlutoniumOre(int par1, Material par3Material)
                                                 i1++;
                                 } while(true);
                 }
-                AxisAlignedBB axisalignedbb = getCollisionBoundingBoxFromPool(world, i, j, k).expand(2, 2, 2);
+                AxisAlignedBB axisalignedbb = getCollisionBoundingBoxFromPool(world, i, j, k).expand(1.5, 1.5, 1.5);
                 List list = world.getEntitiesWithinAABB(EntityLivingBase.class, axisalignedbb);
                 Iterator var6 = list.iterator();
                 EntityLivingBase var7;

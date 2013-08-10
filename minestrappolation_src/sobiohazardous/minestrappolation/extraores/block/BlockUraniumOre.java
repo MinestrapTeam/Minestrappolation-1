@@ -194,7 +194,7 @@ public BlockUraniumOre(int par1, Material par3Material)
                                                 i1++;
                                 } while(true);
                 }
-                AxisAlignedBB axisalignedbb = getCollisionBoundingBoxFromPool(world, i, j, k).expand(2, 2, 2);
+                AxisAlignedBB axisalignedbb = getCollisionBoundingBoxFromPool(world, i, j, k).expand(1.5, 1.5, 1.5);
                 List list = world.getEntitiesWithinAABB(EntityLivingBase.class, axisalignedbb);
                 Iterator var6 = list.iterator();
                 EntityLivingBase var7;
@@ -208,7 +208,7 @@ public BlockUraniumOre(int par1, Material par3Material)
                     {
                 	    //System.out.println("close");
                 	    living = (EntityLivingBase)var6.next();
-                        living.addPotionEffect(new PotionEffect(Potion.poison.getId(), 180, 1, false));
+                        living.addPotionEffect(new PotionEffect(Potion.poison.getId(), 120, 1, false));
                 	    //varEntityLiving.addPotionEffect(new PotionEffect(Potion.poison.getId(),200,10));          
                     }
                 }
