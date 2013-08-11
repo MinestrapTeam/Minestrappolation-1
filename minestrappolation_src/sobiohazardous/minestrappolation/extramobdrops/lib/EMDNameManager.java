@@ -36,5 +36,6 @@ public class EMDNameManager
 		LanguageRegistry.addName(ExtraMobDrops.hornTitanium, "Horned Titanium Sword");
 		LanguageRegistry.addName(ExtraMobDrops.beakChicken, "Chicken Beak");
 		LanguageRegistry.addName(ExtraMobDrops.potion, "EMD Potion");
+		LanguageRegistry.addName(ExtraMobDrops.footChicken, "Chicken Foot");
 	}
 }

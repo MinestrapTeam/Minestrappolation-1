@@ -4,6 +4,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import java.util.List;
 
+import sobiohazardous.minestrappolation.extramobdrops.ExtraMobDrops;
 import sobiohazardous.minestrappolation.extramobdrops.potion.EMDPotionHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
@@ -209,7 +210,32 @@ public class TileEntityBrewingStand extends TileEntity implements ISidedInventor
      */
     private int getPotionResult(int par1, ItemStack par2ItemStack)
     {
-        return par2ItemStack == null ? par1 : (Item.itemsList[par2ItemStack.itemID].isPotionIngredient() ? PotionHelper.applyIngredient(par1, Item.itemsList[par2ItemStack.itemID].getPotionEffect()) : (Item.itemsList[par2ItemStack.itemID].isPotionIngredient() ? EMDPotionHelper.applyIngredient(par1, Item.itemsList[par2ItemStack.itemID].getPotionEffect()) : par1));
+    	
+    	if(par2ItemStack == null)
+    	{
+    		return par1;
+    	}
+    	
+    	if(Item.itemsList[par2ItemStack.itemID].isPotionIngredient())
+    	{
+    		if(par2ItemStack.itemID < 400)
+    		{
+    			return PotionHelper.applyIngredient(par1, Item.itemsList[par2ItemStack.itemID].getPotionEffect());    	
+    		}
+    		
+    		if(par2ItemStack.itemID > 400)
+    		{
+    			return EMDPotionHelper.applyIngredient(par1, Item.itemsList[par2ItemStack.itemID].getPotionEffect());    	
+    		}
+    	}
+    
+		return par1;
+    	
+    	
+    	/*
+        return par2ItemStack == null ? par1 : 
+        (Item.itemsList[par2ItemStack.itemID].isPotionIngredient() ? PotionHelper.applyIngredient(par1, Item.itemsList[par2ItemStack.itemID].getPotionEffect()) ? EMDPotionHelper.applyIngredient(par1, Item.itemsList[par2ItemStack.itemID].getPotionEffect()) : par1); 	
+    	*/
     }
 
     /**

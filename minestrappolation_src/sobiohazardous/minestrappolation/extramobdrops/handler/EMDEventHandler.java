@@ -1,10 +1,15 @@
 package sobiohazardous.minestrappolation.extramobdrops.handler;
 
+import java.util.Collection;
+
 import sobiohazardous.minestrappolation.extramobdrops.ExtraMobDrops;
+import sobiohazardous.minestrappolation.extramobdrops.potion.PotionManager;
 import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.*;
+import net.minecraft.potion.Potion;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 
 public class EMDEventHandler 
 {
@@ -157,6 +162,10 @@ public class EMDEventHandler
 				{
 					event.entityLiving.dropItem(ExtraMobDrops.beakChicken.itemID, 1);
 				}
+				if(rand3 < 0.2D)
+				{
+					event.entityLiving.dropItem(ExtraMobDrops.footChicken.itemID, 2);
+				}
 			}
 			
 			if(event.entityLiving instanceof EntitySpider)
@@ -166,6 +175,20 @@ public class EMDEventHandler
 					event.entityLiving.dropItem(ExtraMobDrops.animalBones.itemID, 1);
 				}
 			}
+			
+			if(event.entityLiving instanceof EntityOcelot)
+			{
+				if (rand < 0.05D) //Makes drop 100% drop chance. Example: (0.25D = 25%, 1D = 100%, etc.)
+				{
+					event.entityLiving.dropItem(ExtraMobDrops.footChicken.itemID, 1);
+				}
+			}
 		}
+	}
+	
+	@ForgeSubscribe
+	public void onEntityUpdate(LivingUpdateEvent event) 
+	{
+		PotionManager.definePotionEffects(event);		
 	}
 }

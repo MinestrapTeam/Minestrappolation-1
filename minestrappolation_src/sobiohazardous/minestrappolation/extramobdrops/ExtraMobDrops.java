@@ -89,7 +89,8 @@ public class ExtraMobDrops
 	hornBlaziumId,
 	hornTitaniumId,
 	beakChickenId,
-	potionId;
+	potionId,
+	footChickenId;
 	
 	public static Item snout;
 	public static Item pigHoof;
@@ -126,6 +127,8 @@ public class ExtraMobDrops
 	public static Item beakChicken;
 	
 	public static EMDItemPotion potion;
+	
+	public static Item footChicken;
 		
 	@Mod.EventHandler
 	public void preLoad(FMLPreInitializationEvent e)
@@ -162,6 +165,7 @@ public class ExtraMobDrops
 		hornTitaniumId = config.getItem("Horned Titanium Sword", 4025).getInt();
 		beakChickenId = config.getItem("Chicken Beak", 4026).getInt();
 		potionId = config.getItem("Potion", 4027).getInt();
+		footChickenId = config.getItem("Chicken Foot", 4028).getInt();
 		
 		config.save();
 		
@@ -202,8 +206,10 @@ public class ExtraMobDrops
 		hornTitanium= new ItemHornSword(hornTitaniumId, "horned_titanium_sword", EnumHornSwordMaterial.TITANIUMH).setUnlocalizedName("hornedSwordTitanium");
 		
 		beakChicken = new EMDItem(beakChickenId, "chicken_beak").setUnlocalizedName("beakChicken");
-		
+	
 		potion = (EMDItemPotion)new EMDItemPotion(potionId).setUnlocalizedName("emdPotion").func_111206_d("potion");
+		
+		footChicken = new EMDItem(footChickenId, "chicken_foot").setUnlocalizedName("footChicken");
 		
 		EntityRegistry.registerModEntity(EMDEntityPotion.class, "EMDPotion", ModLoader.getUniqueEntityId(), this, 400, 400, true);
 

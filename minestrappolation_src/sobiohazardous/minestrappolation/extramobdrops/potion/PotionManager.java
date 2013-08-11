@@ -5,6 +5,7 @@ import java.lang.reflect.Modifier;
 import java.util.EnumSet;
 import net.minecraft.potion.Potion;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.TickType;
@@ -34,6 +35,17 @@ public class PotionManager
 	public static void loadPotionEffects()
 	{
 		greasePotion = new EMDPotionEffect(32, false).setIconIndex(0, 0).setPotionName("potion.grease");
+	}
+	
+	public static void definePotionEffects(LivingUpdateEvent event)
+	{
+		if (event.entityLiving.isPotionActive(greasePotion)) 
+		{
+			if (event.entityLiving.worldObj.rand.nextInt(20) == 0) 
+			{
+				System.out.println("greasy");
+			}
+		}
 	}
 	
 	public static void loadPotionNames()

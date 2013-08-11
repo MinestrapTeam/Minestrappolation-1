@@ -2,6 +2,8 @@ package sobiohazardous.minestrappolation.extramobdrops.potion;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.potion.Potion;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
