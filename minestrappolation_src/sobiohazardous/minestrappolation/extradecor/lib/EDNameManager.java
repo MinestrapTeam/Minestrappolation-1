@@ -69,6 +69,22 @@ public class EDNameManager
 		LanguageRegistry.instance().addStringLocalization("tile.woodBoardsSingleSlab.spruce.name", "Spruce Board Slab");
 		LanguageRegistry.instance().addStringLocalization("tile.woodBoardsSingleSlab.jungle.name", "Jungle Board Slab");	
 		LanguageRegistry.addName(ExtraDecor.checkerTileStairs, "Checker Tile Stairs");
+		LanguageRegistry.instance().addStringLocalization("tile.stainedBrick.white.name", "White Stained Bricks");
+		LanguageRegistry.instance().addStringLocalization("tile.stainedBrick.lightGrey.name", "Light Grey Stained Bricks");
+		LanguageRegistry.instance().addStringLocalization("tile.stainedBrick.darkGrey.name", "Grey Stained Bricks");
+		LanguageRegistry.instance().addStringLocalization("tile.stainedBrick.black.name", "Black Stained Bricks");
+		LanguageRegistry.instance().addStringLocalization("tile.stainedBrick.brown.name", "Brown Stained Bricks");
+		LanguageRegistry.instance().addStringLocalization("tile.stainedBrick.pink.name", "Pink Stained Bricks");
+		LanguageRegistry.instance().addStringLocalization("tile.stainedBrick.red.name", "Red Stained Bricks");
+		LanguageRegistry.instance().addStringLocalization("tile.stainedBrick.orange.name", "Orange Stained Bricks");
+		LanguageRegistry.instance().addStringLocalization("tile.stainedBrick.yellow.name", "Yellow Stained Bricks");
+		LanguageRegistry.instance().addStringLocalization("tile.stainedBrick.lime.name", "Lime Stained Bricks");
+		LanguageRegistry.instance().addStringLocalization("tile.stainedBrick.green.name", "Green Stained Bricks");
+		LanguageRegistry.instance().addStringLocalization("tile.stainedBrick.cyan.name", "Cyan Stained Bricks");
+		LanguageRegistry.instance().addStringLocalization("tile.stainedBrick.lightBlue.name", "Light Blue Stained Bricks");
+		LanguageRegistry.instance().addStringLocalization("tile.stainedBrick.blue.name", "Blue Stained Bricks");
+		LanguageRegistry.instance().addStringLocalization("tile.stainedBrick.purple.name", "Purple Stained Bricks");
+		LanguageRegistry.instance().addStringLocalization("tile.stainedBrick.magenta.name", "Magenta Stained Bricks");
 	}
 	
 }

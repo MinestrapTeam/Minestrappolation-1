@@ -291,5 +291,139 @@ public class EDRecipeManager
 				{
 			"  T",  " TT", "TTT", Character.valueOf('T'), ExtraDecor.checkerTile
 				});
+		
+		
+		
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 8, 0), new Object[]
+				{
+			"BBB", "BDB", "BBB", Character.valueOf('B'), Block.brick, Character.valueOf('D'), new ItemStack(Item.dyePowder, 1, 15)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 8, 1), new Object[]
+				{
+			"BBB", "BDB", "BBB", Character.valueOf('B'), Block.brick, Character.valueOf('D'), new ItemStack(Item.dyePowder, 1, 7)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 8, 2), new Object[]
+				{
+			"BBB", "BDB", "BBB", Character.valueOf('B'), Block.brick, Character.valueOf('D'), new ItemStack(Item.dyePowder, 1, 8)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 8, 3), new Object[]
+				{
+			"BBB", "BDB", "BBB", Character.valueOf('B'), Block.brick, Character.valueOf('D'), new ItemStack(Item.dyePowder, 1, 0)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 8, 4), new Object[]
+				{
+			"BBB", "BDB", "BBB", Character.valueOf('B'), Block.brick, Character.valueOf('D'), new ItemStack(Item.dyePowder, 1, 3)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 8, 5), new Object[]
+				{
+			"BBB", "BDB", "BBB", Character.valueOf('B'), Block.brick, Character.valueOf('D'), new ItemStack(Item.dyePowder, 1, 9)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 8, 6), new Object[]
+				{
+			"BBB", "BDB", "BBB", Character.valueOf('B'), Block.brick, Character.valueOf('D'), new ItemStack(Item.dyePowder, 1, 1)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 8, 7), new Object[]
+				{
+			"BBB", "BDB", "BBB", Character.valueOf('B'), Block.brick, Character.valueOf('D'), new ItemStack(Item.dyePowder, 1, 14)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 8, 8), new Object[]
+				{
+			"BBB", "BDB", "BBB", Character.valueOf('B'), Block.brick, Character.valueOf('D'), new ItemStack(Item.dyePowder, 1, 11)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 8, 9), new Object[]
+				{
+			"BBB", "BDB", "BBB", Character.valueOf('B'), Block.brick, Character.valueOf('D'), new ItemStack(Item.dyePowder, 1, 10)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 8, 10), new Object[]
+				{
+			"BBB", "BDB", "BBB", Character.valueOf('B'), Block.brick, Character.valueOf('D'), new ItemStack(Item.dyePowder, 1, 2)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 8, 11), new Object[]
+				{
+			"BBB", "BDB", "BBB", Character.valueOf('B'), Block.brick, Character.valueOf('D'), new ItemStack(Item.dyePowder, 1, 6)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 8, 12), new Object[]
+				{
+			"BBB", "BDB", "BBB", Character.valueOf('B'), Block.brick, Character.valueOf('D'), new ItemStack(Item.dyePowder, 1, 12)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 8, 13), new Object[]
+				{
+			"BBB", "BDB", "BBB", Character.valueOf('B'), Block.brick, Character.valueOf('D'), new ItemStack(Item.dyePowder, 1, 4)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 8, 14), new Object[]
+				{
+			"BBB", "BDB", "BBB", Character.valueOf('B'), Block.brick, Character.valueOf('D'), new ItemStack(Item.dyePowder, 1, 5)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 8, 15), new Object[]
+				{
+			"BBB", "BDB", "BBB", Character.valueOf('B'), Block.brick, Character.valueOf('D'), new ItemStack(Item.dyePowder, 1, 13)
+				});
+		
+		
+		
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 4, 0), new Object[]
+				{
+			"BB", "BB", Character.valueOf('B'), new ItemStack(Block.field_111039_cA, 1, 0)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 4, 1), new Object[]
+				{
+			"BB", "BB", Character.valueOf('B'), new ItemStack(Block.field_111039_cA, 1, 8)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 4, 2), new Object[]
+				{
+			"BB", "BB", Character.valueOf('B'), new ItemStack(Block.field_111039_cA, 1, 7)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 4, 3), new Object[]
+				{
+			"BB", "BB", Character.valueOf('B'), new ItemStack(Block.field_111039_cA, 1, 15)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 4, 4), new Object[]
+				{
+			"BB", "BB", Character.valueOf('B'), new ItemStack(Block.field_111039_cA, 1, 12)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 4, 5), new Object[]
+				{
+			"BB", "BB", Character.valueOf('B'), new ItemStack(Block.field_111039_cA, 1, 6)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 4, 6), new Object[]
+				{
+			"BB", "BB", Character.valueOf('B'), new ItemStack(Block.field_111039_cA, 1, 14)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 4, 7), new Object[]
+				{
+			"BB", "BB", Character.valueOf('B'), new ItemStack(Block.field_111039_cA, 1, 1)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 4, 8), new Object[]
+				{
+			"BB", "BB", Character.valueOf('B'), new ItemStack(Block.field_111039_cA, 1, 4)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 4, 9), new Object[]
+				{
+			"BB", "BB", Character.valueOf('B'), new ItemStack(Block.field_111039_cA, 1, 5)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 4, 10), new Object[]
+				{
+			"BB", "BB", Character.valueOf('B'), new ItemStack(Block.field_111039_cA, 1, 13)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 4, 11), new Object[]
+				{
+			"BB", "BB", Character.valueOf('B'), new ItemStack(Block.field_111039_cA, 1, 9)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 4, 12), new Object[]
+				{
+			"BB", "BB", Character.valueOf('B'), new ItemStack(Block.field_111039_cA, 1, 3)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 4, 13), new Object[]
+				{
+			"BB", "BB", Character.valueOf('B'), new ItemStack(Block.field_111039_cA, 1, 11)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 4, 14), new Object[]
+				{
+			"BB", "BB", Character.valueOf('B'), new ItemStack(Block.field_111039_cA, 1, 10)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.stainedBrick, 4, 15), new Object[]
+				{
+			"BB", "BB", Character.valueOf('B'), new ItemStack(Block.field_111039_cA, 1, 2)
+				});
 	}
 }

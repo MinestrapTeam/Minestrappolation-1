@@ -120,7 +120,8 @@ public class ExtraDecor
 	woodBoardsStairsJungleId,
 	woodBoardsSingleSlabId,
 	woodBoardsDoubleSlabId,
-	checkerTileStairsId;
+	checkerTileStairsId,
+	stainedBrickId;
 	
 	public static Block stoneBlockRefined;
 	public static Block stonePillar;
@@ -198,6 +199,8 @@ public class ExtraDecor
 	
 	public static Block checkerTileStairs;
 	
+	public static Block stainedBrick;
+	
 	public static CreativeTabs tabDecorBlocks = new CreativeTabExtraDecorBlocks(CreativeTabs.getNextID(),"Extrappolated Decor");
 	
 	public static int paneRenderId = RenderingRegistry.getNextAvailableRenderId();
@@ -261,6 +264,7 @@ public class ExtraDecor
 		woodBoardsSingleSlabId = config.getBlock("Wood Boards Single Slab", 743).getInt();
 		woodBoardsDoubleSlabId = config.getBlock("Wood Boards Double Slab", 744).getInt();
 		checkerTileStairsId = config.getBlock("Checker Tile Stairs", 745).getInt();
+		stainedBrickId = config.getBlock("Stained Bricks", 746).getInt();
 		
 		config.save();		
 		
@@ -341,6 +345,8 @@ public class ExtraDecor
 	
 		checkerTileStairs = new EDBlockStairs(checkerTileStairsId, checkerTile, 0).setUnlocalizedName("checkerTileStairs").setHardness(3F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep);
 		
+		stainedBrick = (new BlockStainedBrick(stainedBrickId)).setHardness(2F).setResistance(10F).setCreativeTab(tabDecorBlocks).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("stainedBrick");
+		
 		EDBlockRegistry.registerBlocks();
 		EDNameManager.registerNames();
 		EDRecipeManager.loadAllRecipes();
@@ -381,6 +387,7 @@ public class ExtraDecor
 		Item.itemsList[woodBeveled.blockID] = (new ItemMultiTextureTile(woodBeveled.blockID - 256, woodBeveled, BlockWoodBeveled.woodType)).setUnlocalizedName("woodBeveled");
 		Item.itemsList[sandstoneBricks.blockID] = (new ItemMultiTextureTile(sandstoneBricks.blockID - 256, sandstoneBricks, BlockSandstoneBrick.sandType)).setUnlocalizedName("sandstoneBrick");
 		Item.itemsList[woodBoards.blockID] = (new ItemMultiTextureTile(woodBoards.blockID - 256, woodBoards, BlockWoodBoards.woodType)).setUnlocalizedName("woodBoards");
+		Item.itemsList[stainedBrick.blockID] = (new ItemMultiTextureTile(stainedBrick.blockID - 256, stainedBrick, BlockStainedBrick.brickType)).setUnlocalizedName("stainedBrick");
 		
 		//TODO Forms of adding slabs
 		Item.itemsList[this.woodBoardsSingleSlab.blockID] = (new ItemSlab(this.woodBoardsSingleSlab.blockID - 256, (BlockHalfSlab)woodBoardsSingleSlab, (BlockHalfSlab)woodBoardsDoubleSlab, false));
