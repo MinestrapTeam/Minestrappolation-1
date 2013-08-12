@@ -1,12 +1,13 @@
 package sobiohazardous.minestrappolation.extraores.item;
 
-import com.google.common.collect.Multimap;
-
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
+
+import com.google.common.collect.Multimap;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -14,29 +15,28 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.src.*;
 import net.minecraft.world.World;
 
 public class ItemESword extends Item
 {
-    private int weaponDamage;
+    private float weaponDamage;
     private final ExtracraftToolMaterial toolMaterial;
     private String texture;
 
-    public void registerIcons(IconRegister par1IconRegister)
-    {
-             this.itemIcon = par1IconRegister.registerIcon(texture);
-    }
-
-    
-    public ItemESword(int par1, String texture, ExtracraftToolMaterial par2EnumToolMaterial)
+    public ItemESword(int par1, String texture, ExtracraftToolMaterial par2ExtracraftToolMaterial)
     {
         super(par1);
-        toolMaterial = par2EnumToolMaterial;
-        maxStackSize = 1;
-        setMaxDamage(par2EnumToolMaterial.getMaxUses());
-        weaponDamage = 4 + par2EnumToolMaterial.getDamageVsEntity();
+        this.toolMaterial = par2ExtracraftToolMaterial;
+        this.maxStackSize = 1;
+        this.setMaxDamage(par2ExtracraftToolMaterial.getMaxUses());
+        //this.setCreativeTab(ExtraOres.tabOresItems);
+        this.weaponDamage = 4.0F + par2ExtracraftToolMaterial.getDamageVsEntity();
         this.texture = "extraores:" + texture;
+    }
+
+    public float func_82803_g()
+    {
+        return this.toolMaterial.getDamageVsEntity();
     }
 
     /**
@@ -45,40 +45,42 @@ public class ItemESword extends Item
      */
     public float getStrVsBlock(ItemStack par1ItemStack, Block par2Block)
     {
-        return par2Block.blockID != Block.web.blockID ? 1.5F : 15F;
+        if (par2Block.blockID == Block.web.blockID)
+        {
+            return 15.0F;
+        }
+        else
+        {
+            Material material = par2Block.blockMaterial;
+            return material != Material.plants && material != Material.vine && material != Material.coral && material != Material.leaves && material != Material.pumpkin ? 1.0F : 1.5F;
+        }
     }
 
     /**
      * Current implementations of this method in child classes do not use the entry argument beside ev. They just raise
      * the damage on the stack.
      */
-    public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase par2EntityLiving, EntityLivingBase par3EntityLiving)
+    public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase par2EntityLivingBase, EntityLivingBase par3EntityLivingBase)
     {
     	if(toolMaterial == ExtracraftToolMaterial.BLAZIUM)
     	{
-    		par2EntityLiving.setFire(10);
+    		par2EntityLivingBase.setFire(10);
     	}
-        par1ItemStack.damageItem(1, par3EntityLiving);
+        par1ItemStack.damageItem(1, par3EntityLivingBase);
         return true;
     }
 
-    public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6, EntityLivingBase par7EntityLiving)
+    public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6, EntityLivingBase par7EntityLivingBase)
     {
         if ((double)Block.blocksList[par3].getBlockHardness(par2World, par4, par5, par6) != 0.0D)
         {
-            par1ItemStack.damageItem(2, par7EntityLiving);
+            par1ItemStack.damageItem(2, par7EntityLivingBase);
         }
 
         return true;
     }
 
-    /**
-     * Returns the damage against a given entity.
-     */
-    public int getDamageVsEntity(Entity par1Entity)
-    {
-        return weaponDamage;
-    }
+    @SideOnly(Side.CLIENT)
 
     /**
      * Returns True is the item is renderer in full 3D when hold.
@@ -101,7 +103,7 @@ public class ItemESword extends Item
      */
     public int getMaxItemUseDuration(ItemStack par1ItemStack)
     {
-        return 0x11940;
+        return 72000;
     }
 
     /**
@@ -109,7 +111,7 @@ public class ItemESword extends Item
      */
     public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
     {
-        par3EntityPlayer.setItemInUse(par1ItemStack, getMaxItemUseDuration(par1ItemStack));
+        par3EntityPlayer.setItemInUse(par1ItemStack, this.getMaxItemUseDuration(par1ItemStack));
         return par1ItemStack;
     }
 
@@ -126,9 +128,25 @@ public class ItemESword extends Item
      */
     public int getItemEnchantability()
     {
-        return toolMaterial.getEnchantability();
+        return this.toolMaterial.getEnchantability();
     }
-    
+
+    /**
+     * Return the name for this tool's material.
+     */
+    public String getToolMaterialName()
+    {
+        return this.toolMaterial.toString();
+    }
+
+    /**
+     * Return whether this item is repairable in an anvil.
+     */
+    public boolean getIsRepairable(ItemStack par1ItemStack, ItemStack par2ItemStack)
+    {
+        return this.toolMaterial.getToolCraftingMaterial() == par2ItemStack.itemID ? true : super.getIsRepairable(par1ItemStack, par2ItemStack);
+    }
+
     public Multimap func_111205_h()
     {
         Multimap multimap = super.func_111205_h();
@@ -136,4 +154,3 @@ public class ItemESword extends Item
         return multimap;
     }
 }
-

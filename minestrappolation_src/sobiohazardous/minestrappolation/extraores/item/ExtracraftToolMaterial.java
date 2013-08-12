@@ -102,7 +102,7 @@ public enum ExtracraftToolMaterial
      */
     public int getEnchantability()
     {
-        return enchantability;
+        return this.enchantability;
     }
 
 	public int getToolCraftingMaterial()
