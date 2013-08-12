@@ -29,10 +29,9 @@ import sobiohazardous.minestrappolation.extraores.handler.ServerPacketHandler;
 import sobiohazardous.minestrappolation.extraores.handler.ServerTickHandler;
 import sobiohazardous.minestrappolation.extraores.item.*;
 import sobiohazardous.minestrappolation.extraores.lib.EOBlockRegister;
+import sobiohazardous.minestrappolation.extraores.lib.EOFuelHandler;
 import sobiohazardous.minestrappolation.extraores.lib.EONameManager;
 import sobiohazardous.minestrappolation.extraores.lib.EORecipeManager;
-import sobiohazardous.minestrappolation.extraores.misc.PlutoniumFuelHandler;
-import sobiohazardous.minestrappolation.extraores.misc.UraniumFuelHandler;
 import sobiohazardous.minestrappolation.extraores.plate.IPlateRenderingHandler;
 import sobiohazardous.minestrappolation.extraores.plate.Plate;
 import sobiohazardous.minestrappolation.extraores.proxy.CommonProxy;
@@ -1580,8 +1579,7 @@ public class ExtraOres
         TickRegistry.registerTickHandler(new ClientTickHandler(EnumSet.of(TickType.CLIENT)), Side.CLIENT);
         TickRegistry.registerTickHandler(new ServerTickHandler(EnumSet.of(TickType.PLAYER)), Side.SERVER);
 
-        GameRegistry.registerFuelHandler(new UraniumFuelHandler());
-        GameRegistry.registerFuelHandler(new PlutoniumFuelHandler());
+        GameRegistry.registerFuelHandler(new EOFuelHandler());
 
 		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(this.CopperIngot),1,5,30));
 		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(this.TinIngot),1,5,30));
