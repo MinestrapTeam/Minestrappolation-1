@@ -36,6 +36,8 @@ import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -375,8 +377,9 @@ public class ExtraDecor
 		MinecraftForge.setBlockHarvestLevel(oozeSlime, "shovel", 0);
 		MinecraftForge.setBlockHarvestLevel(magmaOoze, "shovel", 0);
 		
-		GameRegistry.registerWorldGenerator(new EDOreGenerator());
-		
+		GameRegistry.registerWorldGenerator(new EDOreGenerator());	
+		oreRegistration();
+		addOreRecipes();
 	}
 
 	@Mod.EventHandler
@@ -400,5 +403,30 @@ public class ExtraDecor
 			System.err.println("ExtraDecor: Could not load bridge recipes. Heres why: ");
 			e.printStackTrace();
 		}
+	}
+	
+	public static void oreRegistration()
+	{
+		OreDictionary.registerOre("plankWood", new ItemStack(woodBoards, 1, 0));
+		OreDictionary.registerOre("plankWood", new ItemStack(woodBoards, 1, 1));
+		OreDictionary.registerOre("plankWood", new ItemStack(woodBoards, 1, 2));
+		OreDictionary.registerOre("plankWood", new ItemStack(woodBoards, 1, 3));
+		OreDictionary.registerOre("meatRaw", new ItemStack(Item.beefRaw));
+		OreDictionary.registerOre("meatRaw", new ItemStack(Item.porkRaw));
+		OreDictionary.registerOre("meatRaw", new ItemStack(Item.fishRaw));
+		OreDictionary.registerOre("meatRaw", new ItemStack(Item.chickenRaw));
+		OreDictionary.registerOre("meatRaw", new ItemStack(Item.rottenFlesh));
+	}
+	
+	public static void addOreRecipes()
+	{
+		GameRegistry.addRecipe(new ShapedOreRecipe(meatBlock, true, new Object[]
+				{
+				"MMM", "MMM", "MMM", Character.valueOf('M'), "meatRaw"
+				}));
+		GameRegistry.addRecipe(new ShapedOreRecipe(ExtraDecor.crate, true, new Object[]
+				{
+			"WWW","SSS","WWW", Character.valueOf('S'), Item.stick, Character.valueOf('W'), "plankWood"
+				}));
 	}
 }

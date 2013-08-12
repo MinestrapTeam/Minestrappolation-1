@@ -96,20 +96,36 @@ public class EDRecipeManager
 				{
 			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(Block.planks, 1, 0)
 				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodPanel, 9, 0), new Object[]
+				{
+			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(ExtraDecor.woodBoards, 1, 0)
+				});
 		
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodPanel, 9, 1), new Object[]
 				{
 			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(Block.planks, 1, 2)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodPanel, 9, 1), new Object[]
+				{
+			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(ExtraDecor.woodBoards, 1, 1)
 				});
 		
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodPanel, 9,2), new Object[]
 				{
 			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(Block.planks, 1, 1)
 				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodPanel, 9,2), new Object[]
+				{
+			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(ExtraDecor.woodBoards, 1, 2)
+				});
 		
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodPanel, 9,3), new Object[]
 				{
 			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(Block.planks, 1, 3)
+				});
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodPanel, 9,3), new Object[]
+				{
+			"SSS", "SSS", "SSS", Character.valueOf('S'), new ItemStack(ExtraDecor.woodBoards, 1, 3)
 				});
 		
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.woodBeveled, 4, 0), new Object[]
@@ -174,26 +190,6 @@ public class EDRecipeManager
 				{
 			"S", Character.valueOf('S'), ExtraDecor.sugarBlock
 				});
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.meatBlock), new Object[]
-				{
-			"SSS","SSS","SSS", Character.valueOf('S'), Item.chickenRaw
-				});
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.meatBlock), new Object[]
-				{
-			"SSS","SSS","SSS", Character.valueOf('S'), Item.beefRaw
-				});
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.meatBlock), new Object[]
-				{
-			"SSS","SSS","SSS", Character.valueOf('S'), Item.fishRaw
-				});
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.meatBlock), new Object[]
-				{
-			"SSS","SSS","SSS", Character.valueOf('S'), Item.rottenFlesh
-				});
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.meatBlock), new Object[]
-				{
-			"SSS","SSS","SSS", Character.valueOf('S'), Item.porkRaw
-				});
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.magmaOoze), new Object[]
 				{
 			"SSS","SSS","SSS", Character.valueOf('S'), Item.magmaCream
@@ -209,10 +205,6 @@ public class EDRecipeManager
 		GameRegistry.addRecipe(new ItemStack(Item.enderPearl, 9), new Object[]
 				{
 			"S", Character.valueOf('S'), ExtraDecor.enderBlock
-				});
-		GameRegistry.addRecipe(new ItemStack(ExtraDecor.crate), new Object[]
-				{
-			"WWW","SSS","WWW", Character.valueOf('S'), Item.stick, Character.valueOf('W'), Block.planks
 				});
 		GameRegistry.addRecipe(new ItemStack(ExtraDecor.barrel), new Object[]
 				{
