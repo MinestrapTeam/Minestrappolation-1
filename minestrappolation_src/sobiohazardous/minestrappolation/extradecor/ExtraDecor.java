@@ -64,7 +64,7 @@ import sobiohazardous.minestrappolation.extradecor.material.*;
 @NetworkMod(clientSideRequired = true, serverSideRequired = false,
 clientPacketHandlerSpec = @SidedPacketHandler(channels = {"extradecorChan"}, packetHandler = ClientPacketHandler.class),
 serverPacketHandlerSpec = @SidedPacketHandler(channels = {"extradecorChanS"}, packetHandler = ServerPacketHandler.class))
-@Mod ( modid = "ExtraDecor", name="Extrappolated Decor", version="B1.0")
+@Mod ( modid = "ExtraDecor", name="Extrappolated Decor", version="B1.1")
 public class ExtraDecor 
 {
 	@SidedProxy(clientSide = "sobiohazardous.minestrappolation.extradecor.proxy.ClientProxy", serverSide = "sobiohazardous.minestrappolation.extradecor.proxy.CommonProxy")

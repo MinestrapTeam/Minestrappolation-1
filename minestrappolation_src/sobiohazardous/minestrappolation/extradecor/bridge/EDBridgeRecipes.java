@@ -15,6 +15,8 @@ public class EDBridgeRecipes
 {
 	private static boolean hasExtraOres = Loader.isModLoaded("ExtraOres");
 	
+	//static Block sunstone = GameRegistry.findBlock("ExtraOres", "Sunstone");
+	
 	public static void loadBridgeRecipes() throws Exception
 	{	
 		if(hasExtraOres)
@@ -26,7 +28,7 @@ public class EDBridgeRecipes
 		}
 	}
 	
-	//EXPERIMENTAL\\
+	//EXPERIMENTAL - I Tried to use reflection to refer to other mods possibly loaded or not. it failed, and turns out, forge already has it.\\
 	
 	/**
 	 * Used for getting blocks and items from classes if they do not exist (reflection)
