@@ -589,6 +589,8 @@ public class EORecipeManager
 				{
 			"ZZZ", "ZZZ", "ZZZ", Character.valueOf('Z'), ExtraOres.Uranium
 				});
+		GameRegistry.addSmelting(ExtraOres.UraniumOre.blockID, new ItemStack(ExtraOres.Uranium, 2), 0.15F);
+		GameRegistry.addSmelting(ExtraOres.PlutoniumOre.blockID, new ItemStack(ExtraOres.Plutonium, 2), 0.15F);
 		
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(ExtraOres.Plutonium, 9), new Object[]
@@ -606,7 +608,7 @@ public class EORecipeManager
 				});
 		GameRegistry.addRecipe(new ItemStack(ExtraOres.nuke, 1), new Object[]
 				{
-			"UPU", "PUP", "UPU", Character.valueOf('P'), ExtraOres.Plutonium, Character.valueOf('U'), ExtraOres.Uranium
+			"UPU", "PUP", "UPU", Character.valueOf('P'), ExtraOres.RawPlutoniumBlock, Character.valueOf('U'), ExtraOres.RawUraniumBlock
 				});
 		
 	
