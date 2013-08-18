@@ -3,6 +3,7 @@ package sobiohazardous.minestrappolation.extraores.item;
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.src.*;
 
 public class ItemEShovel extends ItemExtracraftTool
@@ -15,10 +16,12 @@ public class ItemEShovel extends ItemExtracraftTool
              this.itemIcon = par1IconRegister.registerIcon(texture);
     }
 
-    public ItemEShovel(int par1, String texture, ExtracraftToolMaterial par2EnumToolMaterial)
+    public ItemEShovel(int par1, String texture, EnumToolMaterial par2EnumToolMaterial)
     {
         super(par1, 1, par2EnumToolMaterial, blocksEffectiveAgainst);
         this.texture = "extraores:" + texture;
+        this.setCreativeTab(null);
+
     }
 
     /**

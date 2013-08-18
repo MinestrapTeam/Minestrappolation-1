@@ -11,32 +11,31 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
+import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemTool;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeHooks;
 
-public class ItemExtracraftTool extends Item
+public class ItemExtracraftTool extends ItemTool
 {
     private Block[] blocksEffectiveAgainst;
-    public float efficiencyOnProperMaterial = 4.0F;
-
-    /** Damage versus entities. */
-    public int damageVsEntity;
 
     /** The material this tool is made from. */
-    protected ExtracraftToolMaterial toolMaterial;
+    protected EnumToolMaterial toolMaterial;
     
 
-    protected ItemExtracraftTool(int par1, int par2, ExtracraftToolMaterial par3ExtracraftToolMaterial, Block par4ArrayOfBlock[])
+    protected ItemExtracraftTool(int par1, float par2, EnumToolMaterial par3ExtracraftToolMaterial, Block par4ArrayOfBlock[])
     {
-        super(par1);
+        super(par1, par2, par3ExtracraftToolMaterial, par4ArrayOfBlock);
         this.toolMaterial = par3ExtracraftToolMaterial;
         this.blocksEffectiveAgainst = par4ArrayOfBlock;
         this.maxStackSize = 1;
         this.setMaxDamage(par3ExtracraftToolMaterial.getMaxUses());
         this.efficiencyOnProperMaterial = par3ExtracraftToolMaterial.getEfficiencyOnProperMaterial();
         this.damageVsEntity = par2 + par3ExtracraftToolMaterial.getDamageVsEntity();
+        this.setCreativeTab(null);
     }
 
     /**
@@ -62,7 +61,7 @@ public class ItemExtracraftTool extends Item
      */
     public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase par2EntityLiving, EntityLivingBase par3EntityLiving)
     {
-        if(toolMaterial == ExtracraftToolMaterial.TORITE || toolMaterial == ExtracraftToolMaterial.BPTORITE)
+        if(toolMaterial == ExtraOres.toolMaterialTorite || toolMaterial == ExtraOres.toolMaterialBPTorite)
         	{
         	par1ItemStack.damageItem(1, par3EntityLiving);
         	return true;
@@ -85,7 +84,7 @@ public class ItemExtracraftTool extends Item
         }
         else
         {
-        	if(toolMaterial == ExtracraftToolMaterial.TITANIUM || toolMaterial == ExtracraftToolMaterial.BEDROCK || toolMaterial == ExtracraftToolMaterial.BPTITANIUM || toolMaterial == ExtracraftToolMaterial.BPBEDROCK)
+        	if(toolMaterial == ExtraOres.toolMaterialTitanium || toolMaterial == ExtraOres.toolMaterialBedrock || toolMaterial == ExtraOres.toolMaterialBPTitanium || toolMaterial == ExtraOres.toolMaterialBPBedrock)
         	{
         	    par1ItemStack.damageItem(4000, par7EntityLiving);
         	}
@@ -96,57 +95,10 @@ public class ItemExtracraftTool extends Item
         }
         return true;
     }
-
-    /**
-     * Returns the damage against a given entity.
-     */
-    public int getDamageVsEntity(Entity par1Entity)
-    {
-        return damageVsEntity;
-    }
-
-    /**
-     * Returns True is the item is renderer in full 3D when hold.
-     */
-    public boolean isFull3D()
-    {
-        return true;
-    }
-
-    /**
-     * Return the enchantability factor of the item, most of the time is based on material.
-     */
-    public int getItemEnchantability()
-    {
-        return toolMaterial.getEnchantability();
-    }
-    public String getToolMaterialName()
-    {
-        return this.toolMaterial.toString();
-    }
-
-    /**
-     * Return whether this item is repairable in an anvil.
-     */
-    public boolean getIsRepairable(ItemStack par1ItemStack, ItemStack par2ItemStack)
-    {
-        return this.toolMaterial.getToolCraftingMaterial() == par2ItemStack.itemID ? true : super.getIsRepairable(par1ItemStack, par2ItemStack);
-    }
-
-    /** FORGE: Overridden to allow custom tool effectiveness */
-    @Override
-    public float getStrVsBlock(ItemStack stack, Block block, int meta) 
-    {
-        if (ForgeHooks.isToolEffective(stack, block, meta))
-        {
-            return efficiencyOnProperMaterial;
-        }
-        return getStrVsBlock(stack, block);
-    }
     
     public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
     {
-    	if (toolMaterial == ExtracraftToolMaterial.BLAZIUM || toolMaterial == ExtracraftToolMaterial.BPBLAZIUM)
+    	if (toolMaterial == ExtraOres.toolMaterialBlazium || toolMaterial == ExtraOres.toolMaterialBPBlazium)
     	{
     		if (par7 == 0)
     		{
@@ -212,7 +164,7 @@ public class ItemExtracraftTool extends Item
     
     public EnumAction getItemUseAction(ItemStack par1ItemStack)
     {
-    	if(toolMaterial == ExtracraftToolMaterial.TORITE || toolMaterial == ExtracraftToolMaterial.BPTORITE)
+    	if(toolMaterial == ExtraOres.toolMaterialTorite || toolMaterial == ExtraOres.toolMaterialBPTorite)
     	{
     		return EnumAction.block;
     	}
@@ -222,20 +174,10 @@ public class ItemExtracraftTool extends Item
     
     public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
     {
-    	if(toolMaterial == ExtracraftToolMaterial.TORITE || toolMaterial == ExtracraftToolMaterial.BPTORITE)
+    	if(toolMaterial == ExtraOres.toolMaterialTorite || toolMaterial == ExtraOres.toolMaterialBPTorite)
     	{
     		par3EntityPlayer.setItemInUse(par1ItemStack, getMaxItemUseDuration(par1ItemStack));
     	}
     	return par1ItemStack;
-    }
-
-    public Multimap func_111205_h()
-    {
-        Multimap multimap = super.func_111205_h();
-        multimap.put(SharedMonsterAttributes.field_111264_e.func_111108_a(), new AttributeModifier(field_111210_e, "Tool modifier", (double)this.damageVsEntity, 0));
-        return multimap;
-    }
-    
-    
-    
+    }       
 }
