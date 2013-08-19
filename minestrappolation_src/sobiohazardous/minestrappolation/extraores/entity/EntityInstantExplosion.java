@@ -7,13 +7,13 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 
-public class EntityExplosion extends Entity
+public class EntityInstantExplosion extends Entity
 {
     /** How long the fuse is */
     public int fuse;
     private EntityLivingBase tntPlacedBy;
 
-    public EntityExplosion(World par1World)
+    public EntityInstantExplosion(World par1World)
     {
         super(par1World);
         this.preventEntitySpawning = true;
@@ -21,7 +21,7 @@ public class EntityExplosion extends Entity
         this.yOffset = this.height / 2.0F;
     }
 
-    public EntityExplosion(World par1World, double par2, double par4, double par6, EntityLivingBase par8EntityLivingBase)
+    public EntityInstantExplosion(World par1World, double par2, double par4, double par6, EntityLivingBase par8EntityLivingBase)
     {
         this(par1World);
         this.setPosition(par2, par4, par6);

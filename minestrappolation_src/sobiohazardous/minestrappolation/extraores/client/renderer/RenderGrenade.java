@@ -1,4 +1,4 @@
-package sobiohazardous.minestrappolation.extraores.entity;
+package sobiohazardous.minestrappolation.extraores.client.renderer;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

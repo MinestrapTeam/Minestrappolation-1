@@ -1,4 +1,4 @@
-package sobiohazardous.minestrappolation.extraores.entity;
+package sobiohazardous.minestrappolation.extraores.client.renderer;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -12,6 +12,7 @@ import net.minecraft.entity.item.EntityTNTPrimed;
 import org.lwjgl.opengl.GL11;
 
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
+import sobiohazardous.minestrappolation.extraores.entity.EntityNukePrimed;
 
 @SideOnly(Side.CLIENT)
 public class RenderNukePrimed extends Render

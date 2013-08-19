@@ -1,12 +1,13 @@
-package sobiohazardous.minestrappolation.extraores.plate;
+package sobiohazardous.minestrappolation.extraores.block;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import net.minecraft.src.*;
 import net.minecraft.world.ChunkPosition;
 import net.minecraft.world.World;
 
-class PlateLogic
+class BlockPlateLogic
 { 
     private World worldObj;
     private int trackX;
@@ -15,9 +16,9 @@ class PlateLogic
 
    
     private List connectedTracks;
-    final Plate tinplate;
+    final BlockPlate tinplate;
 
-	public PlateLogic(Plate par1BlockRail, World par2World, int par3, int par4, int par5)
+	public BlockPlateLogic(BlockPlate par1BlockRail, World par2World, int par3, int par4, int par5)
     {
         tinplate = par1BlockRail;
         connectedTracks = new ArrayList();
@@ -92,7 +93,7 @@ class PlateLogic
     {
         for (int i = 0; i < connectedTracks.size(); i++)
         {
-            PlateLogic raillogic = getMinecartTrackLogic((ChunkPosition)connectedTracks.get(i));
+            BlockPlateLogic raillogic = getMinecartTrackLogic((ChunkPosition)connectedTracks.get(i));
 
             if (raillogic == null || !raillogic.isConnectedTo(this))
             {
@@ -112,29 +113,29 @@ class PlateLogic
         //    return true;
         //}
 
-        if (Plate.isRailBlockAt(worldObj, par1, par2 + 1, par3))
+        if (BlockPlate.isRailBlockAt(worldObj, par1, par2 + 1, par3))
         {
             return true;
         }
 
-        return Plate.isRailBlockAt(worldObj, par1, par2 - 1, par3);
+        return BlockPlate.isRailBlockAt(worldObj, par1, par2 - 1, par3);
     }
 
-    private PlateLogic getMinecartTrackLogic(ChunkPosition par1ChunkPosition)
+    private BlockPlateLogic getMinecartTrackLogic(ChunkPosition par1ChunkPosition)
     {
         //if (Plate.isRailBlockAt(worldObj, par1ChunkPosition.x, par1ChunkPosition.y, par1ChunkPosition.z))
         //{
         //    return new PlateLogic(tinplate, worldObj, par1ChunkPosition.x, par1ChunkPosition.y, par1ChunkPosition.z);
         //}
 
-        if (Plate.isRailBlockAt(worldObj, par1ChunkPosition.x, par1ChunkPosition.y + 1, par1ChunkPosition.z))
+        if (BlockPlate.isRailBlockAt(worldObj, par1ChunkPosition.x, par1ChunkPosition.y + 1, par1ChunkPosition.z))
         {
-            return new PlateLogic(tinplate, worldObj, par1ChunkPosition.x, par1ChunkPosition.y + 1, par1ChunkPosition.z);
+            return new BlockPlateLogic(tinplate, worldObj, par1ChunkPosition.x, par1ChunkPosition.y + 1, par1ChunkPosition.z);
         }
 
-        if (Plate.isRailBlockAt(worldObj, par1ChunkPosition.x, par1ChunkPosition.y - 1, par1ChunkPosition.z))
+        if (BlockPlate.isRailBlockAt(worldObj, par1ChunkPosition.x, par1ChunkPosition.y - 1, par1ChunkPosition.z))
         {
-            return new PlateLogic(tinplate, worldObj, par1ChunkPosition.x, par1ChunkPosition.y - 1, par1ChunkPosition.z);
+            return new BlockPlateLogic(tinplate, worldObj, par1ChunkPosition.x, par1ChunkPosition.y - 1, par1ChunkPosition.z);
         }
         else
         {
@@ -142,7 +143,7 @@ class PlateLogic
         }
     }
 
-    private boolean isConnectedTo(PlateLogic par1RailLogic)
+    private boolean isConnectedTo(BlockPlateLogic par1RailLogic)
     {
         for (int i = 0; i < connectedTracks.size(); i++)
         {
@@ -205,7 +206,7 @@ class PlateLogic
     /**
      * Determines whether or not the track can bend to meet the specified rail
      */
-    private boolean canConnectTo(PlateLogic par1RailLogic)
+    private boolean canConnectTo(BlockPlateLogic par1RailLogic)
     {
         if (isConnectedTo(par1RailLogic))
         {
@@ -229,7 +230,7 @@ class PlateLogic
     /**
      * The specified neighbor has just formed a new connection, so update accordingly
      */
-    private void connectToNeighbor(PlateLogic par1RailLogic)
+    private void connectToNeighbor(BlockPlateLogic par1RailLogic)
     {
         connectedTracks.add(new ChunkPosition(par1RailLogic.trackX, par1RailLogic.trackY, par1RailLogic.trackZ));
         boolean flag = isInTrack(trackX, trackY, trackZ - 1);
@@ -252,12 +253,12 @@ class PlateLogic
 
         if (byte0 == 0)
         {
-            if (Plate.isRailBlockAt(worldObj, trackX, trackY + 1, trackZ - 1))
+            if (BlockPlate.isRailBlockAt(worldObj, trackX, trackY + 1, trackZ - 1))
             {
                 byte0 = 4;
             }
 
-            if (Plate.isRailBlockAt(worldObj, trackX, trackY + 1, trackZ + 1))
+            if (BlockPlate.isRailBlockAt(worldObj, trackX, trackY + 1, trackZ + 1))
             {
                 byte0 = 5;
             }
@@ -265,12 +266,12 @@ class PlateLogic
 
         if (byte0 == 1)
         {
-            if (Plate.isRailBlockAt(worldObj, trackX + 1, trackY + 1, trackZ))
+            if (BlockPlate.isRailBlockAt(worldObj, trackX + 1, trackY + 1, trackZ))
             {
                 byte0 = 2;
             }
 
-            if (Plate.isRailBlockAt(worldObj, trackX - 1, trackY + 1, trackZ))
+            if (BlockPlate.isRailBlockAt(worldObj, trackX - 1, trackY + 1, trackZ))
             {
                 byte0 = 3;
             }
@@ -291,7 +292,7 @@ class PlateLogic
      */
     private boolean canConnectFrom(int par1, int par2, int par3)
     {
-        PlateLogic raillogic = getMinecartTrackLogic(new ChunkPosition(par1, par2, par3));
+        BlockPlateLogic raillogic = getMinecartTrackLogic(new ChunkPosition(par1, par2, par3));
 
         if (raillogic == null)
         {
@@ -367,12 +368,12 @@ class PlateLogic
 
         if (byte0 == 0)
         {
-            if (Plate.isRailBlockAt(worldObj, trackX, trackY + 1, trackZ - 1))
+            if (BlockPlate.isRailBlockAt(worldObj, trackX, trackY + 1, trackZ - 1))
             {
                 byte0 = 4;
             }
 
-            if (Plate.isRailBlockAt(worldObj, trackX, trackY + 1, trackZ + 1))
+            if (BlockPlate.isRailBlockAt(worldObj, trackX, trackY + 1, trackZ + 1))
             {
                 byte0 = 5;
             }
@@ -380,12 +381,12 @@ class PlateLogic
 
         if (byte0 == 1)
         {
-            if (Plate.isRailBlockAt(worldObj, trackX + 1, trackY + 1, trackZ))
+            if (BlockPlate.isRailBlockAt(worldObj, trackX + 1, trackY + 1, trackZ))
             {
                 byte0 = 2;
             }
 
-            if (Plate.isRailBlockAt(worldObj, trackX - 1, trackY + 1, trackZ))
+            if (BlockPlate.isRailBlockAt(worldObj, trackX - 1, trackY + 1, trackZ))
             {
                 byte0 = 3;
             }
@@ -407,7 +408,7 @@ class PlateLogic
 
             for (int j = 0; j < connectedTracks.size(); j++)
             {
-                PlateLogic raillogic = getMinecartTrackLogic((ChunkPosition)connectedTracks.get(j));
+                BlockPlateLogic raillogic = getMinecartTrackLogic((ChunkPosition)connectedTracks.get(j));
 
                 if (raillogic == null)
                 {

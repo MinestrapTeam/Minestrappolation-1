@@ -172,7 +172,7 @@ public class EOOreGenerator implements IWorldGenerator
 			int j5 = rand.nextInt(256);
 			int k5 = chunkz + rand.nextInt(16);
 			
-			(new WorldGenNetherExtracraft(ExtraOres.BlaziumOre.blockID, 5)).generate(world, rand, i5, j5, k5);
+			(new WorldGenNether(ExtraOres.BlaziumOre.blockID, 5)).generate(world, rand, i5, j5, k5);
 		}
 		//soul ore
 		for(int h = 0; h<20; h++)
@@ -181,7 +181,7 @@ public class EOOreGenerator implements IWorldGenerator
 			int j5 = rand.nextInt(256);
 			int k5 = chunkz + rand.nextInt(16);
 			
-			(new WorldGenSoulSandExtracraft(ExtraOres.SoulOre.blockID, 5)).generate(world,rand, i5, j5, k5);
+			(new WorldGenSoulSand(ExtraOres.SoulOre.blockID, 5)).generate(world,rand, i5, j5, k5);
 		}
 		//invincium
 		for(int h = 0; h<400; h++)

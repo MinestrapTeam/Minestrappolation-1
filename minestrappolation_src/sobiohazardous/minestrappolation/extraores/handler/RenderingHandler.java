@@ -1,6 +1,7 @@
-package sobiohazardous.minestrappolation.extraores.plate;
+package sobiohazardous.minestrappolation.extraores.handler;
 
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
+import sobiohazardous.minestrappolation.extraores.block.BlockPlate;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.Tessellator;
@@ -8,7 +9,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 
-public class IPlateRenderingHandler extends RenderBlocks implements ISimpleBlockRenderingHandler
+public class RenderingHandler extends RenderBlocks implements ISimpleBlockRenderingHandler
 {
 	public void renderInventoryBlock(Block block, int metadata, int modelID, RenderBlocks renderer)
     {
@@ -20,7 +21,7 @@ public class IPlateRenderingHandler extends RenderBlocks implements ISimpleBlock
     {
     	if (modelId == ExtraOres.plateRenderId)
 		{
-			return renderTinPlate((Plate)block, renderer, world, x, y, z, block, modelId);
+			return renderTinPlate((BlockPlate)block, renderer, world, x, y, z, block, modelId);
 		}
 	return false;
     }
@@ -35,7 +36,7 @@ public class IPlateRenderingHandler extends RenderBlocks implements ISimpleBlock
          return ExtraOres.plateRenderId;
     }
     
-    public boolean renderTinPlate(Plate par1BlockRailBase, RenderBlocks renderblocks, IBlockAccess iblockaccess, int par2, int par3, int par4, Block block, int modelId)
+    public boolean renderTinPlate(BlockPlate par1BlockRailBase, RenderBlocks renderblocks, IBlockAccess iblockaccess, int par2, int par3, int par4, Block block, int modelId)
     {
     	Tessellator tessellator = Tessellator.instance;
         int l = iblockaccess.getBlockMetadata(par2, par3, par4);

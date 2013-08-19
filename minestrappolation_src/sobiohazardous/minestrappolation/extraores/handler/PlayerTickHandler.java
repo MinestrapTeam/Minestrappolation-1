@@ -9,14 +9,14 @@ import sobiohazardous.minestrappolation.extraores.lib.ArmorEffects;
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
 
-public class ServerTickHandler implements ITickHandler
+public class PlayerTickHandler implements ITickHandler
 {
     private final EnumSet<TickType> ticksToGet;
     
     /*
      * This Tick Handler will fire for whatever TickType's you construct and register it with.
      */
-    public ServerTickHandler(EnumSet<TickType> ticksToGet)
+    public PlayerTickHandler(EnumSet<TickType> ticksToGet)
     {
         this.ticksToGet = ticksToGet;
     }
@@ -44,7 +44,7 @@ public class ServerTickHandler implements ITickHandler
     @Override
     public String getLabel()
     {
-        return "ExtraoresServerTick";
+        return "ExtraoresPlayerTick";
     }
     
     public static void playerTick(EntityPlayer player)

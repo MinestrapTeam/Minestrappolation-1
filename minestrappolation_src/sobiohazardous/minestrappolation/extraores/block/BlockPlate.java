@@ -1,4 +1,4 @@
-package sobiohazardous.minestrappolation.extraores.plate;
+package sobiohazardous.minestrappolation.extraores.block;
 
 import java.util.Random;
 
@@ -16,12 +16,12 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class Plate extends Block
+public class BlockPlate extends Block
 {
 	 
-	protected static Plate plate;
+	protected static BlockPlate plate;
 	public String texture;
-	public Plate(int par1, String Filetexture)
+	public BlockPlate(int par1, String Filetexture)
 	    {
 	        super(par1, Material.circuits);
 	        this.texture = "extraores:" + Filetexture;
@@ -148,7 +148,7 @@ public class Plate extends Block
         }
         else
         {
-        	(new PlateLogic(this, par1World, par2, par3, par4)).refreshTrackShape(par1World.isBlockIndirectlyGettingPowered(par2, par3, par4), par5);
+        	(new BlockPlateLogic(this, par1World, par2, par3, par4)).refreshTrackShape(par1World.isBlockIndirectlyGettingPowered(par2, par3, par4), par5);
         	return;
         }
     }

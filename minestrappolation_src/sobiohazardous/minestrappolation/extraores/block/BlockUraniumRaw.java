@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
-import sobiohazardous.minestrappolation.extraores.entity.EntityExplosion;
+import sobiohazardous.minestrappolation.extraores.entity.EntityInstantExplosion;
 import sobiohazardous.minestrappolation.util.BlockFunctions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -13,10 +13,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.src.ModLoader;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
@@ -33,6 +31,7 @@ public BlockUraniumRaw(int par1, Material par3Material)
                 this.setCreativeTab(CreativeTabs.tabBlock);
         }
    
+		@Override
 		public void registerIcons(IconRegister iconRegister)
 		{
 				blockIcon = iconRegister.registerIcon("extraores:block_UraniumRaw");
@@ -40,14 +39,16 @@ public BlockUraniumRaw(int par1, Material par3Material)
         /**
          * Returns the ID of the items to drop on destruction.
          */
-        public int idDropped(int par1, Random par2Random, int par3)
+        @Override
+		public int idDropped(int par1, Random par2Random, int par3)
         {
                 return this.blockID;
         }
         /**
          * Returns the quantity of items to drop on block destruction.
          */
-        public int quantityDropped(Random par1Random)
+        @Override
+		public int quantityDropped(Random par1Random)
         {
          return 1;
         }
@@ -60,7 +61,8 @@ public BlockUraniumRaw(int par1, Material par3Material)
         //                par1World.scheduleBlockUpdate(i, j, k, blockID, tickRate());
         //}
         
-        public void onBlockAdded(World par1World, int par2, int par3, int par4)
+        @Override
+		public void onBlockAdded(World par1World, int par2, int par3, int par4)
         {
                         par1World.setBlockMetadataWithNotify(par2, par3, par4, blockID, par4);
                         par1World.scheduleBlockUpdate(par2, par3, par4, blockID, tickRate());
@@ -81,7 +83,8 @@ public BlockUraniumRaw(int par1, Material par3Material)
                         return Block.blocksList[i] != null && Block.blocksList[i].blockMaterial != Material.air && Block.blocksList[i].isOpaqueCube();
         }
    
-        public void updateTick(World world, int i, int j, int k, Random random)
+        @Override
+		public void updateTick(World world, int i, int j, int k, Random random)
         {
          world.scheduleBlockUpdate(i, j, k, blockID, tickRate());
                 int l = world.getBlockMetadata(i, j, k);
@@ -232,12 +235,14 @@ public BlockUraniumRaw(int par1, Material par3Material)
                     }
         }
         
-        public boolean canBlockStay(World par1World, int par2, int par3, int par4)
+        @Override
+		public boolean canBlockStay(World par1World, int par2, int par3, int par4)
         {
             return this.canPlaceBlockAt(par1World, par2, par3, par4);
         }
         
-        public boolean canPlaceBlockAt(World par1World, int par2, int par3, int par4)
+        @Override
+		public boolean canPlaceBlockAt(World par1World, int par2, int par3, int par4)
         {
             if (BlockFunctions.isWaterTouchingAllSides(par1World, par2, par3, par4))
             {
@@ -248,7 +253,7 @@ public BlockUraniumRaw(int par1, Material par3Material)
             	 if (!par1World.isRemote)
                  {                    
    
-            		 EntityExplosion entitytntprimed = new EntityExplosion(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), player);
+            		 EntityInstantExplosion entitytntprimed = new EntityInstantExplosion(par1World, par2 + 0.5F, par3 + 0.5F, par4 + 0.5F, player);
                          par1World.spawnEntityInWorld(entitytntprimed);
                          par1World.playSoundAtEntity(entitytntprimed, "random.fuse", 1.0F, 1.0F);
                  }
@@ -257,14 +262,15 @@ public BlockUraniumRaw(int par1, Material par3Material)
             return true;
         }
       
-        public void onNeighborBlockChange(World par1World, int par2, int par3, int par4, int par5)
+        @Override
+		public void onNeighborBlockChange(World par1World, int par2, int par3, int par4, int par5)
         {
         	 if (!BlockFunctions.isWaterTouchingAllSides(par1World, par2, par3, par4))
         	 {
         		 if (!par1World.isRemote)
                  {                    
    
-            		 EntityExplosion entitytntprimed = new EntityExplosion(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), player);
+            		 EntityInstantExplosion entitytntprimed = new EntityInstantExplosion(par1World, par2 + 0.5F, par3 + 0.5F, par4 + 0.5F, player);
                          par1World.spawnEntityInWorld(entitytntprimed);
                          par1World.playSoundAtEntity(entitytntprimed, "random.fuse", 1.0F, 1.0F);
                  }
@@ -274,11 +280,12 @@ public BlockUraniumRaw(int par1, Material par3Material)
         /**
          * Called upon the block being destroyed by an explosion
          */
-        public void onBlockDestroyedByExplosion(World par1World, int par2, int par3, int par4, Explosion par5Explosion)
+        @Override
+		public void onBlockDestroyedByExplosion(World par1World, int par2, int par3, int par4, Explosion par5Explosion)
         {
             if (!par1World.isRemote)
             {
-            	EntityExplosion entitytntprimed = new EntityExplosion(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), player);
+            	EntityInstantExplosion entitytntprimed = new EntityInstantExplosion(par1World, par2 + 0.5F, par3 + 0.5F, par4 + 0.5F, player);
                 par1World.spawnEntityInWorld(entitytntprimed);
                 par1World.playSoundAtEntity(entitytntprimed, "random.fuse", 1.0F, 1.0F);
             }
@@ -290,7 +297,7 @@ public BlockUraniumRaw(int par1, Material par3Material)
             {
                 if ((par5 & 1) == 1)
                 {
-                	EntityExplosion entitytntprimed = new EntityExplosion(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), player);
+                	EntityInstantExplosion entitytntprimed = new EntityInstantExplosion(par1World, par2 + 0.5F, par3 + 0.5F, par4 + 0.5F, player);
                     par1World.spawnEntityInWorld(entitytntprimed);
                     par1World.playSoundAtEntity(entitytntprimed, "random.fuse", 1.0F, 1.0F);                }
             }

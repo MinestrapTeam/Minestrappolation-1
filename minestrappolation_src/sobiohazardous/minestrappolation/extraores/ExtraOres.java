@@ -12,28 +12,27 @@ import java.util.logging.Level;
 import javax.swing.text.html.parser.Entity;
 import org.lwjgl.input.Keyboard;
 import sobiohazardous.minestrappolation.extraores.block.*;
+import sobiohazardous.minestrappolation.extraores.client.renderer.RenderGrenade;
+import sobiohazardous.minestrappolation.extraores.client.renderer.RenderNukePrimed;
 import sobiohazardous.minestrappolation.extraores.entity.EntityGrenade;
 import sobiohazardous.minestrappolation.extraores.entity.EntityGrenadeImpact;
 import sobiohazardous.minestrappolation.extraores.entity.EntityGrenadeSticky;
 import sobiohazardous.minestrappolation.extraores.entity.EntityNukePrimed;
-import sobiohazardous.minestrappolation.extraores.entity.EntityExplosion;
-import sobiohazardous.minestrappolation.extraores.entity.RenderGrenade;
-import sobiohazardous.minestrappolation.extraores.entity.RenderNukePrimed;
+import sobiohazardous.minestrappolation.extraores.entity.EntityInstantExplosion;
 import sobiohazardous.minestrappolation.extraores.gen.EOOreGenerator;
 import sobiohazardous.minestrappolation.extraores.handler.ClientPacketHandler;
 import sobiohazardous.minestrappolation.extraores.handler.ClientTickHandler;
-import sobiohazardous.minestrappolation.extraores.handler.EOGuiHandler;
-import sobiohazardous.minestrappolation.extraores.handler.BlacksmithTrades;
-import sobiohazardous.minestrappolation.extraores.handler.PriestTrades;
+import sobiohazardous.minestrappolation.extraores.handler.GuiHandler;
+import sobiohazardous.minestrappolation.extraores.handler.BlacksmithTradeHandler;
+import sobiohazardous.minestrappolation.extraores.handler.PriestTradeHandler;
+import sobiohazardous.minestrappolation.extraores.handler.RenderingHandler;
 import sobiohazardous.minestrappolation.extraores.handler.ServerPacketHandler;
-import sobiohazardous.minestrappolation.extraores.handler.ServerTickHandler;
+import sobiohazardous.minestrappolation.extraores.handler.PlayerTickHandler;
 import sobiohazardous.minestrappolation.extraores.item.*;
 import sobiohazardous.minestrappolation.extraores.lib.EOBlockRegister;
 import sobiohazardous.minestrappolation.extraores.lib.EOFuelHandler;
 import sobiohazardous.minestrappolation.extraores.lib.EONameManager;
 import sobiohazardous.minestrappolation.extraores.lib.EORecipeManager;
-import sobiohazardous.minestrappolation.extraores.plate.IPlateRenderingHandler;
-import sobiohazardous.minestrappolation.extraores.plate.Plate;
 import sobiohazardous.minestrappolation.extraores.proxy.CommonProxy;
 
 import net.minecraft.block.Block;
@@ -863,7 +862,7 @@ public class ExtraOres
 	@Instance("ExtraOres")
 	public static ExtraOres instance;
 	
-	private EOGuiHandler guiHandler = new EOGuiHandler();
+	private GuiHandler guiHandler = new GuiHandler();
 	
 	@Mod.EventHandler
     public void myNewPreLoadMethod(FMLPreInitializationEvent evt)	
@@ -1189,7 +1188,7 @@ public class ExtraOres
 	    Block.bedrock.setHardness(80F);
 	    
 		GameRegistry.registerWorldGenerator(new EOOreGenerator());
-		EntityRegistry.registerModEntity(EntityExplosion.class, "Plutonium", 4, this, 350, 5, false);
+		EntityRegistry.registerModEntity(EntityInstantExplosion.class, "Plutonium", 4, this, 350, 5, false);
 		EntityRegistry.registerModEntity(EntityGrenade.class, "Grenade", 2, this, 40, 3, true);
 		EntityRegistry.registerModEntity(EntityNukePrimed.class, "NukePrimed", 3, this, 350, 5, false);
 		EntityRegistry.registerModEntity(EntityGrenadeImpact.class, "GrenadeImpact", 4, this, 40, 3, true);
@@ -1304,9 +1303,9 @@ public class ExtraOres
 		TinPants = (new ItemExtracraftPants(tinPantsId, "item_TinLeggings",MaterialTin, proxy.addArmor("tin"),2)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("TinPants");
 		TinBoots = (new ItemExtracraftBoots(tinBootsId, "item_TinBoots",MaterialTin, proxy.addArmor("tin"),3)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("TinBoots");
 	
-		TinPlate = (new Plate(tinPlateId,"block_Tin")).setHardness(0.7F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("TinPlate");
-		BronzePlate = (new Plate(bronzePlateId, "block_Bronze")).setHardness(0.7F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("BronzePlate");
-		SteelPlate = (new Plate(steelPlateId, "block_SteelSide")).setHardness(0.7F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("SteelPlate");
+		TinPlate = (new BlockPlate(tinPlateId,"block_Tin")).setHardness(0.7F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("TinPlate");
+		BronzePlate = (new BlockPlate(bronzePlateId, "block_Bronze")).setHardness(0.7F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("BronzePlate");
+		SteelPlate = (new BlockPlate(steelPlateId, "block_SteelSide")).setHardness(0.7F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("SteelPlate");
 		TinPlateItem = (new ItemBlockPlacer(tinPlateItemId,"item_TinPlate", TinPlate)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("TinPlateItem");
 		BronzePlateItem = (new ItemBlockPlacer(bronzePlateItemId, "item_BronzePlate", BronzePlate)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("BronzePlateItem");
 		SteelPlateItem = (new ItemBlockPlacer(steelPlateItemId,"item_SteelPlate", SteelPlate)).setCreativeTab(ExtraOres.tabOresItems).setUnlocalizedName("SteelPlateItem");
@@ -1600,7 +1599,7 @@ public class ExtraOres
         proxy.registerRenderThings(); //this allows seperate renderings for server and client
         
         TickRegistry.registerTickHandler(new ClientTickHandler(EnumSet.of(TickType.CLIENT)), Side.CLIENT);
-        TickRegistry.registerTickHandler(new ServerTickHandler(EnumSet.of(TickType.PLAYER)), Side.SERVER);
+        TickRegistry.registerTickHandler(new PlayerTickHandler(EnumSet.of(TickType.PLAYER)), Side.SERVER);
 
         GameRegistry.registerFuelHandler(new EOFuelHandler());
 
@@ -1660,8 +1659,8 @@ public class ExtraOres
 		ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH).addItem(new WeightedRandomChestContent(new ItemStack(this.CoalIronIngot),1,5,17));
 		ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH).addItem(new WeightedRandomChestContent(new ItemStack(this.SteelIngot),1,5,17));
 		
-		VillagerRegistry.instance().registerVillageTradeHandler(3, new BlacksmithTrades());
-		VillagerRegistry.instance().registerVillageTradeHandler(2, new PriestTrades());
+		VillagerRegistry.instance().registerVillageTradeHandler(3, new BlacksmithTradeHandler());
+		VillagerRegistry.instance().registerVillageTradeHandler(2, new PriestTradeHandler());
 		
 		MinecraftForge.setBlockHarvestLevel(CopperOre, "pickaxe", 0);
 		MinecraftForge.setBlockHarvestLevel(CopperBlock, "pickaxe", 0);

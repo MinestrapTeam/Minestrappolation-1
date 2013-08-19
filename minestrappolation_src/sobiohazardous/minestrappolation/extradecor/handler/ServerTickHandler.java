@@ -39,6 +39,6 @@ public class ServerTickHandler implements ITickHandler
     @Override
     public String getLabel()
     {
-        return "ExtraoresServerTick";
+        return "ExtraDecorServerTick";
     }
 }

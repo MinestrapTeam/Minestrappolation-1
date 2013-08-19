@@ -2,19 +2,14 @@ package sobiohazardous.minestrappolation.extradecor.handler;
 
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
-import sobiohazardous.minestrappolation.extradecor.block.EDBlockPane;
 import sobiohazardous.minestrappolation.extradecor.block.BlockRope;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockFence;
-import net.minecraft.block.BlockPane;
-import net.minecraft.client.renderer.EntityRenderer;
 import net.minecraft.client.renderer.RenderBlocks;
-import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 
-public class RopeRender extends RenderBlocks implements ISimpleBlockRenderingHandler
+public class RopeRenderingHandler extends RenderBlocks implements ISimpleBlockRenderingHandler
 {
+	@Override
 	public void renderInventoryBlock(Block block, int metadata, int modelID, RenderBlocks renderer)
     {
          
@@ -30,11 +25,13 @@ public class RopeRender extends RenderBlocks implements ISimpleBlockRenderingHan
 	    return false;
 	 }
 
+	@Override
 	public boolean shouldRender3DInInventory()
 	{
 	    return false;
 	}
 
+	@Override
 	public int getRenderId()
 	{
 	     return ExtraDecor.ropeRenderId;
@@ -45,7 +42,7 @@ public class RopeRender extends RenderBlocks implements ISimpleBlockRenderingHan
         boolean flag = false;
         float f = 0.375F;
         float f1 = 0.625F;
-        r.setRenderBounds((double)f, 0.0D, (double)f, (double)f1, 1.0D, (double)f1);
+        r.setRenderBounds(f, 0.0D, f, f1, 1.0D, f1);
         r.renderStandardBlock(par1BlockFence, par2, par3, par4);
         flag = true;
         boolean flag1 = false;

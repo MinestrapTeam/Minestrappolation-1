@@ -2,10 +2,10 @@ package sobiohazardous.minestrappolation.extraores.proxy;
 
 import java.util.Map;
 
+import sobiohazardous.minestrappolation.extraores.client.renderer.RenderNukePrimed;
 import sobiohazardous.minestrappolation.extraores.entity.EntityNukePrimed;
-import sobiohazardous.minestrappolation.extraores.entity.RenderNukePrimed;
+import sobiohazardous.minestrappolation.extraores.handler.RenderingHandler;
 import sobiohazardous.minestrappolation.extraores.lib.EOBlockRegister;
-import sobiohazardous.minestrappolation.extraores.plate.IPlateRenderingHandler;
 
 import net.minecraft.src.ModLoader;
 import cpw.mods.fml.client.registry.RenderingRegistry;

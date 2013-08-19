@@ -13,7 +13,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 // Create a class and implement IGuiHandler
-public class EOGuiHandler implements IGuiHandler
+public class GuiHandler implements IGuiHandler
 {
 // This is a required method to open you Gui and has 6 params
 // @param int id, this is the Gui Id

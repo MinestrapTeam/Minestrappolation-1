@@ -5,7 +5,7 @@ import java.util.Random;
 
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
 import sobiohazardous.minestrappolation.extraores.entity.EntityNukePrimed;
-import sobiohazardous.minestrappolation.extraores.entity.EntityExplosion;
+import sobiohazardous.minestrappolation.extraores.entity.EntityInstantExplosion;
 import sobiohazardous.minestrappolation.util.BlockFunctions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -256,7 +256,7 @@ public BlockPlutoniumRaw(int par1, Material par3Material)
             	 if (!par1World.isRemote)
                  {                    
   
-            		 EntityExplosion entitytntprimed = new EntityExplosion(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), player);
+            		 EntityInstantExplosion entitytntprimed = new EntityInstantExplosion(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), player);
                          par1World.spawnEntityInWorld(entitytntprimed);
                          par1World.playSoundAtEntity(entitytntprimed, "random.fuse", 1.0F, 1.0F);
                  }
@@ -272,7 +272,7 @@ public BlockPlutoniumRaw(int par1, Material par3Material)
         		 if (!par1World.isRemote)
                  {                    
    
-            		 EntityExplosion entitytntprimed = new EntityExplosion(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), player);
+            		 EntityInstantExplosion entitytntprimed = new EntityInstantExplosion(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), player);
                          par1World.spawnEntityInWorld(entitytntprimed);
                          par1World.playSoundAtEntity(entitytntprimed, "random.fuse", 1.0F, 1.0F);
                  }
@@ -286,7 +286,7 @@ public BlockPlutoniumRaw(int par1, Material par3Material)
         {
             if (!par1World.isRemote)
             {
-            	EntityExplosion entitytntprimed = new EntityExplosion(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), player);
+            	EntityInstantExplosion entitytntprimed = new EntityInstantExplosion(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), player);
                 par1World.spawnEntityInWorld(entitytntprimed);
                 par1World.playSoundAtEntity(entitytntprimed, "random.fuse", 1.0F, 1.0F);
             }
@@ -298,7 +298,7 @@ public BlockPlutoniumRaw(int par1, Material par3Material)
             {
                 if ((par5 & 1) == 1)
                 {
-                	EntityExplosion entitytntprimed = new EntityExplosion(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), player);
+                	EntityInstantExplosion entitytntprimed = new EntityInstantExplosion(par1World, (double)((float)par2 + 0.5F), (double)((float)par3 + 0.5F), (double)((float)par4 + 0.5F), player);
                     par1World.spawnEntityInWorld(entitytntprimed);
                     par1World.playSoundAtEntity(entitytntprimed, "random.fuse", 1.0F, 1.0F);                }
             }

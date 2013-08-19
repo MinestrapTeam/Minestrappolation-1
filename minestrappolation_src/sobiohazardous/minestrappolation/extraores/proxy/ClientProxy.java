@@ -3,15 +3,15 @@ package sobiohazardous.minestrappolation.extraores.proxy;
 import java.util.Map;
 
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
+import sobiohazardous.minestrappolation.extraores.client.renderer.RenderGrenade;
+import sobiohazardous.minestrappolation.extraores.client.renderer.RenderNukePrimed;
 import sobiohazardous.minestrappolation.extraores.entity.EntityGrenade;
 import sobiohazardous.minestrappolation.extraores.entity.EntityGrenadeImpact;
 import sobiohazardous.minestrappolation.extraores.entity.EntityGrenadeSticky;
 import sobiohazardous.minestrappolation.extraores.entity.EntityNukePrimed;
-import sobiohazardous.minestrappolation.extraores.entity.EntityExplosion;
-import sobiohazardous.minestrappolation.extraores.entity.RenderGrenade;
-import sobiohazardous.minestrappolation.extraores.entity.RenderNukePrimed;
+import sobiohazardous.minestrappolation.extraores.entity.EntityInstantExplosion;
+import sobiohazardous.minestrappolation.extraores.handler.RenderingHandler;
 import sobiohazardous.minestrappolation.extraores.lib.EOBlockRegister;
-import sobiohazardous.minestrappolation.extraores.plate.IPlateRenderingHandler;
 
 import net.minecraft.src.ModLoader;
 import net.minecraftforge.client.MinecraftForgeClient;
@@ -38,7 +38,7 @@ public class ClientProxy extends CommonProxy
          * use RenderingRegistry.registerEntityRenderingHandler for entities
          * look at RenderingRegistry for more
          */
-		RenderingRegistry.registerBlockHandler(new IPlateRenderingHandler());
+		RenderingRegistry.registerBlockHandler(new RenderingHandler());
 				
 		RenderingRegistry.registerEntityRenderingHandler(EntityNukePrimed.class, new RenderNukePrimed());
 		RenderingRegistry.registerEntityRenderingHandler(EntityGrenade.class, new RenderGrenade(ExtraOres.grenade));

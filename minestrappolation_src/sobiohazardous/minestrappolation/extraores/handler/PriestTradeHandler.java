@@ -10,7 +10,7 @@ import net.minecraft.village.MerchantRecipeList;
 import sobiohazardous.minestrappolation.extraores.ExtraOres;
 import cpw.mods.fml.common.registry.VillagerRegistry.IVillageTradeHandler;
 
-public class PriestTrades implements IVillageTradeHandler
+public class PriestTradeHandler implements IVillageTradeHandler
 { 
 	public void manipulateTradesForVillager(EntityVillager villager, MerchantRecipeList recipes, Random random) 
 	{

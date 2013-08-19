@@ -1,7 +1,7 @@
 package sobiohazardous.minestrappolation.extradecor.proxy;
 
-import sobiohazardous.minestrappolation.extradecor.handler.PaneRender;
-import sobiohazardous.minestrappolation.extradecor.handler.RopeRender;
+import sobiohazardous.minestrappolation.extradecor.handler.PaneRenderingHandler;
+import sobiohazardous.minestrappolation.extradecor.handler.RopeRenderingHandler;
 import net.minecraft.src.ModLoader;
 import net.minecraftforge.client.MinecraftForgeClient;
 import cpw.mods.fml.client.registry.RenderingRegistry;
@@ -23,8 +23,8 @@ public class ClientProxy extends CommonProxy
          * use RenderingRegistry.registerEntityRenderingHandler for entities
          * look at RenderingRegistry for more
          */
-    	RenderingRegistry.registerBlockHandler(new PaneRender());
-    	RenderingRegistry.registerBlockHandler(new RopeRender());
+    	RenderingRegistry.registerBlockHandler(new PaneRenderingHandler());
+    	RenderingRegistry.registerBlockHandler(new RopeRenderingHandler());
     	
     }
 }

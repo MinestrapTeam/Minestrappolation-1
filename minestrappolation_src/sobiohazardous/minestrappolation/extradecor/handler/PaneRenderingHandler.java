@@ -13,7 +13,7 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 
-public class PaneRender extends RenderBlocks implements ISimpleBlockRenderingHandler
+public class PaneRenderingHandler extends RenderBlocks implements ISimpleBlockRenderingHandler
 {
 	public void renderInventoryBlock(Block block, int metadata, int modelID, RenderBlocks renderer)
     {

@@ -11,7 +11,7 @@ import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
 import cpw.mods.fml.common.registry.VillagerRegistry.IVillageTradeHandler;
 
-public class BlacksmithTrades implements IVillageTradeHandler 
+public class BlacksmithTradeHandler implements IVillageTradeHandler 
 {
 	public void manipulateTradesForVillager(EntityVillager villager, MerchantRecipeList recipes, Random random) 
 	{

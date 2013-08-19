@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 
-public class WorldGenNetherExtracraft extends WorldGenerator
+public class WorldGenSoulSand extends WorldGenerator
 {
     /** The block ID of the ore to be placed using this generator. */
     private int minableBlockId;
@@ -17,7 +17,7 @@ public class WorldGenNetherExtracraft extends WorldGenerator
     /** The number of blocks to generate. */
     private int numberOfBlocks;
 
-    public WorldGenNetherExtracraft(int par1, int par2)
+    public WorldGenSoulSand(int par1, int par2)
     {
         minableBlockId = par1;
         numberOfBlocks = par2;
@@ -70,7 +70,7 @@ public class WorldGenNetherExtracraft extends WorldGenerator
                     {
                         double d14 = (((double)j2 + 0.5D) - d8) / (d10 / 2D);
 
-                        if (d12 * d12 + d13 * d13 + d14 * d14 < 1.0D && par1World.getBlockId(l1, i2, j2) == Block.netherrack.blockID)
+                        if (d12 * d12 + d13 * d13 + d14 * d14 < 1.0D && par1World.getBlockId(l1, i2, j2) == Block.slowSand.blockID)
                         {
                             par1World.setBlock(l1, i2, j2, minableBlockId);
                         }
