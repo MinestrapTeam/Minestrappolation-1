@@ -123,7 +123,8 @@ public class ExtraDecor
 	woodBoardsSingleSlabId,
 	woodBoardsDoubleSlabId,
 	checkerTileStairsId,
-	stainedBrickId;
+	stainedBrickId,
+	cobbledRoadId;
 	
 	public static Block stoneBlockRefined;
 	public static Block stonePillar;
@@ -203,6 +204,8 @@ public class ExtraDecor
 	
 	public static Block stainedBrick;
 	
+	public static Block cobbledRoad;
+	
 	public static CreativeTabs tabDecorBlocks = new CreativeTabExtraDecorBlocks(CreativeTabs.getNextID(),"Extrappolated Decor");
 	
 	public static int paneRenderId = RenderingRegistry.getNextAvailableRenderId();
@@ -267,6 +270,7 @@ public class ExtraDecor
 		woodBoardsDoubleSlabId = config.getBlock("Wood Boards Double Slab", 744).getInt();
 		checkerTileStairsId = config.getBlock("Checker Tile Stairs", 745).getInt();
 		stainedBrickId = config.getBlock("Stained Bricks", 746).getInt();
+		cobbledRoadId = config.getBlock("Cobbled Road", 747).getInt();
 		
 		config.save();		
 		
@@ -349,6 +353,8 @@ public class ExtraDecor
 		
 		stainedBrick = (new BlockStainedBrick(stainedBrickId)).setHardness(2F).setResistance(10F).setCreativeTab(tabDecorBlocks).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("stainedBrick");
 		
+		cobbledRoad = (new BlockCobbledRoad(cobbledRoadId)).setHardness(1).setResistance(5F).setCreativeTab(tabDecorBlocks).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("cobbledRoad");
+		
 		EDBlockRegistry.registerBlocks();
 		EDNameManager.registerNames();
 		EDRecipeManager.loadAllRecipes();
@@ -376,6 +382,7 @@ public class ExtraDecor
 		MinecraftForge.setBlockHarvestLevel(flintTile, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(oozeSlime, "shovel", 0);
 		MinecraftForge.setBlockHarvestLevel(magmaOoze, "shovel", 0);
+		MinecraftForge.setBlockHarvestLevel(cobbledRoad, "pickaxe", 0);
 		
 		GameRegistry.registerWorldGenerator(new EDOreGenerator());	
 		oreRegistration();

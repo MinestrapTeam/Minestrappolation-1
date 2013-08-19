@@ -417,5 +417,12 @@ public class EDRecipeManager
 				{
 			"BB", "BB", Character.valueOf('B'), new ItemStack(Block.field_111039_cA, 1, 2)
 				});
+		
+		
+		
+		GameRegistry.addRecipe(new ItemStack(ExtraDecor.cobbledRoad, 1), new Object[]
+				{
+			"CC", "DD", Character.valueOf('C'), Block.cobblestone, Character.valueOf('D'), Block.dirt
+				});
 	}
 }

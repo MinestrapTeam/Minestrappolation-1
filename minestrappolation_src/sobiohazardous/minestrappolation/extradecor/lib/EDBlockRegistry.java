@@ -55,6 +55,7 @@ public class EDBlockRegistry
 		GameRegistry.registerBlock(ExtraDecor.woodBoardsDoubleSlab, "woodBoardsDoubleSlab");
 		GameRegistry.registerBlock(ExtraDecor.checkerTileStairs, "checkerTileStairs");
 		GameRegistry.registerBlock(ExtraDecor.stainedBrick, "stainedBrick");
+		GameRegistry.registerBlock(ExtraDecor.cobbledRoad, "cobbledRoad");
 	}
 	
 }

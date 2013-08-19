@@ -85,6 +85,7 @@ public class EDNameManager
 		LanguageRegistry.instance().addStringLocalization("tile.stainedBrick.blue.name", "Blue Stained Bricks");
 		LanguageRegistry.instance().addStringLocalization("tile.stainedBrick.purple.name", "Purple Stained Bricks");
 		LanguageRegistry.instance().addStringLocalization("tile.stainedBrick.magenta.name", "Magenta Stained Bricks");
+		LanguageRegistry.addName(ExtraDecor.cobbledRoad, "Cobbled Road");
 	}
 	
 }
