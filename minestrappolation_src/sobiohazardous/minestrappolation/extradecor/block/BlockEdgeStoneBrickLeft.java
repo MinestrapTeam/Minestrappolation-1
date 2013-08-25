@@ -6,7 +6,6 @@ import java.util.Random;
 
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
 import sobiohazardous.minestrappolation.util.BlockFunctions;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -39,7 +38,7 @@ public class BlockEdgeStoneBrickLeft extends Block
 	
 	public int idDropped(int par1, Random par2Random, int par3)
     {
-        return ExtraDecor.edgeStoneBrick.blockID;
+        return EDBlockManager.edgeStoneBrick.blockID;
     }
 
 }

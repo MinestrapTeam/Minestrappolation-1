@@ -2,6 +2,7 @@ package sobiohazardous.minestrappolation.extradecor.block;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
 import java.util.List;
 import java.util.Random;
 
@@ -23,7 +24,7 @@ public class BlockWoodBoardSlab extends BlockHalfSlab
     public BlockWoodBoardSlab(int par1, boolean par2)
     {
         super(par1, par2, Material.wood);
-        this.setCreativeTab(ExtraDecor.tabDecorBlocks);
+        this.setCreativeTab(EDBlockManager.tabDecorBlocks);
     }
 
     @SideOnly(Side.CLIENT)
@@ -33,7 +34,7 @@ public class BlockWoodBoardSlab extends BlockHalfSlab
      */
     public Icon getIcon(int par1, int par2)
     {
-        return ExtraDecor.woodBoards.getIcon(par1, par2 & 7);
+        return EDBlockManager.woodBoards.getIcon(par1, par2 & 7);
     }
 
     /**
@@ -41,7 +42,7 @@ public class BlockWoodBoardSlab extends BlockHalfSlab
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return ExtraDecor.woodBoardsSingleSlab.blockID;
+        return EDBlockManager.woodBoardsSingleSlab.blockID;
     }
 
     /**
@@ -50,7 +51,7 @@ public class BlockWoodBoardSlab extends BlockHalfSlab
      */
     protected ItemStack createStackedBlock(int par1)
     {
-        return new ItemStack(ExtraDecor.woodBoardsSingleSlab.blockID, 2, par1 & 7);
+        return new ItemStack(EDBlockManager.woodBoardsSingleSlab.blockID, 2, par1 & 7);
     }
 
     /**
@@ -73,7 +74,7 @@ public class BlockWoodBoardSlab extends BlockHalfSlab
      */
     public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
     {
-        if (par1 != ExtraDecor.woodBoardsDoubleSlab.blockID)
+        if (par1 != EDBlockManager.woodBoardsDoubleSlab.blockID)
         {
             for (int j = 0; j < 4; ++j)
             {
@@ -92,7 +93,7 @@ public class BlockWoodBoardSlab extends BlockHalfSlab
     
     public int getFlammability(IBlockAccess world, int x, int y, int z, int metadata, ForgeDirection face)
     {
-    	if(blockID == ExtraDecor.woodBoardsSingleSlab.blockID || blockID == ExtraDecor.woodBoardsDoubleSlab.blockID)
+    	if(blockID == EDBlockManager.woodBoardsSingleSlab.blockID || blockID == EDBlockManager.woodBoardsDoubleSlab.blockID)
     	{
     		if(face == ForgeDirection.UP || face == ForgeDirection.DOWN || face == ForgeDirection.NORTH || face == ForgeDirection.SOUTH || face == ForgeDirection.EAST || face == ForgeDirection.WEST)
     		{

@@ -13,6 +13,7 @@ import net.minecraft.util.StatCollector;
 
 public class GuiCrate extends GuiContainer
 {
+	public static ResourceLocation crategui = new ResourceLocation("extraores","gui/crate.png");
 
 	public GuiCrate(InventoryPlayer player_inventory, TileEntityCrate tile_entity)
 	{
@@ -31,8 +32,7 @@ public class GuiCrate extends GuiContainer
 	protected void drawGuiContainerBackgroundLayer(float f, int i, int j)
 	{
 		GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-		ResourceLocation gui = new ResourceLocation("gui/crate.png");
-		this.mc.renderEngine.func_110577_a(gui);		
+		this.mc.renderEngine.func_110577_a(crategui);		
 		int x = (width - xSize) / 2;
 		int y = (height - ySize) / 2;
 		this.drawTexturedModalRect(x, y, 0, 0, xSize, ySize);

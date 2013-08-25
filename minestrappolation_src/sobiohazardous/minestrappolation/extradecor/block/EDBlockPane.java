@@ -2,11 +2,12 @@ package sobiohazardous.minestrappolation.extradecor.block;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
 import java.util.List;
 import java.util.Random;
 
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
-
+import sobiohazardous.minestrappolation.extradecor.item.EDItemManager;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -48,7 +49,7 @@ public class EDBlockPane extends Block
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return !this.canDropItself ? 0 : blockID == ExtraDecor.cardboard.blockID ? ExtraDecor.cardboardItem.itemID : super.idDropped(par1, par2Random, par3);
+        return !this.canDropItself ? 0 : blockID == EDBlockManager.cardboard.blockID ? EDBlockManager.cardboard.blockID : super.idDropped(par1, par2Random, par3);
     }
 
     /**
@@ -213,7 +214,7 @@ public class EDBlockPane extends Block
      */
     public final boolean canThisPaneConnectToThisBlockID(int par1)
     {
-        return Block.opaqueCubeLookup[par1] || par1 == this.blockID || par1 == Block.glass.blockID || par1 == ExtraDecor.glassRefined.blockID || par1 == ExtraDecor.cardboard.blockID;
+        return Block.opaqueCubeLookup[par1] || par1 == this.blockID || par1 == Block.glass.blockID || par1 == EDBlockManager.glassRefined.blockID || par1 == EDBlockManager.cardboard.blockID;
     }
 
     /**
@@ -247,7 +248,7 @@ public class EDBlockPane extends Block
     
     public int getFlammability(IBlockAccess world, int x, int y, int z, int metadata, ForgeDirection face)
     {
-    	if(blockID == ExtraDecor.cardboard.blockID)
+    	if(blockID == EDBlockManager.cardboard.blockID)
     	{
     		if(face == ForgeDirection.UP || face == ForgeDirection.DOWN || face == ForgeDirection.NORTH || face == ForgeDirection.SOUTH || face == ForgeDirection.EAST || face == ForgeDirection.WEST)
     		{

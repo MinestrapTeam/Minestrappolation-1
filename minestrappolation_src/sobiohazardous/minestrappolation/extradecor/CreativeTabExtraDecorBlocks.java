@@ -1,5 +1,6 @@
 package sobiohazardous.minestrappolation.extradecor;
 
+import sobiohazardous.minestrappolation.extradecor.block.EDBlockManager;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.creativetab.CreativeTabs;
@@ -15,7 +16,7 @@ public final class CreativeTabExtraDecorBlocks extends CreativeTabs
         @SideOnly(Side.CLIENT)
         public int getTabIconItemIndex()
         {
-                return ExtraDecor.sandstoneBricks.blockID;
+                return EDBlockManager.sandstoneBricks.blockID;
         }
    
         public String getTranslatedTabLabel()

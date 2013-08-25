@@ -2,10 +2,10 @@ package sobiohazardous.minestrappolation.extradecor.block;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
 import java.util.List;
 
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -26,7 +26,7 @@ public class BlockWoodBoards extends Block
     public BlockWoodBoards(int id)
     {
         super(id, Material.wood);
-        this.setCreativeTab(ExtraDecor.tabDecorBlocks);
+        this.setCreativeTab(EDBlockManager.tabDecorBlocks);
     }
 
     @SideOnly(Side.CLIENT)
@@ -83,7 +83,7 @@ public class BlockWoodBoards extends Block
     
     public int getFlammability(IBlockAccess world, int x, int y, int z, int metadata, ForgeDirection face)
     {
-    	if(blockID == ExtraDecor.woodPanel.blockID || blockID == ExtraDecor.woodBeveled.blockID || blockID == ExtraDecor.woodBoards.blockID)
+    	if(blockID == EDBlockManager.woodPanel.blockID || blockID == EDBlockManager.woodBeveled.blockID || blockID == EDBlockManager.woodBoards.blockID)
     	{
     		if(face == ForgeDirection.UP || face == ForgeDirection.DOWN || face == ForgeDirection.NORTH || face == ForgeDirection.SOUTH || face == ForgeDirection.EAST || face == ForgeDirection.WEST)
     		{

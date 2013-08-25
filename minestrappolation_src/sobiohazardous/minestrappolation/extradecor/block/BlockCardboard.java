@@ -32,7 +32,7 @@ public class BlockCardboard extends EDBlock
     {
     	if(par5 == Block.waterMoving.blockID || par5 == Block.waterStill.blockID)
     	{
-            par1World.setBlock(par2, par3, par4, ExtraDecor.cardboardWet.blockID);
+            par1World.setBlock(par2, par3, par4, EDBlockManager.cardboardWet.blockID);
     	}
     }
 
@@ -43,7 +43,7 @@ public class BlockCardboard extends EDBlock
     {
     	if(BlockFunctions.isWaterTouchingAllSides(par1World, par2, par3, par4))
     	{
-    		par1World.setBlock(par2, par3, par4, ExtraDecor.cardboardWet.blockID);
+    		par1World.setBlock(par2, par3, par4, EDBlockManager.cardboardWet.blockID);
     	}
     }
     
@@ -51,13 +51,13 @@ public class BlockCardboard extends EDBlock
     {
     	if(BlockFunctions.isWaterTouchingAllSides(par1World, par2, par3, par4))
     	{
-    		par1World.setBlock(par2, par3, par4, ExtraDecor.cardboardWet.blockID);
+    		par1World.setBlock(par2, par3, par4, EDBlockManager.cardboardWet.blockID);
     	}
     }
     
     public int getFlammability(IBlockAccess world, int x, int y, int z, int metadata, ForgeDirection face)
     {
-    	if(blockID == ExtraDecor.cardboardBlock.blockID)
+    	if(blockID == EDBlockManager.cardboardBlock.blockID)
     	{
     		if(face == ForgeDirection.UP || face == ForgeDirection.DOWN || face == ForgeDirection.NORTH || face == ForgeDirection.SOUTH || face == ForgeDirection.EAST || face == ForgeDirection.WEST)
     		{

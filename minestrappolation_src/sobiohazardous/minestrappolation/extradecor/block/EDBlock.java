@@ -19,7 +19,7 @@ public class EDBlock extends Block
 	public EDBlock(int par1, Material material, String texture)
     {
         super(par1, material);
-        this.setCreativeTab(ExtraDecor.tabDecorBlocks);
+        this.setCreativeTab(EDBlockManager.tabDecorBlocks);
         this.texture = "ExtraDecor:" + texture;
     }
 
@@ -28,7 +28,7 @@ public class EDBlock extends Block
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return this.blockID == ExtraDecor.stoneBlockRefined.blockID ? ExtraDecor.stoneBlockRefined.blockID : this.blockID;
+        return this.blockID == EDBlockManager.stoneBlockRefined.blockID ? EDBlockManager.stoneBlockRefined.blockID : this.blockID;
     }
     
     public void registerIcons(IconRegister par1IconRegister)
@@ -37,11 +37,11 @@ public class EDBlock extends Block
     }    
     public boolean canDragonDestroy(World world, int x, int y, int z)
     {
-        return blockID != obsidian.blockID && blockID != whiteStone.blockID && blockID != bedrock.blockID && blockID != ExtraDecor.endstoneSmooth.blockID && blockID != ExtraDecor.endstoneRefined.blockID && blockID != ExtraDecor.endstoneBrick.blockID && blockID != ExtraDecor.obsidianTile.blockID;
+        return blockID != obsidian.blockID && blockID != whiteStone.blockID && blockID != bedrock.blockID && blockID != EDBlockManager.endstoneSmooth.blockID && blockID != EDBlockManager.endstoneRefined.blockID && blockID !=EDBlockManager.endstoneBrick.blockID && blockID != EDBlockManager.obsidianTile.blockID;
     }
     public int getFlammability(IBlockAccess world, int x, int y, int z, int metadata, ForgeDirection face)
     {
-    	if(blockID == ExtraDecor.woodPanel.blockID || blockID == ExtraDecor.woodBeveled.blockID)
+    	if(blockID == EDBlockManager.woodPanel.blockID || blockID ==EDBlockManager.woodBeveled.blockID)
     	{
     		if(face == ForgeDirection.UP || face == ForgeDirection.DOWN || face == ForgeDirection.NORTH || face == ForgeDirection.SOUTH || face == ForgeDirection.EAST || face == ForgeDirection.WEST)
     		{

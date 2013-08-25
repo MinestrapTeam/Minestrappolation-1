@@ -2,10 +2,10 @@ package sobiohazardous.minestrappolation.extradecor.block;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
 import java.util.List;
 
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -24,7 +24,7 @@ public class BlockSandstoneBrick extends Block
     public BlockSandstoneBrick(int id)
     {
         super(id, Material.sand);
-        this.setCreativeTab(ExtraDecor.tabDecorBlocks);
+        this.setCreativeTab(EDBlockManager.tabDecorBlocks);
     }
 
     @SideOnly(Side.CLIENT)

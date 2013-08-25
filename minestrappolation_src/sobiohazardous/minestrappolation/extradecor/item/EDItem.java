@@ -1,6 +1,7 @@
 package sobiohazardous.minestrappolation.extradecor.item;
 
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
+import sobiohazardous.minestrappolation.extradecor.block.EDBlockManager;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
@@ -13,7 +14,7 @@ public class EDItem extends Item
 		public EDItem(int i, String texture)
         {
                 super(i);
-                this.setCreativeTab(ExtraDecor.tabDecorBlocks);
+                this.setCreativeTab(EDBlockManager.tabDecorBlocks);
                 this.itemTexture = "ExtraDecor:" + texture;
         }
 		

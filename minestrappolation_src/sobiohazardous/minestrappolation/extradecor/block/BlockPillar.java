@@ -23,7 +23,7 @@ public class BlockPillar extends Block
 	public BlockPillar(int par1, String sidesImg, String topImg)
     {
         super(par1, Material.rock);
-        this.setCreativeTab(ExtraDecor.tabDecorBlocks);
+        this.setCreativeTab(EDBlockManager.tabDecorBlocks);
         this.sidesImg = sidesImg;
         this.topImg = topImg;
     }

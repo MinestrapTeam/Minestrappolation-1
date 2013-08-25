@@ -1,6 +1,7 @@
 package sobiohazardous.minestrappolation.extradecor.tileentity;
 
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
+import sobiohazardous.minestrappolation.extradecor.block.EDBlockManager;
 import sobiohazardous.minestrappolation.extraores.block.BlockCopper;
 import sobiohazardous.minestrappolation.util.BlockFunctions;
 import net.minecraft.block.Block;
@@ -22,7 +23,7 @@ public class TileEntityCardboardWet extends TileEntity
     	{ 	
     		if(ticks == 1000)
     		{
-            	this.worldObj.setBlock(this.xCoord, this.yCoord, this.zCoord, ExtraDecor.cardboardBlock.blockID);
+            	this.worldObj.setBlock(this.xCoord, this.yCoord, this.zCoord, EDBlockManager.cardboardBlock.blockID);
 
     		}
     	}

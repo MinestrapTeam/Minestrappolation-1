@@ -6,7 +6,6 @@ import java.util.Random;
 
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
 import sobiohazardous.minestrappolation.util.BlockFunctions;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -31,7 +30,7 @@ public class BlockEdgeStoneBrick extends Block
 	public BlockEdgeStoneBrick(int par1)
     {
         super(par1, Material.rock);
-        this.setCreativeTab(ExtraDecor.tabDecorBlocks);
+        this.setCreativeTab(EDBlockManager.tabDecorBlocks);
     }
 	
 	public void registerIcons(IconRegister par1IconRegister)

@@ -14,7 +14,7 @@ public class BlockSugarBlock extends EDBlock
 	public BlockSugarBlock(int id, String texture)
 	{
 		super(id, Material.ground, texture);
-		this.setCreativeTab(ExtraDecor.tabDecorBlocks);
+		this.setCreativeTab(EDBlockManager.tabDecorBlocks);
 	}
 	
 	public void onBlockAdded(World par1World, int par2, int par3, int par4)

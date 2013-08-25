@@ -3,9 +3,9 @@ package sobiohazardous.minestrappolation.extradecor.block;
 import java.util.Random;
 
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
+import sobiohazardous.minestrappolation.extradecor.item.EDItemManager;
 import sobiohazardous.minestrappolation.extradecor.tileentity.TileEntityCardboardWet;
 import sobiohazardous.minestrappolation.util.BlockFunctions;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -33,7 +33,7 @@ public class BlockCardboardWet extends BlockContainer
     
     public int idDropped(int par1, Random par2Random, int par3)
     {
-    	return ExtraDecor.cardboardItem.itemID;
+    	return EDBlockManager.cardboard.blockID;
     }
     
     /**
@@ -95,7 +95,7 @@ public class BlockCardboardWet extends BlockContainer
     	if(par5 == Block.waterMoving.blockID || par5 == Block.waterStill.blockID)
     	{
             this.isDry = false;
-            par1World.setBlock(par2, par3, par4, ExtraDecor.cardboardWet.blockID);
+            par1World.setBlock(par2, par3, par4, EDBlockManager.cardboardWet.blockID);
     	}
     	
     	if(par5 != Block.waterMoving.blockID || par5 != Block.waterStill.blockID)
@@ -112,7 +112,7 @@ public class BlockCardboardWet extends BlockContainer
     	if(BlockFunctions.isWaterTouchingAllSides(par1World, par2, par3, par4))
     	{
             this.isDry = false;
-    		par1World.setBlock(par2, par3, par4, ExtraDecor.cardboardWet.blockID);
+    		par1World.setBlock(par2, par3, par4, EDBlockManager.cardboardWet.blockID);
     	}
     	
     	if(!BlockFunctions.isWaterTouchingAllSides(par1World, par2, par3, par4))

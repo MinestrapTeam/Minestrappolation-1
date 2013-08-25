@@ -2,12 +2,12 @@ package sobiohazardous.minestrappolation.extradecor.block;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
 import java.util.List;
 import java.util.Random;
 
 import sobiohazardous.minestrappolation.extradecor.ExtraDecor;
 import sobiohazardous.minestrappolation.util.BlockFunctions;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -75,7 +75,7 @@ public class BlockRope extends Block
 
     public static boolean isIdAFence(int par0)
     {
-        return par0 == ExtraDecor.rope.blockID;
+        return par0 == EDBlockManager.rope.blockID;
     }
 
     @SideOnly(Side.CLIENT)
@@ -138,7 +138,7 @@ public class BlockRope extends Block
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return ExtraDecor.itemRope.itemID;
+        return EDBlockManager.itemRope.itemID;
     }
     
     public void onBlockPlacedBy(World par1World, int par2, int par3, int par4, EntityLivingBase par5EntityLivingBase, ItemStack par6ItemStack)

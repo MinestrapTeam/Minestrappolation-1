@@ -11,12 +11,12 @@ public class EDBlockStairs extends BlockStairs
 	public EDBlockStairs(int id, Block block, int blockmeta)
 	{
 		super(id, block, blockmeta);
-		this.setCreativeTab(ExtraDecor.tabDecorBlocks);
+		this.setCreativeTab(EDBlockManager.tabDecorBlocks);
 	}
 	
 	public int getFlammability(IBlockAccess world, int x, int y, int z, int metadata, ForgeDirection face)
     {
-    	if(blockID == ExtraDecor.woodBoardsStairsOak.blockID || blockID == ExtraDecor.woodBoardsStairsBirch.blockID || blockID == ExtraDecor.woodBoardsStairsSpruce.blockID || blockID == ExtraDecor.woodBoardsStairsJungle.blockID)
+    	if(blockID == EDBlockManager.woodBoardsStairsOak.blockID || blockID == EDBlockManager.woodBoardsStairsBirch.blockID || blockID == EDBlockManager.woodBoardsStairsSpruce.blockID || blockID == EDBlockManager.woodBoardsStairsJungle.blockID)
     	{
     		if(face == ForgeDirection.UP || face == ForgeDirection.DOWN || face == ForgeDirection.NORTH || face == ForgeDirection.SOUTH || face == ForgeDirection.EAST || face == ForgeDirection.WEST)
     		{
