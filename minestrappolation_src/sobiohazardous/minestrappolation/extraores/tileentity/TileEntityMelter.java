@@ -237,18 +237,22 @@ public class TileEntityMelter extends TileEntity implements IInventory
          */
 	public void updateEntity()
 	{
-		System.out.println(needBucket);
+		//System.out.println(needBucket);
          boolean var1 = this.goldBurnTime > 0;
          boolean var2 = false;
          
          if(goldItemStacks[3]==null)
     	 {
+        	 //System.out.println("no bucket");
     		 hasBucket = false;
+    		 //System.out.println("Has Bucket = "+hasBucket);
     	 }
     	 
     	 if(goldItemStacks[3] != null && goldItemStacks[3].getItemDamage() == ((new ItemStack(Item.bucketEmpty, 0).getItemDamage())))
     	 {
+    		// System.out.println("Bucket found");
     		 hasBucket = true;
+    		 //System.out.println("Has Bucket = "+hasBucket);
     	 }
     	 
          if (this.goldBurnTime > 0)
@@ -314,6 +318,7 @@ public class TileEntityMelter extends TileEntity implements IInventory
 	{
          if (goldItemStacks[0] == null)
          {
+       
                  return false;
          }
 
@@ -321,41 +326,74 @@ public class TileEntityMelter extends TileEntity implements IInventory
 
          if (itemstack == null)
          {
+        	 
                  return false;
          }
 
          if (goldItemStacks[2] == null)
          {
+        	
+        	 if (needBucket == true && hasBucket == true)
+             {
+            	 System.out.println("true: needsBucket hasBucket");
+            	 return true; 	         	
+             }
+             
+             if (needBucket == false && hasBucket == false)
+             {
+            	 System.out.println("true: Doesn't need bucket does not have bucket");
+            	 return true;
+             }
+             
+             if(needBucket == true && hasBucket == false){
+            	 System.out.println("false: needs bucket does not have bukket");
+            	 return false;
+             }
+             
+             if(needBucket == false && hasBucket == true){
+            	 System.out.println("true: does not need bucket has bucket");
+            	 return true;
+             }
+             
+             
                  return true;
          }
 
          if (!goldItemStacks[2].isItemEqual(itemstack))
          {
+        	
                  return false;
          }
 
          if (goldItemStacks[2].stackSize < getInventoryStackLimit() && goldItemStacks[2].stackSize < goldItemStacks[2].getMaxStackSize())
          {
+        	
                  return true;
          }
          
-         if (needBucket == true)
+         if (needBucket == true && hasBucket == true)
          {
-    
-        	 if(hasBucket == true)
-        	 {
-        		 return true;
-        	 }     	         	
+        	 System.out.println("true: needsBucket hasBucket");
+        	 return true; 	         	
          }
          
-         if (needBucket == false)
+         if (needBucket == false && hasBucket == false)
          {
-    
-        	 if(hasBucket == false)
-        	 {
-        		 return false;
-        	 }     	         	
+        	 System.out.println("true: Doesn't need bucket does not have bucket");
+        	 return true;
          }
+         
+         if(needBucket == true && hasBucket == false){
+        	 System.out.println("false: needs bucket does not have bukket");
+        	 return false;
+         }
+         
+         if(needBucket == false && hasBucket == true){
+        	 System.out.println("true: does not need bucket has bucket");
+        	 return true;
+         }
+         
+      
 
          return goldItemStacks[2].stackSize < itemstack.getMaxStackSize();
 	}
@@ -365,7 +403,7 @@ public class TileEntityMelter extends TileEntity implements IInventory
          */
 	public void smeltItem()
 	{
-         if (this.canSmelt())
+         if (this.canSmelt() == true)
          {
                  ItemStack var1 = MelterRecipes.smelting().getSmeltingResult(this.goldItemStacks[0].getItem().itemID);
                  if (this.goldItemStacks[2] == null)

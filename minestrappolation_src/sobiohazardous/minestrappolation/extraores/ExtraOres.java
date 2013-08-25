@@ -10,7 +10,10 @@ import java.util.EnumSet;
 import java.util.logging.Level;
 
 import javax.swing.text.html.parser.Entity;
+
 import org.lwjgl.input.Keyboard;
+
+import sobiohazardous.minestrappolation.extradecor.tileentity.TileEntityCardboardWet;
 import sobiohazardous.minestrappolation.extraores.block.*;
 import sobiohazardous.minestrappolation.extraores.client.renderer.RenderGrenade;
 import sobiohazardous.minestrappolation.extraores.client.renderer.RenderNukePrimed;
@@ -34,7 +37,7 @@ import sobiohazardous.minestrappolation.extraores.lib.EOFuelHandler;
 import sobiohazardous.minestrappolation.extraores.lib.EONameManager;
 import sobiohazardous.minestrappolation.extraores.lib.EORecipeManager;
 import sobiohazardous.minestrappolation.extraores.proxy.CommonProxy;
-
+import sobiohazardous.minestrappolation.extraores.tileentity.TileEntityMelter;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHalfSlab;
 import net.minecraft.block.BlockStairs;
@@ -1602,6 +1605,7 @@ public class ExtraOres
         TickRegistry.registerTickHandler(new PlayerTickHandler(EnumSet.of(TickType.PLAYER)), Side.SERVER);
 
         GameRegistry.registerFuelHandler(new EOFuelHandler());
+    	GameRegistry.registerTileEntity(TileEntityMelter.class, "tileEntityMelter");
 
 		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(this.CopperIngot),1,5,30));
 		ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(this.TinIngot),1,5,30));
